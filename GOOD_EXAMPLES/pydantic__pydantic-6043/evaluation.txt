@@ -1,0 +1,154 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+System optimization
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+15 min ~ 1 hour
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/pydantic/json_schema.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/tests/test_json_schema.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch implements a `_sort_json_schema` function that recursively sorts dictionary keys in JSON schema structures to ensure deterministic output",
+    "rationale": "The core requirement is to produce deterministically sorted JSON schemas by sorting dictionary keys. This is essential for the test_by_alias test to pass with properties appearing in alphabetical order.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The sorting function is called in the `generate` method of the `GenerateJsonSchema` class on the json_schema before returning it",
+    "rationale": "The generate method is the main entry point for schema generation. Applying sorting here ensures all generated schemas are deterministically ordered as per the problem statement requirement.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The sorting implementation sorts list items based on their content or string representation",
+    "rationale": "Lists in JSON schemas often have semantic meaning in their order (e.g., tuple prefixItems, enum values, discriminated unions). Reordering list items can break existing tests and change schema semantics, violating the best-effort approach mentioned in the problem statement.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The patch successfully makes the failing test_by_alias test pass by ensuring properties keys appear in sorted (alphabetical) order",
+    "rationale": "This is the specific failing test that needs to be fixed. The test expects ['Crackle', 'Snap'] instead of ['Snap', 'Crackle'], demonstrating the need for alphabetical sorting of property keys.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The patch breaks more than 5 existing passing tests (PASS_TO_PASS tests that become failures)",
+    "rationale": "The implementation must maintain backward compatibility and not introduce significant regressions. Breaking many existing tests indicates the sorting is too aggressive, incorrect, or changes semantic meaning of schemas.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "code style",
+    "criterion": "The sorting function is defined at the module level as a standalone function rather than as an instance method of GenerateJsonSchema",
+    "rationale": "Module-level functions are more reusable and can be called from multiple places (like both generate and generate_definitions methods). The golden patch demonstrates this pattern for better code organization.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "correctness",
+    "criterion": "The implementation sorts only specific parts of the schema (e.g., only $defs section) rather than comprehensively sorting all dictionary keys throughout the entire schema structure",
+    "rationale": "A partial sorting approach that only targets specific sections will fail to achieve deterministic output for the entire schema. The test_by_alias failure specifically requires properties to be sorted, demonstrating the need for comprehensive sorting.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_08": {
+    "type": "code style",
+    "criterion": "The sorting function includes docstrings or comments explaining its purpose, behavior, and approach to handling different data types",
+    "rationale": "Documentation helps maintainability and makes the intent clear, especially for a utility function that recursively processes complex nested data structures like JSON schemas.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "agent behavior",
+    "criterion": "The patch modifies files other than pydantic/json_schema.py (such as documentation files, unrelated test files, or multiple source files)",
+    "rationale": "The fix should be focused on the json_schema.py implementation file. Modifying unrelated files indicates scope creep or misunderstanding. The golden patch only changes json_schema.py and test files.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_10": {
+    "type": "correctness",
+    "criterion": "The sorting implementation recursively processes nested structures (dictionaries within dictionaries, lists within dictionaries) to ensure complete deterministic ordering at all nesting levels",
+    "rationale": "JSON schemas are deeply nested structures with definitions, properties, and sub-schemas. A shallow sort would miss nested dictionaries and leave non-deterministic ordering in deeper levels, failing to solve the problem completely.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS",
+    "rubric_09": "FAIL",
+    "rubric_10": "PASS"
+  },
+  "trace_02": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "PASS",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 2,
+    "rationale": "The agent implemented a sorting function but took an overly conservative approach by only sorting the $defs section rather than comprehensively sorting the entire schema structure. This caused the main test_by_alias to fail since properties were not sorted. The agent also modified a documentation file unnecessarily and defined the function as an instance method rather than at module level. With 5 MUST_FOLLOW failures including not fixing the target test, this is a low-quality solution that doesn't solve the core problem."
+  },
+  "trace_02": {
+    "rating": 4,
+    "rationale": "The agent successfully fixed the main test_by_alias by implementing comprehensive dictionary key sorting throughout the entire schema structure. The implementation is clean, well-documented, and handles recursion properly. Only 2 email-related tests failed out of 300+ tests. The only minor issue is implementing it as an instance method rather than module-level function. Overall a good fix with minimal regressions."
+  },
+  "trace_03": {
+    "rating": 3,
+    "rationale": "The agent fixed the main test_by_alias successfully but took an overly aggressive approach by sorting list items based on their JSON string representation. This broke 14 existing tests because list order often carries semantic meaning in JSON schemas (tuple types, discriminated unions, enum values). While the core sorting logic is sound, the failure to recognize that list order matters resulted in significant regressions. This indicates partial understanding of the problem with some mistakes."
+  }
+}

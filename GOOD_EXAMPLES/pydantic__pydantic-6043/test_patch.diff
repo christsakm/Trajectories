@@ -1,0 +1,12 @@
+diff --git a/tests/test_json_schema.py b/tests/test_json_schema.py
+--- a/tests/test_json_schema.py
++++ b/tests/test_json_schema.py
+@@ -114,7 +114,7 @@ class ApplePie(BaseModel):
+         },
+         'required': ['Snap'],
+     }
+-    assert list(ApplePie.model_json_schema(by_alias=True)['properties'].keys()) == ['Snap', 'Crackle']
++    assert list(ApplePie.model_json_schema(by_alias=True)['properties'].keys()) == ['Crackle', 'Snap']
+     assert list(ApplePie.model_json_schema(by_alias=False)['properties'].keys()) == ['a', 'b']
+ 
+ 

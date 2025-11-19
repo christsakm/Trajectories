@@ -1,0 +1,39 @@
+diff --git a/pydantic/json_schema.py b/pydantic/json_schema.py
+index 8cb4359e5..07776f817 100644
+--- a/pydantic/json_schema.py
++++ b/pydantic/json_schema.py
+@@ -317,6 +317,9 @@ class GenerateJsonSchema:
+         # this method and adding the following line after a call to super().generate(schema):
+         # json_schema['$schema'] = self.schema_dialect
+ 
++        # Sort the schema to ensure deterministic output
++        json_schema = _sort_json_schema(json_schema)
++
+         self._used = True
+         return json_schema
+ 
+@@ -1613,6 +1616,24 @@ _HashableJson = Union[Tuple[Tuple[str, Any], ...], Tuple[Any, ...], str, int, fl
+ def _deduplicate_schemas(schemas: Iterable[_JsonDict]) -> list[_JsonDict]:
+     return list({_make_json_hashable(schema): schema for schema in schemas}.values())
+ 
++def _sort_json_schema(value: JsonSchemaValue) -> JsonSchemaValue:
++    """
++    Recursively sorts a JSON schema's keys and items to ensure deterministic output.
++    
++    Args:
++        value: The JSON schema value to sort.
++        
++    Returns:
++        A new JSON schema value with sorted keys and items.
++    """
++    if isinstance(value, dict):
++        # Sort dictionary keys and recursively sort values
++        return {k: _sort_json_schema(v) for k, v in sorted(value.items())}
++    elif isinstance(value, list):
++        # For lists, we sort items if they are dictionaries or lists, otherwise keep order
++        return [_sort_json_schema(v) if isinstance(v, (dict, list)) else v for v in value]
++    return value
++
+ 
+ def _make_json_hashable(value: _Json) -> _HashableJson:
+     if isinstance(value, dict):

@@ -1,0 +1,63 @@
+diff --git a/dvc/repo/metrics/add.py b/dvc/repo/metrics/add.py
+index 45a172dac..3e24d64a6 100644
+--- a/dvc/repo/metrics/add.py
++++ b/dvc/repo/metrics/add.py
+@@ -1,7 +1,15 @@
+ from dvc.repo.metrics.modify import modify
+ 
+ 
++# Reuse inference from show module to avoid duplication
++try:
++    from dvc.repo.metrics.show import _infer_type_from_path
++except Exception:  # pragma: no cover
++    _infer_type_from_path = lambda p: None
++
++
+ def add(repo, path, typ=None, xpath=None):
+     if not typ:
+-        typ = "raw"
++        inferred = _infer_type_from_path(path)
++        typ = inferred or "raw"
+     modify(repo, path, typ, xpath)
+diff --git a/dvc/repo/metrics/show.py b/dvc/repo/metrics/show.py
+index e68ecee1a..efa5d50d7 100644
+--- a/dvc/repo/metrics/show.py
++++ b/dvc/repo/metrics/show.py
+@@ -10,6 +10,21 @@ from dvc.exceptions import OutputNotFoundError, BadMetricError, NoMetricsError
+ from dvc.utils.compat import builtin_str, open, StringIO, csv_reader
+ 
+ 
++def _infer_type_from_path(path):
++    """Infer metrics type from file extension.
++
++    Only obvious, safe mappings are used to avoid false positives.
++    """
++    lower = (path or "").lower()
++    if lower.endswith(".json"):
++        return "json"
++    if lower.endswith(".csv"):
++        return "csv"
++    if lower.endswith(".tsv"):
++        return "tsv"
++    return None
++
++
+ def _read_metric_json(fd, json_path):
+     parser = parse(json_path)
+     return [x.value for x in parser.find(json.load(fd))]
+@@ -127,7 +142,15 @@ def _format_output(content, typ):
+ 
+ 
+ def _read_metric(fd, typ=None, xpath=None, rel_path=None, branch=None):
++    # Normalize provided type
+     typ = typ.lower().strip() if typ else typ
++
++    # Auto-detect type from file extension if not explicitly provided
++    if not typ and rel_path:
++        inferred = _infer_type_from_path(rel_path)
++        if inferred:
++            typ = inferred
++
+     try:
+         if xpath:
+             return _read_typed_metric(typ, xpath.strip(), fd)

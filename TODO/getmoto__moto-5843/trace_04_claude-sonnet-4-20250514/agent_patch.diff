@@ -1,0 +1,78 @@
+diff --git a/moto/dynamodb/exceptions.py b/moto/dynamodb/exceptions.py
+index 30aba61ce..0e13542d6 100644
+--- a/moto/dynamodb/exceptions.py
++++ b/moto/dynamodb/exceptions.py
+@@ -261,6 +261,13 @@ class InvalidAttributeTypeError(MockValidationException):
+         super().__init__(self.msg.format(name, expected_type, actual_type))
+ 
+ 
++class InvalidIndexKeyTypeError(MockValidationException):
++    msg = "One or more parameter values were invalid: Type mismatch for Index Key {} Expected: {} Actual: {} IndexName: {}"
++
++    def __init__(self, key_name, expected_type, actual_type, index_name):
++        super().__init__(self.msg.format(key_name, expected_type, actual_type, index_name))
++
++
+ class DuplicateUpdateExpression(InvalidUpdateExpression):
+     def __init__(self, names):
+         super().__init__(
+diff --git a/moto/dynamodb/models/__init__.py b/moto/dynamodb/models/__init__.py
+index 854727ee7..f401ecd88 100644
+--- a/moto/dynamodb/models/__init__.py
++++ b/moto/dynamodb/models/__init__.py
+@@ -21,6 +21,7 @@ from moto.dynamodb.exceptions import (
+     TransactionCanceledException,
+     EmptyKeyAttributeException,
+     InvalidAttributeTypeError,
++    InvalidIndexKeyTypeError,
+     MultipleTransactionsException,
+     TooManyTransactionsException,
+     TableNotFoundException,
+@@ -671,6 +672,39 @@ class Table(CloudFormationModel):
+                         "Start of structure or map found where not expected"
+                     )
+ 
++    def _validate_global_index_keys(self, item_attrs):
++        """
++        Validate that Global Secondary Index key attributes are not NULL
++        """
++        # Build a mapping from attribute name to its expected type
++        attr_type_map = {}
++        for attr_def in self.attr:
++            attr_type_map[attr_def["AttributeName"]] = attr_def["AttributeType"]
++        
++        # Check each global secondary index
++        for global_index in self.global_indexes:
++            index_name = global_index.name
++            # Check each key in the index schema
++            for key_spec in global_index.schema:
++                key_name = key_spec["AttributeName"]
++                # If this attribute is present in the item
++                if key_name in item_attrs:
++                    attr_value = item_attrs[key_name]
++                    dynamo_type = DynamoType(attr_value)
++                    expected_type = attr_type_map[key_name]
++                    
++                    # Check if the attribute is NULL
++                    if dynamo_type.type == "NULL":
++                        raise InvalidIndexKeyTypeError(
++                            key_name, expected_type, "NULL", index_name
++                        )
++                    
++                    # Also validate that the type matches the expected type
++                    if dynamo_type.type != expected_type:
++                        raise InvalidIndexKeyTypeError(
++                            key_name, expected_type, dynamo_type.type, index_name
++                        )
++
+     def put_item(
+         self,
+         item_attrs,
+@@ -713,6 +747,7 @@ class Table(CloudFormationModel):
+ 
+         self._validate_item_types(item_attrs)
+         self._validate_key_sizes(item_attrs)
++        self._validate_global_index_keys(item_attrs)
+ 
+         if expected is None:
+             expected = {}

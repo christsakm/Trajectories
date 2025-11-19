@@ -1,0 +1,134 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+15 min ~ 1 hour
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/mypy/nodes.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/test-data/unit/check-incremental.test"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The solution must add 'from_module_getattr' to the VAR_FLAGS list in mypy/nodes.py to ensure this flag is properly serialized and deserialized in incremental mode.",
+    "rationale": "This is the minimal fix required - the VAR_FLAGS list determines which Var attributes are serialized. Without this flag in VAR_FLAGS, from_module_getattr is lost during incremental runs, causing the crash",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch must fix the failing test testModuleGetattrIncrementalSerializeVarFlag without breaking any existing PASS_TO_PASS tests",
+    "rationale": "The core requirement is that the fix resolves the incremental mode crash when using module-level __getattr__ and passes all regression tests",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "agent behavior",
+    "criterion": "The agent should not modify mypy/lookup.py as a workaround instead of fixing the root serialization issue in nodes.py",
+    "rationale": "While modifying lookup.py to create synthetic Vars can work as a workaround, it adds unnecessary complexity and doesn't address the root cause - that from_module_getattr isn't being serialized",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The solution should be minimal - ideally a single line addition to VAR_FLAGS list without other changes",
+    "rationale": "The problem statement explicitly asks for minimal changes, and the golden patch demonstrates this is a one-line fix. Finding the root cause and fixing it minimally is part of implementing the correct solution",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The agent should not create complex workarounds like fabricating TypeInfo objects or checking is_partial_stub_package when the real issue is flag serialization",
+    "rationale": "Creating dummy TypeInfo objects or adding unrelated checks indicates misunderstanding of the root cause and introduces unnecessary complexity that causes test failures",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "code style",
+    "criterion": "The agent should not add new imports or helper functions to lookup.py unless absolutely necessary",
+    "rationale": "The golden patch shows no imports or helper functions are needed - just adding the flag to VAR_FLAGS solves the problem",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "agent behavior",
+    "criterion": "The agent should understand that the crash occurs during cross-reference fixup in incremental mode because from_module_getattr flag is not persisted across runs",
+    "rationale": "Understanding the root cause (serialization of the flag) vs treating the symptom (lookup failures) is key to implementing the correct minimal fix",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "correctness",
+    "criterion": "The solution should not modify how Var objects are created in lookup.py or add dynamic Var fabrication logic",
+    "rationale": "The golden patch shows that Vars are already being created correctly elsewhere with from_module_getattr=True; the only issue is that this flag wasn't in VAR_FLAGS for serialization",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "FAIL"
+  },
+  "trace_03": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS"
+  },
+  "trace_04": {
+    "rubric_01": "FAIL",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_02": {
+    "rating": 1,
+    "rationale": "The agent completely misunderstands the problem, attempting to fabricate dummy TypeInfo and ClassDef objects for nested access. This approach is fundamentally wrong."
+  },
+  "trace_03": {
+    "rating": 2,
+    "rationale": "The agent added a minimal check for is_partial_stub_package in lookup.py that just returns None. This shows some awareness that the issue relates to __getattr__ but completely misses that the problem is flag serialization in nodes.py, even after viewing VAR_FLAGS."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "Successfully fixes the bug, but uses a helper function in lookup.py rather than the minimal fix in nodes.py. Adds unnecessary complexity and misses the root cause."
+  }
+}

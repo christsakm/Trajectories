@@ -1,0 +1,85 @@
+diff --git a/pydantic/json_schema.py b/pydantic/json_schema.py
+index 8cb4359e5..60444a4eb 100644
+--- a/pydantic/json_schema.py
++++ b/pydantic/json_schema.py
+@@ -80,6 +80,70 @@ def update_json_schema(schema: JsonSchemaValue, updates: dict[str, Any]) -> Json
+     return schema
+ 
+ 
++def sort_json_schema(value: JsonSchemaValue, parent_key: str = 'root') -> JsonSchemaValue:
++    """
++    Recursively sort a JSON schema to make it deterministic.
++    
++    This function ensures that all dictionaries in the JSON schema have their keys sorted
++    alphabetically, and lists of objects (like in 'anyOf', 'oneOf', 'allOf') are sorted
++    by a deterministic key to ensure consistent output.
++    
++    Args:
++        value: The JSON schema value to sort (can be dict, list, or primitive)
++        parent_key: The key of the parent object (used for context)
++        
++    Returns:
++        The sorted JSON schema value
++    """
++    if isinstance(value, dict):
++        # Sort dictionary keys alphabetically
++        sorted_dict = {}
++        for key in sorted(value.keys()):
++            sorted_dict[key] = sort_json_schema(value[key], parent_key=key)
++        return sorted_dict
++    elif isinstance(value, list):
++        # For certain keys that contain schema objects, sort them for deterministic output
++        if parent_key in ('anyOf', 'oneOf', 'allOf'):
++            # Sort schema objects by a deterministic key for consistent ordering
++            sorted_items = []
++            for item in value:
++                sorted_item = sort_json_schema(item, parent_key=parent_key)
++                sorted_items.append(sorted_item)
++            # Sort by a deterministic key - prioritize certain patterns for more intuitive ordering
++            def sort_key(x):
++                if isinstance(x, dict):
++                    # Create a deterministic sort key based on the schema content
++                    # Prioritize by type, with null at the end, and simpler schemas before complex ones
++                    type_val = x.get('type', '')
++                    
++                    if type_val == 'null':
++                        # Put null types at the end for more intuitive Optional[T] ordering
++                        return (2, str(sorted(x.items())))
++                    elif '$ref' in x:
++                        # References come after simple types but before null
++                        return (1, str(sorted(x.items())))
++                    else:
++                        # Simple types come first, but within the same type, sort by complexity
++                        # (fewer keys = simpler = comes first)
++                        num_keys = len(x)
++                        return (0, num_keys, type_val, str(sorted(x.items())))
++                else:
++                    return (0, 0, '', str(x))
++            
++            try:
++                sorted_items.sort(key=sort_key)
++            except (TypeError, AttributeError):
++                # If sorting fails, just keep the original order
++                pass
++            return sorted_items
++        else:
++            # For other lists, just recursively sort the contents
++            return [sort_json_schema(item, parent_key=parent_key) for item in value]
++    else:
++        # For primitive values, return as-is
++        return value
++
++
+ JsonSchemaWarningKind = Literal['skipped-choice', 'non-serializable-default']
+ """
+ A type alias representing the kinds of warnings that can be emitted during JSON schema generation.
+@@ -317,6 +381,9 @@ class GenerateJsonSchema:
+         # this method and adding the following line after a call to super().generate(schema):
+         # json_schema['$schema'] = self.schema_dialect
+ 
++        # Sort the JSON schema to ensure deterministic output
++        json_schema = sort_json_schema(json_schema)
++
+         self._used = True
+         return json_schema
+ 

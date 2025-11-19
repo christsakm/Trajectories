@@ -1,0 +1,18 @@
+diff --git a/mypy/lookup.py b/mypy/lookup.py
+index 41464d83d..7530f4449 100644
+--- a/mypy/lookup.py
++++ b/mypy/lookup.py
+@@ -43,6 +43,13 @@ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+     while True:
+         key = rest.pop()
+         if key not in names:
++            # If the module has __getattr__, missing components might be dynamically provided
++            if mod.is_partial_stub_package:
++                if raise_on_missing:
++                    # For modules with __getattr__, we don't raise an error for missing components
++                    # as they might be provided dynamically
++                    pass
++                return None
+             if raise_on_missing:
+                 assert key in names, "Cannot find component %r for %r" % (key, name)
+             return None

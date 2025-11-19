@@ -1,0 +1,38 @@
+{
+    "python__mypy-10430": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false,
+        "tests_status": {
+            "FAIL_TO_PASS": {
+                "success": [],
+                "failure": [
+                    "mypy/test/testcheck.py::TypeCheckSuite::testModuleGetattrIncrementalSerializeVarFlag"
+                ]
+            },
+            "PASS_TO_PASS": {
+                "success": [
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsIgnorePackageFrom",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsPackagePartial",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubs",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsPackage",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsIgnore",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsIgnorePackage",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsIgnorePackagePartial",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsPackagePartialGetAttr",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testAddedMissingStubsPackageFrom"
+                ],
+                "failure": []
+            },
+            "FAIL_TO_FAIL": {
+                "success": [],
+                "failure": []
+            },
+            "PASS_TO_FAIL": {
+                "success": [],
+                "failure": []
+            }
+        }
+    }
+}

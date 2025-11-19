@@ -1,0 +1,144 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Feature development
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+1 hour ~ 4 hours
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/monai/data/wsi_reader.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/tests/test_wsireader.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The agent adds the num_workers parameter to the __init__ method of the CuCIMWSIReader class in wsi_reader.py.",
+    "rationale": "This change is necessary to allow users to specify the number of workers for multi-threaded image loading, which is the core of the feature development.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The agent updates the get_patch function in wsi_reader.py to utilize the num_workers parameter when calling wsi.read_region.",
+    "rationale": "Ensuring that the num_workers parameter is used in the image loading process is crucial for the feature to function as intended.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The agent adds tests in test_wsireader.py to verify that the num_workers parameter is correctly applied when reading whole images and regions.",
+    "rationale": "Tests are essential to confirm that the new feature works correctly and does not introduce regressions.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The agent ensures that all existing tests in test_wsireader.py pass without modification.",
+    "rationale": "Maintaining the integrity of existing functionality is crucial when introducing new features.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "agent behavior",
+    "criterion": "The agent does not modify unrelated modules outside of monai/data/wsi_reader.py and tests/test_wsireader.py.",
+    "rationale": "Limiting changes to relevant files helps maintain codebase stability and focus on the task at hand.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "code style",
+    "criterion": "The agent provides a clear and concise docstring for the num_workers parameter in the WSIReader class.",
+    "rationale": "Proper documentation helps users understand the purpose and usage of the new parameter.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "code style",
+    "criterion": "The agent uses parameterized tests in test_wsireader.py to cover different scenarios for the num_workers parameter.",
+    "rationale": "Parameterized tests improve test coverage and ensure the feature works under various conditions.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "correctness",
+    "criterion": "The agent's solution passes test_wsireader.py::test_read_whole_image_multi_thread without raising exceptions.",
+    "rationale": "This test specifically checks the functionality of reading whole images with multiple threads, which is a key aspect of the new feature.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "correctness",
+    "criterion": "The agent's solution passes test_wsireader.py::test_read_region_multi_thread without raising exceptions.",
+    "rationale": "This test ensures that reading specific regions with multiple threads works correctly, validating the feature's implementation.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL"
+  },
+  "trace_02": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 2,
+    "rationale": "The implementation added the core num_workers feature but failed most MUST_FOLLOW requirements, including adding tests and verifying multi-thread functionality."
+  },
+  "trace_02": {
+    "rating": 3,
+    "rationale": "The solution improved style and documentation but still failed the crucial MUST_FOLLOW rubrics related to testing and functional verification."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "This trace performs best, passing half of the MUST_FOLLOW requirements and all GOOD_TO_HAVE requirements. However, missing required tests prevents a higher rating."
+  }
+}

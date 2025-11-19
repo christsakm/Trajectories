@@ -1,0 +1,29 @@
+diff --git a/mypy/lookup.py b/mypy/lookup.py
+index 41464d83d..b43e8a9e9 100644
+--- a/mypy/lookup.py
++++ b/mypy/lookup.py
+@@ -43,6 +43,24 @@ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+     while True:
+         key = rest.pop()
+         if key not in names:
++            # Check if the parent module has __getattr__
++            if '__getattr__' in names:
++                # If the module has __getattr__, we consider the name to exist
++                # even if it's not in the symbol table
++                from mypy.nodes import Var, SymbolTableNode
++                var = Var(key)
++                var.type = None  # We'll infer the type later
++                stnode = SymbolTableNode(var)
++                if not rest:
++                    return stnode
++                # For nested access, we need to create a fake TypeInfo
++                from mypy.nodes import TypeInfo, ClassDef, Block
++                dummy_def = ClassDef(key, Block([]))
++                dummy_def.fullname = name
++                info = TypeInfo(SymbolTable(), dummy_def, name)
++                names[key] = SymbolTableNode(info)
++                names = info.names
++                continue
+             if raise_on_missing:
+                 assert key in names, "Cannot find component %r for %r" % (key, name)
+             return None

@@ -1,0 +1,54 @@
+diff --git a/moto/dynamodb/models/__init__.py b/moto/dynamodb/models/__init__.py
+index 854727ee7..f882385d3 100644
+--- a/moto/dynamodb/models/__init__.py
++++ b/moto/dynamodb/models/__init__.py
+@@ -653,6 +653,41 @@ class Table(CloudFormationModel):
+                 if DynamoType(range_value).size() > RANGE_KEY_MAX_LENGTH:
+                     raise RangeKeyTooLong
+ 
++    def _validate_index_attributes(self, item_attrs):
++        """
++        Validates that attributes used in secondary indexes match their expected types.
++        """
++        # Get all global and local secondary indexes
++        all_indexes = self.all_indexes()
++        
++        for index in all_indexes:
++            # Get the key schema for this index
++            for key_spec in index.schema:
++                attr_name = key_spec["AttributeName"]
++                if attr_name in item_attrs:
++                    # Get the expected type from the attribute definitions
++                    expected_type = None
++                    for attr_def in self.attr:
++                        if attr_def["AttributeName"] == attr_name:
++                            expected_type = attr_def["AttributeType"]
++                            break
++                    
++                    if expected_type is not None:
++                        actual_value = item_attrs[attr_name]
++                        # Handle None values
++                        if actual_value is None:
++                            raise MockValidationException(
++                                f"One or more parameter values were invalid: Type mismatch for Index Key {attr_name} Expected: {expected_type} Actual: NULL IndexName: {index.name}"
++                            )
++                        # Convert to DynamoType if needed
++                        if not hasattr(actual_value, 'type'):
++                            actual_value = DynamoType(actual_value)
++                        # Handle type mismatches
++                        if hasattr(actual_value, 'type') and actual_value.type != expected_type:
++                            raise MockValidationException(
++                                f"One or more parameter values were invalid: Type mismatch for Index Key {attr_name} Expected: {expected_type} Actual: {actual_value.type} IndexName: {index.name}"
++                            )
++
+     def _validate_item_types(self, item_attrs):
+         for key, value in item_attrs.items():
+             if type(value) == dict:
+@@ -713,6 +748,7 @@ class Table(CloudFormationModel):
+ 
+         self._validate_item_types(item_attrs)
+         self._validate_key_sizes(item_attrs)
++        self._validate_index_attributes(item_attrs)
+ 
+         if expected is None:
+             expected = {}

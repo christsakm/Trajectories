@@ -1,0 +1,94 @@
+diff --git a/dask/dataframe/core.py b/dask/dataframe/core.py
+index e1e7904a4..af0ac6e57 100644
+--- a/dask/dataframe/core.py
++++ b/dask/dataframe/core.py
+@@ -5222,7 +5222,7 @@ class DataFrame(_Frame):
+     def sort_values(
+         self,
+         by: str | list[str],
+-        npartitions: int | Literal["auto"] | None = None,
++        npartitions: int | Literal["auto"] | None = None,  # "auto" is deprecated
+         ascending: bool = True,
+         na_position: Literal["first"] | Literal["last"] = "last",
+         sort_function: Callable[[pd.DataFrame], pd.DataFrame] | None = None,
+@@ -5238,9 +5238,9 @@ class DataFrame(_Frame):
+         ----------
+         by: str or list[str]
+             Column(s) to sort by.
+-        npartitions: int, None, or 'auto'
++        npartitions: int, None, or 'auto' (deprecated)
+             The ideal number of output partitions. If None, use the same as
+-            the input. If 'auto' then decide by memory use.
++            the input. If 'auto' then decide by memory use (deprecated).
+         ascending: bool, optional
+             Sort ascending vs. descending.
+             Defaults to True.
+@@ -5277,7 +5277,7 @@ class DataFrame(_Frame):
+         other: str | Series,
+         drop: bool = True,
+         sorted: bool = False,
+-        npartitions: int | Literal["auto"] | None = None,
++        npartitions: int | Literal["auto"] | None = None,  # "auto" is deprecated
+         divisions: Sequence | None = None,
+         inplace: bool = False,
+         sort: bool = True,
+@@ -5317,9 +5317,9 @@ class DataFrame(_Frame):
+         sorted: bool, optional
+             If the index column is already sorted in increasing order.
+             Defaults to False
+-        npartitions: int, None, or 'auto'
++        npartitions: int, None, or 'auto' (deprecated)
+             The ideal number of output partitions. If None, use the same as
+-            the input. If 'auto' then decide by memory use.
++            the input. If 'auto' then decide by memory use (deprecated).
+             Only used when ``divisions`` is not given. If ``divisions`` is given,
+             the number of output partitions will be ``len(divisions) - 1``.
+         divisions: list, optional
+diff --git a/dask/dataframe/shuffle.py b/dask/dataframe/shuffle.py
+index 270df6da4..d4707669a 100644
+--- a/dask/dataframe/shuffle.py
++++ b/dask/dataframe/shuffle.py
+@@ -131,7 +131,7 @@ def _calculate_divisions(
+ def sort_values(
+     df: DataFrame,
+     by: str | list[str],
+-    npartitions: int | Literal["auto"] | None = None,
++    npartitions: int | Literal["auto"] | None = None,  # "auto" is deprecated
+     shuffle_method: str | None = None,
+     ascending: bool | list[bool] = True,
+     na_position: Literal["first"] | Literal["last"] = "last",
+@@ -166,6 +166,12 @@ def sort_values(
+         return df.map_partitions(sort_function, **sort_kwargs)
+ 
+     if npartitions == "auto":
++        warnings.warn(
++            "npartitions='auto' is deprecated and will be removed in a future version. "
++            "Please specify an explicit number of partitions or use None to keep the current number of partitions.",
++            FutureWarning,
++            stacklevel=2
++        )
+         repartition = True
+         npartitions = max(100, df.npartitions)
+     else:
+@@ -218,7 +224,7 @@ def sort_values(
+ def set_index(
+     df: DataFrame,
+     index: str | Series,
+-    npartitions: int | Literal["auto"] | None = None,
++    npartitions: int | Literal["auto"] | None = None,  # "auto" is deprecated
+     shuffle_method: str | None = None,
+     compute: bool = False,
+     drop: bool = True,
+@@ -235,6 +241,12 @@ def set_index(
+         ).clear_divisions()
+ 
+     if npartitions == "auto":
++        warnings.warn(
++            "npartitions='auto' is deprecated and will be removed in a future version. "
++            "Please specify an explicit number of partitions or use None to keep the current number of partitions.",
++            FutureWarning,
++            stacklevel=2
++        )
+         repartition = True
+         npartitions = max(100, df.npartitions)
+     else:

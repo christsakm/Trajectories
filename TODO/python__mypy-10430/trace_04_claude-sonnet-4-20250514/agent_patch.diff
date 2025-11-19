@@ -1,0 +1,60 @@
+diff --git a/mypy/lookup.py b/mypy/lookup.py
+index 41464d83d..f591a7095 100644
+--- a/mypy/lookup.py
++++ b/mypy/lookup.py
+@@ -3,12 +3,31 @@ This is a module for various lookup functions:
+ functions that will find a semantic node by its name.
+ """
+ 
+-from mypy.nodes import MypyFile, SymbolTableNode, TypeInfo
++from mypy.nodes import MypyFile, SymbolTableNode, TypeInfo, Var, FuncDef, GDEF
++from mypy.types import AnyType, TypeOfAny, CallableType, get_proper_type
+ from typing import Dict, Optional
+ 
+ # TODO: gradually move existing lookup functions to this module.
+ 
+ 
++def _create_getattr_var(getattr_defn: SymbolTableNode, name: str, fullname: str) -> Optional[Var]:
++    """Create a dummy variable using module-level __getattr__ return type.
++    
++    This is a simplified version of semanal.create_getattr_var for use in lookup.
++    """
++    if isinstance(getattr_defn.node, (FuncDef, Var)):
++        node_type = get_proper_type(getattr_defn.node.type)
++        if isinstance(node_type, CallableType):
++            typ = node_type.ret_type
++        else:
++            typ = AnyType(TypeOfAny.from_error)
++        v = Var(name, type=typ)
++        v._fullname = fullname
++        v.from_module_getattr = True
++        return v
++    return None
++
++
+ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+                            raise_on_missing: bool = False) -> Optional[SymbolTableNode]:
+     """Find a symbol using it fully qualified name.
+@@ -43,6 +62,22 @@ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+     while True:
+         key = rest.pop()
+         if key not in names:
++            # Check if this could be a symbol created via __getattr__
++            # We check if the current module (mod) has __getattr__ and if it's allowed
++            if ('__getattr__' in names and 
++                (mod.is_stub or True)):  # For now, always allow in incremental mode
++                # Try to create a getattr variable
++                getattr_defn = names['__getattr__']
++                gvar = _create_getattr_var(getattr_defn, key, name)
++                if gvar:
++                    stnode = SymbolTableNode(GDEF, gvar)
++                    if not rest:
++                        return stnode
++                    # For nested access, we can't continue since getattr vars don't have names
++                    if raise_on_missing:
++                        assert False, "Cannot find %s" % (name,)
++                    return None
++            
+             if raise_on_missing:
+                 assert key in names, "Cannot find component %r for %r" % (key, name)
+             return None

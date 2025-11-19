@@ -1,0 +1,129 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+
+Category *
+bug fixing
+
+Difficulty *
+15 min ~ 1 hour
+
+Must-read files *
+[
+  "/testbed/moto/core/models.py"
+]
+
+Must-check tests *
+[
+  "/testbed/tests/test_core/test_decorator_calls.py"
+]
+
+Rubrics *
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch must detect inherited setUp methods by checking parent classes in the MRO (Method Resolution Order), not just the current class's direct methods",
+    "rationale": "The core issue is that the decorator only checks direct_methods of the current class, missing setUp inherited from parent classes",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The solution must exclude unittest.TestCase and object from the parent class check to avoid false positives",
+    "rationale": "unittest.TestCase has its own setUp, but we only care about user-defined setUp methods in custom parent classes",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "All FAIL_TO_PASS tests must pass, specifically tests/test_core/test_decorator_calls.py::TestSetUpInBaseClass::test_a_thing",
+    "rationale": "The primary test verifies that inherited setUp/tearDown work correctly with the mock decorator",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "All 19 PASS_TO_PASS tests must continue to pass without regressions",
+    "rationale": "The fix must not break existing functionality for tests with direct setUp methods or no setUp methods",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The solution must not modify the decorate_callable method's reset logic or add conditional reset behavior based on method attributes",
+    "rationale": "Changing when/how reset happens breaks test isolation; the fix should be in has_setup_method detection only",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "code style",
+    "criterion": "Extract the direct methods detection logic into a reusable helper function like get_direct_methods_of(klass)",
+    "rationale": "Improves code organization and matches the golden patch's clean refactoring approach",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "summary",
+    "criterion": "The patch must modify only /testbed/moto/core/models.py and not introduce changes to unrelated files",
+    "rationale": "The issue is in the decorator logic, and the fix should be contained to the core models file",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "agent behavior",
+    "criterion": "The agent should recognize that the problem is specifically about detecting inherited setUp methods from parent classes",
+    "rationale": "Understanding the root cause leads to a targeted fix rather than workarounds or overly complex solutions",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+
+Rubrics rating *
+{
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS"
+  }
+}
+
+Overall rating *
+{
+  "trace_02": {
+    "rating": 1,
+    "rationale": "Fundamentally misunderstands the problem by modifying decorate_callable instead of fixing has_setup_method detection. The agent changes when reset happens (setting reset=False conditionally) rather than detecting inherited setUp from parent classes. This breaks test isolation, causing 6 PASS_TO_PASS test failures, and doesn't address the root cause that the decorator can't see setUp inherited from parent classes."
+  },
+  "trace_03": {
+    "rating": 3,
+    "rationale": "Correctly detects inherited setUp using inspect.getmro() and all tests pass (38 steps, 6 test runs). However, adds unnecessary complexity by dynamically decorating inherited setUp/tearDown methods with setattr logic, which is redundant since Python's inheritance already handles method resolution. Fails rubric_06 (no helper function extraction) and over-engineers the solution compared to the golden patch's simpler approach."
+  },
+  "trace_04": {
+    "rating": 4,
+    "rationale": "Successfully fixes the issue with a clean solution using inspect.getmro() to check parent classes and properly excludes unittest.TestCase. All tests pass with thorough verification (59 steps, 20 test runs). Demonstrates defensive programming with issubclass check. Fails rubric_06 (no helper function extraction) but otherwise matches the golden patch's logic closely."
+  }
+}

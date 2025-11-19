@@ -1,0 +1,1299 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   moto/dynamodb/exceptions.py
+	modified:   moto/dynamodb/models/__init__.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	repro_index_type_validation.py
+	repro_index_type_validation_success.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit e47a2fd120cb7d800aa19c41b88a6c3a907d8682
+Author: mgshirali <93970560+mgshirali@users.noreply.github.com>
+Date:   Sat Jan 14 04:41:03 2023 +0530
+
+    RDS: Support PreferredMaintenanceWindow for DBInstance (#5839)
+
+diff --git a/moto/rds/models.py b/moto/rds/models.py
+index b55c97025..d394f933e 100644
+--- a/moto/rds/models.py
++++ b/moto/rds/models.py
+@@ -35,7 +35,13 @@ from .exceptions import (
+     SubscriptionNotFoundError,
+     SubscriptionAlreadyExistError,
+ )
+-from .utils import FilterDef, apply_filter, merge_filters, validate_filters
++from .utils import (
++    FilterDef,
++    apply_filter,
++    merge_filters,
++    validate_filters,
++    valid_preferred_maintenance_window,
++)
+ 
+ 
+ class Cluster:
+@@ -446,9 +452,15 @@ class Database(CloudFormationModel):
+             self.db_subnet_group = None
+         self.security_groups = kwargs.get("security_groups", [])
+         self.vpc_security_group_ids = kwargs.get("vpc_security_group_ids", [])
+-        self.preferred_maintenance_window = kwargs.get(
+-            "preferred_maintenance_window", "wed:06:38-wed:07:08"
++        self.preferred_maintenance_window = kwargs.get("preferred_maintenance_window")
++        self.preferred_backup_window = kwargs.get("preferred_backup_window")
++        msg = valid_preferred_maintenance_window(
++            self.preferred_maintenance_window,
++            self.preferred_backup_window,
+         )
++        if msg:
++            raise RDSClientError("InvalidParameterValue", msg)
++
+         self.db_parameter_group_name = kwargs.get("db_parameter_group_name")
+         if (
+             self.db_parameter_group_name
+@@ -458,9 +470,6 @@ class Database(CloudFormationModel):
+         ):
+             raise DBParameterGroupNotFoundError(self.db_parameter_group_name)
+ 
+-        self.preferred_backup_window = kwargs.get(
+-            "preferred_backup_window", "13:14-13:44"
+-        )
+         self.license_model = kwargs.get("license_model", "general-public-license")
+         self.option_group_name = kwargs.get("option_group_name", None)
+         self.option_group_supplied = self.option_group_name is not None
+@@ -554,8 +563,8 @@ class Database(CloudFormationModel):
+               <DBInstanceIdentifier>{{ database.db_instance_identifier }}</DBInstanceIdentifier>
+               <DbiResourceId>{{ database.dbi_resource_id }}</DbiResourceId>
+               <InstanceCreateTime>{{ database.instance_create_time }}</InstanceCreateTime>
+-              <PreferredBackupWindow>03:50-04:20</PreferredBackupWindow>
+-              <PreferredMaintenanceWindow>wed:06:38-wed:07:08</PreferredMaintenanceWindow>
++              <PreferredBackupWindow>{{ database.preferred_backup_window }}</PreferredBackupWindow>
++              <PreferredMaintenanceWindow>{{ database.preferred_maintenance_window }}</PreferredMaintenanceWindow>
+               <ReadReplicaDBInstanceIdentifiers>
+                 {% for replica_id in database.replicas %}
+                     <ReadReplicaDBInstanceIdentifier>{{ replica_id }}</ReadReplicaDBInstanceIdentifier>
+@@ -771,6 +780,12 @@ class Database(CloudFormationModel):
+             "db_instance_class": properties.get("DBInstanceClass"),
+             "db_instance_identifier": resource_name,
+             "db_name": properties.get("DBName"),
++            "preferred_backup_window": properties.get(
++                "PreferredBackupWindow", "13:14-13:44"
++            ),
++            "preferred_maintenance_window": properties.get(
++                "PreferredMaintenanceWindow", "wed:06:38-wed:07:08"
++            ).lower(),
+             "db_subnet_group_name": db_subnet_group_name,
+             "engine": properties.get("Engine"),
+             "engine_version": properties.get("EngineVersion"),
+@@ -1448,6 +1463,13 @@ class RDSBackend(BaseBackend):
+                 "db_instance_identifier"
+             ] = db_kwargs.pop("new_db_instance_identifier")
+             self.databases[db_instance_identifier] = database
++        preferred_backup_window = db_kwargs.get("preferred_backup_window")
++        preferred_maintenance_window = db_kwargs.get("preferred_maintenance_window")
++        msg = valid_preferred_maintenance_window(
++            preferred_maintenance_window, preferred_backup_window
++        )
++        if msg:
++            raise RDSClientError("InvalidParameterValue", msg)
+         database.update(db_kwargs)
+         return database
+ 
+diff --git a/moto/rds/responses.py b/moto/rds/responses.py
+index 814e9d828..61cf35441 100644
+--- a/moto/rds/responses.py
++++ b/moto/rds/responses.py
+@@ -44,8 +44,12 @@ class RDSResponse(BaseResponse):
+             "multi_az": self._get_bool_param("MultiAZ"),
+             "option_group_name": self._get_param("OptionGroupName"),
+             "port": self._get_param("Port"),
+-            # PreferredBackupWindow
+-            # PreferredMaintenanceWindow
++            "preferred_backup_window": self._get_param(
++                "PreferredBackupWindow", "13:14-13:44"
++            ),
++            "preferred_maintenance_window": self._get_param(
++                "PreferredMaintenanceWindow", "wed:06:38-wed:07:08"
++            ).lower(),
+             "publicly_accessible": self._get_param("PubliclyAccessible"),
+             "account_id": self.current_account,
+             "region": self.region,
+diff --git a/moto/rds/utils.py b/moto/rds/utils.py
+index d5c3dca72..667aad638 100644
+--- a/moto/rds/utils.py
++++ b/moto/rds/utils.py
+@@ -3,7 +3,10 @@ from collections import namedtuple
+ from botocore.utils import merge_dicts
+ 
+ from collections import OrderedDict
++import datetime
++import re
+ 
++SECONDS_IN_ONE_DAY = 24 * 60 * 60
+ FilterDef = namedtuple(
+     "FilterDef",
+     [
+@@ -133,3 +136,155 @@ def apply_filter(resources, filters, filter_defs):
+         if matches_filter:
+             resources_filtered[identifier] = obj
+     return resources_filtered
++
++
++def get_start_date_end_date(base_date, window):
++    """Gets the start date and end date given DDD:HH24:MM-DDD:HH24:MM.
++
++    :param base_date:
++        type datetime
++    :param window:
++        DDD:HH24:MM-DDD:HH24:MM
++    :returns:
++        Start and End Date in datetime format
++    :rtype:
++        tuple
++    """
++    days = {"mon": 1, "tue": 2, "wed": 3, "thu": 4, "fri": 5, "sat": 6, "sun": 7}
++    start = datetime.datetime.strptime(
++        base_date + " " + window[4:9], "%d/%m/%y %H:%M"
++    ) + datetime.timedelta(days=days[window[0:3]])
++    end = datetime.datetime.strptime(
++        base_date + " " + window[14::], "%d/%m/%y %H:%M"
++    ) + datetime.timedelta(days=days[window[10:13]])
++    return start, end
++
++
++def get_start_date_end_date_from_time(base_date, window):
++    """Gets the start date and end date given HH24:MM-HH24:MM.
++
++    :param base_date:
++        type datetime
++    :param window:
++        HH24:MM-HH24:MM
++    :returns:
++        Start and End Date in datetime format
++        along with flag for spills over a day
++        This is useful when determine time overlaps
++    :rtype:
++        tuple
++    """
++    times = window.split("-")
++    spillover = False
++    start = datetime.datetime.strptime(base_date + " " + times[0], "%d/%m/%y %H:%M")
++    end = datetime.datetime.strptime(base_date + " " + times[1], "%d/%m/%y %H:%M")
++    if end < start:
++        end += datetime.timedelta(days=1)
++        spillover = True
++    return start, end, spillover
++
++
++def get_overlap_between_two_date_ranges(
++    start_time_1, end_time_1, start_time_2, end_time_2
++):
++    """Determines overlap between 2 date ranges.
++
++    :param start_time_1:
++        type datetime
++    :param start_time_2:
++        type datetime
++    :param end_time_1:
++        type datetime
++    :param end_time_2:
++        type datetime
++    :returns:
++        overlap in seconds
++    :rtype:
++        int
++    """
++    latest_start = max(start_time_1, start_time_2)
++    earliest_end = min(end_time_1, end_time_2)
++    delta = earliest_end - latest_start
++    overlap = (delta.days * SECONDS_IN_ONE_DAY) + delta.seconds
++    return overlap
++
++
++def valid_preferred_maintenance_window(maintenance_window, backup_window):
++    """Determines validity of preferred_maintenance_window
++
++    :param maintenance_windown:
++        type DDD:HH24:MM-DDD:HH24:MM
++    :param backup_window:
++        type HH24:MM-HH24:MM
++    :returns:
++        message
++    :rtype:
++        str
++    """
++    MINUTES_30 = 1800
++    HOURS_24 = 86400
++    base_date = datetime.datetime.now().strftime("%d/%m/%y")
++    try:
++        p = re.compile(
++            "([a-z]{3}):([0-9]{2}):([0-9]{2})-([a-z]{3}):([0-9]{2}):([0-9]{2})"
++        )
++        if len(maintenance_window) != 19 or re.search(p, maintenance_window) is None:
++            return f"Invalid maintenance window format: {maintenance_window}. Should be specified as a range ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). Example: Sun:23:45-Mon:00:15"
++        if backup_window:
++            (
++                backup_window_start,
++                backup_window_end,
++                backup_spill,
++            ) = get_start_date_end_date_from_time(base_date, backup_window)
++            (
++                maintenance_window_start,
++                maintenance_window_end,
++                maintenance_spill,
++            ) = get_start_date_end_date_from_time(
++                base_date, maintenance_window[4:10] + maintenance_window[14::]
++            )
++            if (
++                get_overlap_between_two_date_ranges(
++                    backup_window_start,
++                    backup_window_end,
++                    maintenance_window_start,
++                    maintenance_window_end,
++                )
++                >= 0
++            ):
++                return "The backup window and maintenance window must not overlap."
++
++            # Due to spill overs, adjust the windows
++            elif maintenance_spill:
++                backup_window_start += datetime.timedelta(days=1)
++                backup_window_end += datetime.timedelta(days=1)
++            elif backup_spill:
++                maintenance_window_start += datetime.timedelta(days=1)
++                maintenance_window_end += datetime.timedelta(days=1)
++
++            # If spills, rerun overlap test with adjusted windows
++            if maintenance_spill or backup_spill:
++                if (
++                    get_overlap_between_two_date_ranges(
++                        backup_window_start,
++                        backup_window_end,
++                        maintenance_window_start,
++                        maintenance_window_end,
++                    )
++                    >= 0
++                ):
++                    return "The backup window and maintenance window must not overlap."
++
++        maintenance_window_start, maintenance_window_end = get_start_date_end_date(
++            base_date, maintenance_window
++        )
++        delta = maintenance_window_end - maintenance_window_start
++        delta_seconds = delta.seconds + (delta.days * SECONDS_IN_ONE_DAY)
++        if delta_seconds >= MINUTES_30 and delta_seconds <= HOURS_24:
++            return
++        elif delta_seconds >= 0 and delta_seconds <= MINUTES_30:
++            return "The maintenance window must be at least 30 minutes."
++        else:
++            return "Maintenance window must be less than 24 hours."
++    except Exception:
++        return f"Invalid day:hour:minute value: {maintenance_window}"
+diff --git a/tests/test_rds/test_rds.py b/tests/test_rds/test_rds.py
+index 006903788..cb452c06b 100644
+--- a/tests/test_rds/test_rds.py
++++ b/tests/test_rds/test_rds.py
+@@ -75,6 +75,179 @@ def test_create_database_no_allocated_storage():
+     db_instance["Engine"].should.equal("postgres")
+     db_instance["StorageType"].should.equal("gp2")
+     db_instance["AllocatedStorage"].should.equal(20)
++    db_instance["PreferredMaintenanceWindow"].should.equal("wed:06:38-wed:07:08")
++
++
++@mock_rds
++def test_create_database_invalid_preferred_maintenance_window_more_24_hours():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="mon:16:00-tue:17:00",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal("Maintenance window must be less than 24 hours.")
++
++
++@mock_rds
++def test_create_database_invalid_preferred_maintenance_window_less_30_mins():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="mon:16:00-mon:16:05",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal("The maintenance window must be at least 30 minutes.")
++
++
++@mock_rds
++def test_create_database_invalid_preferred_maintenance_window_value():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="sim:16:00-mon:16:30",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain("Invalid day:hour:minute")
++
++
++@mock_rds
++def test_create_database_invalid_preferred_maintenance_window_format():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="mon:16tue:17:00",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain(
++        "Should be specified as a range ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). Example: Sun:23:45-Mon:00:15"
++    )
++
++
++@mock_rds
++def test_create_database_preferred_backup_window_overlap_no_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="wed:18:00-wed:22:00",
++            PreferredBackupWindow="20:00-20:30",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
++@mock_rds
++def test_create_database_preferred_backup_window_overlap_maintenance_window_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="wed:18:00-thu:01:00",
++            PreferredBackupWindow="00:00-00:30",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
++@mock_rds
++def test_create_database_preferred_backup_window_overlap_backup_window_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="thu:00:00-thu:14:00",
++            PreferredBackupWindow="23:50-00:20",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
++@mock_rds
++def test_create_database_preferred_backup_window_overlap_both_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    with pytest.raises(ClientError) as ex:
++        conn.create_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            Engine="postgres",
++            DBName="staging-postgres",
++            DBInstanceClass="db.m1.small",
++            PreferredMaintenanceWindow="wed:18:00-thu:01:00",
++            PreferredBackupWindow="23:50-00:20",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
++@mock_rds
++def test_create_database_valid_preferred_maintenance_window_format():
++    conn = boto3.client("rds", region_name="us-west-2")
++    database = conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        Engine="postgres",
++        DBName="staging-postgres",
++        DBInstanceClass="db.m1.small",
++        PreferredMaintenanceWindow="sun:16:00-sun:16:30",
++    )
++    db_instance = database["DBInstance"]
++    db_instance["DBInstanceClass"].should.equal("db.m1.small")
++    db_instance["PreferredMaintenanceWindow"].should.equal("sun:16:00-sun:16:30")
++
++
++@mock_rds
++def test_create_database_valid_preferred_maintenance_window_uppercase_format():
++    conn = boto3.client("rds", region_name="us-west-2")
++    database = conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        Engine="postgres",
++        DBName="staging-postgres",
++        DBInstanceClass="db.m1.small",
++        PreferredMaintenanceWindow="MON:16:00-TUE:01:30",
++    )
++    db_instance = database["DBInstance"]
++    db_instance["DBInstanceClass"].should.equal("db.m1.small")
++    db_instance["PreferredMaintenanceWindow"].should.equal("mon:16:00-tue:01:30")
+ 
+ 
+ @mock_rds
+@@ -397,6 +570,9 @@ def test_modify_db_instance():
+     )
+     instances = conn.describe_db_instances(DBInstanceIdentifier="db-master-1")
+     instances["DBInstances"][0]["AllocatedStorage"].should.equal(20)
++    instances["DBInstances"][0]["PreferredMaintenanceWindow"].should.equal(
++        "wed:06:38-wed:07:08"
++    )
+     instances["DBInstances"][0]["VpcSecurityGroups"][0][
+         "VpcSecurityGroupId"
+     ].should.equal("sg-123456")
+@@ -423,6 +599,252 @@ def test_modify_db_instance_not_existent_db_parameter_group_name():
+     ).should.throw(ClientError)
+ 
+ 
++@mock_rds
++def test_modify_db_instance_valid_preferred_maintenance_window():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    instances = conn.describe_db_instances(DBInstanceIdentifier="db-master-1")
++    conn.modify_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        PreferredMaintenanceWindow="sun:16:00-sun:16:30",
++    )
++    instances = conn.describe_db_instances(DBInstanceIdentifier="db-master-1")
++    instances["DBInstances"][0]["PreferredMaintenanceWindow"].should.equal(
++        "sun:16:00-sun:16:30"
++    )
++
++
++@mock_rds
++def test_modify_db_instance_valid_preferred_maintenance_window_uppercase():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    instances = conn.describe_db_instances(DBInstanceIdentifier="db-master-1")
++    conn.modify_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        PreferredMaintenanceWindow="SUN:16:00-SUN:16:30",
++    )
++    instances = conn.describe_db_instances(DBInstanceIdentifier="db-master-1")
++    instances["DBInstances"][0]["PreferredMaintenanceWindow"].should.equal(
++        "sun:16:00-sun:16:30"
++    )
++
++
++@mock_rds
++def test_modify_db_instance_invalid_preferred_maintenance_window_more_than_24_hours():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="sun:16:00-sat:16:30",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal("Maintenance window must be less than 24 hours.")
++
++
++@mock_rds
++def test_modify_db_instance_invalid_preferred_maintenance_window_less_than_30_mins():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="sun:16:00-sun:16:10",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal("The maintenance window must be at least 30 minutes.")
++
++
++@mock_rds
++def test_modify_db_instance_invalid_preferred_maintenance_window_value():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="sin:16:00-sun:16:30",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain("Invalid day:hour:minute value")
++
++
++@mock_rds
++def test_modify_db_instance_invalid_preferred_maintenance_window_format():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="sun:16:00sun:16:30",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.contain(
++        "Should be specified as a range ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). Example: Sun:23:45-Mon:00:15"
++    )
++
++
++@mock_rds
++def test_modify_db_instance_maintenance_backup_window_no_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="sun:16:00-sun:16:30",
++            PreferredBackupWindow="15:50-16:20",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
++@mock_rds
++def test_modify_db_instance_maintenance_backup_window_maintenance_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="sun:16:00-mon:15:00",
++            PreferredBackupWindow="00:00-00:30",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
++@mock_rds
++def test_modify_db_instance_maintenance_backup_window_backup_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="mon:00:00-mon:15:00",
++            PreferredBackupWindow="23:50-00:20",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
++@mock_rds
++def test_modify_db_instance_maintenance_backup_window_both_spill():
++    conn = boto3.client("rds", region_name="us-west-2")
++    conn.create_db_instance(
++        DBInstanceIdentifier="db-master-1",
++        AllocatedStorage=10,
++        DBInstanceClass="postgres",
++        Engine="db.m1.small",
++        MasterUsername="root",
++        MasterUserPassword="hunter2",
++        Port=1234,
++        DBSecurityGroups=["my_sg"],
++    )
++    with pytest.raises(ClientError) as ex:
++        conn.modify_db_instance(
++            DBInstanceIdentifier="db-master-1",
++            PreferredMaintenanceWindow="sun:16:00-mon:15:00",
++            PreferredBackupWindow="23:20-00:20",
++        )
++    err = ex.value.response["Error"]
++    err["Code"].should.equal("InvalidParameterValue")
++    err["Message"].should.equal(
++        "The backup window and maintenance window must not overlap."
++    )
++
++
+ @mock_rds
+ def test_rename_db_instance():
+     conn = boto3.client("rds", region_name="us-west-2")
++ git diff e47a2fd120cb7d800aa19c41b88a6c3a907d8682
+diff --git a/moto/dynamodb/exceptions.py b/moto/dynamodb/exceptions.py
+index 30aba61ce..ddbaeadaf 100644
+--- a/moto/dynamodb/exceptions.py
++++ b/moto/dynamodb/exceptions.py
+@@ -254,6 +254,16 @@ class UpdateHashRangeKeyException(MockValidationException):
+         super().__init__(self.msg.format(key_name))
+ 
+ 
++
++class InvalidIndexKeyTypeError(MockValidationException):
++    msg = (
++        "One or more parameter values were invalid: Type mismatch for Index Key {} "
++        "Expected: {} Actual: {} IndexName: {}"
++    )
++
++    def __init__(self, name, expected_type, actual_type, index_name):
++        super().__init__(self.msg.format(name, expected_type, actual_type, index_name))
++
+ class InvalidAttributeTypeError(MockValidationException):
+     msg = "One or more parameter values were invalid: Type mismatch for key {} expected: {} actual: {}"
+ 
+diff --git a/moto/dynamodb/models/__init__.py b/moto/dynamodb/models/__init__.py
+index 854727ee7..de351c593 100644
+--- a/moto/dynamodb/models/__init__.py
++++ b/moto/dynamodb/models/__init__.py
+@@ -641,6 +641,40 @@ class Table(CloudFormationModel):
+             keys.append(range_key)
+         return keys
+ 
++    def _validate_index_key_types(self, item_attrs):
++        # Validate GSI/LSI key attribute types for values provided in this item
++        from moto.dynamodb.exceptions import InvalidIndexKeyTypeError
++        # Build a mapping of attribute name -> expected DDBType for all index keys
++        index_key_expected_types = {}
++        for index in (self.indexes or []) + (self.global_indexes or []):
++            # index.schema is a list of {'AttributeName': ..., 'KeyType': 'HASH'|'RANGE'}
++            for keydef in index.schema:
++                attr_name = keydef["AttributeName"]
++                # Find expected type from table attribute definitions
++                expected_type = None
++                for attr_def in self.attr or []:
++                    if attr_def["AttributeName"] == attr_name:
++                        expected_type = attr_def["AttributeType"]
++                        break
++                if expected_type is None:
++                    # If the attribute definition is missing, AWS would have rejected table creation; skip here
++                    continue
++                index_key_expected_types.setdefault(index.name, {})[attr_name] = expected_type
++        # Now validate the actual item
++        for index in (self.indexes or []) + (self.global_indexes or []):
++            expected_for_index = index_key_expected_types.get(index.name, {})
++            for attr_name, expected_type in expected_for_index.items():
++                provided = item_attrs.get(attr_name)
++                if provided is None:
++                    # AWS allows missing index key attributes in the item
++                    continue
++                provided_type = list(provided.keys())[0]
++                if provided_type != expected_type:
++                    raise InvalidIndexKeyTypeError(
++                        attr_name, expected_type, provided_type, index.name
++                    )
++
++
+     def _validate_key_sizes(self, item_attrs):
+         for hash_name in self.hash_key_names:
+             hash_value = item_attrs.get(hash_name)
+@@ -713,6 +747,8 @@ class Table(CloudFormationModel):
+ 
+         self._validate_item_types(item_attrs)
+         self._validate_key_sizes(item_attrs)
++        # Validate data types for any attributes that are part of index keys
++        self._validate_index_key_types(item_attrs)
+ 
+         if expected is None:
+             expected = {}
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ make init
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: boto3>=1.9.201 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (1.40.74)
+Requirement already satisfied: botocore>=1.12.201 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (1.40.74)
+Requirement already satisfied: cryptography>=3.3.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (46.0.3)
+Requirement already satisfied: requests>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (2.32.5)
+Requirement already satisfied: xmltodict in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (1.0.2)
+Requirement already satisfied: werkzeug!=2.2.0,!=2.2.1,>=0.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.1.3)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (2.9.0.post0)
+Requirement already satisfied: responses>=0.13.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (0.25.8)
+Requirement already satisfied: Jinja2>=2.10.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.1.6)
+Requirement already satisfied: six>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from python-dateutil<3.0.0,>=2.1->moto==4.1.0.dev0) (1.17.0)
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from boto3>=1.9.201->moto==4.1.0.dev0) (1.0.1)
+Requirement already satisfied: s3transfer<0.15.0,>=0.14.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from boto3>=1.9.201->moto==4.1.0.dev0) (0.14.0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from botocore>=1.12.201->moto==4.1.0.dev0) (2.5.0)
+Requirement already satisfied: cffi>=2.0.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cryptography>=3.3.1->moto==4.1.0.dev0) (2.0.0)
+Requirement already satisfied: pycparser in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography>=3.3.1->moto==4.1.0.dev0) (2.23)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from Jinja2>=2.10.1->moto==4.1.0.dev0) (3.0.3)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from requests>=2.5->moto==4.1.0.dev0) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from requests>=2.5->moto==4.1.0.dev0) (3.11)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from requests>=2.5->moto==4.1.0.dev0) (2025.11.12)
+Requirement already satisfied: pyyaml in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from responses>=0.13.0->moto==4.1.0.dev0) (6.0.3)
+Building wheels for collected packages: moto
+  Building editable for moto (pyproject.toml): started
+  Building editable for moto (pyproject.toml): finished with status 'done'
+  Created wheel for moto: filename=moto-4.1.0.dev0-0.editable-py2.py3-none-any.whl size=11176 sha256=2a9af4387709ed986ab31ad37cd55813db7d81d57007d4345dce5e902f7a3f9e
+  Stored in directory: /tmp/pip-ephem-wheel-cache-5krasumc/wheels/5d/7e/d4/0611b5e1f6b19283dfc03cca62ebc6a41021c5c464d28aab8f
+Successfully built moto
+Installing collected packages: moto
+  Attempting uninstall: moto
+    Found existing installation: moto 4.1.0.dev0
+    Uninstalling moto-4.1.0.dev0:
+      Successfully uninstalled moto-4.1.0.dev0
+Successfully installed moto-4.1.0.dev0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: coverage in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r /testbed/requirements-tests.txt (line 1)) (7.11.3)
+Requirement already satisfied: pytest in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r /testbed/requirements-tests.txt (line 2)) (9.0.1)
+Requirement already satisfied: pytest-cov in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r /testbed/requirements-tests.txt (line 3)) (7.0.0)
+Requirement already satisfied: pytest-xdist in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r /testbed/requirements-tests.txt (line 4)) (3.8.0)
+Requirement already satisfied: surer in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r /testbed/requirements-tests.txt (line 5)) (0.0.3)
+Requirement already satisfied: freezegun in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r /testbed/requirements-tests.txt (line 6)) (1.5.5)
+Requirement already satisfied: pylint in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r /testbed/requirements-tests.txt (line 7)) (4.0.3)
+Requirement already satisfied: black==22.3.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 4)) (22.3.0)
+Requirement already satisfied: flake8==4.0.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 5)) (4.0.1)
+Requirement already satisfied: flake8-print in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 6)) (5.0.0)
+Requirement already satisfied: flake8-use-fstring in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 7)) (1.4)
+Requirement already satisfied: click in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 8)) (8.3.1)
+Requirement already satisfied: inflection in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 9)) (0.5.1)
+Requirement already satisfied: lxml in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 10)) (6.0.2)
+Requirement already satisfied: mypy in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 11)) (1.18.2)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 12)) (25.0)
+Requirement already satisfied: build in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 13)) (1.3.0)
+Requirement already satisfied: prompt_toolkit in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r requirements-dev.txt (line 14)) (3.0.52)
+Requirement already satisfied: boto3>=1.9.201 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (1.40.74)
+Requirement already satisfied: botocore>=1.12.201 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (1.40.74)
+Requirement already satisfied: cryptography>=3.3.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (46.0.3)
+Requirement already satisfied: requests>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (2.32.5)
+Requirement already satisfied: xmltodict in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (1.0.2)
+Requirement already satisfied: werkzeug!=2.2.0,!=2.2.1,>=0.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.1.3)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (2.9.0.post0)
+Requirement already satisfied: responses>=0.13.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (0.25.8)
+Requirement already satisfied: Jinja2>=2.10.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.1.6)
+Requirement already satisfied: python-jose<4.0.0,>=3.1.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from python-jose[cryptography]<4.0.0,>=3.1.0; extra == "all"->moto==4.1.0.dev0) (3.5.0)
+Requirement already satisfied: ecdsa!=0.15 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (0.19.1)
+Requirement already satisfied: docker>=2.5.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (7.1.0)
+Requirement already satisfied: graphql-core in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.2.7)
+Requirement already satisfied: PyYAML>=5.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (6.0.3)
+Requirement already satisfied: cfn-lint>=0.40.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (1.40.4)
+Requirement already satisfied: sshpubkeys>=3.1.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.3.1)
+Requirement already satisfied: openapi-spec-validator>=0.2.8 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (0.7.2)
+Requirement already satisfied: pyparsing>=3.0.7 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.2.5)
+Requirement already satisfied: jsondiff>=1.1.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (2.2.1)
+Requirement already satisfied: aws-xray-sdk!=0.96,>=0.93 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (2.15.0)
+Requirement already satisfied: setuptools in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (80.9.0)
+Requirement already satisfied: flask!=2.2.0,!=2.2.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (3.1.2)
+Requirement already satisfied: flask-cors in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from moto==4.1.0.dev0) (6.0.1)
+Requirement already satisfied: platformdirs>=2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from black==22.3.0->-r requirements-dev.txt (line 4)) (4.5.0)
+Requirement already satisfied: pathspec>=0.9.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from black==22.3.0->-r requirements-dev.txt (line 4)) (0.12.1)
+Requirement already satisfied: mypy-extensions>=0.4.3 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from black==22.3.0->-r requirements-dev.txt (line 4)) (1.1.0)
+Requirement already satisfied: mccabe<0.7.0,>=0.6.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from flake8==4.0.1->-r requirements-dev.txt (line 5)) (0.6.1)
+Requirement already satisfied: pycodestyle<2.9.0,>=2.8.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from flake8==4.0.1->-r requirements-dev.txt (line 5)) (2.8.0)
+Requirement already satisfied: pyflakes<2.5.0,>=2.4.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from flake8==4.0.1->-r requirements-dev.txt (line 5)) (2.4.0)
+Requirement already satisfied: six>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from python-dateutil<3.0.0,>=2.1->moto==4.1.0.dev0) (1.17.0)
+Requirement already satisfied: rsa!=4.1.1,!=4.4,<5.0,>=4.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from python-jose<4.0.0,>=3.1.0->python-jose[cryptography]<4.0.0,>=3.1.0; extra == "all"->moto==4.1.0.dev0) (4.9.1)
+Requirement already satisfied: pyasn1>=0.5.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from python-jose<4.0.0,>=3.1.0->python-jose[cryptography]<4.0.0,>=3.1.0; extra == "all"->moto==4.1.0.dev0) (0.6.1)
+Requirement already satisfied: iniconfig>=1.0.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pytest->-r /testbed/requirements-tests.txt (line 2)) (2.3.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pytest->-r /testbed/requirements-tests.txt (line 2)) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pytest->-r /testbed/requirements-tests.txt (line 2)) (2.19.2)
+Requirement already satisfied: execnet>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pytest-xdist->-r /testbed/requirements-tests.txt (line 4)) (2.1.2)
+Requirement already satisfied: astroid<=4.1.dev0,>=4.0.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pylint->-r /testbed/requirements-tests.txt (line 7)) (4.0.2)
+Requirement already satisfied: dill>=0.3.6 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pylint->-r /testbed/requirements-tests.txt (line 7)) (0.4.0)
+Requirement already satisfied: isort!=5.13,<8,>=5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pylint->-r /testbed/requirements-tests.txt (line 7)) (7.0.0)
+Requirement already satisfied: tomlkit>=0.10.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pylint->-r /testbed/requirements-tests.txt (line 7)) (0.13.3)
+Requirement already satisfied: typing_extensions>=4.6.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from mypy->-r requirements-dev.txt (line 11)) (4.15.0)
+Requirement already satisfied: pyproject_hooks in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from build->-r requirements-dev.txt (line 13)) (1.2.0)
+Requirement already satisfied: wcwidth in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from prompt_toolkit->-r requirements-dev.txt (line 14)) (0.2.14)
+Requirement already satisfied: wrapt in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from aws-xray-sdk!=0.96,>=0.93->moto==4.1.0.dev0) (2.0.1)
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from boto3>=1.9.201->moto==4.1.0.dev0) (1.0.1)
+Requirement already satisfied: s3transfer<0.15.0,>=0.14.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from boto3>=1.9.201->moto==4.1.0.dev0) (0.14.0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from botocore>=1.12.201->moto==4.1.0.dev0) (2.5.0)
+Requirement already satisfied: aws-sam-translator>=1.97.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cfn-lint>=0.40.0->moto==4.1.0.dev0) (1.101.0)
+Requirement already satisfied: jsonpatch in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cfn-lint>=0.40.0->moto==4.1.0.dev0) (1.33)
+Requirement already satisfied: networkx<4,>=2.4 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cfn-lint>=0.40.0->moto==4.1.0.dev0) (3.5)
+Requirement already satisfied: sympy>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cfn-lint>=0.40.0->moto==4.1.0.dev0) (1.14.0)
+Requirement already satisfied: regex in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cfn-lint>=0.40.0->moto==4.1.0.dev0) (2025.11.3)
+Requirement already satisfied: jsonschema<5,>=3.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (4.25.1)
+Requirement already satisfied: pydantic!=1.10.15,!=1.10.17,<3,>=1.8 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (2.12.4)
+Requirement already satisfied: attrs>=22.2.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from jsonschema<5,>=3.2->aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (25.4.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from jsonschema<5,>=3.2->aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from jsonschema<5,>=3.2->aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (0.36.2)
+Requirement already satisfied: rpds-py>=0.7.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from jsonschema<5,>=3.2->aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (0.29.0)
+Requirement already satisfied: annotated-types>=0.6.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pydantic!=1.10.15,!=1.10.17,<3,>=1.8->aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pydantic!=1.10.15,!=1.10.17,<3,>=1.8->aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (2.41.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from pydantic!=1.10.15,!=1.10.17,<3,>=1.8->aws-sam-translator>=1.97.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (0.4.2)
+Requirement already satisfied: cffi>=2.0.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cryptography>=3.3.1->moto==4.1.0.dev0) (2.0.0)
+Requirement already satisfied: pycparser in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography>=3.3.1->moto==4.1.0.dev0) (2.23)
+Requirement already satisfied: blinker>=1.9.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from flask!=2.2.0,!=2.2.1->moto==4.1.0.dev0) (1.9.0)
+Requirement already satisfied: itsdangerous>=2.2.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from flask!=2.2.0,!=2.2.1->moto==4.1.0.dev0) (2.2.0)
+Requirement already satisfied: markupsafe>=2.1.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from flask!=2.2.0,!=2.2.1->moto==4.1.0.dev0) (3.0.3)
+Requirement already satisfied: jsonschema-path<0.4.0,>=0.3.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from openapi-spec-validator>=0.2.8->moto==4.1.0.dev0) (0.3.4)
+Requirement already satisfied: lazy-object-proxy<2.0.0,>=1.7.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from openapi-spec-validator>=0.2.8->moto==4.1.0.dev0) (1.12.0)
+Requirement already satisfied: openapi-schema-validator<0.7.0,>=0.6.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from openapi-spec-validator>=0.2.8->moto==4.1.0.dev0) (0.6.3)
+Requirement already satisfied: pathable<0.5.0,>=0.4.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from jsonschema-path<0.4.0,>=0.3.1->openapi-spec-validator>=0.2.8->moto==4.1.0.dev0) (0.4.4)
+Requirement already satisfied: rfc3339-validator in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from openapi-schema-validator<0.7.0,>=0.6.0->openapi-spec-validator>=0.2.8->moto==4.1.0.dev0) (0.1.4)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from requests>=2.5->moto==4.1.0.dev0) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from requests>=2.5->moto==4.1.0.dev0) (3.11)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from requests>=2.5->moto==4.1.0.dev0) (2025.11.12)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from sympy>=1.0.0->cfn-lint>=0.40.0->moto==4.1.0.dev0) (1.3.0)
+Requirement already satisfied: jsonpointer>=1.9 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from jsonpatch->cfn-lint>=0.40.0->moto==4.1.0.dev0) (3.0.0)
+Building wheels for collected packages: moto
+  Building editable for moto (pyproject.toml): started
+  Building editable for moto (pyproject.toml): finished with status 'done'
+  Created wheel for moto: filename=moto-4.1.0.dev0-0.editable-py2.py3-none-any.whl size=11176 sha256=305bb7590ce17443d5cbc8397d568d0502bf7002398c2623282765b17ee0551e
+  Stored in directory: /tmp/pip-ephem-wheel-cache-gwh1un76/wheels/5d/7e/d4/0611b5e1f6b19283dfc03cca62ebc6a41021c5c464d28aab8f
+Successfully built moto
+Installing collected packages: moto
+  Attempting uninstall: moto
+    Found existing installation: moto 4.1.0.dev0
+    Uninstalling moto-4.1.0.dev0:
+      Successfully uninstalled moto-4.1.0.dev0
+Successfully installed moto-4.1.0.dev0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git checkout e47a2fd120cb7d800aa19c41b88a6c3a907d8682 tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py
+Updated 0 paths from a374a8794
++ git apply -v -
+Checking patch tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py...
+Applied patch tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py cleanly.
++ pytest -n0 -rA tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-9.0.1, pluggy-1.6.0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.8.0, cov-7.0.0
+collected 34 items
+
+tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py ............. [ 38%]
+.....................                                                    [100%]
+
+=============================== warnings summary ===============================
+tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py: 26 warnings
+  /testbed/moto/dynamodb/models/__init__.py:453: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    self.created_at = datetime.datetime.utcnow()
+
+tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py: 26 warnings
+  /testbed/moto/core/utils.py:177: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    epoch = datetime.datetime.utcfromtimestamp(0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_query_gsi_with_wrong_key_attribute_names_throws_exception
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_query_table_with_wrong_key_attribute_names_throws_exception
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_empty_expressionattributenames
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_empty_expressionattributenames_with_empty_projection
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_empty_expressionattributenames_with_projection
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_update_item_range_key_set
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_batch_get_item_non_existing_table
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_batch_write_item_non_existing_table
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_create_table_with_redundant_attributes
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_create_table_with_missing_attributes
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_create_table_with_redundant_and_missing_attributes
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_put_item_wrong_attribute_type
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_hash_key_cannot_use_begins_with_operations
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_hash_key_can_only_use_equals_operations[<]
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_hash_key_can_only_use_equals_operations[<=]
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_hash_key_can_only_use_equals_operations[>]
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_hash_key_can_only_use_equals_operations[>=]
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_creating_table_with_0_local_indexes
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_creating_table_with_0_global_indexes
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_multiple_transactions_on_same_item
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_transact_write_items__too_many_transactions
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_update_item_non_existent_table
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_update_item_with_duplicate_expressions[set example_column = :example_column, example_column = :example_column]
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_update_item_with_duplicate_expressions[set example_column = :example_column ADD x :y set example_column = :example_column]
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_put_item_wrong_datatype
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_put_item_empty_set
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_update_expression_with_trailing_comma
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_batch_put_item_with_empty_value
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_query_begins_with_without_brackets
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_transact_write_items_multiple_operations_fail
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_update_primary_key_with_sortkey
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_update_primary_key
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_put_item__string_as_integer_value
+PASSED tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py::test_gsi_key_cannot_be_empty
+======================= 34 passed, 52 warnings in 3.39s ========================
++ git checkout e47a2fd120cb7d800aa19c41b88a6c3a907d8682 tests/test_dynamodb/exceptions/test_dynamodb_exceptions.py
+Updated 1 path from a374a8794

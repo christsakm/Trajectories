@@ -1,0 +1,38 @@
+diff --git a/moto/core/models.py b/moto/core/models.py
+index 9a54dd5ed..6238cc6f3 100644
+--- a/moto/core/models.py
++++ b/moto/core/models.py
+@@ -136,7 +136,14 @@ class BaseMockAWS:
+             x for x, y in klass.__dict__.items() if inspect.isclass(y)
+         )
+ 
++        # Check if setUp is defined in the class or its parents
+         has_setup_method = "setUp" in direct_methods
++        if not has_setup_method:
++            # Check if setUp is inherited
++            for cls in inspect.getmro(klass):
++                if "setUp" in cls.__dict__:
++                    has_setup_method = True
++                    break
+ 
+         for attr in itertools.chain(direct_methods, defined_classes):
+             if attr.startswith("_"):
+@@ -179,6 +186,18 @@ class BaseMockAWS:
+             except TypeError:
+                 # Sometimes we can't set this for built-in types
+                 continue
++        
++        # Handle inherited setUp and tearDown methods
++        for attr in ["setUp", "tearDown"]:
++            if attr not in direct_methods:
++                # Check if the method is inherited
++                for cls in inspect.getmro(klass):
++                    if attr in cls.__dict__:
++                        attr_value = getattr(klass, attr)
++                        # Decorate the inherited method
++                        setattr(klass, attr, self(attr_value, reset=(attr == "setUp")))
++                        break
++        
+         return klass
+ 
+     def mock_env_variables(self):

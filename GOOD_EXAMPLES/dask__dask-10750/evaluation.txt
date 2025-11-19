@@ -1,0 +1,154 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+1 hour ~ 4 hours
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/dask/dataframe/shuffle.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/dask/dataframe/tests/test_shuffle.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch adds a deprecation warning when npartitions == 'auto' in the sort_values function using warnings.warn()",
+    "rationale": "The deprecation warning must be added to sort_values to notify users that 'auto' is deprecated. This is the primary requirement of the fix.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch adds a deprecation warning when npartitions == 'auto' in the set_index function using warnings.warn()",
+    "rationale": "The deprecation warning must be added to set_index to notify users that 'auto' is deprecated. Both functions need the warning since both accept npartitions='auto'.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The patch uses FutureWarning as the warning category when calling warnings.warn()",
+    "rationale": "FutureWarning is the appropriate warning category for deprecations in Python. Using other warning types like DeprecationWarning would not be visible by default in many environments.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The patch specifies stacklevel=2 when calling warnings.warn() to ensure the warning points to the user's code, not the internal library code",
+    "rationale": "The stacklevel parameter ensures that the warning traceback points to the user's call site rather than the internal library code, making it easier for users to identify where they need to make changes.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The patch maintains the existing behavior when npartitions == 'auto' (repartition = True, npartitions = max(100, df.npartitions)) rather than changing it to npartitions = None",
+    "rationale": "The golden patch only adds a deprecation warning but does not change the behavior. Changing the behavior would break backward compatibility and is not part of the deprecation process - behavior changes should come in a future version after removal.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_06": {
+    "type": "agent behavior",
+    "criterion": "The patch does not modify files other than dask/dataframe/shuffle.py (e.g., does not modify core.py to update docstrings or type hints)",
+    "rationale": "The fix is localized to adding warnings in shuffle.py. Modifying core.py to update docstrings or type hints is unnecessary and indicates the agent is over-engineering the solution beyond what is required.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "correctness",
+    "criterion": "The patch uses the exact warning message from the golden patch: '`npartitions='auto'` is deprecated, either set it as an integer or leave as `None`.'",
+    "rationale": "While the exact message wording is not critical, matching the golden patch message ensures consistency and provides clear guidance to users about the alternatives (integer or None).",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "code style",
+    "criterion": "The patch places the warnings.warn() call immediately after the 'if npartitions == \"auto\":' check, before any other logic in that branch",
+    "rationale": "Placing the warning first ensures it is always raised when the condition is met, before any other code executes. This follows the pattern in the golden patch and ensures consistent behavior.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "code style",
+    "criterion": "The patch does not add unnecessary imports (warnings module should already be imported, or if not, the import should be added at the top of the file)",
+    "rationale": "Adding unnecessary imports or importing warnings in the wrong location indicates the agent didn't check existing imports or understand Python import conventions.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_10": {
+    "type": "correctness",
+    "criterion": "The patch ensures the deprecation warning test passes (test_npartitions_auto_raises_deprecation_warning), which verifies that warnings are raised when npartitions='auto' is used",
+    "rationale": "The test verifies that the deprecation warnings are actually raised when users call the functions with npartitions='auto'. If the test fails, the warnings are not working correctly.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "FAIL"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 3,
+    "rationale": "Partial fix that adds deprecation warnings in both functions and passes all tests. However, it fails multiple MUST_FOLLOW rubrics: it doesn't specify stacklevel=2 (affecting warning traceback accuracy), changes the behavior to set npartitions=None instead of maintaining existing behavior, and unnecessarily modifies core.py docstrings. The warning message also doesn't match the golden patch."
+  },
+  "trace_03": {
+    "rating": 4,
+    "rationale": "Good fix that adds deprecation warnings correctly in both functions with proper stacklevel=2 and maintains existing behavior. The solution passes all tests. However, it unnecessarily modifies core.py with comments and the warning message doesn't match the golden patch exactly, indicating minor deviations from the ideal implementation."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "Partial fix that adds deprecation warnings with correct stacklevel and maintains existing behavior, but fails the critical test (test_npartitions_auto_raises_deprecation_warning), indicating the warnings are not being raised correctly. Additionally, it unnecessarily modifies core.py with docstring deprecation notices and the warning message doesn't match the golden patch. Fails 1 MUST_FOLLOW rubric (test failure) and 2 GOOD_TO_HAVE rubrics."
+  }
+}

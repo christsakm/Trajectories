@@ -1,0 +1,13 @@
+diff --git a/hydra/_internal/instantiate/_instantiate2.py b/hydra/_internal/instantiate/_instantiate2.py
+index 43dc0857fd..f0201e4fab 100644
+--- a/hydra/_internal/instantiate/_instantiate2.py
++++ b/hydra/_internal/instantiate/_instantiate2.py
+@@ -71,7 +71,7 @@ def _call_target(_target_: Callable, _partial_: bool, *args, **kwargs) -> Any:
+ 
+ def _convert_target_to_string(t: Any) -> Any:
+     if isinstance(t, type):
+-        return f"{t.__module__}.{t.__name__}"
++        return f"{t.__module__}.{t.__qualname__}"
+     elif callable(t):
+         return f"{t.__module__}.{t.__qualname__}"
+     else:

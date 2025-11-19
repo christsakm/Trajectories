@@ -1,0 +1,40 @@
+diff --git a/moto/dynamodb/models/__init__.py b/moto/dynamodb/models/__init__.py
+index 854727ee7..1045d346a 100644
+--- a/moto/dynamodb/models/__init__.py
++++ b/moto/dynamodb/models/__init__.py
+@@ -653,6 +653,27 @@ class Table(CloudFormationModel):
+                 if DynamoType(range_value).size() > RANGE_KEY_MAX_LENGTH:
+                     raise RangeKeyTooLong
+ 
++    def _validate_global_index_key_attributes(self, item_attrs):
++        # Check all global secondary indexes
++        for gsi in self.global_indexes:
++            # Check each key in the GSI schema
++            for key_spec in gsi.schema:
++                attr_name = key_spec["AttributeName"]
++                # If the attribute is in the item and is NULL, raise an exception
++                if attr_name in item_attrs:
++                    attr_value = DynamoType(item_attrs[attr_name])
++                    if attr_value.type == "NULL":
++                        # Find the expected type for this attribute
++                        expected_type = None
++                        for attr_def in self.attr:
++                            if attr_def["AttributeName"] == attr_name:
++                                expected_type = attr_def["AttributeType"]
++                                break
++                        
++                        raise MockValidationException(
++                            f"One or more parameter values were invalid: Type mismatch for Index Key {attr_name} Expected: {expected_type} Actual: NULL IndexName: {gsi.name}"
++                        )
++
+     def _validate_item_types(self, item_attrs):
+         for key, value in item_attrs.items():
+             if type(value) == dict:
+@@ -713,6 +734,7 @@ class Table(CloudFormationModel):
+ 
+         self._validate_item_types(item_attrs)
+         self._validate_key_sizes(item_attrs)
++        self._validate_global_index_key_attributes(item_attrs)
+ 
+         if expected is None:
+             expected = {}

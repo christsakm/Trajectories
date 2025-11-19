@@ -1,0 +1,48 @@
+{
+    "getmoto__moto-4799": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": true,
+        "tests_status": {
+            "FAIL_TO_PASS": {
+                "success": [
+                    "tests/test_core/test_decorator_calls.py::TestSetUpInBaseClass::test_a_thing"
+                ],
+                "failure": []
+            },
+            "PASS_TO_PASS": {
+                "success": [
+                    "tests/test_core/test_decorator_calls.py::TestWithNestedClasses::TestWithSetup::test_should_not_find_bucket_from_test_method",
+                    "tests/test_core/test_decorator_calls.py::test_context_manager",
+                    "tests/test_core/test_decorator_calls.py::Tester::test_still_the_same",
+                    "tests/test_core/test_decorator_calls.py::TestWithPseudoPrivateMethod::test_should_not_find_bucket",
+                    "tests/test_core/test_decorator_calls.py::TestWithPublicMethod::test_should_not_find_bucket",
+                    "tests/test_core/test_decorator_calls.py::test_decorator_start_and_stop",
+                    "tests/test_core/test_decorator_calls.py::TesterWithSetup::test_still_the_same",
+                    "tests/test_core/test_decorator_calls.py::TestWithSetup::test_should_not_find_unknown_bucket",
+                    "tests/test_core/test_decorator_calls.py::TestWithNestedClasses::NestedClass::test_should_find_bucket",
+                    "tests/test_core/test_decorator_calls.py::TesterWithStaticmethod::test_no_instance_sent_to_staticmethod",
+                    "tests/test_core/test_decorator_calls.py::TestWithSetup::test_should_find_bucket",
+                    "tests/test_core/test_decorator_calls.py::TestWithNestedClasses::TestWithSetup::test_should_find_bucket",
+                    "tests/test_core/test_decorator_calls.py::test_basic_decorator",
+                    "tests/test_core/test_decorator_calls.py::test_decorater_wrapped_gets_set",
+                    "tests/test_core/test_decorator_calls.py::TestWithPseudoPrivateMethod::test_should_find_bucket",
+                    "tests/test_core/test_decorator_calls.py::TestWithNestedClasses::NestedClass2::test_should_find_bucket",
+                    "tests/test_core/test_decorator_calls.py::Tester::test_the_class",
+                    "tests/test_core/test_decorator_calls.py::TestWithNestedClasses::NestedClass2::test_should_not_find_bucket_from_different_class",
+                    "tests/test_core/test_decorator_calls.py::TestWithPublicMethod::test_should_find_bucket"
+                ],
+                "failure": []
+            },
+            "FAIL_TO_FAIL": {
+                "success": [],
+                "failure": []
+            },
+            "PASS_TO_FAIL": {
+                "success": [],
+                "failure": []
+            }
+        }
+    }
+}

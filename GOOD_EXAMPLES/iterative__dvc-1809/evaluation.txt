@@ -1,0 +1,125 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Feature development
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+1 hour ~ 4 hours
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/dvc/command/metrics.py",
+  "/testbed/dvc/repo/metrics/show.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/tests/test_metrics.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The agent updates the metrics_show_parser in dvc/command/metrics.py to include automatic type detection in the help description.",
+    "rationale": "Ensures users are informed about the new feature through the command-line help.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The agent modifies _read_metrics in dvc/repo/metrics/show.py to set the type based on file extension if not explicitly provided.",
+    "rationale": "This change is crucial for implementing the automatic type detection feature.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The solution passes all tests in tests/test_metrics.py, including the new tests for automatic type detection.",
+    "rationale": "Passing tests confirm that the feature works correctly and does not introduce regressions.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The agent adds comprehensive test cases in tests/test_metrics.py to cover various file extensions and their automatic type detection.",
+    "rationale": "Ensures that the feature is robust and handles different scenarios correctly.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The agent does not modify unrelated modules outside of dvc/command/metrics.py, dvc/repo/metrics/show.py, and tests/test_metrics.py.",
+    "rationale": "Prevents unintended side effects and keeps the changes focused on the feature.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "code style",
+    "criterion": "The agent uses clear and descriptive variable names when implementing the automatic type detection logic.",
+    "rationale": "Improves code readability and maintainability.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "code style",
+    "criterion": "The agent includes comments explaining the logic for automatic type detection in dvc/repo/metrics/show.py.",
+    "rationale": "Helps future developers understand the purpose and functionality of the code.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "PASS",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS"
+  },
+  "trace_03": {
+    "rubric_01": "FAIL",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL"
+  },
+  "trace_04": {
+    "rubric_01": "FAIL",
+    "rubric_02": "PASS",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_02": {
+    "rating": 3,
+    "rationale": "Multiple MUST_FOLLOW correctness rubrics failed, indicating a low-quality solution with critical gaps. Although some GOOD_TO_HAVE items passed, they cannot compensate for the essential failures."
+  },
+  "trace_03": {
+    "rating": 2,
+    "rationale": "Only one MUST_FOLLOW rubric passed and several correctness issues remain unresolved. The solution shows partial effort but still falls below acceptable quality."
+  },
+  "trace_04": {
+    "rating": 2,
+    "rationale": "The majority of MUST_FOLLOW criteria failed. Despite some code-style successes, the solution does not satisfy core functional requirements and therefore warrants a low rating."
+  }
+}

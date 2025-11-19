@@ -1,0 +1,155 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+15 min ~ 1 hour
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/hydra/_internal/instantiate/_instantiate2.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/tests/instantiate/test_instantiate.py",
+  "/testbed/tests/instantiate/__init__.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch changes the type case in _convert_target_to_string to use __qualname__ instead of __name__ when converting a type to a string",
+    "rationale": "Using __name__ for types fails for nested classes (e.g., A.B becomes 'B' instead of 'A.B'). The __qualname__ attribute correctly includes the full qualified name including the parent class, which is essential for nested class resolution.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch removes the separate isinstance(t, type) check and consolidates type and callable handling into a single if callable(t): branch",
+    "rationale": "Since types are callable in Python, the separate isinstance(t, type) check is redundant. Consolidating both cases into a single callable check simplifies the code and ensures consistent behavior, as both types and callables use __qualname__ for proper nested class resolution.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "agent behavior",
+    "criterion": "The patch does not add null checks or fallback logic for __module__ attribute (e.g., checking if t.__module__ is not None before using it)",
+    "rationale": "Adding unnecessary null checks for __module__ indicates the agent is over-engineering the solution. The golden patch demonstrates that such checks are not needed, and adding them suggests a misunderstanding of when __module__ can be None.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The patch maintains the else branch that returns t unchanged for non-callable, non-type values",
+    "rationale": "The function must handle non-callable values by returning them unchanged. This preserves existing behavior for values that are already strings or other non-callable types passed to the function.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "agent behavior",
+    "criterion": "The patch does not modify any other functions or files beyond _convert_target_to_string in hydra/_internal/instantiate/_instantiate2.py",
+    "rationale": "The fix is localized to the _convert_target_to_string function. Modifying other functions or files indicates the agent did not understand the scope of the problem and attempted an overly broad solution.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "correctness",
+    "criterion": "The patch uses __qualname__ consistently for both the type case (if it still exists) and the callable case, ensuring nested classes and nested methods are handled correctly",
+    "rationale": "Both types and callables (including nested classes and methods) require __qualname__ to correctly represent their fully qualified names. Using __name__ for types would break nested class resolution.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "agent behavior",
+    "criterion": "The patch does not add comments explaining the change unless they provide meaningful context about why __qualname__ is used",
+    "rationale": "While comments can be helpful, adding verbose or obvious comments (like 'Use __qualname__ for both types and callables') without explaining the nested class context suggests the agent doesn't fully understand the problem being solved.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_08": {
+    "type": "correctness",
+    "criterion": "The patch correctly handles the case where t is a type by ensuring it goes through the callable branch and uses __qualname__ in the string formatting",
+    "rationale": "Types in Python are callable, so they should be handled by the callable branch. The key fix is ensuring __qualname__ is used instead of __name__ so that nested classes like OuterClass.Nested resolve to '__main__.OuterClass.Nested' instead of '__main__.Nested'.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "correctness",
+    "criterion": "The patch does not introduce any additional conditional logic or special cases beyond what is necessary to fix the nested class issue",
+    "rationale": "The fix should be minimal and elegant. Adding unnecessary conditional logic, null checks, or special cases indicates the agent is overcomplicating a simple fix that only requires changing __name__ to __qualname__ and removing redundant type checking.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_10": {
+    "type": "correctness",
+    "criterion": "The patch ensures that the string format f\"{t.__module__}.{t.__qualname__}\" is used for callables (which includes types after the fix)",
+    "rationale": "The correct format for representing a callable's fully qualified name is module.qualname. This format ensures nested classes are correctly represented as 'module.OuterClass.Nested' rather than the incorrect 'module.Nested'.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL",
+    "rubric_08": "FAIL",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  },
+  "trace_02": {
+    "rubric_01": "PASS",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL",
+    "rubric_10": "PASS"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 3,
+    "rationale": "Partial fix that correctly changes __name__ to __qualname__ for types, resolving the nested class issue. The solution works and passes all tests. However, it doesn't follow the golden patch pattern of removing the redundant isinstance(t, type) check and consolidating into a single callable branch. Additionally, it adds an unnecessary comment, indicating minor code quality issues."
+  },
+  "trace_02": {
+    "rating": 2,
+    "rationale": "Low quality fix that correctly changes __name__ to __qualname__ for types, resolving the nested class issue. The solution works and passes all tests. However, it fails multiple MUST_FOLLOW rubrics by keeping the redundant isinstance(t, type) check and adding unnecessary null checks for __module__, indicating over-engineering and incomplete understanding of the problem."
+  },
+  "trace_03": {
+    "rating": 4,
+    "rationale": "Good fix that correctly changes __name__ to __qualname__ for types, resolving the nested class issue. The solution works and passes all tests. However, it doesn't follow the golden patch pattern of removing the redundant isinstance(t, type) check and consolidating into a single callable branch, which would simplify the code."
+  }
+}

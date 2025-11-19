@@ -1,0 +1,71 @@
+diff --git a/monai/data/wsi_reader.py b/monai/data/wsi_reader.py
+index 0bb2de98..d215b0ea 100644
+--- a/monai/data/wsi_reader.py
++++ b/monai/data/wsi_reader.py
+@@ -59,6 +59,9 @@ class BaseWSIReader(ImageReader):
+         super().__init__()
+         self.level = level
+         self.channel_dim = channel_dim
++        # num_workers is used by cuCIM's read_region, not CuImage constructor or openslide
++        # Keep it as an attribute and remove from kwargs to avoid passing to CuImage()
++        self.num_workers: Optional[int] = kwargs.pop("num_workers", None)
+         self.kwargs = kwargs
+         self.metadata: Dict[Any, Any] = {}
+ 
+@@ -276,6 +279,11 @@ class WSIReader(BaseWSIReader):
+             self.reader = OpenSlideWSIReader(level=level, channel_dim=channel_dim, **kwargs)
+         else:
+             raise ValueError(f"The supported backends are cucim and openslide, '{self.backend}' was given.")
++        # propagate cuCIM-specific option to the concrete reader
++        try:
++            setattr(self.reader, "num_workers", getattr(self, "num_workers", None))
++        except Exception:
++            pass
+         self.supported_suffixes = self.reader.supported_suffixes
+ 
+     def get_level_count(self, wsi) -> int:
+@@ -424,6 +432,11 @@ class CuCIMWSIReader(BaseWSIReader):
+         filenames: Sequence[PathLike] = ensure_tuple(data)
+         kwargs_ = self.kwargs.copy()
+         kwargs_.update(kwargs)
++        # handle cuCIM-specific option for read_region
++        if "num_workers" in kwargs:
++            self.num_workers = kwargs.get("num_workers")
++        # remove options that are not CuImage constructor args
++        kwargs_.pop("num_workers", None)
+         for filename in filenames:
+             wsi = CuImage(filename, **kwargs_)
+             wsi_list.append(wsi)
+@@ -448,7 +461,10 @@ class CuCIMWSIReader(BaseWSIReader):
+         """
+         # Extract a patch or the entire image
+         # (reverse the order of location and size to become WxH for cuCIM)
+-        patch: np.ndarray = wsi.read_region(location=location[::-1], size=size[::-1], level=level)
++        _kwargs = {}
++        if getattr(self, "num_workers", None) is not None:
++            _kwargs["num_workers"] = self.num_workers
++        patch: np.ndarray = wsi.read_region(location=location[::-1], size=size[::-1], level=level, **_kwargs)
+ 
+         # Convert to numpy
+         patch = np.asarray(patch, dtype=dtype)
+diff --git a/repro_wsireader_num_workers.py b/repro_wsireader_num_workers.py
+new file mode 100644
+index 00000000..30c105b6
+--- /dev/null
++++ b/repro_wsireader_num_workers.py
+@@ -0,0 +1,15 @@
++import os
++from monai.data.wsi_reader import CuCIMWSIReader
++from monai.utils import optional_import
++import numpy as np
++
++cucim, has_cucim = optional_import('cucim')
++
++print('has_cucim:', bool(has_cucim))
++# We can't rely on actual cucim in this environment, but ensure no errors constructing
++reader = CuCIMWSIReader(level=0, num_workers=8)
++print('reader.num_workers =', getattr(reader, 'num_workers', None))
++# ensure num_workers not passed to CuImage ctor: call read() with dummy path won't work; so just ensure attribute exists
++# Ensure get_data doesn't require num_workers argument and default behavior is stable with numpy synthetic
++arr = np.ones((3,4,5), dtype=np.uint8)
++print('OK')

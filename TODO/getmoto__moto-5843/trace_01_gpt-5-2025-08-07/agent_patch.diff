@@ -1,0 +1,179 @@
+diff --git a/moto/dynamodb/exceptions.py b/moto/dynamodb/exceptions.py
+index 30aba61ce..ddbaeadaf 100644
+--- a/moto/dynamodb/exceptions.py
++++ b/moto/dynamodb/exceptions.py
+@@ -254,6 +254,16 @@ class UpdateHashRangeKeyException(MockValidationException):
+         super().__init__(self.msg.format(key_name))
+ 
+ 
++
++class InvalidIndexKeyTypeError(MockValidationException):
++    msg = (
++        "One or more parameter values were invalid: Type mismatch for Index Key {} "
++        "Expected: {} Actual: {} IndexName: {}"
++    )
++
++    def __init__(self, name, expected_type, actual_type, index_name):
++        super().__init__(self.msg.format(name, expected_type, actual_type, index_name))
++
+ class InvalidAttributeTypeError(MockValidationException):
+     msg = "One or more parameter values were invalid: Type mismatch for key {} expected: {} actual: {}"
+ 
+diff --git a/moto/dynamodb/models/__init__.py b/moto/dynamodb/models/__init__.py
+index 854727ee7..de351c593 100644
+--- a/moto/dynamodb/models/__init__.py
++++ b/moto/dynamodb/models/__init__.py
+@@ -641,6 +641,40 @@ class Table(CloudFormationModel):
+             keys.append(range_key)
+         return keys
+ 
++    def _validate_index_key_types(self, item_attrs):
++        # Validate GSI/LSI key attribute types for values provided in this item
++        from moto.dynamodb.exceptions import InvalidIndexKeyTypeError
++        # Build a mapping of attribute name -> expected DDBType for all index keys
++        index_key_expected_types = {}
++        for index in (self.indexes or []) + (self.global_indexes or []):
++            # index.schema is a list of {'AttributeName': ..., 'KeyType': 'HASH'|'RANGE'}
++            for keydef in index.schema:
++                attr_name = keydef["AttributeName"]
++                # Find expected type from table attribute definitions
++                expected_type = None
++                for attr_def in self.attr or []:
++                    if attr_def["AttributeName"] == attr_name:
++                        expected_type = attr_def["AttributeType"]
++                        break
++                if expected_type is None:
++                    # If the attribute definition is missing, AWS would have rejected table creation; skip here
++                    continue
++                index_key_expected_types.setdefault(index.name, {})[attr_name] = expected_type
++        # Now validate the actual item
++        for index in (self.indexes or []) + (self.global_indexes or []):
++            expected_for_index = index_key_expected_types.get(index.name, {})
++            for attr_name, expected_type in expected_for_index.items():
++                provided = item_attrs.get(attr_name)
++                if provided is None:
++                    # AWS allows missing index key attributes in the item
++                    continue
++                provided_type = list(provided.keys())[0]
++                if provided_type != expected_type:
++                    raise InvalidIndexKeyTypeError(
++                        attr_name, expected_type, provided_type, index.name
++                    )
++
++
+     def _validate_key_sizes(self, item_attrs):
+         for hash_name in self.hash_key_names:
+             hash_value = item_attrs.get(hash_name)
+@@ -713,6 +747,8 @@ class Table(CloudFormationModel):
+ 
+         self._validate_item_types(item_attrs)
+         self._validate_key_sizes(item_attrs)
++        # Validate data types for any attributes that are part of index keys
++        self._validate_index_key_types(item_attrs)
+ 
+         if expected is None:
+             expected = {}
+diff --git a/repro_index_type_validation.py b/repro_index_type_validation.py
+new file mode 100644
+index 000000000..55231be4d
+--- /dev/null
++++ b/repro_index_type_validation.py
+@@ -0,0 +1,49 @@
++from moto.dynamodb.models import DynamoDBBackend
++from moto.dynamodb.exceptions import MockValidationException
++
++
++def create_table_with_gsi():
++    backend = DynamoDBBackend(region_name="us-east-1", account_id="123456789012")
++    backend.create_table(
++        name="lilja-test",
++        schema=[{"AttributeName": "id", "KeyType": "HASH"}],
++        attr=[
++            {"AttributeName": "id", "AttributeType": "S"},
++            {"AttributeName": "hello", "AttributeType": "S"},
++        ],
++        global_indexes=[
++            {
++                "IndexName": "hello-index",
++                "KeySchema": [
++                    {"AttributeName": "hello", "KeyType": "HASH"},
++                ],
++                "Projection": {"ProjectionType": "ALL"},
++            }
++        ],
++        throughput={"ReadCapacityUnits": 5, "WriteCapacityUnits": 5},
++        billing_mode=None,
++        streams=None,
++        sse_specification=None,
++        tags=None,
++    )
++    return backend
++
++
++def main():
++    backend = create_table_with_gsi()
++    table = backend.get_table("lilja-test")
++    # Try to put item with NULL for GSI hash key, should raise ValidationException
++    item = {
++        "id": {"S": "woop"},
++        "hello": {"NULL": True},
++    }
++    try:
++        table.put_item(item, overwrite=True)
++    except MockValidationException as e:
++        print("Caught expected ValidationException:", e.message)
++    else:
++        raise SystemExit("Expected a ValidationException for index key type mismatch, but none was raised")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/repro_index_type_validation_success.py b/repro_index_type_validation_success.py
+new file mode 100644
+index 000000000..4fcd166e0
+--- /dev/null
++++ b/repro_index_type_validation_success.py
+@@ -0,0 +1,43 @@
++from moto.dynamodb.models import DynamoDBBackend
++
++
++def create_table_with_gsi():
++    backend = DynamoDBBackend(region_name="us-east-1", account_id="123456789012")
++    backend.create_table(
++        name="lilja-test",
++        schema=[{"AttributeName": "id", "KeyType": "HASH"}],
++        attr=[
++            {"AttributeName": "id", "AttributeType": "S"},
++            {"AttributeName": "hello", "AttributeType": "S"},
++        ],
++        global_indexes=[
++            {
++                "IndexName": "hello-index",
++                "KeySchema": [
++                    {"AttributeName": "hello", "KeyType": "HASH"},
++                ],
++                "Projection": {"ProjectionType": "ALL"},
++            }
++        ],
++        throughput={"ReadCapacityUnits": 5, "WriteCapacityUnits": 5},
++        billing_mode=None,
++        streams=None,
++        sse_specification=None,
++        tags=None,
++    )
++    return backend
++
++
++def main():
++    backend = create_table_with_gsi()
++    table = backend.get_table("lilja-test")
++    item = {
++        "id": {"S": "woop"},
++        "hello": {"S": "ok"},
++    }
++    table.put_item(item, overwrite=True)
++    print("Put succeeded")
++
++
++if __name__ == "__main__":
++    main()

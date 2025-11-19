@@ -1,0 +1,57 @@
+diff --git a/moto/scheduler/models.py b/moto/scheduler/models.py
+index 9e1df7739..3737f550c 100644
+--- a/moto/scheduler/models.py
++++ b/moto/scheduler/models.py
+@@ -39,6 +39,10 @@ class Schedule(BaseModel):
+         self.kms_key_arn = kms_key_arn
+         self.start_date = start_date
+         self.end_date = end_date
++        # AWS returns CreationDate and LastModificationDate in get_schedule
++        # Use unix_time to be consistent with other models in Moto
++        self.creation_date = unix_time()
++        self.last_modification_date = self.creation_date
+ 
+     @staticmethod
+     def validate_target(target: Dict[str, Any]) -> Dict[str, Any]:  # type: ignore[misc]
+@@ -63,6 +67,8 @@ class Schedule(BaseModel):
+             "KmsKeyArn": self.kms_key_arn,
+             "StartDate": self.start_date,
+             "EndDate": self.end_date,
++            "CreationDate": self.creation_date,
++            "LastModificationDate": self.last_modification_date,
+         }
+         if short:
+             dct["Target"] = {"Arn": dct["Target"]["Arn"]}
+@@ -182,6 +188,7 @@ class EventBridgeSchedulerBackend(BaseBackend):
+         schedule.kms_key_arn = kms_key_arn
+         schedule.start_date = start_date
+         schedule.end_date = end_date
++        schedule.last_modification_date = unix_time()
+         return schedule
+ 
+     def list_schedules(
+diff --git a/repro_scheduler_get_schedule.py b/repro_scheduler_get_schedule.py
+new file mode 100644
+index 000000000..07144eeb9
+--- /dev/null
++++ b/repro_scheduler_get_schedule.py
+@@ -0,0 +1,19 @@
++import boto3
++from moto import mock_scheduler
++
++@mock_scheduler
++def main():
++    client = boto3.client("scheduler", region_name="us-east-1")
++    arn = client.create_schedule(
++        Name="test-sch",
++        ScheduleExpression="rate(5 minutes)",
++        FlexibleTimeWindow={"Mode": "OFF", "MaximumWindowInMinutes": 1},
++        Target={"Arn": "arn:aws:lambda:us-east-1:123456789012:function:fn", "RoleArn": "arn:aws:iam::123456789012:role/r"},
++    )["ScheduleArn"]
++    resp = client.get_schedule(Name="test-sch")
++    print("Get schedule resp keys:", sorted(resp.keys()))
++    assert "CreationDate" in resp and "LastModificationDate" in resp
++    print("OK: contains CreationDate and LastModificationDate")
++
++if __name__ == "__main__":
++    main()

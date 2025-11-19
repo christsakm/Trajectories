@@ -1,0 +1,61 @@
+diff --git a/mypy/lookup.py b/mypy/lookup.py
+index 41464d83d..ec08d9936 100644
+--- a/mypy/lookup.py
++++ b/mypy/lookup.py
+@@ -3,8 +3,9 @@ This is a module for various lookup functions:
+ functions that will find a semantic node by its name.
+ """
+ 
+-from mypy.nodes import MypyFile, SymbolTableNode, TypeInfo
+-from typing import Dict, Optional
++from mypy.nodes import MypyFile, SymbolTableNode, TypeInfo, Var, GDEF
++from typing import Dict, Optional, List
++from mypy.types import AnyType, TypeOfAny
+ 
+ # TODO: gradually move existing lookup functions to this module.
+ 
+@@ -19,9 +20,14 @@ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+ 
+     This function should *not* be used to find a module. Those should be looked
+     in the modules dictionary.
++
++    Additionally, if the final component is missing from a module that defines
++    a module-level __getattr__, return a synthetic Var created from that
++    __getattr__ (to support re-exported names originating from module
++    __getattr__ across incremental runs).
+     """
+     head = name
+-    rest = []
++    rest = []  # type: List[str]
+     # 1. Find a module tree in modules dictionary.
+     while True:
+         if '.' not in head:
+@@ -34,6 +40,7 @@ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+         if mod is not None:
+             break
+     names = mod.names
++    in_module_scope = True  # Track whether we are still looking at the module symbol table
+     # 2. Find the symbol in the module tree.
+     if not rest:
+         # Looks like a module, don't use this to avoid confusions.
+@@ -43,6 +50,15 @@ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+     while True:
+         key = rest.pop()
+         if key not in names:
++            # If we are at the module level and the module defines __getattr__,
++            # fabricate a Var corresponding to this attribute. This mirrors
++            # the behavior in the semantic analyzer and avoids crashes when
++            # resolving cross refs to names produced via module-level __getattr__.
++            if raise_on_missing and in_module_scope and '__getattr__' in mod.names:
++                v = Var(key, type=AnyType(TypeOfAny.special_form))
++                v._fullname = mod.fullname + '.' + key
++                v.from_module_getattr = True
++                return SymbolTableNode(GDEF, v)
+             if raise_on_missing:
+                 assert key in names, "Cannot find component %r for %r" % (key, name)
+             return None
+@@ -57,3 +73,4 @@ def lookup_fully_qualified(name: str, modules: Dict[str, MypyFile],
+                 assert node, "Cannot find %s" % (name,)
+             return None
+         names = node.names
++        in_module_scope = False

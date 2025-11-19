@@ -1,0 +1,99 @@
+diff --git a/monai/data/wsi_reader.py b/monai/data/wsi_reader.py
+index 0bb2de98..3aa78f99 100644
+--- a/monai/data/wsi_reader.py
++++ b/monai/data/wsi_reader.py
+@@ -55,10 +55,11 @@ class BaseWSIReader(ImageReader):
+     supported_suffixes: List[str] = []
+     backend = ""
+ 
+-    def __init__(self, level: int, channel_dim: int = 0, **kwargs):
++    def __init__(self, level: int, channel_dim: int = 0, num_workers: Optional[int] = None, **kwargs):
+         super().__init__()
+         self.level = level
+         self.channel_dim = channel_dim
++        self.num_workers = num_workers
+         self.kwargs = kwargs
+         self.metadata: Dict[Any, Any] = {}
+ 
+@@ -262,18 +263,20 @@ class WSIReader(BaseWSIReader):
+         backend: the name of backend whole slide image reader library, the default is cuCIM.
+         level: the level at which patches are extracted.
+         channel_dim: the desired dimension for color channel. Default to 0 (channel first).
++        num_workers: number of worker threads for reading patches (only supported by CuCIM backend).
++            If None, the backend's default will be used.
+         kwargs: additional arguments to be passed to the backend library
+ 
+     """
+ 
+-    def __init__(self, backend="cucim", level: int = 0, channel_dim: int = 0, **kwargs):
+-        super().__init__(level, channel_dim, **kwargs)
++    def __init__(self, backend="cucim", level: int = 0, channel_dim: int = 0, num_workers: Optional[int] = None, **kwargs):
++        super().__init__(level, channel_dim, num_workers, **kwargs)
+         self.backend = backend.lower()
+         self.reader: Union[CuCIMWSIReader, OpenSlideWSIReader]
+         if self.backend == "cucim":
+-            self.reader = CuCIMWSIReader(level=level, channel_dim=channel_dim, **kwargs)
++            self.reader = CuCIMWSIReader(level=level, channel_dim=channel_dim, num_workers=num_workers, **kwargs)
+         elif self.backend == "openslide":
+-            self.reader = OpenSlideWSIReader(level=level, channel_dim=channel_dim, **kwargs)
++            self.reader = OpenSlideWSIReader(level=level, channel_dim=channel_dim, num_workers=num_workers, **kwargs)
+         else:
+             raise ValueError(f"The supported backends are cucim and openslide, '{self.backend}' was given.")
+         self.supported_suffixes = self.reader.supported_suffixes
+@@ -356,6 +359,7 @@ class CuCIMWSIReader(BaseWSIReader):
+         level: the whole slide image level at which the image is extracted. (default=0)
+             This is overridden if the level argument is provided in `get_data`.
+         channel_dim: the desired dimension for color channel. Default to 0 (channel first).
++        num_workers: number of worker threads for reading patches. If None, CuCIM's default will be used.
+         kwargs: additional args for `cucim.CuImage` module:
+             https://github.com/rapidsai/cucim/blob/main/cpp/include/cucim/cuimage.h
+ 
+@@ -364,8 +368,8 @@ class CuCIMWSIReader(BaseWSIReader):
+     supported_suffixes = ["tif", "tiff", "svs"]
+     backend = "cucim"
+ 
+-    def __init__(self, level: int = 0, channel_dim: int = 0, **kwargs):
+-        super().__init__(level, channel_dim, **kwargs)
++    def __init__(self, level: int = 0, channel_dim: int = 0, num_workers: Optional[int] = None, **kwargs):
++        super().__init__(level, channel_dim, num_workers, **kwargs)
+ 
+     @staticmethod
+     def get_level_count(wsi) -> int:
+@@ -448,7 +452,10 @@ class CuCIMWSIReader(BaseWSIReader):
+         """
+         # Extract a patch or the entire image
+         # (reverse the order of location and size to become WxH for cuCIM)
+-        patch: np.ndarray = wsi.read_region(location=location[::-1], size=size[::-1], level=level)
++        read_region_kwargs = {"location": location[::-1], "size": size[::-1], "level": level}
++        if self.num_workers is not None:
++            read_region_kwargs["num_workers"] = self.num_workers
++        patch: np.ndarray = wsi.read_region(**read_region_kwargs)
+ 
+         # Convert to numpy
+         patch = np.asarray(patch, dtype=dtype)
+@@ -477,6 +484,8 @@ class OpenSlideWSIReader(BaseWSIReader):
+         level: the whole slide image level at which the image is extracted. (default=0)
+             This is overridden if the level argument is provided in `get_data`.
+         channel_dim: the desired dimension for color channel. Default to 0 (channel first).
++        num_workers: number of worker threads for reading patches. Note: OpenSlide does not support
++            parallel reading, so this parameter is ignored for OpenSlide backend.
+         kwargs: additional args for `openslide.OpenSlide` module.
+ 
+     """
+@@ -484,8 +493,14 @@ class OpenSlideWSIReader(BaseWSIReader):
+     supported_suffixes = ["tif", "tiff", "svs"]
+     backend = "openslide"
+ 
+-    def __init__(self, level: int = 0, channel_dim: int = 0, **kwargs):
+-        super().__init__(level, channel_dim, **kwargs)
++    def __init__(self, level: int = 0, channel_dim: int = 0, num_workers: Optional[int] = None, **kwargs):
++        super().__init__(level, channel_dim, num_workers, **kwargs)
++        if num_workers is not None:
++            import warnings
++            warnings.warn(
++                "num_workers parameter is not supported by OpenSlide backend and will be ignored.",
++                UserWarning
++            )
+ 
+     @staticmethod
+     def get_level_count(wsi) -> int:

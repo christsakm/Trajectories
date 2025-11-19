@@ -1,0 +1,140 @@
+Evaluation Form - EVALUATED
+
+Language *
+Python
+
+Category *
+bug fixing
+
+Difficulty *
+15 min ~ 1 hour
+
+Must-read files *
+[
+  "/testbed/mypy/nodes.py"
+]
+
+Must-check tests *
+[
+  "/testbed/test-data/unit/check-incremental.test"
+]
+
+Rubrics *
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch must add 'from_module_getattr' to the VAR_FLAGS list in mypy/nodes.py at line 797 to enable proper serialization.",
+    "rationale": "This is the root cause fix - VAR_FLAGS controls which Var attributes are serialized during incremental builds. Without this, the from_module_getattr flag is lost across incremental runs.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The failing test testModuleGetattrIncrementalSerializeVarFlag must pass after applying the patch.",
+    "rationale": "This test specifically verifies that module __getattr__ works correctly across multiple incremental builds, which requires proper flag serialization.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "All existing PASS_TO_PASS tests must continue passing with no regressions introduced.",
+    "rationale": "The fix must not break existing functionality, especially other incremental build scenarios.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The solution should not modify mypy/lookup.py if the minimal VAR_FLAGS fix in nodes.py is implemented.",
+    "rationale": "The golden patch shows the proper fix is in nodes.py. Modifying lookup.py is a workaround that adds complexity without addressing the serialization root cause.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_05": {
+    "type": "agent behavior",
+    "criterion": "The agent must create and run a reproduction script that demonstrates the crash before making any code fixes.",
+    "rationale": "Reproducing the issue confirms understanding of the problem and helps verify the fix works.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_06": {
+    "type": "agent behavior",
+    "criterion": "The agent should view mypy/nodes.py and investigate the VAR_FLAGS constant during debugging to understand the serialization mechanism.",
+    "rationale": "Understanding VAR_FLAGS is key to finding the minimal fix. The golden patch modifies this constant.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "agent behavior",
+    "criterion": "The agent should not run the test suite more than 5 times, as this is a relatively straightforward serialization bug.",
+    "rationale": "Excessive test runs suggest trial-and-error rather than systematic debugging. The fix is simple once the serialization issue is understood.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_08": {
+    "type": "code style",
+    "criterion": "The solution should be minimal - avoid adding helper functions, complex conditional logic, or fabricating synthetic objects when a simple flag addition suffices.",
+    "rationale": "The golden patch is a 1-line change. Complex workarounds indicate missing the root cause and add maintenance burden.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "summary",
+    "criterion": "The final summary should explain that the issue is a serialization problem where from_module_getattr flag needs to be added to VAR_FLAGS for incremental mode persistence.",
+    "rationale": "Understanding and communicating the root cause demonstrates proper diagnosis and helps future maintainers.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+
+Rubrics rating *
+{
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL"
+  },
+  "trace_03": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL"
+  },
+  "trace_04": {
+    "rubric_01": "FAIL",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL"
+  }
+}
+
+Overall rating *
+{
+  "trace_02": {
+    "rating": 1,
+    "rationale": "Tests fail completely. Never investigated nodes.py where the fix belongs, instead adding broken code in lookup.py that creates fake TypeInfo objects and mutates shared state. This demonstrates fundamental misunderstanding of the serialization problem - the solution fabricates complex objects instead of fixing flag persistence."
+  },
+  "trace_03": {
+    "rating": 2,
+    "rationale": "Despite viewing nodes.py and finding VAR_FLAGS during investigation, implements a meaningless check for is_partial_stub_package in lookup.py that just returns None. Tests fail and excessive testing (9 runs) suggests trial-and-error without understanding that the problem is flag serialization, even after viewing the answer."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "All tests pass with a well-structured helper function. However, never investigated nodes.py where the fix belongs, resulting in the most complex workaround (~45 lines vs 1-line golden fix). Excessive testing (10 runs) indicates trial-and-error, and unnecessary complexity with multiple imports and helper functions shows missing the serialization root cause entirely."
+  }
+}
