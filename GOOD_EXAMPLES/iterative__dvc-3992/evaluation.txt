@@ -1,0 +1,154 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Feature development
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+15 min ~ 1 hour
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/dvc/repo/plots/data.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/tests/func/plots/test_plots.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The agent must add a _processors() method to the YAMLPlotData class in dvc/repo/plots/data.py that includes _find_data processor for handling hierarchical YAML data structures",
+    "rationale": "This is the core fix required to support finding metrics inside nested dictionaries in YAML plot files, matching the functionality already present in JSONPlotData",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The _processors() method in YAMLPlotData should call super()._processors() to get parent processors and prepend _find_data to the list, maintaining the correct processing order",
+    "rationale": "The correct implementation pattern requires getting parent processors and prepending the _find_data processor, following the same pattern as JSONPlotData",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "agent behavior",
+    "criterion": "The agent should make minimal changes focused only on fixing the YAML plot support issue without modifying unrelated files or functionality",
+    "rationale": "The task description explicitly states to make minimal changes to non-test files, and unnecessary modifications increase the risk of introducing bugs or regressions",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "agent behavior",
+    "criterion": "The agent should not modify configuration files like .dvc/config or .dvc/.gitignore unless explicitly required to fix the plot YAML support issue",
+    "rationale": "Configuration changes are unrelated to the core issue of YAML plot support and could break existing setups or test environments",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_05": {
+    "type": "agent behavior",
+    "criterion": "The agent should not create new template files, sitecustomize.py, or other infrastructure files that are unrelated to the YAML plot parsing functionality",
+    "rationale": "Creating new files beyond what's needed for the fix adds unnecessary complexity and is not minimal change approach",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "code style",
+    "criterion": "The agent should not modify the help text or documentation strings in command files unless the issue specifically requires updating documentation about supported formats",
+    "rationale": "While updating documentation to mention YAML support is useful, it's a secondary concern and the PR description notes documentation should be updated separately",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "correctness",
+    "criterion": "The implementation should use the existing _find_data function already defined in dvc/repo/plots/data.py without redefining or modifying it",
+    "rationale": "The _find_data function already exists and works correctly for JSON; reusing it for YAML ensures consistency and avoids code duplication",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "agent behavior",
+    "criterion": "The agent should run and verify the failing test (test_load_metric_from_dict_yaml) passes after making changes",
+    "rationale": "Running tests verifies the fix works correctly, though the task description states tests are already handled",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "correctness",
+    "criterion": "The agent should not include _apply_path processor in YAMLPlotData unless it's specifically needed, as the golden patch only includes _find_data",
+    "rationale": "While including _apply_path might not break functionality, it deviates from the golden patch and may introduce unnecessary behavior differences between the golden solution and agent solution",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_10": {
+    "type": "agent behavior",
+    "criterion": "The agent should not modify output/base.py or add verify_plot() methods unless required by the specific test failures encountered",
+    "rationale": "The core issue is about data parsing for plots, not output validation; such changes are beyond the minimal scope needed",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "PASS",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS",
+    "rubric_09": "FAIL",
+    "rubric_10": "PASS"
+  },
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "FAIL"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "FAIL",
+    "rubric_10": "PASS"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 2,
+    "rationale": "The agent failed the primary correctness requirements by not properly implementing the _processors() method in YAMLPlotData. While it created various infrastructure files and modifications (sitecustomize.py, dag.py changes, file extension handling), it did not add the core fix needed. The test still fails, making this a low-quality solution with multiple MUST_FOLLOW failures."
+  },
+  "trace_02": {
+    "rating": 1,
+    "rationale": "The agent made extensive unrelated changes including modifying .dvc/config, adding plot template files, and adding verify_plot() methods, but completely failed to implement the required _processors() method in YAMLPlotData. The test remains failing. This represents a wrong solution that introduces many unnecessary changes without fixing the core issue."
+  },
+  "trace_03": {
+    "rating": 4,
+    "rationale": "The agent successfully implemented the core fix by adding the _processors() method to YAMLPlotData with the correct pattern. The test passes and the solution is minimal. However, it includes _apply_path processor in addition to _find_data, which slightly deviates from the golden patch (though this may not break functionality). Overall, a good fix with only a minor stylistic difference from the ideal solution."
+  }
+}

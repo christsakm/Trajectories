@@ -1,0 +1,1949 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	classmethod_test.py
+	comprehensive_test.py
+	debug_issue.py
+	debug_type.py
+	main.py
+	no_forward_ref.py
+	original_case.py
+	simple_test.py
+	test_issue.py
+
+nothing added to commit but untracked files present (use "git add" to track)
++ git show
+commit 43ffb49102e2508b5e4767d200872060ddc9f0fc
+Author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+Date:   Thu Dec 14 19:32:04 2023 -0800
+
+    Sync typeshed (#16665)
+    
+    Source commit:
+    
+    https://github.com/python/typeshed/commit/b6740d0bf4b4cf89befae74a0b12ebef6ce7bda6
+
+diff --git a/mypy/typeshed/stdlib/VERSIONS b/mypy/typeshed/stdlib/VERSIONS
+index d24e85c8f..f5e30c460 100644
+--- a/mypy/typeshed/stdlib/VERSIONS
++++ b/mypy/typeshed/stdlib/VERSIONS
+@@ -150,6 +150,7 @@ imaplib: 2.7-
+ imghdr: 2.7-
+ imp: 2.7-3.11
+ importlib: 2.7-
++importlib._abc: 3.10-
+ importlib.metadata: 3.8-
+ importlib.metadata._meta: 3.10-
+ importlib.readers: 3.10-
+diff --git a/mypy/typeshed/stdlib/_ctypes.pyi b/mypy/typeshed/stdlib/_ctypes.pyi
+index 8a891971e..0fa041844 100644
+--- a/mypy/typeshed/stdlib/_ctypes.pyi
++++ b/mypy/typeshed/stdlib/_ctypes.pyi
+@@ -51,8 +51,8 @@ class _CDataMeta(type):
+     # By default mypy complains about the following two methods, because strictly speaking cls
+     # might not be a Type[_CT]. However this can never actually happen, because the only class that
+     # uses _CDataMeta as its metaclass is _CData. So it's safe to ignore the errors here.
+-    def __mul__(cls: type[_CT], other: int) -> type[Array[_CT]]: ...  # type: ignore[misc]  # pyright: ignore[reportGeneralTypeIssues]
+-    def __rmul__(cls: type[_CT], other: int) -> type[Array[_CT]]: ...  # type: ignore[misc]  # pyright: ignore[reportGeneralTypeIssues]
++    def __mul__(cls: type[_CT], other: int) -> type[Array[_CT]]: ...  # type: ignore[misc]
++    def __rmul__(cls: type[_CT], other: int) -> type[Array[_CT]]: ...  # type: ignore[misc]
+ 
+ class _CData(metaclass=_CDataMeta):
+     _b_base_: int
+diff --git a/mypy/typeshed/stdlib/_operator.pyi b/mypy/typeshed/stdlib/_operator.pyi
+index e7d1a98c4..26e69f130 100644
+--- a/mypy/typeshed/stdlib/_operator.pyi
++++ b/mypy/typeshed/stdlib/_operator.pyi
+@@ -2,14 +2,17 @@ import sys
+ from _typeshed import SupportsGetItem
+ from collections.abc import Callable, Container, Iterable, MutableMapping, MutableSequence, Sequence
+ from typing import Any, AnyStr, Generic, Protocol, SupportsAbs, TypeVar, overload
+-from typing_extensions import ParamSpec, SupportsIndex, TypeAlias, final
++from typing_extensions import ParamSpec, SupportsIndex, TypeAlias, TypeVarTuple, Unpack, final
+ 
+ _R = TypeVar("_R")
+ _T = TypeVar("_T")
+ _T_co = TypeVar("_T_co", covariant=True)
++_T1 = TypeVar("_T1")
++_T2 = TypeVar("_T2")
+ _K = TypeVar("_K")
+ _V = TypeVar("_V")
+ _P = ParamSpec("_P")
++_Ts = TypeVarTuple("_Ts")
+ 
+ # The following protocols return "Any" instead of bool, since the comparison
+ # operators can be overloaded to return an arbitrary object. For example,
+@@ -105,22 +108,10 @@ class attrgetter(Generic[_T_co]):
+ 
+ @final
+ class itemgetter(Generic[_T_co]):
+-    # mypy lacks support for PEP 646 https://github.com/python/mypy/issues/12280
+-    # So we have to define all of these overloads to simulate unpacking the arguments
+     @overload
+-    def __new__(cls, item: _T_co) -> itemgetter[_T_co]: ...
++    def __new__(cls, __item: _T) -> itemgetter[_T]: ...
+     @overload
+-    def __new__(cls, item: _T_co, __item2: _T_co) -> itemgetter[tuple[_T_co, _T_co]]: ...
+-    @overload
+-    def __new__(cls, item: _T_co, __item2: _T_co, __item3: _T_co) -> itemgetter[tuple[_T_co, _T_co, _T_co]]: ...
+-    @overload
+-    def __new__(
+-        cls, item: _T_co, __item2: _T_co, __item3: _T_co, __item4: _T_co
+-    ) -> itemgetter[tuple[_T_co, _T_co, _T_co, _T_co]]: ...
+-    @overload
+-    def __new__(
+-        cls, item: _T_co, __item2: _T_co, __item3: _T_co, __item4: _T_co, *items: _T_co
+-    ) -> itemgetter[tuple[_T_co, ...]]: ...
++    def __new__(cls, __item1: _T1, __item2: _T2, *items: Unpack[_Ts]) -> itemgetter[tuple[_T1, _T2, Unpack[_Ts]]]: ...
+     # __key: _KT_contra in SupportsGetItem seems to be causing variance issues, ie:
+     # TypeVar "_KT_contra@SupportsGetItem" is contravariant
+     #   "tuple[int, int]" is incompatible with protocol "SupportsIndex"
+diff --git a/mypy/typeshed/stdlib/_typeshed/__init__.pyi b/mypy/typeshed/stdlib/_typeshed/__init__.pyi
+index 33659cf31..05892c8aa 100644
+--- a/mypy/typeshed/stdlib/_typeshed/__init__.pyi
++++ b/mypy/typeshed/stdlib/_typeshed/__init__.pyi
+@@ -320,3 +320,12 @@ class DataclassInstance(Protocol):
+ # Anything that can be passed to the int/float constructors
+ ConvertibleToInt: TypeAlias = str | ReadableBuffer | SupportsInt | SupportsIndex | SupportsTrunc
+ ConvertibleToFloat: TypeAlias = str | ReadableBuffer | SupportsFloat | SupportsIndex
++
++# A few classes updated from Foo(str, Enum) to Foo(StrEnum). This is a convenience so these
++# can be accurate on all python versions without getting too wordy
++if sys.version_info >= (3, 11):
++    from enum import StrEnum as StrEnum
++else:
++    from enum import Enum
++
++    class StrEnum(str, Enum): ...
+diff --git a/mypy/typeshed/stdlib/asyncio/base_events.pyi b/mypy/typeshed/stdlib/asyncio/base_events.pyi
+index afddcd918..ff6c42c36 100644
+--- a/mypy/typeshed/stdlib/asyncio/base_events.pyi
++++ b/mypy/typeshed/stdlib/asyncio/base_events.pyi
+@@ -11,7 +11,7 @@ from collections.abc import Callable, Iterable, Sequence
+ from contextvars import Context
+ from socket import AddressFamily, SocketKind, _Address, _RetAddress, socket
+ from typing import IO, Any, TypeVar, overload
+-from typing_extensions import Literal, TypeAlias
++from typing_extensions import Literal, TypeAlias, TypeVarTuple, Unpack
+ 
+ if sys.version_info >= (3, 9):
+     __all__ = ("BaseEventLoop", "Server")
+@@ -19,6 +19,7 @@ else:
+     __all__ = ("BaseEventLoop",)
+ 
+ _T = TypeVar("_T")
++_Ts = TypeVarTuple("_Ts")
+ _ProtocolT = TypeVar("_ProtocolT", bound=BaseProtocol)
+ _Context: TypeAlias = dict[str, Any]
+ _ExceptionHandler: TypeAlias = Callable[[AbstractEventLoop, _Context], object]
+@@ -71,12 +72,14 @@ class BaseEventLoop(AbstractEventLoop):
+     def close(self) -> None: ...
+     async def shutdown_asyncgens(self) -> None: ...
+     # Methods scheduling callbacks.  All these return Handles.
+-    def call_soon(self, callback: Callable[..., object], *args: Any, context: Context | None = None) -> Handle: ...
++    def call_soon(
++        self, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
++    ) -> Handle: ...
+     def call_later(
+-        self, delay: float, callback: Callable[..., object], *args: Any, context: Context | None = None
++        self, delay: float, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
+     ) -> TimerHandle: ...
+     def call_at(
+-        self, when: float, callback: Callable[..., object], *args: Any, context: Context | None = None
++        self, when: float, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
+     ) -> TimerHandle: ...
+     def time(self) -> float: ...
+     # Future methods
+@@ -92,8 +95,10 @@ class BaseEventLoop(AbstractEventLoop):
+     def set_task_factory(self, factory: _TaskFactory | None) -> None: ...
+     def get_task_factory(self) -> _TaskFactory | None: ...
+     # Methods for interacting with threads
+-    def call_soon_threadsafe(self, callback: Callable[..., object], *args: Any, context: Context | None = None) -> Handle: ...
+-    def run_in_executor(self, executor: Any, func: Callable[..., _T], *args: Any) -> Future[_T]: ...
++    def call_soon_threadsafe(
++        self, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
++    ) -> Handle: ...
++    def run_in_executor(self, executor: Any, func: Callable[[Unpack[_Ts]], _T], *args: Unpack[_Ts]) -> Future[_T]: ...
+     def set_default_executor(self, executor: Any) -> None: ...
+     # Network I/O methods returning Futures.
+     async def getaddrinfo(
+@@ -441,9 +446,9 @@ class BaseEventLoop(AbstractEventLoop):
+         errors: None = None,
+         **kwargs: Any,
+     ) -> tuple[SubprocessTransport, _ProtocolT]: ...
+-    def add_reader(self, fd: FileDescriptorLike, callback: Callable[..., Any], *args: Any) -> None: ...
++    def add_reader(self, fd: FileDescriptorLike, callback: Callable[[Unpack[_Ts]], Any], *args: Unpack[_Ts]) -> None: ...
+     def remove_reader(self, fd: FileDescriptorLike) -> bool: ...
+-    def add_writer(self, fd: FileDescriptorLike, callback: Callable[..., Any], *args: Any) -> None: ...
++    def add_writer(self, fd: FileDescriptorLike, callback: Callable[[Unpack[_Ts]], Any], *args: Unpack[_Ts]) -> None: ...
+     def remove_writer(self, fd: FileDescriptorLike) -> bool: ...
+     # The sock_* methods (and probably some others) are not actually implemented on
+     # BaseEventLoop, only on subclasses. We list them here for now for convenience.
+@@ -457,7 +462,7 @@ class BaseEventLoop(AbstractEventLoop):
+         async def sock_recvfrom_into(self, sock: socket, buf: WriteableBuffer, nbytes: int = 0) -> tuple[int, _RetAddress]: ...
+         async def sock_sendto(self, sock: socket, data: ReadableBuffer, address: _Address) -> int: ...
+     # Signal handling.
+-    def add_signal_handler(self, sig: int, callback: Callable[..., Any], *args: Any) -> None: ...
++    def add_signal_handler(self, sig: int, callback: Callable[[Unpack[_Ts]], Any], *args: Unpack[_Ts]) -> None: ...
+     def remove_signal_handler(self, sig: int) -> bool: ...
+     # Error handlers.
+     def set_exception_handler(self, handler: _ExceptionHandler | None) -> None: ...
+diff --git a/mypy/typeshed/stdlib/asyncio/events.pyi b/mypy/typeshed/stdlib/asyncio/events.pyi
+index 87e7edb46..0f51c457f 100644
+--- a/mypy/typeshed/stdlib/asyncio/events.pyi
++++ b/mypy/typeshed/stdlib/asyncio/events.pyi
+@@ -6,7 +6,7 @@ from collections.abc import Callable, Coroutine, Generator, Sequence
+ from contextvars import Context
+ from socket import AddressFamily, SocketKind, _Address, _RetAddress, socket
+ from typing import IO, Any, Protocol, TypeVar, overload
+-from typing_extensions import Literal, Self, TypeAlias, deprecated
++from typing_extensions import Literal, Self, TypeAlias, TypeVarTuple, Unpack, deprecated
+ 
+ from . import _AwaitableLike, _CoroutineLike
+ from .base_events import Server
+@@ -56,6 +56,7 @@ else:
+     )
+ 
+ _T = TypeVar("_T")
++_Ts = TypeVarTuple("_Ts")
+ _ProtocolT = TypeVar("_ProtocolT", bound=BaseProtocol)
+ _Context: TypeAlias = dict[str, Any]
+ _ExceptionHandler: TypeAlias = Callable[[AbstractEventLoop, _Context], object]
+@@ -131,22 +132,24 @@ class AbstractEventLoop:
+     # Methods scheduling callbacks.  All these return Handles.
+     if sys.version_info >= (3, 9):  # "context" added in 3.9.10/3.10.2
+         @abstractmethod
+-        def call_soon(self, callback: Callable[..., object], *args: Any, context: Context | None = None) -> Handle: ...
++        def call_soon(
++            self, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
++        ) -> Handle: ...
+         @abstractmethod
+         def call_later(
+-            self, delay: float, callback: Callable[..., object], *args: Any, context: Context | None = None
++            self, delay: float, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
+         ) -> TimerHandle: ...
+         @abstractmethod
+         def call_at(
+-            self, when: float, callback: Callable[..., object], *args: Any, context: Context | None = None
++            self, when: float, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
+         ) -> TimerHandle: ...
+     else:
+         @abstractmethod
+-        def call_soon(self, callback: Callable[..., object], *args: Any) -> Handle: ...
++        def call_soon(self, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> Handle: ...
+         @abstractmethod
+-        def call_later(self, delay: float, callback: Callable[..., object], *args: Any) -> TimerHandle: ...
++        def call_later(self, delay: float, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> TimerHandle: ...
+         @abstractmethod
+-        def call_at(self, when: float, callback: Callable[..., object], *args: Any) -> TimerHandle: ...
++        def call_at(self, when: float, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> TimerHandle: ...
+ 
+     @abstractmethod
+     def time(self) -> float: ...
+@@ -173,13 +176,15 @@ class AbstractEventLoop:
+     # Methods for interacting with threads
+     if sys.version_info >= (3, 9):  # "context" added in 3.9.10/3.10.2
+         @abstractmethod
+-        def call_soon_threadsafe(self, callback: Callable[..., object], *args: Any, context: Context | None = None) -> Handle: ...
++        def call_soon_threadsafe(
++            self, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts], context: Context | None = None
++        ) -> Handle: ...
+     else:
+         @abstractmethod
+-        def call_soon_threadsafe(self, callback: Callable[..., object], *args: Any) -> Handle: ...
++        def call_soon_threadsafe(self, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> Handle: ...
+ 
+     @abstractmethod
+-    def run_in_executor(self, executor: Any, func: Callable[..., _T], *args: Any) -> Future[_T]: ...
++    def run_in_executor(self, executor: Any, func: Callable[[Unpack[_Ts]], _T], *args: Unpack[_Ts]) -> Future[_T]: ...
+     @abstractmethod
+     def set_default_executor(self, executor: Any) -> None: ...
+     # Network I/O methods returning Futures.
+@@ -542,11 +547,11 @@ class AbstractEventLoop:
+         **kwargs: Any,
+     ) -> tuple[SubprocessTransport, _ProtocolT]: ...
+     @abstractmethod
+-    def add_reader(self, fd: FileDescriptorLike, callback: Callable[..., Any], *args: Any) -> None: ...
++    def add_reader(self, fd: FileDescriptorLike, callback: Callable[[Unpack[_Ts]], Any], *args: Unpack[_Ts]) -> None: ...
+     @abstractmethod
+     def remove_reader(self, fd: FileDescriptorLike) -> bool: ...
+     @abstractmethod
+-    def add_writer(self, fd: FileDescriptorLike, callback: Callable[..., Any], *args: Any) -> None: ...
++    def add_writer(self, fd: FileDescriptorLike, callback: Callable[[Unpack[_Ts]], Any], *args: Unpack[_Ts]) -> None: ...
+     @abstractmethod
+     def remove_writer(self, fd: FileDescriptorLike) -> bool: ...
+     # Completion based I/O methods returning Futures prior to 3.7
+@@ -569,7 +574,7 @@ class AbstractEventLoop:
+         async def sock_sendto(self, sock: socket, data: ReadableBuffer, address: _Address) -> int: ...
+     # Signal handling.
+     @abstractmethod
+-    def add_signal_handler(self, sig: int, callback: Callable[..., object], *args: Any) -> None: ...
++    def add_signal_handler(self, sig: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+     @abstractmethod
+     def remove_signal_handler(self, sig: int) -> bool: ...
+     # Error handlers.
+diff --git a/mypy/typeshed/stdlib/asyncio/exceptions.pyi b/mypy/typeshed/stdlib/asyncio/exceptions.pyi
+index 075fbb805..0746394d5 100644
+--- a/mypy/typeshed/stdlib/asyncio/exceptions.pyi
++++ b/mypy/typeshed/stdlib/asyncio/exceptions.pyi
+@@ -21,7 +21,12 @@ else:
+     )
+ 
+ class CancelledError(BaseException): ...
+-class TimeoutError(Exception): ...
++
++if sys.version_info >= (3, 11):
++    from builtins import TimeoutError as TimeoutError
++else:
++    class TimeoutError(Exception): ...
++
+ class InvalidStateError(Exception): ...
+ class SendfileNotAvailableError(RuntimeError): ...
+ 
+diff --git a/mypy/typeshed/stdlib/asyncio/locks.pyi b/mypy/typeshed/stdlib/asyncio/locks.pyi
+index ab4e63ab5..394b82a5b 100644
+--- a/mypy/typeshed/stdlib/asyncio/locks.pyi
++++ b/mypy/typeshed/stdlib/asyncio/locks.pyi
+@@ -10,8 +10,10 @@ from typing_extensions import Literal, Self
+ from .events import AbstractEventLoop
+ from .futures import Future
+ 
+-if sys.version_info >= (3, 11):
++if sys.version_info >= (3, 10):
+     from .mixins import _LoopBoundMixin
++else:
++    _LoopBoundMixin = object
+ 
+ if sys.version_info >= (3, 11):
+     __all__ = ("Lock", "Event", "Condition", "Semaphore", "BoundedSemaphore", "Barrier")
+@@ -44,7 +46,7 @@ else:
+             self, exc_type: type[BaseException] | None, exc: BaseException | None, tb: TracebackType | None
+         ) -> None: ...
+ 
+-class Lock(_ContextManagerMixin):
++class Lock(_ContextManagerMixin, _LoopBoundMixin):
+     if sys.version_info >= (3, 10):
+         def __init__(self) -> None: ...
+     else:
+@@ -54,7 +56,7 @@ class Lock(_ContextManagerMixin):
+     async def acquire(self) -> Literal[True]: ...
+     def release(self) -> None: ...
+ 
+-class Event:
++class Event(_LoopBoundMixin):
+     if sys.version_info >= (3, 10):
+         def __init__(self) -> None: ...
+     else:
+@@ -65,7 +67,7 @@ class Event:
+     def clear(self) -> None: ...
+     async def wait(self) -> Literal[True]: ...
+ 
+-class Condition(_ContextManagerMixin):
++class Condition(_ContextManagerMixin, _LoopBoundMixin):
+     if sys.version_info >= (3, 10):
+         def __init__(self, lock: Lock | None = None) -> None: ...
+     else:
+@@ -79,7 +81,7 @@ class Condition(_ContextManagerMixin):
+     def notify(self, n: int = 1) -> None: ...
+     def notify_all(self) -> None: ...
+ 
+-class Semaphore(_ContextManagerMixin):
++class Semaphore(_ContextManagerMixin, _LoopBoundMixin):
+     _value: int
+     _waiters: deque[Future[Any]]
+     if sys.version_info >= (3, 10):
+diff --git a/mypy/typeshed/stdlib/asyncio/queues.pyi b/mypy/typeshed/stdlib/asyncio/queues.pyi
+index f56a09524..bb4ee71f9 100644
+--- a/mypy/typeshed/stdlib/asyncio/queues.pyi
++++ b/mypy/typeshed/stdlib/asyncio/queues.pyi
+@@ -5,6 +5,11 @@ from typing import Any, Generic, TypeVar
+ if sys.version_info >= (3, 9):
+     from types import GenericAlias
+ 
++if sys.version_info >= (3, 10):
++    from .mixins import _LoopBoundMixin
++else:
++    _LoopBoundMixin = object
++
+ __all__ = ("Queue", "PriorityQueue", "LifoQueue", "QueueFull", "QueueEmpty")
+ 
+ class QueueEmpty(Exception): ...
+@@ -12,7 +17,9 @@ class QueueFull(Exception): ...
+ 
+ _T = TypeVar("_T")
+ 
+-class Queue(Generic[_T]):
++# If Generic[_T] is last and _LoopBoundMixin is object, pyright is unhappy.
++# We can remove the noqa pragma when dropping 3.9 support.
++class Queue(Generic[_T], _LoopBoundMixin):  # noqa: Y059
+     if sys.version_info >= (3, 10):
+         def __init__(self, maxsize: int = 0) -> None: ...
+     else:
+diff --git a/mypy/typeshed/stdlib/asyncio/unix_events.pyi b/mypy/typeshed/stdlib/asyncio/unix_events.pyi
+index d440206aa..ee16035f8 100644
+--- a/mypy/typeshed/stdlib/asyncio/unix_events.pyi
++++ b/mypy/typeshed/stdlib/asyncio/unix_events.pyi
+@@ -2,12 +2,13 @@ import sys
+ import types
+ from abc import ABCMeta, abstractmethod
+ from collections.abc import Callable
+-from typing import Any
+-from typing_extensions import Literal, Self, deprecated
++from typing_extensions import Literal, Self, TypeVarTuple, Unpack, deprecated
+ 
+ from .events import AbstractEventLoop, BaseDefaultEventLoopPolicy
+ from .selector_events import BaseSelectorEventLoop
+ 
++_Ts = TypeVarTuple("_Ts")
++
+ # This is also technically not available on Win,
+ # but other parts of typeshed need this definition.
+ # So, it is special cased.
+@@ -15,7 +16,7 @@ if sys.version_info >= (3, 12):
+     @deprecated("Deprecated as of Python 3.12; will be removed in Python 3.14")
+     class AbstractChildWatcher:
+         @abstractmethod
+-        def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++        def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+         @abstractmethod
+         def remove_child_handler(self, pid: int) -> bool: ...
+         @abstractmethod
+@@ -35,7 +36,7 @@ if sys.version_info >= (3, 12):
+ else:
+     class AbstractChildWatcher:
+         @abstractmethod
+-        def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++        def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+         @abstractmethod
+         def remove_child_handler(self, pid: int) -> bool: ...
+         @abstractmethod
+@@ -91,26 +92,26 @@ if sys.platform != "win32":
+         class SafeChildWatcher(BaseChildWatcher):
+             def __enter__(self) -> Self: ...
+             def __exit__(self, a: type[BaseException] | None, b: BaseException | None, c: types.TracebackType | None) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+ 
+         @deprecated("Deprecated as of Python 3.12; will be removed in Python 3.14")
+         class FastChildWatcher(BaseChildWatcher):
+             def __enter__(self) -> Self: ...
+             def __exit__(self, a: type[BaseException] | None, b: BaseException | None, c: types.TracebackType | None) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+     else:
+         class SafeChildWatcher(BaseChildWatcher):
+             def __enter__(self) -> Self: ...
+             def __exit__(self, a: type[BaseException] | None, b: BaseException | None, c: types.TracebackType | None) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+ 
+         class FastChildWatcher(BaseChildWatcher):
+             def __enter__(self) -> Self: ...
+             def __exit__(self, a: type[BaseException] | None, b: BaseException | None, c: types.TracebackType | None) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+ 
+     class _UnixSelectorEventLoop(BaseSelectorEventLoop): ...
+@@ -137,7 +138,7 @@ if sys.platform != "win32":
+             def __exit__(
+                 self, exc_type: type[BaseException] | None, exc_val: BaseException | None, exc_tb: types.TracebackType | None
+             ) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+             def attach_loop(self, loop: AbstractEventLoop | None) -> None: ...
+     elif sys.version_info >= (3, 8):
+@@ -148,7 +149,7 @@ if sys.platform != "win32":
+             def __exit__(
+                 self, exc_type: type[BaseException] | None, exc_val: BaseException | None, exc_tb: types.TracebackType | None
+             ) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+             def attach_loop(self, loop: AbstractEventLoop | None) -> None: ...
+ 
+@@ -161,7 +162,7 @@ if sys.platform != "win32":
+                 self, exc_type: type[BaseException] | None, exc_val: BaseException | None, exc_tb: types.TracebackType | None
+             ) -> None: ...
+             def __del__(self) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+             def attach_loop(self, loop: AbstractEventLoop | None) -> None: ...
+ 
+@@ -174,5 +175,5 @@ if sys.platform != "win32":
+             def is_active(self) -> bool: ...
+             def close(self) -> None: ...
+             def attach_loop(self, loop: AbstractEventLoop | None) -> None: ...
+-            def add_child_handler(self, pid: int, callback: Callable[..., object], *args: Any) -> None: ...
++            def add_child_handler(self, pid: int, callback: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> None: ...
+             def remove_child_handler(self, pid: int) -> bool: ...
+diff --git a/mypy/typeshed/stdlib/builtins.pyi b/mypy/typeshed/stdlib/builtins.pyi
+index e3d7ee7e5..dca3c2160 100644
+--- a/mypy/typeshed/stdlib/builtins.pyi
++++ b/mypy/typeshed/stdlib/builtins.pyi
+@@ -202,7 +202,7 @@ class type:
+     def __instancecheck__(self, __instance: Any) -> bool: ...
+     def __subclasscheck__(self, __subclass: type) -> bool: ...
+     @classmethod
+-    def __prepare__(metacls, __name: str, __bases: tuple[type, ...], **kwds: Any) -> Mapping[str, object]: ...
++    def __prepare__(metacls, __name: str, __bases: tuple[type, ...], **kwds: Any) -> MutableMapping[str, object]: ...
+     if sys.version_info >= (3, 10):
+         def __or__(self, __value: Any) -> types.UnionType: ...
+         def __ror__(self, __value: Any) -> types.UnionType: ...
+diff --git a/mypy/typeshed/stdlib/concurrent/futures/_base.pyi b/mypy/typeshed/stdlib/concurrent/futures/_base.pyi
+index eb5ca4e2d..8a11f47e5 100644
+--- a/mypy/typeshed/stdlib/concurrent/futures/_base.pyi
++++ b/mypy/typeshed/stdlib/concurrent/futures/_base.pyi
+@@ -24,7 +24,11 @@ LOGGER: Logger
+ 
+ class Error(Exception): ...
+ class CancelledError(Error): ...
+-class TimeoutError(Error): ...
++
++if sys.version_info >= (3, 11):
++    from builtins import TimeoutError as TimeoutError
++else:
++    class TimeoutError(Error): ...
+ 
+ if sys.version_info >= (3, 8):
+     class InvalidStateError(Error): ...
+diff --git a/mypy/typeshed/stdlib/ctypes/wintypes.pyi b/mypy/typeshed/stdlib/ctypes/wintypes.pyi
+index 59c7ae3e5..84c9c9157 100644
+--- a/mypy/typeshed/stdlib/ctypes/wintypes.pyi
++++ b/mypy/typeshed/stdlib/ctypes/wintypes.pyi
+@@ -186,55 +186,53 @@ class WIN32_FIND_DATAW(Structure):
+     cFileName: _CField[Array[WCHAR], str, str]
+     cAlternateFileName: _CField[Array[WCHAR], str, str]
+ 
+-# These pointer type definitions use _Pointer[...] instead of POINTER(...), to allow them
+-# to be used in type annotations.
+-PBOOL: TypeAlias = _Pointer[BOOL]
+-LPBOOL: TypeAlias = _Pointer[BOOL]
+-PBOOLEAN: TypeAlias = _Pointer[BOOLEAN]
+-PBYTE: TypeAlias = _Pointer[BYTE]
+-LPBYTE: TypeAlias = _Pointer[BYTE]
+-PCHAR: TypeAlias = _Pointer[CHAR]
+-LPCOLORREF: TypeAlias = _Pointer[COLORREF]
+-PDWORD: TypeAlias = _Pointer[DWORD]
+-LPDWORD: TypeAlias = _Pointer[DWORD]
+-PFILETIME: TypeAlias = _Pointer[FILETIME]
+-LPFILETIME: TypeAlias = _Pointer[FILETIME]
+-PFLOAT: TypeAlias = _Pointer[FLOAT]
+-PHANDLE: TypeAlias = _Pointer[HANDLE]
+-LPHANDLE: TypeAlias = _Pointer[HANDLE]
+-PHKEY: TypeAlias = _Pointer[HKEY]
+-LPHKL: TypeAlias = _Pointer[HKL]
+-PINT: TypeAlias = _Pointer[INT]
+-LPINT: TypeAlias = _Pointer[INT]
+-PLARGE_INTEGER: TypeAlias = _Pointer[LARGE_INTEGER]
+-PLCID: TypeAlias = _Pointer[LCID]
+-PLONG: TypeAlias = _Pointer[LONG]
+-LPLONG: TypeAlias = _Pointer[LONG]
+-PMSG: TypeAlias = _Pointer[MSG]
+-LPMSG: TypeAlias = _Pointer[MSG]
+-PPOINT: TypeAlias = _Pointer[POINT]
+-LPPOINT: TypeAlias = _Pointer[POINT]
+-PPOINTL: TypeAlias = _Pointer[POINTL]
+-PRECT: TypeAlias = _Pointer[RECT]
+-LPRECT: TypeAlias = _Pointer[RECT]
+-PRECTL: TypeAlias = _Pointer[RECTL]
+-LPRECTL: TypeAlias = _Pointer[RECTL]
+-LPSC_HANDLE: TypeAlias = _Pointer[SC_HANDLE]
+-PSHORT: TypeAlias = _Pointer[SHORT]
+-PSIZE: TypeAlias = _Pointer[SIZE]
+-LPSIZE: TypeAlias = _Pointer[SIZE]
+-PSIZEL: TypeAlias = _Pointer[SIZEL]
+-LPSIZEL: TypeAlias = _Pointer[SIZEL]
+-PSMALL_RECT: TypeAlias = _Pointer[SMALL_RECT]
+-PUINT: TypeAlias = _Pointer[UINT]
+-LPUINT: TypeAlias = _Pointer[UINT]
+-PULARGE_INTEGER: TypeAlias = _Pointer[ULARGE_INTEGER]
+-PULONG: TypeAlias = _Pointer[ULONG]
+-PUSHORT: TypeAlias = _Pointer[USHORT]
+-PWCHAR: TypeAlias = _Pointer[WCHAR]
+-PWIN32_FIND_DATAA: TypeAlias = _Pointer[WIN32_FIND_DATAA]
+-LPWIN32_FIND_DATAA: TypeAlias = _Pointer[WIN32_FIND_DATAA]
+-PWIN32_FIND_DATAW: TypeAlias = _Pointer[WIN32_FIND_DATAW]
+-LPWIN32_FIND_DATAW: TypeAlias = _Pointer[WIN32_FIND_DATAW]
+-PWORD: TypeAlias = _Pointer[WORD]
+-LPWORD: TypeAlias = _Pointer[WORD]
++class PBOOL(_Pointer[BOOL]): ...
++class LPBOOL(_Pointer[BOOL]): ...
++class PBOOLEAN(_Pointer[BOOLEAN]): ...
++class PBYTE(_Pointer[BYTE]): ...
++class LPBYTE(_Pointer[BYTE]): ...
++class PCHAR(_Pointer[CHAR]): ...
++class LPCOLORREF(_Pointer[COLORREF]): ...
++class PDWORD(_Pointer[DWORD]): ...
++class LPDWORD(_Pointer[DWORD]): ...
++class PFILETIME(_Pointer[FILETIME]): ...
++class LPFILETIME(_Pointer[FILETIME]): ...
++class PFLOAT(_Pointer[FLOAT]): ...
++class PHANDLE(_Pointer[HANDLE]): ...
++class LPHANDLE(_Pointer[HANDLE]): ...
++class PHKEY(_Pointer[HKEY]): ...
++class LPHKL(_Pointer[HKL]): ...
++class PINT(_Pointer[INT]): ...
++class LPINT(_Pointer[INT]): ...
++class PLARGE_INTEGER(_Pointer[LARGE_INTEGER]): ...
++class PLCID(_Pointer[LCID]): ...
++class PLONG(_Pointer[LONG]): ...
++class LPLONG(_Pointer[LONG]): ...
++class PMSG(_Pointer[MSG]): ...
++class LPMSG(_Pointer[MSG]): ...
++class PPOINT(_Pointer[POINT]): ...
++class LPPOINT(_Pointer[POINT]): ...
++class PPOINTL(_Pointer[POINTL]): ...
++class PRECT(_Pointer[RECT]): ...
++class LPRECT(_Pointer[RECT]): ...
++class PRECTL(_Pointer[RECTL]): ...
++class LPRECTL(_Pointer[RECTL]): ...
++class LPSC_HANDLE(_Pointer[SC_HANDLE]): ...
++class PSHORT(_Pointer[SHORT]): ...
++class PSIZE(_Pointer[SIZE]): ...
++class LPSIZE(_Pointer[SIZE]): ...
++class PSIZEL(_Pointer[SIZEL]): ...
++class LPSIZEL(_Pointer[SIZEL]): ...
++class PSMALL_RECT(_Pointer[SMALL_RECT]): ...
++class PUINT(_Pointer[UINT]): ...
++class LPUINT(_Pointer[UINT]): ...
++class PULARGE_INTEGER(_Pointer[ULARGE_INTEGER]): ...
++class PULONG(_Pointer[ULONG]): ...
++class PUSHORT(_Pointer[USHORT]): ...
++class PWCHAR(_Pointer[WCHAR]): ...
++class PWIN32_FIND_DATAA(_Pointer[WIN32_FIND_DATAA]): ...
++class LPWIN32_FIND_DATAA(_Pointer[WIN32_FIND_DATAA]): ...
++class PWIN32_FIND_DATAW(_Pointer[WIN32_FIND_DATAW]): ...
++class LPWIN32_FIND_DATAW(_Pointer[WIN32_FIND_DATAW]): ...
++class PWORD(_Pointer[WORD]): ...
++class LPWORD(_Pointer[WORD]): ...
+diff --git a/mypy/typeshed/stdlib/dis.pyi b/mypy/typeshed/stdlib/dis.pyi
+index ab101a517..796d81d8b 100644
+--- a/mypy/typeshed/stdlib/dis.pyi
++++ b/mypy/typeshed/stdlib/dis.pyi
+@@ -48,7 +48,7 @@ if sys.version_info >= (3, 11):
+         end_col_offset: int | None = None
+ 
+ if sys.version_info >= (3, 11):
+-    class Instruction(NamedTuple):
++    class _Instruction(NamedTuple):
+         opname: str
+         opcode: int
+         arg: int | None
+@@ -60,7 +60,7 @@ if sys.version_info >= (3, 11):
+         positions: Positions | None = None
+ 
+ else:
+-    class Instruction(NamedTuple):
++    class _Instruction(NamedTuple):
+         opname: str
+         opcode: int
+         arg: int | None
+@@ -70,6 +70,9 @@ else:
+         starts_line: int | None
+         is_jump_target: bool
+ 
++class Instruction(_Instruction):
++    def _disassemble(self, lineno_width: int = 3, mark_as_current: bool = False, offset_width: int = 4) -> str: ...
++
+ class Bytecode:
+     codeobj: types.CodeType
+     first_line: int
+diff --git a/mypy/typeshed/stdlib/email/_policybase.pyi b/mypy/typeshed/stdlib/email/_policybase.pyi
+new file mode 100644
+index 000000000..a3dd61a28
+--- /dev/null
++++ b/mypy/typeshed/stdlib/email/_policybase.pyi
+@@ -0,0 +1,51 @@
++from abc import ABCMeta, abstractmethod
++from collections.abc import Callable
++from email.errors import MessageDefect
++from email.header import Header
++from email.message import Message
++from typing import Any
++from typing_extensions import Self
++
++class _PolicyBase:
++    def __add__(self, other: Any) -> Self: ...
++    def clone(self, **kw: Any) -> Self: ...
++
++class Policy(_PolicyBase, metaclass=ABCMeta):
++    max_line_length: int | None
++    linesep: str
++    cte_type: str
++    raise_on_defect: bool
++    mangle_from_: bool
++    message_factory: Callable[[Policy], Message] | None
++    def __init__(
++        self,
++        *,
++        max_line_length: int | None = 78,
++        linesep: str = "\n",
++        cte_type: str = "8bit",
++        raise_on_defect: bool = False,
++        mangle_from_: bool = False,
++        message_factory: Callable[[Policy], Message] | None = None,
++    ) -> None: ...
++    def handle_defect(self, obj: Message, defect: MessageDefect) -> None: ...
++    def register_defect(self, obj: Message, defect: MessageDefect) -> None: ...
++    def header_max_count(self, name: str) -> int | None: ...
++    @abstractmethod
++    def header_source_parse(self, sourcelines: list[str]) -> tuple[str, str]: ...
++    @abstractmethod
++    def header_store_parse(self, name: str, value: str) -> tuple[str, str]: ...
++    @abstractmethod
++    def header_fetch_parse(self, name: str, value: str) -> str: ...
++    @abstractmethod
++    def fold(self, name: str, value: str) -> str: ...
++    @abstractmethod
++    def fold_binary(self, name: str, value: str) -> bytes: ...
++
++class Compat32(Policy):
++    def header_source_parse(self, sourcelines: list[str]) -> tuple[str, str]: ...
++    def header_store_parse(self, name: str, value: str) -> tuple[str, str]: ...
++    def header_fetch_parse(self, name: str, value: str) -> str | Header: ...  # type: ignore[override]
++    def fold(self, name: str, value: str) -> str: ...
++    def fold_binary(self, name: str, value: str) -> bytes: ...
++
++compat32: Compat32
+diff --git a/mypy/typeshed/stdlib/email/feedparser.pyi b/mypy/typeshed/stdlib/email/feedparser.pyi
+index 4b7f73b9c..22920fc99 100644
+--- a/mypy/typeshed/stdlib/email/feedparser.pyi
++++ b/mypy/typeshed/stdlib/email/feedparser.pyi
+@@ -15,10 +15,9 @@ class FeedParser(Generic[_MessageT]):
+     def feed(self, data: str) -> None: ...
+     def close(self) -> _MessageT: ...
+ 
+-class BytesFeedParser(Generic[_MessageT]):
++class BytesFeedParser(FeedParser[_MessageT]):
+     @overload
+     def __init__(self: BytesFeedParser[Message], _factory: None = None, *, policy: Policy = ...) -> None: ...
+     @overload
+     def __init__(self, _factory: Callable[[], _MessageT], *, policy: Policy = ...) -> None: ...
+-    def feed(self, data: bytes | bytearray) -> None: ...
+-    def close(self) -> _MessageT: ...
++    def feed(self, data: bytes | bytearray) -> None: ...  # type: ignore[override]
+diff --git a/mypy/typeshed/stdlib/email/message.pyi b/mypy/typeshed/stdlib/email/message.pyi
+index 18852f4d3..71c8da3a6 100644
+--- a/mypy/typeshed/stdlib/email/message.pyi
++++ b/mypy/typeshed/stdlib/email/message.pyi
+@@ -3,17 +3,27 @@ from email import _ParamsType, _ParamType
+ from email.charset import Charset
+ from email.contentmanager import ContentManager
+ from email.errors import MessageDefect
++from email.header import Header
+ from email.policy import Policy
+-from typing import Any, TypeVar, overload
+-from typing_extensions import Self, TypeAlias
++from typing import Any, Protocol, TypeVar, overload
++from typing_extensions import Literal, Self, TypeAlias
+ 
+ __all__ = ["Message", "EmailMessage"]
+ 
+ _T = TypeVar("_T")
+-
+-_PayloadType: TypeAlias = list[Message] | str | bytes | bytearray
++_PayloadType: TypeAlias = Message | str
++_EncodedPayloadType: TypeAlias = Message | bytes
++_MultipartPayloadType: TypeAlias = list[_PayloadType]
+ _CharsetType: TypeAlias = Charset | str | None
++# Type returned by Policy.header_fetch_parse, AnyOf[str | Header]
+ _HeaderType: TypeAlias = Any
++_HeaderTypeParam: TypeAlias = str | Header
++
++class _SupportsEncodeToPayload(Protocol):
++    def encode(self, __encoding: str) -> _PayloadType | _MultipartPayloadType | _SupportsDecodeToPayload: ...
++
++class _SupportsDecodeToPayload(Protocol):
++    def decode(self, __encoding: str, __errors: str) -> _PayloadType | _MultipartPayloadType: ...
+ 
+ class Message:
+     policy: Policy  # undocumented
+@@ -23,16 +33,43 @@ class Message:
+     def is_multipart(self) -> bool: ...
+     def set_unixfrom(self, unixfrom: str) -> None: ...
+     def get_unixfrom(self) -> str | None: ...
+-    def attach(self, payload: Message) -> None: ...
+-    def get_payload(self, i: int | None = None, decode: bool = False) -> Any: ...  # returns _PayloadType | None
+-    def set_payload(self, payload: _PayloadType, charset: _CharsetType = None) -> None: ...
++    def attach(self, payload: _PayloadType) -> None: ...
++    # `i: int` without a multipart payload results in an error
++    # `| Any`: can be None for cleared or unset payload, but annoying to check
++    @overload  # multipart
++    def get_payload(self, i: int, decode: Literal[True]) -> None: ...
++    @overload  # multipart
++    def get_payload(self, i: int, decode: Literal[False] = False) -> _PayloadType | Any: ...
++    @overload  # either
++    def get_payload(self, i: None = None, decode: Literal[False] = False) -> _PayloadType | _MultipartPayloadType | Any: ...
++    @overload  # not multipart
++    def get_payload(self, i: None = None, *, decode: Literal[True]) -> _EncodedPayloadType | Any: ...
++    @overload  # not multipart, IDEM but w/o kwarg
++    def get_payload(self, i: None, decode: Literal[True]) -> _EncodedPayloadType | Any: ...
++    # If `charset=None` and payload supports both `encode` AND `decode`, then an invalid payload could be passed, but this is unlikely
++    # Not[_SupportsEncodeToPayload]
++    @overload
++    def set_payload(
++        self, payload: _SupportsDecodeToPayload | _PayloadType | _MultipartPayloadType, charset: None = None
++    ) -> None: ...
++    @overload
++    def set_payload(
++        self,
++        payload: _SupportsEncodeToPayload | _SupportsDecodeToPayload | _PayloadType | _MultipartPayloadType,
++        charset: Charset | str,
++    ) -> None: ...
+     def set_charset(self, charset: _CharsetType) -> None: ...
+     def get_charset(self) -> _CharsetType: ...
+     def __len__(self) -> int: ...
+     def __contains__(self, name: str) -> bool: ...
+     def __iter__(self) -> Iterator[str]: ...
++    # Same as `get` with `failobj=None`, but with the expectation that it won't return None in most scenarios
++    # This is important for protocols using __getitem__, like SupportsKeysAndGetItem
++    # Morally, the return type should be `AnyOf[_HeaderType, None]`,
++    # which we could spell as `_HeaderType | Any`,
++    # *but* `_HeaderType` itself is currently an alias to `Any`...
+     def __getitem__(self, name: str) -> _HeaderType: ...
+-    def __setitem__(self, name: str, val: _HeaderType) -> None: ...
++    def __setitem__(self, name: str, val: _HeaderTypeParam) -> None: ...
+     def __delitem__(self, name: str) -> None: ...
+     def keys(self) -> list[str]: ...
+     def values(self) -> list[_HeaderType]: ...
+@@ -46,7 +83,7 @@ class Message:
+     @overload
+     def get_all(self, name: str, failobj: _T) -> list[_HeaderType] | _T: ...
+     def add_header(self, _name: str, _value: str, **_params: _ParamsType) -> None: ...
+-    def replace_header(self, _name: str, _value: _HeaderType) -> None: ...
++    def replace_header(self, _name: str, _value: _HeaderTypeParam) -> None: ...
+     def get_content_type(self) -> str: ...
+     def get_content_maintype(self) -> str: ...
+     def get_content_subtype(self) -> str: ...
+@@ -100,7 +137,7 @@ class Message:
+     ) -> None: ...
+     def __init__(self, policy: Policy = ...) -> None: ...
+     # The following two methods are undocumented, but a source code comment states that they are public API
+-    def set_raw(self, name: str, value: _HeaderType) -> None: ...
++    def set_raw(self, name: str, value: _HeaderTypeParam) -> None: ...
+     def raw_items(self) -> Iterator[tuple[str, _HeaderType]]: ...
+ 
+ class MIMEPart(Message):
+diff --git a/mypy/typeshed/stdlib/email/policy.pyi b/mypy/typeshed/stdlib/email/policy.pyi
+index 804044031..5f1cf934e 100644
+--- a/mypy/typeshed/stdlib/email/policy.pyi
++++ b/mypy/typeshed/stdlib/email/policy.pyi
+@@ -1,55 +1,11 @@
+-from abc import ABCMeta, abstractmethod
+ from collections.abc import Callable
++from email._policybase import Compat32 as Compat32, Policy as Policy, compat32 as compat32
+ from email.contentmanager import ContentManager
+-from email.errors import MessageDefect
+-from email.header import Header
+ from email.message import Message
+ from typing import Any
+-from typing_extensions import Self
+ 
+ __all__ = ["Compat32", "compat32", "Policy", "EmailPolicy", "default", "strict", "SMTP", "HTTP"]
+ 
+-class Policy(metaclass=ABCMeta):
+-    max_line_length: int | None
+-    linesep: str
+-    cte_type: str
+-    raise_on_defect: bool
+-    mangle_from_: bool
+-    message_factory: Callable[[Policy], Message] | None
+-    def __init__(
+-        self,
+-        *,
+-        max_line_length: int | None = ...,
+-        linesep: str = ...,
+-        cte_type: str = ...,
+-        raise_on_defect: bool = ...,
+-        mangle_from_: bool = ...,
+-        message_factory: Callable[[Policy], Message] | None = ...,
+-    ) -> None: ...
+-    def clone(self, **kw: Any) -> Self: ...
+-    def handle_defect(self, obj: Message, defect: MessageDefect) -> None: ...
+-    def register_defect(self, obj: Message, defect: MessageDefect) -> None: ...
+-    def header_max_count(self, name: str) -> int | None: ...
+-    @abstractmethod
+-    def header_source_parse(self, sourcelines: list[str]) -> tuple[str, str]: ...
+-    @abstractmethod
+-    def header_store_parse(self, name: str, value: str) -> tuple[str, str]: ...
+-    @abstractmethod
+-    def header_fetch_parse(self, name: str, value: str) -> str: ...
+-    @abstractmethod
+-    def fold(self, name: str, value: str) -> str: ...
+-    @abstractmethod
+-    def fold_binary(self, name: str, value: str) -> bytes: ...
+-
+-class Compat32(Policy):
+-    def header_source_parse(self, sourcelines: list[str]) -> tuple[str, str]: ...
+-    def header_store_parse(self, name: str, value: str) -> tuple[str, str]: ...
+-    def header_fetch_parse(self, name: str, value: str) -> str | Header: ...  # type: ignore[override]
+-    def fold(self, name: str, value: str) -> str: ...
+-    def fold_binary(self, name: str, value: str) -> bytes: ...
+-
+-compat32: Compat32
+-
+ class EmailPolicy(Policy):
+     utf8: bool
+     refold_source: str
+diff --git a/mypy/typeshed/stdlib/importlib/_abc.pyi b/mypy/typeshed/stdlib/importlib/_abc.pyi
+new file mode 100644
+index 000000000..1a21b9a72
+--- /dev/null
++++ b/mypy/typeshed/stdlib/importlib/_abc.pyi
+@@ -0,0 +1,15 @@
++import sys
++import types
++from abc import ABCMeta
++from importlib.machinery import ModuleSpec
++
++if sys.version_info >= (3, 10):
++    class Loader(metaclass=ABCMeta):
++        def load_module(self, fullname: str) -> types.ModuleType: ...
++        if sys.version_info < (3, 12):
++            def module_repr(self, module: types.ModuleType) -> str: ...
++
++        def create_module(self, spec: ModuleSpec) -> types.ModuleType | None: ...
++        # Not defined on the actual class for backwards-compatibility reasons,
++        # but expected in new code.
++        def exec_module(self, module: types.ModuleType) -> None: ...
+diff --git a/mypy/typeshed/stdlib/importlib/abc.pyi b/mypy/typeshed/stdlib/importlib/abc.pyi
+index 148e12ec7..eb13240f8 100644
+--- a/mypy/typeshed/stdlib/importlib/abc.pyi
++++ b/mypy/typeshed/stdlib/importlib/abc.pyi
+@@ -24,18 +24,19 @@ if sys.version_info >= (3, 11):
+     if sys.version_info < (3, 12):
+         __all__ += ["Finder", "ResourceReader", "Traversable", "TraversableResources"]
+ 
+-if sys.version_info < (3, 12):
+-    class Finder(metaclass=ABCMeta): ...
+-
+-class Loader(metaclass=ABCMeta):
+-    def load_module(self, fullname: str) -> types.ModuleType: ...
+-    if sys.version_info < (3, 12):
++if sys.version_info >= (3, 10):
++    from importlib._abc import Loader as Loader
++else:
++    class Loader(metaclass=ABCMeta):
++        def load_module(self, fullname: str) -> types.ModuleType: ...
+         def module_repr(self, module: types.ModuleType) -> str: ...
++        def create_module(self, spec: ModuleSpec) -> types.ModuleType | None: ...
++        # Not defined on the actual class for backwards-compatibility reasons,
++        # but expected in new code.
++        def exec_module(self, module: types.ModuleType) -> None: ...
+ 
+-    def create_module(self, spec: ModuleSpec) -> types.ModuleType | None: ...
+-    # Not defined on the actual class for backwards-compatibility reasons,
+-    # but expected in new code.
+-    def exec_module(self, module: types.ModuleType) -> None: ...
++if sys.version_info < (3, 12):
++    class Finder(metaclass=ABCMeta): ...
+ 
+ class ResourceLoader(Loader):
+     @abstractmethod
+@@ -62,10 +63,13 @@ class SourceLoader(ResourceLoader, ExecutionLoader, metaclass=ABCMeta):
+     def get_source(self, fullname: str) -> str | None: ...
+     def path_stats(self, path: str) -> Mapping[str, Any]: ...
+ 
+-# The base classes differ on 3.12:
+-if sys.version_info >= (3, 12):
++# The base classes differ starting in 3.10:
++if sys.version_info >= (3, 10):
+     # Please keep in sync with sys._MetaPathFinder
+     class MetaPathFinder(metaclass=ABCMeta):
++        if sys.version_info < (3, 12):
++            def find_module(self, fullname: str, path: Sequence[str] | None) -> Loader | None: ...
++
+         def invalidate_caches(self) -> None: ...
+         # Not defined on the actual class, but expected to exist.
+         def find_spec(
+@@ -73,6 +77,10 @@ if sys.version_info >= (3, 12):
+         ) -> ModuleSpec | None: ...
+ 
+     class PathEntryFinder(metaclass=ABCMeta):
++        if sys.version_info < (3, 12):
++            def find_module(self, fullname: str) -> Loader | None: ...
++            def find_loader(self, fullname: str) -> tuple[Loader | None, Sequence[str]]: ...
++
+         def invalidate_caches(self) -> None: ...
+         # Not defined on the actual class, but expected to exist.
+         def find_spec(self, fullname: str, target: types.ModuleType | None = ...) -> ModuleSpec | None: ...
+@@ -138,10 +146,10 @@ if sys.version_info >= (3, 9):
+         # which is not the case.
+         @overload
+         @abstractmethod
+-        def open(self, __mode: Literal["r", "w"] = "r", *, encoding: str | None = None, errors: str | None = None) -> IO[str]: ...
++        def open(self, __mode: Literal["r"] = "r", *, encoding: str | None = None, errors: str | None = None) -> IO[str]: ...
+         @overload
+         @abstractmethod
+-        def open(self, __mode: Literal["rb", "wb"]) -> IO[bytes]: ...
++        def open(self, __mode: Literal["rb"]) -> IO[bytes]: ...
+         @property
+         @abstractmethod
+         def name(self) -> str: ...
+diff --git a/mypy/typeshed/stdlib/importlib/metadata/__init__.pyi b/mypy/typeshed/stdlib/importlib/metadata/__init__.pyi
+index fd470b8f0..a936eece1 100644
+--- a/mypy/typeshed/stdlib/importlib/metadata/__init__.pyi
++++ b/mypy/typeshed/stdlib/importlib/metadata/__init__.pyi
+@@ -1,16 +1,21 @@
+ import abc
+ import pathlib
+ import sys
++from _collections_abc import dict_keys, dict_values
+ from _typeshed import StrPath
+-from collections.abc import Iterable, Mapping
++from collections.abc import Iterable, Iterator, Mapping
+ from email.message import Message
+ from importlib.abc import MetaPathFinder
+ from os import PathLike
+ from pathlib import Path
+ from re import Pattern
+-from typing import Any, ClassVar, NamedTuple, overload
++from typing import Any, ClassVar, Generic, NamedTuple, TypeVar, overload
+ from typing_extensions import Self
+ 
++_T = TypeVar("_T")
++_KT = TypeVar("_KT")
++_VT = TypeVar("_VT")
++
+ __all__ = [
+     "Distribution",
+     "DistributionFinder",
+@@ -35,14 +40,23 @@ class PackageNotFoundError(ModuleNotFoundError):
+     @property
+     def name(self) -> str: ...  # type: ignore[override]
+ 
+-class _EntryPointBase(NamedTuple):
+-    name: str
+-    value: str
+-    group: str
++if sys.version_info >= (3, 11):
++    class DeprecatedTuple:
++        def __getitem__(self, item: int) -> str: ...
++    _EntryPointBase = DeprecatedTuple
++else:
++    class _EntryPointBase(NamedTuple):
++        name: str
++        value: str
++        group: str
+ 
+ class EntryPoint(_EntryPointBase):
+     pattern: ClassVar[Pattern[str]]
+     if sys.version_info >= (3, 11):
++        name: str
++        value: str
++        group: str
++
+         def __init__(self, name: str, value: str, group: str) -> None: ...
+ 
+     def load(self) -> Any: ...  # Callable[[], Any] or an importable module
+@@ -68,9 +82,33 @@ class EntryPoint(_EntryPointBase):
+ 
+     def __hash__(self) -> int: ...
+     def __eq__(self, other: object) -> bool: ...
++    if sys.version_info >= (3, 11):
++        def __lt__(self, other: object) -> bool: ...
++    if sys.version_info < (3, 12):
++        def __iter__(self) -> Iterator[Any]: ...  # result of iter((str, Self)), really
+ 
+-if sys.version_info >= (3, 10):
+-    class EntryPoints(list[EntryPoint]):  # use as list is deprecated since 3.10
++if sys.version_info >= (3, 12):
++    class EntryPoints(tuple[EntryPoint, ...]):
++        def __getitem__(self, name: str) -> EntryPoint: ...  # type: ignore[override]
++        def select(
++            self,
++            *,
++            name: str = ...,
++            value: str = ...,
++            group: str = ...,
++            module: str = ...,
++            attr: str = ...,
++            extras: list[str] = ...,
++        ) -> EntryPoints: ...
++        @property
++        def names(self) -> set[str]: ...
++        @property
++        def groups(self) -> set[str]: ...
++
++elif sys.version_info >= (3, 10):
++    class DeprecatedList(list[_T]): ...
++
++    class EntryPoints(DeprecatedList[EntryPoint]):  # use as list is deprecated since 3.10
+         # int argument is deprecated since 3.10
+         def __getitem__(self, name: int | str) -> EntryPoint: ...  # type: ignore[override]
+         def select(
+@@ -89,7 +127,18 @@ if sys.version_info >= (3, 10):
+         def groups(self) -> set[str]: ...
+ 
+ if sys.version_info >= (3, 10) and sys.version_info < (3, 12):
+-    class SelectableGroups(dict[str, EntryPoints]):  # use as dict is deprecated since 3.10
++    class Deprecated(Generic[_KT, _VT]):
++        def __getitem__(self, name: _KT) -> _VT: ...
++        @overload
++        def get(self, name: _KT) -> _VT | None: ...
++        @overload
++        def get(self, name: _KT, default: _T) -> _VT | _T: ...
++        def __iter__(self) -> Iterator[_KT]: ...
++        def __contains__(self, *args: object) -> bool: ...
++        def keys(self) -> dict_keys[_KT, _VT]: ...
++        def values(self) -> dict_values[_KT, _VT]: ...
++
++    class SelectableGroups(Deprecated[str, EntryPoints], dict[str, EntryPoints]):  # use as dict is deprecated since 3.10
+         @classmethod
+         def load(cls, eps: Iterable[EntryPoint]) -> Self: ...
+         @property
+@@ -124,7 +173,13 @@ class FileHash:
+     value: str
+     def __init__(self, spec: str) -> None: ...
+ 
+-class Distribution:
++if sys.version_info >= (3, 12):
++    class DeprecatedNonAbstract: ...
++    _distribution_parent = DeprecatedNonAbstract
++else:
++    _distribution_parent = object
++
++class Distribution(_distribution_parent):
+     @abc.abstractmethod
+     def read_text(self, filename: str) -> str | None: ...
+     @abc.abstractmethod
+diff --git a/mypy/typeshed/stdlib/io.pyi b/mypy/typeshed/stdlib/io.pyi
+index 16270b948..ee4eda1b4 100644
+--- a/mypy/typeshed/stdlib/io.pyi
++++ b/mypy/typeshed/stdlib/io.pyi
+@@ -33,6 +33,9 @@ __all__ = [
+ if sys.version_info >= (3, 8):
+     __all__ += ["open_code"]
+ 
++if sys.version_info >= (3, 11):
++    __all__ += ["DEFAULT_BUFFER_SIZE", "IncrementalNewlineDecoder", "text_encoding"]
++
+ _T = TypeVar("_T")
+ 
+ DEFAULT_BUFFER_SIZE: Literal[8192]
+diff --git a/mypy/typeshed/stdlib/lzma.pyi b/mypy/typeshed/stdlib/lzma.pyi
+index 8e296bb5b..be61cac08 100644
+--- a/mypy/typeshed/stdlib/lzma.pyi
++++ b/mypy/typeshed/stdlib/lzma.pyi
+@@ -1,4 +1,4 @@
+-import io
++from _compression import BaseStream
+ from _typeshed import ReadableBuffer, StrOrBytesPath
+ from collections.abc import Mapping, Sequence
+ from typing import IO, Any, TextIO, overload
+@@ -104,7 +104,7 @@ class LZMACompressor:
+ 
+ class LZMAError(Exception): ...
+ 
+-class LZMAFile(io.BufferedIOBase, IO[bytes]):  # type: ignore[misc]  # incompatible definitions of writelines in the base classes
++class LZMAFile(BaseStream, IO[bytes]):  # type: ignore[misc]  # incompatible definitions of writelines in the base classes
+     def __init__(
+         self,
+         filename: _PathOrFile | None = None,
+diff --git a/mypy/typeshed/stdlib/os/__init__.pyi b/mypy/typeshed/stdlib/os/__init__.pyi
+index 45eaf2a66..7d4b8adcd 100644
+--- a/mypy/typeshed/stdlib/os/__init__.pyi
++++ b/mypy/typeshed/stdlib/os/__init__.pyi
+@@ -26,7 +26,7 @@ from contextlib import AbstractContextManager
+ from io import BufferedRandom, BufferedReader, BufferedWriter, FileIO, TextIOWrapper as _TextIOWrapper
+ from subprocess import Popen
+ from typing import IO, Any, AnyStr, BinaryIO, Generic, NoReturn, Protocol, TypeVar, overload, runtime_checkable
+-from typing_extensions import Final, Literal, Self, TypeAlias, final
++from typing_extensions import Final, Literal, Self, TypeAlias, Unpack, final
+ 
+ from . import path as _path
+ 
+@@ -847,8 +847,12 @@ def execl(file: StrOrBytesPath, __arg0: StrOrBytesPath, *args: StrOrBytesPath) -
+ def execlp(file: StrOrBytesPath, __arg0: StrOrBytesPath, *args: StrOrBytesPath) -> NoReturn: ...
+ 
+ # These are: execle(file, *args, env) but env is pulled from the last element of the args.
+-def execle(file: StrOrBytesPath, __arg0: StrOrBytesPath, *args: Any) -> NoReturn: ...
+-def execlpe(file: StrOrBytesPath, __arg0: StrOrBytesPath, *args: Any) -> NoReturn: ...
++def execle(
++    file: StrOrBytesPath, *args: Unpack[tuple[StrOrBytesPath, Unpack[tuple[StrOrBytesPath, ...]], _ExecEnv]]
++) -> NoReturn: ...
++def execlpe(
++    file: StrOrBytesPath, *args: Unpack[tuple[StrOrBytesPath, Unpack[tuple[StrOrBytesPath, ...]], _ExecEnv]]
++) -> NoReturn: ...
+ 
+ # The docs say `args: tuple or list of strings`
+ # The implementation enforces tuple or list so we can't use Sequence.
+diff --git a/mypy/typeshed/stdlib/pstats.pyi b/mypy/typeshed/stdlib/pstats.pyi
+index 5d25d1bb3..44ce33469 100644
+--- a/mypy/typeshed/stdlib/pstats.pyi
++++ b/mypy/typeshed/stdlib/pstats.pyi
+@@ -1,8 +1,7 @@
+ import sys
+-from _typeshed import StrOrBytesPath
++from _typeshed import StrEnum, StrOrBytesPath
+ from collections.abc import Iterable
+ from cProfile import Profile as _cProfile
+-from enum import Enum
+ from profile import Profile
+ from typing import IO, Any, overload
+ from typing_extensions import Literal, Self, TypeAlias
+@@ -14,7 +13,7 @@ else:
+ 
+ _Selector: TypeAlias = str | float | int
+ 
+-class SortKey(str, Enum):
++class SortKey(StrEnum):
+     CALLS: str
+     CUMULATIVE: str
+     FILENAME: str
+diff --git a/mypy/typeshed/stdlib/pyclbr.pyi b/mypy/typeshed/stdlib/pyclbr.pyi
+index 38658a031..504a5d5f1 100644
+--- a/mypy/typeshed/stdlib/pyclbr.pyi
++++ b/mypy/typeshed/stdlib/pyclbr.pyi
+@@ -1,20 +1,35 @@
+ import sys
+-from collections.abc import Sequence
++from collections.abc import Mapping, Sequence
+ 
+ __all__ = ["readmodule", "readmodule_ex", "Class", "Function"]
+ 
+-class Class:
++class _Object:
+     module: str
+     name: str
+-    super: list[Class | str] | None
+-    methods: dict[str, int]
+     file: int
+     lineno: int
+ 
+     if sys.version_info >= (3, 10):
+         end_lineno: int | None
+ 
+-    parent: Class | None
++    parent: _Object | None
++
++    # This is a dict at runtime, but we're typing it as Mapping to
++    # avoid variance issues in the subclasses
++    children: Mapping[str, _Object]
++
++    if sys.version_info >= (3, 10):
++        def __init__(
++            self, module: str, name: str, file: str, lineno: int, end_lineno: int | None, parent: _Object | None
++        ) -> None: ...
++    else:
++        def __init__(self, module: str, name: str, file: str, lineno: int, parent: _Object | None) -> None: ...
++
++class Function(_Object):
++    if sys.version_info >= (3, 10):
++        is_async: bool
++
++    parent: Function | Class | None
+     children: dict[str, Class | Function]
+ 
+     if sys.version_info >= (3, 10):
+@@ -22,29 +37,20 @@ class Class:
+             self,
+             module: str,
+             name: str,
+-            super_: list[Class | str] | None,
+             file: str,
+             lineno: int,
+-            parent: Class | None = None,
++            parent: Function | Class | None = None,
++            is_async: bool = False,
+             *,
+             end_lineno: int | None = None,
+         ) -> None: ...
+     else:
+-        def __init__(
+-            self, module: str, name: str, super: list[Class | str] | None, file: str, lineno: int, parent: Class | None = None
+-        ) -> None: ...
+-
+-class Function:
+-    module: str
+-    name: str
+-    file: int
+-    lineno: int
+-
+-    if sys.version_info >= (3, 10):
+-        end_lineno: int | None
+-        is_async: bool
++        def __init__(self, module: str, name: str, file: str, lineno: int, parent: Function | Class | None = None) -> None: ...
+ 
+-    parent: Function | Class | None
++class Class(_Object):
++    super: list[Class | str] | None
++    methods: dict[str, int]
++    parent: Class | None
+     children: dict[str, Class | Function]
+ 
+     if sys.version_info >= (3, 10):
+@@ -52,15 +58,17 @@ class Function:
+             self,
+             module: str,
+             name: str,
++            super_: list[Class | str] | None,
+             file: str,
+             lineno: int,
+-            parent: Function | Class | None = None,
+-            is_async: bool = False,
++            parent: Class | None = None,
+             *,
+             end_lineno: int | None = None,
+         ) -> None: ...
+     else:
+-        def __init__(self, module: str, name: str, file: str, lineno: int, parent: Function | Class | None = None) -> None: ...
++        def __init__(
++            self, module: str, name: str, super: list[Class | str] | None, file: str, lineno: int, parent: Class | None = None
++        ) -> None: ...
+ 
+ def readmodule(module: str, path: Sequence[str] | None = None) -> dict[str, Class]: ...
+ def readmodule_ex(module: str, path: Sequence[str] | None = None) -> dict[str, Class | Function | list[str]]: ...
+diff --git a/mypy/typeshed/stdlib/socketserver.pyi b/mypy/typeshed/stdlib/socketserver.pyi
+index 6a932f66c..5753d1d66 100644
+--- a/mypy/typeshed/stdlib/socketserver.pyi
++++ b/mypy/typeshed/stdlib/socketserver.pyi
+@@ -86,7 +86,7 @@ class UDPServer(TCPServer):
+     def get_request(self) -> tuple[tuple[bytes, _socket], _RetAddress]: ...  # type: ignore[override]
+ 
+ if sys.platform != "win32":
+-    class UnixStreamServer(BaseServer):
++    class UnixStreamServer(TCPServer):
+         server_address: _AfUnixAddress  # type: ignore[assignment]
+         def __init__(
+             self,
+@@ -95,7 +95,7 @@ if sys.platform != "win32":
+             bind_and_activate: bool = True,
+         ) -> None: ...
+ 
+-    class UnixDatagramServer(BaseServer):
++    class UnixDatagramServer(UDPServer):
+         server_address: _AfUnixAddress  # type: ignore[assignment]
+         def __init__(
+             self,
+diff --git a/mypy/typeshed/stdlib/sre_parse.pyi b/mypy/typeshed/stdlib/sre_parse.pyi
+index 8ef65223d..2c10bf7e7 100644
+--- a/mypy/typeshed/stdlib/sre_parse.pyi
++++ b/mypy/typeshed/stdlib/sre_parse.pyi
+@@ -19,6 +19,9 @@ FLAGS: dict[str, int]
+ TYPE_FLAGS: int
+ GLOBAL_FLAGS: int
+ 
++if sys.version_info >= (3, 11):
++    MAXWIDTH: int
++
+ if sys.version_info < (3, 11):
+     class Verbose(Exception): ...
+ 
+diff --git a/mypy/typeshed/stdlib/tkinter/__init__.pyi b/mypy/typeshed/stdlib/tkinter/__init__.pyi
+index a73b1e275..5f7c3cb45 100644
+--- a/mypy/typeshed/stdlib/tkinter/__init__.pyi
++++ b/mypy/typeshed/stdlib/tkinter/__init__.pyi
+@@ -1,13 +1,12 @@
+ import _tkinter
+ import sys
+-from _typeshed import Incomplete, StrOrBytesPath
++from _typeshed import Incomplete, StrEnum, StrOrBytesPath
+ from collections.abc import Callable, Mapping, Sequence
+-from enum import Enum
+ from tkinter.constants import *
+ from tkinter.font import _FontDescription
+ from types import TracebackType
+ from typing import Any, Generic, NamedTuple, TypeVar, overload, type_check_only
+-from typing_extensions import Literal, TypeAlias, TypedDict, deprecated
++from typing_extensions import Literal, TypeAlias, TypedDict, TypeVarTuple, Unpack, deprecated
+ 
+ if sys.version_info >= (3, 9):
+     __all__ = [
+@@ -195,7 +194,7 @@ if sys.version_info >= (3, 11):
+         releaselevel: str
+         serial: int
+ 
+-class EventType(str, Enum):
++class EventType(StrEnum):
+     Activate: str
+     ButtonPress: str
+     Button = ButtonPress
+@@ -315,6 +314,8 @@ getdouble: Incomplete
+ 
+ def getboolean(s): ...
+ 
++_Ts = TypeVarTuple("_Ts")
++
+ class _GridIndexInfo(TypedDict, total=False):
+     minsize: _ScreenUnits
+     pad: _ScreenUnits
+@@ -350,9 +351,9 @@ class Misc:
+     def tk_focusPrev(self) -> Misc | None: ...
+     # .after() can be called without the "func" argument, but it is basically never what you want.
+     # It behaves like time.sleep() and freezes the GUI app.
+-    def after(self, ms: int | Literal["idle"], func: Callable[..., object], *args: Any) -> str: ...
++    def after(self, ms: int | Literal["idle"], func: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> str: ...
+     # after_idle is essentially partialmethod(after, "idle")
+-    def after_idle(self, func: Callable[..., object], *args: Any) -> str: ...
++    def after_idle(self, func: Callable[[Unpack[_Ts]], object], *args: Unpack[_Ts]) -> str: ...
+     def after_cancel(self, id: str) -> None: ...
+     def bell(self, displayof: Literal[0] | Misc | None = 0) -> None: ...
+     def clipboard_get(self, *, displayof: Misc = ..., type: str = ...) -> str: ...
+diff --git a/mypy/typeshed/stdlib/trace.pyi b/mypy/typeshed/stdlib/trace.pyi
+index 3764a5b06..14a921c5e 100644
+--- a/mypy/typeshed/stdlib/trace.pyi
++++ b/mypy/typeshed/stdlib/trace.pyi
+@@ -1,7 +1,7 @@
+ import sys
+ import types
+-from _typeshed import StrPath, TraceFunction
+-from collections.abc import Callable, Mapping, Sequence
++from _typeshed import Incomplete, StrPath, TraceFunction
++from collections.abc import Callable, Iterable, Mapping, Sequence
+ from typing import Any, TypeVar
+ from typing_extensions import ParamSpec, TypeAlias
+ 
+@@ -12,6 +12,12 @@ _P = ParamSpec("_P")
+ _FileModuleFunction: TypeAlias = tuple[str, str | None, str]
+ 
+ class CoverageResults:
++    counts: dict[tuple[str, int], int]
++    counter: dict[tuple[str, int], int]
++    calledfuncs: dict[_FileModuleFunction, int]
++    callers: dict[tuple[_FileModuleFunction, _FileModuleFunction], int]
++    inifile: StrPath | None
++    outfile: StrPath | None
+     def __init__(
+         self,
+         counts: dict[tuple[str, int], int] | None = None,
+@@ -27,7 +33,21 @@ class CoverageResults:
+     ) -> tuple[int, int]: ...
+     def is_ignored_filename(self, filename: str) -> bool: ...  # undocumented
+ 
++class _Ignore:
++    def __init__(self, modules: Iterable[str] | None = None, dirs: Iterable[StrPath] | None = None) -> None: ...
++    def names(self, filename: str, modulename: str) -> int: ...
++
+ class Trace:
++    inifile: StrPath | None
++    outfile: StrPath | None
++    ignore: _Ignore
++    counts: dict[str, int]
++    pathtobasename: dict[Incomplete, Incomplete]
++    donothing: int
++    trace: int
++    start_time: int | None
++    globaltrace: TraceFunction
++    localtrace: TraceFunction
+     def __init__(
+         self,
+         count: int = 1,
+diff --git a/mypy/typeshed/stdlib/unittest/case.pyi b/mypy/typeshed/stdlib/unittest/case.pyi
+index cc5d683e2..7efe6cdc9 100644
+--- a/mypy/typeshed/stdlib/unittest/case.pyi
++++ b/mypy/typeshed/stdlib/unittest/case.pyi
+@@ -249,6 +249,8 @@ class TestCase:
+     def assertListEqual(self, list1: list[Any], list2: list[Any], msg: Any = None) -> None: ...
+     def assertTupleEqual(self, tuple1: tuple[Any, ...], tuple2: tuple[Any, ...], msg: Any = None) -> None: ...
+     def assertSetEqual(self, set1: AbstractSet[object], set2: AbstractSet[object], msg: Any = None) -> None: ...
++    # assertDictEqual accepts only true dict instances. We can't use that here, since that would make
++    # assertDictEqual incompatible with TypedDict.
+     def assertDictEqual(self, d1: Mapping[Any, object], d2: Mapping[Any, object], msg: Any = None) -> None: ...
+     def fail(self, msg: Any = None) -> NoReturn: ...
+     def countTestCases(self) -> int: ...
+diff --git a/mypy/typeshed/stdlib/urllib/response.pyi b/mypy/typeshed/stdlib/urllib/response.pyi
+index 61ba68707..bbec4cacc 100644
+--- a/mypy/typeshed/stdlib/urllib/response.pyi
++++ b/mypy/typeshed/stdlib/urllib/response.pyi
+@@ -1,39 +1,23 @@
+ import sys
++import tempfile
+ from _typeshed import ReadableBuffer
+ from collections.abc import Callable, Iterable
+ from email.message import Message
+ from types import TracebackType
+-from typing import IO, Any, BinaryIO
+-from typing_extensions import Self
++from typing import IO, Any
+ 
+ __all__ = ["addbase", "addclosehook", "addinfo", "addinfourl"]
+ 
+-class addbase(BinaryIO):
++class addbase(tempfile._TemporaryFileWrapper[bytes]):
+     fp: IO[bytes]
+     def __init__(self, fp: IO[bytes]) -> None: ...
+-    def __enter__(self) -> Self: ...
+     def __exit__(
+         self, type: type[BaseException] | None, value: BaseException | None, traceback: TracebackType | None
+     ) -> None: ...
+-    def __iter__(self) -> Self: ...
+-    def __next__(self) -> bytes: ...
+-    def close(self) -> None: ...
+     # These methods don't actually exist, but the class inherits at runtime from
+     # tempfile._TemporaryFileWrapper, which uses __getattr__ to delegate to the
+     # underlying file object. To satisfy the BinaryIO interface, we pretend that this
+     # class has these additional methods.
+-    def fileno(self) -> int: ...
+-    def flush(self) -> None: ...
+-    def isatty(self) -> bool: ...
+-    def read(self, n: int = ...) -> bytes: ...
+-    def readable(self) -> bool: ...
+-    def readline(self, limit: int = ...) -> bytes: ...
+-    def readlines(self, hint: int = ...) -> list[bytes]: ...
+-    def seek(self, offset: int, whence: int = ...) -> int: ...
+-    def seekable(self) -> bool: ...
+-    def tell(self) -> int: ...
+-    def truncate(self, size: int | None = ...) -> int: ...
+-    def writable(self) -> bool: ...
+     def write(self, s: ReadableBuffer) -> int: ...
+     def writelines(self, lines: Iterable[ReadableBuffer]) -> None: ...
+ 
+diff --git a/mypy/typeshed/stdlib/xml/sax/__init__.pyi b/mypy/typeshed/stdlib/xml/sax/__init__.pyi
+index f726eae05..d2d6f12d4 100644
+--- a/mypy/typeshed/stdlib/xml/sax/__init__.pyi
++++ b/mypy/typeshed/stdlib/xml/sax/__init__.pyi
+@@ -1,10 +1,17 @@
+ import sys
+ from _typeshed import ReadableBuffer, StrPath, SupportsRead, _T_co
+ from collections.abc import Iterable
+-from typing import Any, NoReturn, Protocol
++from typing import Protocol
+ from typing_extensions import TypeAlias
++from xml.sax._exceptions import (
++    SAXException as SAXException,
++    SAXNotRecognizedException as SAXNotRecognizedException,
++    SAXNotSupportedException as SAXNotSupportedException,
++    SAXParseException as SAXParseException,
++    SAXReaderNotAvailable as SAXReaderNotAvailable,
++)
+ from xml.sax.handler import ContentHandler as ContentHandler, ErrorHandler as ErrorHandler
+-from xml.sax.xmlreader import Locator, XMLReader
++from xml.sax.xmlreader import XMLReader
+ 
+ class _SupportsReadClose(SupportsRead[_T_co], Protocol[_T_co]):
+     def close(self) -> None: ...
+@@ -14,23 +21,6 @@ if sys.version_info >= (3, 8):
+ else:
+     _Source: TypeAlias = str | _SupportsReadClose[bytes] | _SupportsReadClose[str]
+ 
+-class SAXException(Exception):
+-    def __init__(self, msg: str, exception: Exception | None = None) -> None: ...
+-    def getMessage(self) -> str: ...
+-    def getException(self) -> Exception: ...
+-    def __getitem__(self, ix: Any) -> NoReturn: ...
+-
+-class SAXParseException(SAXException):
+-    def __init__(self, msg: str, exception: Exception | None, locator: Locator) -> None: ...
+-    def getColumnNumber(self) -> int: ...
+-    def getLineNumber(self) -> int: ...
+-    def getPublicId(self): ...
+-    def getSystemId(self): ...
+-
+-class SAXNotRecognizedException(SAXException): ...
+-class SAXNotSupportedException(SAXException): ...
+-class SAXReaderNotAvailable(SAXNotSupportedException): ...
+-
+ default_parser_list: list[str]
+ 
+ if sys.version_info >= (3, 8):
+diff --git a/mypy/typeshed/stdlib/xml/sax/_exceptions.pyi b/mypy/typeshed/stdlib/xml/sax/_exceptions.pyi
+new file mode 100644
+index 000000000..8a437a971
+--- /dev/null
++++ b/mypy/typeshed/stdlib/xml/sax/_exceptions.pyi
+@@ -0,0 +1,19 @@
++from typing import NoReturn
++from xml.sax.xmlreader import Locator
++
++class SAXException(Exception):
++    def __init__(self, msg: str, exception: Exception | None = None) -> None: ...
++    def getMessage(self) -> str: ...
++    def getException(self) -> Exception: ...
++    def __getitem__(self, ix: object) -> NoReturn: ...
++
++class SAXParseException(SAXException):
++    def __init__(self, msg: str, exception: Exception | None, locator: Locator) -> None: ...
++    def getColumnNumber(self) -> int: ...
++    def getLineNumber(self) -> int: ...
++    def getPublicId(self): ...
++    def getSystemId(self): ...
++
++class SAXNotRecognizedException(SAXException): ...
++class SAXNotSupportedException(SAXException): ...
++class SAXReaderNotAvailable(SAXNotSupportedException): ...
+diff --git a/mypy/typeshed/stdlib/xxlimited.pyi b/mypy/typeshed/stdlib/xxlimited.pyi
+index d4f41bbaf..7fc39138f 100644
+--- a/mypy/typeshed/stdlib/xxlimited.pyi
++++ b/mypy/typeshed/stdlib/xxlimited.pyi
+@@ -2,7 +2,7 @@ import sys
+ from typing import Any
+ from typing_extensions import final
+ 
+-class Str: ...
++class Str(str): ...
+ 
+ @final
+ class Xxo:
+@@ -14,10 +14,10 @@ def foo(__i: int, __j: int) -> Any: ...
+ def new() -> Xxo: ...
+ 
+ if sys.version_info >= (3, 10):
+-    class Error: ...
++    class Error(Exception): ...
+ 
+ else:
+-    class error: ...
++    class error(Exception): ...
+     class Null: ...
+ 
+     def roj(__b: Any) -> None: ...
++ git diff 43ffb49102e2508b5e4767d200872060ddc9f0fc
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -r test-requirements.txt
+Ignoring lxml: markers '(python_version < "3.11" or sys_platform != "win32") and python_version < "3.12"' don't match your environment
+Requirement already satisfied: attrs==23.1.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 7)) (23.1.0)
+Requirement already satisfied: black==23.9.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 9)) (23.9.1)
+Requirement already satisfied: cfgv==3.4.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 11)) (3.4.0)
+Requirement already satisfied: click==8.1.7 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 13)) (8.1.7)
+Requirement already satisfied: coverage==7.3.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 15)) (7.3.2)
+Requirement already satisfied: distlib==0.3.7 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 17)) (0.3.7)
+Requirement already satisfied: execnet==2.0.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 19)) (2.0.2)
+Requirement already satisfied: filelock==3.12.4 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 21)) (3.12.4)
+Requirement already satisfied: identify==2.5.30 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 25)) (2.5.30)
+Requirement already satisfied: iniconfig==2.0.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 27)) (2.0.0)
+Requirement already satisfied: mypy-extensions==1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 31)) (1.0.0)
+Requirement already satisfied: nodeenv==1.8.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 35)) (1.8.0)
+Requirement already satisfied: packaging==23.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 37)) (23.2)
+Requirement already satisfied: pathspec==0.11.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 41)) (0.11.2)
+Requirement already satisfied: platformdirs==3.11.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 43)) (3.11.0)
+Requirement already satisfied: pluggy==1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 47)) (1.3.0)
+Requirement already satisfied: pre-commit==3.5.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 49)) (3.5.0)
+Requirement already satisfied: pre-commit-hooks==4.5.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 51)) (4.5.0)
+Requirement already satisfied: psutil==5.9.6 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 53)) (5.9.6)
+Requirement already satisfied: pytest==7.4.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 55)) (7.4.2)
+Requirement already satisfied: pytest-cov==4.1.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 60)) (4.1.0)
+Requirement already satisfied: pytest-xdist==3.3.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 62)) (3.3.1)
+Requirement already satisfied: pyyaml==6.0.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 64)) (6.0.1)
+Requirement already satisfied: ruamel-yaml==0.17.40 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 66)) (0.17.40)
+Requirement already satisfied: ruamel-yaml-clib==0.2.8 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 68)) (0.2.8)
+Requirement already satisfied: ruff==0.1.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 70)) (0.1.0)
+Requirement already satisfied: tomli==2.0.1 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 72)) (2.0.1)
+Requirement already satisfied: types-psutil==5.9.5.17 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 74)) (5.9.5.17)
+Requirement already satisfied: types-setuptools==68.2.0.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 76)) (68.2.0.0)
+Requirement already satisfied: typing-extensions==4.8.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 78)) (4.8.0)
+Requirement already satisfied: virtualenv==20.24.5 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 80)) (20.24.5)
+Requirement already satisfied: setuptools==68.2.2 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from -r test-requirements.txt (line 84)) (68.2.2)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: typing_extensions>=4.1.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from mypy==1.9.0+dev.43ffb49102e2508b5e4767d200872060ddc9f0fc) (4.8.0)
+Requirement already satisfied: mypy_extensions>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.12/site-packages (from mypy==1.9.0+dev.43ffb49102e2508b5e4767d200872060ddc9f0fc) (1.0.0)
+Building wheels for collected packages: mypy
+  Building editable for mypy (pyproject.toml): started
+  Building editable for mypy (pyproject.toml): finished with status 'done'
+  Created wheel for mypy: filename=mypy-1.9.0+dev.43ffb49102e2508b5e4767d200872060ddc9f0fc-0.editable-py3-none-any.whl size=8276 sha256=e5a220585b0398df7de9f48f170fba0048368df5c26ad4bc07dc77cc64d06c10
+  Stored in directory: /tmp/pip-ephem-wheel-cache-sob51pbn/wheels/5d/7e/d4/0611b5e1f6b19283dfc03cca62ebc6a41021c5c464d28aab8f
+Successfully built mypy
+Installing collected packages: mypy
+  Attempting uninstall: mypy
+    Found existing installation: mypy 1.9.0+dev.43ffb49102e2508b5e4767d200872060ddc9f0fc
+    Uninstalling mypy-1.9.0+dev.43ffb49102e2508b5e4767d200872060ddc9f0fc:
+      Successfully uninstalled mypy-1.9.0+dev.43ffb49102e2508b5e4767d200872060ddc9f0fc
+Successfully installed mypy-1.9.0+dev.43ffb49102e2508b5e4767d200872060ddc9f0fc
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ hash -r
++ git checkout 43ffb49102e2508b5e4767d200872060ddc9f0fc test-data/unit/check-generics.test
+Updated 0 paths from 98a3259f7
++ git apply -v -
+Checking patch test-data/unit/check-generics.test...
+Applied patch test-data/unit/check-generics.test cleanly.
++ pytest -rA -k 'testGenericStaticMethodInGenericFunction or testMultipleAssignmentFromAnyIterable'
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-7.4.2, pluggy-1.3.0
+rootdir: /testbed
+configfile: pyproject.toml
+testpaths: mypy/test, mypyc/test
+plugins: xdist-3.3.1, cov-4.1.0
+created: 8/8 workers
+8 workers [2 items]
+
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+___________________ testGenericStaticMethodInGenericFunction ___________________
+[gw0] linux -- Python 3.12.12 /opt/miniconda3/envs/testbed/bin/python
+data: /testbed/test-data/unit/check-generics.test:2300:
+Failed: Unexpected type checker output (/testbed/test-data/unit/check-generics.test, line 2300)
+----------------------------- Captured stderr call -----------------------------
+Expected:
+Actual:
+[32m  main:10: error: Incompatible return value type (got "T", expected "S")[0m (diff)
+
+Update the test output using --update-data -n0 (you can additionally use the -k selector to update only specific tests)
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED mypy/test/testcheck.py::TypeCheckSuite::check-generics.test::testMultipleAssignmentFromAnyIterable
+FAILED mypy/test/testcheck.py::TypeCheckSuite::check-generics.test::testGenericStaticMethodInGenericFunction
+========================= 1 failed, 1 passed in 3.10s ==========================
++ git checkout 43ffb49102e2508b5e4767d200872060ddc9f0fc test-data/unit/check-generics.test
+Updated 1 path from 98a3259f7

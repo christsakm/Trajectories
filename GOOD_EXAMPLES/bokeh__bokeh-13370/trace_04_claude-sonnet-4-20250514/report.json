@@ -1,0 +1,40 @@
+{
+    "bokeh__bokeh-13370": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": true,
+        "tests_status": {
+            "FAIL_TO_PASS": {
+                "success": [
+                    "tests/unit/bokeh/test_layouts.py::test_gridplot_toolbar_options__issue_13369"
+                ],
+                "failure": []
+            },
+            "PASS_TO_PASS": {
+                "success": [
+                    "tests/unit/bokeh/test_layouts.py::test_layout_nested",
+                    "tests/unit/bokeh/test_layouts.py::test_gridplot_None",
+                    "tests/unit/bokeh/test_layouts.py::test_grid",
+                    "tests/unit/bokeh/test_layouts.py::test_gridplot_merge_toolbar_properties__issue_13265",
+                    "tests/unit/bokeh/test_layouts.py::test_layout_kwargs",
+                    "tests/unit/bokeh/test_layouts.py::test_gridplot_merge_tools_with_None",
+                    "tests/unit/bokeh/test_layouts.py::test_group_tools",
+                    "tests/unit/bokeh/test_layouts.py::test_repeated_children",
+                    "tests/unit/bokeh/test_layouts.py::test_gridplot_merge_tools_nested",
+                    "tests/unit/bokeh/test_layouts.py::test_layout_simple",
+                    "tests/unit/bokeh/test_layouts.py::test_gridplot_merge_tools_flat"
+                ],
+                "failure": []
+            },
+            "FAIL_TO_FAIL": {
+                "success": [],
+                "failure": []
+            },
+            "PASS_TO_FAIL": {
+                "success": [],
+                "failure": []
+            }
+        }
+    }
+}

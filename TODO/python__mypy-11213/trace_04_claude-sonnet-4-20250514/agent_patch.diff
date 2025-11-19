@@ -1,0 +1,26 @@
+diff --git a/mypy/semanal.py b/mypy/semanal.py
+index 7bfa3c66e..397610dca 100644
+--- a/mypy/semanal.py
++++ b/mypy/semanal.py
+@@ -4961,9 +4961,18 @@ class SemanticAnalyzer(NodeVisitor[None],
+         - Yes in annotated functions.
+         - No otherwise.
+         """
+-        return (self.options.check_untyped_defs
+-                or not self.function_stack
+-                or not self.function_stack[-1].is_dynamic())
++        if self.options.check_untyped_defs or not self.function_stack:
++            return True
++        
++        # Look for the first non-lambda function in the stack to determine
++        # if we're in a checked context. This handles the case where we're
++        # inside a lambda within an untyped function.
++        for func in reversed(self.function_stack):
++            if not isinstance(func, LambdaExpr):
++                return not func.is_dynamic()
++        
++        # If we only have lambdas in the stack, check the most recent one
++        return not self.function_stack[-1].is_dynamic()
+ 
+     def fail(self,
+              msg: str,

@@ -1,0 +1,47 @@
+{
+    "python__mypy-11213": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false,
+        "tests_status": {
+            "FAIL_TO_PASS": {
+                "success": [
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFuncLambdaStack",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFunc"
+                ],
+                "failure": []
+            },
+            "PASS_TO_PASS": {
+                "success": [
+                    "mypy/test/testcheck.py::TypeCheckSuite::testLambdaTypedContext",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testEqNone",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testLambdaUnypedContext",
+                    "mypy/test/testcheck.py::TypeCheckSuite::testLambdaCheckUnypedContext"
+                ],
+                "failure": [
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromClassLambdaStackForce",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModuleForce",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFuncLambdaStackForce",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModule",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFunc",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFuncForced",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModuleLambdaStackForce",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFuncForced",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModuleLambdaStack",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFuncLambdaStackForce",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromClassLambdaStack",
+                    "mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFuncLambdaStack"
+                ]
+            },
+            "FAIL_TO_FAIL": {
+                "success": [],
+                "failure": []
+            },
+            "PASS_TO_FAIL": {
+                "success": [],
+                "failure": []
+            }
+        }
+    }
+}

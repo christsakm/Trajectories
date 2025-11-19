@@ -1,0 +1,33 @@
+diff --git a/mypy/checkmember.py b/mypy/checkmember.py
+index 5a4f3875a..f377ebb09 100644
+--- a/mypy/checkmember.py
++++ b/mypy/checkmember.py
+@@ -1216,12 +1216,27 @@ def add_class_tvars(
+     # To achieve such behaviour, we add the class type variables that are still free
+     # (i.e. appear in the return type of the class object on which the method was accessed).
+     if isinstance(t, CallableType):
+-        tvars = original_vars if original_vars is not None else []
++        # Only add class type variables for classmethods. For staticmethods and
++        # regular functions defined on the class, we should not implicitly add
++        # class type variables to the function's generic variables, since any
++        # occurrences of class type variables in the signature should be
++        # resolved via mapping to the specific class instance (isuper) when
++        # accessed through a specialized class object like C[T]. See
++        # https://github.com/python/mypy/issues/16444
++        tvars: Sequence[TypeVarLikeType] = []
++        if is_classmethod and original_vars is not None:
++            tvars = original_vars
+         t = freshen_all_functions_type_vars(t)
+         if is_classmethod:
+             t = bind_self(t, original_type, is_classmethod=True)
+             assert isuper is not None
+             t = expand_type_by_instance(t, isuper)
++        else:
++            # For static methods (and other callables) expand any references to
++            # class type variables using the concrete class instance where the
++            # method was defined.
++            if isuper is not None:
++                t = expand_type_by_instance(t, isuper)
+         freeze_all_type_vars(t)
+         return t.copy_modified(variables=list(tvars) + list(t.variables))
+     elif isinstance(t, Overloaded):

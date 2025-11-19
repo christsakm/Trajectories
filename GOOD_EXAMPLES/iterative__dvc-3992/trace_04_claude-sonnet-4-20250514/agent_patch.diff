@@ -1,0 +1,24 @@
+diff --git a/dvc/repo/plots/data.py b/dvc/repo/plots/data.py
+index 68430e6a2..918d81141 100644
+--- a/dvc/repo/plots/data.py
++++ b/dvc/repo/plots/data.py
+@@ -96,6 +96,8 @@ def _apply_path(data, path=None, **kwargs):
+ 
+     found = jsonpath_ng.parse(path).find(data)
+     first_datum = first(found)
++    if not first_datum:
++        raise PlotDataStructureError()
+     if (
+         len(found) == 1
+         and isinstance(first_datum.value, list)
+@@ -237,6 +239,10 @@ class YAMLPlotData(PlotData):
+ 
+         return yaml.load(self.content, OrderedLoader)
+ 
++    def _processors(self):
++        parent_processors = super()._processors()
++        return [_apply_path, _find_data] + parent_processors
++
+ 
+ def _load_from_revision(repo, datafile, revision):
+     from dvc.repo.tree import RepoTree

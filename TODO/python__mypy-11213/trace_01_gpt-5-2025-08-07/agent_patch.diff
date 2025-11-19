@@ -1,0 +1,66 @@
+diff --git a/mypy/semanal.py b/mypy/semanal.py
+index 7bfa3c66e..26afa3066 100644
+--- a/mypy/semanal.py
++++ b/mypy/semanal.py
+@@ -4960,10 +4960,17 @@ class SemanticAnalyzer(NodeVisitor[None],
+         - Yes outside functions.
+         - Yes in annotated functions.
+         - No otherwise.
++
++        Additionally, avoid reporting errors for any code nested within an
++        untyped (dynamic) function when check_untyped_defs is disabled.
++        This includes lambdas inside an untyped function.
+         """
+-        return (self.options.check_untyped_defs
+-                or not self.function_stack
+-                or not self.function_stack[-1].is_dynamic())
++        if self.options.check_untyped_defs or not self.function_stack:
++            return True
++        # If any enclosing function is dynamic (untyped), suppress errors.
++        # This prevents reporting errors for lambdas or nested code inside
++        # untyped functions under the default configuration.
++        return not any(fn.is_dynamic() for fn in self.function_stack)
+ 
+     def fail(self,
+              msg: str,
+diff --git a/repro.py b/repro.py
+new file mode 100644
+index 000000000..1c0efcef5
+--- /dev/null
++++ b/repro.py
+@@ -0,0 +1,35 @@
++import sys
++from mypy import api
++import tempfile, os
++
++def write_temp(code: str) -> str:
++    fd, path = tempfile.mkstemp(suffix='.py', text=True)
++    with os.fdopen(fd, 'w', encoding='utf-8') as f:
++        f.write(code)
++    return path
++
++def run_mypy(code: str):
++    path = write_temp(code)
++    try:
++        res = api.run([path])
++        print('stdout:')
++        print(res[0])
++        print('stderr:')
++        print(res[1])
++        print('status:', res[2])
++    finally:
++        os.remove(path)
++
++code = """
++# sample code to repro: untyped functions
++
++def f():
++    return UNDEFINED
++
++
++def g():
++    return lambda x: UNDEFINED in x
++"""
++
++if __name__ == '__main__':
++    run_mypy(code)

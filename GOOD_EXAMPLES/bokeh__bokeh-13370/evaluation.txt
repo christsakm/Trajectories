@@ -1,0 +1,155 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+15 min ~ 1 hour
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/bokehjs/src/lib/api/gridplot.ts",
+  "/testbed/src/bokeh/layouts.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/tests/unit/bokeh/test_layouts.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "agent behavior",
+    "criterion": "The agent successfully reproduces the TypeError about 'got multiple values for keyword argument' before attempting any fix",
+    "rationale": "Reproducing the bug first is essential to confirm the issue exists and to verify the fix works. This demonstrates proper debugging methodology.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch removes the **toolbar_options unpacking from the Toolbar() constructor call to avoid duplicate keyword arguments",
+    "rationale": "This is the core fix for the bug. The error occurs because parameters like 'logo' are passed both explicitly and through **toolbar_options, causing Python to raise TypeError for duplicate keyword arguments.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The patch ensures user-provided toolbar_options take precedence over merged/computed toolbar property values from individual plots",
+    "rationale": "When users explicitly provide toolbar_options, those values must override defaults or computed values from merging individual plot toolbars. This respects user intent and matches expected API behavior.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The patch adds handling for the 'autohide' toolbar property alongside other properties like logo, active_drag, active_inspect, active_scroll, active_tap, and active_multi",
+    "rationale": "The golden patch includes autohide property handling which ensures complete coverage of all toolbar options and maintains consistency with the full Toolbar API.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The patch modifies the assert_unique helper function to check toolbar_options parameter first before applying the default uniqueness logic",
+    "rationale": "This is the elegant approach used in the golden patch to let toolbar_options override computed values. It ensures user-specified options take priority throughout the toolbar property resolution logic.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_06": {
+    "type": "code style",
+    "criterion": "The patch adds proper type hints for the toolbar_options parameter using Literal to specify the allowed toolbar option keys",
+    "rationale": "Type hints improve code quality and developer experience by making the API clearer, enabling IDE autocomplete, and allowing static type checking. The golden patch adds ToolbarOptions as a Literal type.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "correctness",
+    "criterion": "The solution passes all FAIL_TO_PASS tests (test_gridplot_toolbar_options__issue_13369) and all PASS_TO_PASS tests without any regression",
+    "rationale": "The fix must resolve the reported issue and not break any existing functionality. Test results are the ultimate validation of correctness.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "correctness",
+    "criterion": "The patch properly handles the None default value of toolbar_options before performing operations like 'in' checks or .update() method calls",
+    "rationale": "The toolbar_options parameter defaults to None in the function signature. Code must check if toolbar_options is not None before using 'in' operator or calling .update() to avoid TypeError at runtime.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "summary",
+    "criterion": "The agent correctly explains that the root cause is toolbar properties being passed both explicitly (e.g., logo=logo) and through **toolbar_options unpacking to Toolbar(), causing duplicate keyword arguments",
+    "rationale": "Clear understanding and explanation of the root cause demonstrates proper debugging analysis and helps future maintainers understand why the change was necessary.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_10": {
+    "type": "summary",
+    "criterion": "The agent explains or documents that the solution avoids conditionally skipping properties in merged_props dict based on toolbar_options keys, instead using a simpler unconditional merge strategy where toolbar_options naturally overrides via dict precedence",
+    "rationale": "Documenting that the fix uses unconditional property collection with natural dict override precedence (rather than conditional property inclusion) demonstrates understanding of cleaner merge patterns and helps maintainers understand why this approach is more maintainable than checking each property key individually.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  },
+  "trace_02": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "PASS",
+    "rubric_10": "PASS"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "PASS",
+    "rubric_10": "FAIL"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 4,
+    "rationale": "Good solution that successfully fixes the core duplicate keyword argument bug (rubric_02) and properly handles the None default value of toolbar_options (rubric_08). Reproduces the error before fixing (rubric_01), ensures toolbar_options take precedence (rubric_03), passes all tests (rubric_07), correctly explains the root cause (rubric_09), and uses unconditional property collection approach (rubric_10). However, fails three GOOD_TO_HAVE rubrics: (1) rubric_04 - does not add autohide property handling alongside other toolbar properties, (2) rubric_05 - does not modify assert_unique function to check toolbar_options first as in golden patch, instead uses verbose conditional logic with isinstance checks, (3) rubric_06 - missing type hints with Literal for toolbar_options parameter. The solution is verbose but functionally correct and safe."
+  },
+  "trace_02": {
+    "rating": 3,
+    "rationale": "Fixes the core bug (rubric_02) with clean dict merging using update() pattern. Reproduces error first (rubric_01), ensures precedence (rubric_03), passes tests (rubric_07), explains root cause (rubric_09), and uses clean unconditional merge strategy (rubric_10). However, fails four rubrics including one critical MUST_FOLLOW: (1) rubric_08 (MUST_FOLLOW) - calls toolbar_kwargs.update(toolbar_options) without checking if toolbar_options is None first, which will cause AttributeError when toolbar_options is not provided (default None value); tests don't expose this edge case, (2) rubric_04 - missing autohide property handling, (3) rubric_05 - does not modify assert_unique function to prioritize toolbar_options, (4) rubric_06 - no type hints. The latent None handling bug is a serious flaw that reduces reliability."
+  },
+  "trace_04": {
+    "rating": 2,
+    "rationale": "Fixes the reported bug (rubric_02) and passes all provided tests (rubric_07). Reproduces error (rubric_01), ensures precedence (rubric_03), and explains root cause (rubric_09). However, fails five rubrics including one critical MUST_FOLLOW: (1) rubric_08 (MUST_FOLLOW) - checks 'logo' not in toolbar_options without verifying toolbar_options is not None first, causing TypeError 'argument of type NoneType is not iterable' when using default None value; this fail-fast bug occurs early in conditional logic, (2) rubric_04 - missing autohide property handling, (3) rubric_05 - does not modify assert_unique helper function as in golden patch, (4) rubric_06 - no type hints with Literal, (5) rubric_10 - uses conditional 'if property not in toolbar_options' checks to skip adding properties to merged_props dict, which is more complex than unconditional merge with natural dict override precedence. The critical None handling flaw makes this solution unreliable in production despite passing tests that always provide toolbar_options."
+  }
+}

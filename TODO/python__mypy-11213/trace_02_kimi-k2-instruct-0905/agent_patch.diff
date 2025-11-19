@@ -1,0 +1,18 @@
+diff --git a/mypy/semanal.py b/mypy/semanal.py
+index 7bfa3c66e..1786b0f36 100644
+--- a/mypy/semanal.py
++++ b/mypy/semanal.py
+@@ -4880,6 +4880,13 @@ class SemanticAnalyzer(NodeVisitor[None],
+             # later on. Defer current target.
+             self.record_incomplete_ref()
+             return
++        
++        # Skip checking undefined names in untyped functions
++        if (self.is_func_scope() 
++                and self.function_stack 
++                and self.function_stack[-1].type is None):
++            return
++            
+         message = 'Name "{}" is not defined'.format(name)
+         self.fail(message, ctx, code=codes.NAME_DEFINED)
+ 

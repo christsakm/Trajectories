@@ -1,0 +1,194 @@
+diff --git a/classmethod_test.py b/classmethod_test.py
+new file mode 100644
+index 000000000..b7bea7011
+--- /dev/null
++++ b/classmethod_test.py
+@@ -0,0 +1,10 @@
++from typing import Generic, TypeVar
++T = TypeVar('T')
++
++class C(Generic[T]):
++    @classmethod
++    def c(cls) -> C[T]:  # Using classmethod instead
++        return cls()
++
++# This should work
++x: C[int] = C[int].c()
+\ No newline at end of file
+diff --git a/comprehensive_test.py b/comprehensive_test.py
+new file mode 100644
+index 000000000..468e3510d
+--- /dev/null
++++ b/comprehensive_test.py
+@@ -0,0 +1,39 @@
++from typing import Generic, TypeVar
++T = TypeVar('T')
++U = TypeVar('U')
++
++class C(Generic[T]):
++    @staticmethod
++    def static_method() -> 'C[T]':
++        return C()
++    
++    @classmethod
++    def class_method(cls) -> 'C[T]':
++        return cls()
++        
++    def instance_method(self) -> 'C[T]':
++        return C()
++
++class D(C[T], Generic[T, U]):
++    @staticmethod
++    def static_method_d() -> 'D[T, U]':
++        return D()
++
++# Test cases
++# 1. Basic static method on generic class
++x1: C[int] = C[int].static_method()
++
++# 2. Class method (should still work)
++x2: C[int] = C[int].class_method()
++
++# 3. Instance method (should still work)
++x3: C[int] = C[int]().instance_method()
++
++# 4. Static method on derived generic class with multiple type vars
++x4: D[int, str] = D[int, str].static_method_d()
++
++# 5. Function with type variables
++def f(t: T) -> C[T]:
++    return C[T].static_method()
++
++print("All tests passed!")
+\ No newline at end of file
+diff --git a/debug_issue.py b/debug_issue.py
+new file mode 100644
+index 000000000..13e9465a5
+--- /dev/null
++++ b/debug_issue.py
+@@ -0,0 +1,23 @@
++#!/usr/bin/env python3
++
++"""Debug script to understand the issue with staticmethod on generic types."""
++
++from typing import Generic, TypeVar
++T = TypeVar('T')
++
++class C(Generic[T]):
++    @staticmethod
++    def c() -> 'C[T]':
++        return C()
++
++def f(t: T) -> C[T]:
++    # This should work - calling staticmethod on a parameterized generic type
++    result = C[T].c()
++    print(f"Type of result: {type(result)}")
++    return result
++
++# Test the function
++if __name__ == "__main__":
++    # This should work at runtime
++    x = f(42)
++    print(f"Result: {x}")
+\ No newline at end of file
+diff --git a/debug_type.py b/debug_type.py
+new file mode 100644
+index 000000000..64b821521
+--- /dev/null
++++ b/debug_type.py
+@@ -0,0 +1,9 @@
++from typing import Generic, TypeVar
++T = TypeVar('T')
++
++class C(Generic[T]):
++    pass
++
++# What is the type of C[T]?
++x = C[int]  # This should be a type object
++y = C()     # This should be an instance
+\ No newline at end of file
+diff --git a/main.py b/main.py
+new file mode 100644
+index 000000000..d02f5e090
+--- /dev/null
++++ b/main.py
+@@ -0,0 +1,10 @@
++from typing import Generic, TypeVar 
++T = TypeVar('T')
++
++class C(Generic[T]):
++    @staticmethod
++    def c() -> 'C[T]':
++        return C()
++
++def f(t: T) -> C[T]:
++    return C[T].c()
+\ No newline at end of file
+diff --git a/no_forward_ref.py b/no_forward_ref.py
+new file mode 100644
+index 000000000..2c634bc3c
+--- /dev/null
++++ b/no_forward_ref.py
+@@ -0,0 +1,10 @@
++from typing import Generic, TypeVar
++T = TypeVar('T')
++
++class C(Generic[T]):
++    @staticmethod
++    def c() -> C[T]:  # No forward reference
++        return C()
++
++# This should work
++x: C[int] = C[int].c()
+\ No newline at end of file
+diff --git a/original_case.py b/original_case.py
+new file mode 100644
+index 000000000..d02f5e090
+--- /dev/null
++++ b/original_case.py
+@@ -0,0 +1,10 @@
++from typing import Generic, TypeVar 
++T = TypeVar('T')
++
++class C(Generic[T]):
++    @staticmethod
++    def c() -> 'C[T]':
++        return C()
++
++def f(t: T) -> C[T]:
++    return C[T].c()
+\ No newline at end of file
+diff --git a/simple_test.py b/simple_test.py
+new file mode 100644
+index 000000000..3dd970378
+--- /dev/null
++++ b/simple_test.py
+@@ -0,0 +1,10 @@
++from typing import Generic, TypeVar
++T = TypeVar('T')
++
++class C(Generic[T]):
++    @staticmethod
++    def c() -> 'C[T]':
++        return C()
++
++# This should work
++x: C[int] = C[int].c()
+\ No newline at end of file
+diff --git a/test_issue.py b/test_issue.py
+new file mode 100644
+index 000000000..d02f5e090
+--- /dev/null
++++ b/test_issue.py
+@@ -0,0 +1,10 @@
++from typing import Generic, TypeVar 
++T = TypeVar('T')
++
++class C(Generic[T]):
++    @staticmethod
++    def c() -> 'C[T]':
++        return C()
++
++def f(t: T) -> C[T]:
++    return C[T].c()
+\ No newline at end of file

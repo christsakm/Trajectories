@@ -1,0 +1,2030 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   dvc/repo/plots/data.py
+	modified:   setup.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit c1e5b10cbd8d751c7036e26fe62f58edece0e507
+Author: Saugat Pachhai <suagatchhetri@outlook.com>
+Date:   Tue Jun 9 09:43:34 2020 +0000
+
+    remove unnecessary dependencies (#3987)
+    
+    Fix #3971
+
+diff --git a/setup.py b/setup.py
+index 4c927dcf1..d60c928e0 100644
+--- a/setup.py
++++ b/setup.py
+@@ -60,9 +60,6 @@ install_requires = [
+     "grandalf==0.6",
+     "distro>=1.3.0",
+     "appdirs>=1.4.3",
+-    "treelib>=1.5.5",
+-    "inflect>=2.1.0,<4",
+-    "humanize>=0.5.1",
+     "PyYAML>=5.1.2,<5.4",  # Compatibility with awscli
+     "ruamel.yaml>=0.16.1",
+     "funcy>=1.14",
++ git diff c1e5b10cbd8d751c7036e26fe62f58edece0e507
+diff --git a/dvc/repo/plots/data.py b/dvc/repo/plots/data.py
+index 68430e6a2..918d81141 100644
+--- a/dvc/repo/plots/data.py
++++ b/dvc/repo/plots/data.py
+@@ -96,6 +96,8 @@ def _apply_path(data, path=None, **kwargs):
+ 
+     found = jsonpath_ng.parse(path).find(data)
+     first_datum = first(found)
++    if not first_datum:
++        raise PlotDataStructureError()
+     if (
+         len(found) == 1
+         and isinstance(first_datum.value, list)
+@@ -237,6 +239,10 @@ class YAMLPlotData(PlotData):
+ 
+         return yaml.load(self.content, OrderedLoader)
+ 
++    def _processors(self):
++        parent_processors = super()._processors()
++        return [_apply_path, _find_data] + parent_processors
++
+ 
+ def _load_from_revision(repo, datafile, revision):
+     from dvc.repo.tree import RepoTree
+diff --git a/setup.py b/setup.py
+index d60c928e0..3713f8edd 100644
+--- a/setup.py
++++ b/setup.py
+@@ -119,7 +119,7 @@ tests_requirements = [
+     "pydocstyle<4.0",
+     "jaraco.windows==3.9.2",
+     "mock-ssh-server>=0.8.2",
+-    "moto==1.3.14.dev464",
++    "moto==1.3.14",
+     "rangehttpserver==1.2.0",
+     "beautifulsoup4==4.4.0",
+ ]
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install --upgrade pip wheel GitPython
+Requirement already satisfied: pip in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (25.3)
+Requirement already satisfied: wheel in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (0.45.1)
+Requirement already satisfied: GitPython in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (3.1.45)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from GitPython) (4.0.12)
+Requirement already satisfied: typing-extensions>=3.10.0.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from GitPython) (4.15.0)
+Requirement already satisfied: smmap<6,>=3.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from gitdb<5,>=4.0.1->GitPython) (5.0.2)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install 'cython<3.0.0'
+Requirement already satisfied: cython<3.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (0.29.37)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install --no-build-isolation pyyaml==5.4.1
+Collecting pyyaml==5.4.1
+  Using cached PyYAML-5.4.1-cp39-cp39-manylinux1_x86_64.whl.metadata (2.1 kB)
+Using cached PyYAML-5.4.1-cp39-cp39-manylinux1_x86_64.whl (630 kB)
+Installing collected packages: pyyaml
+  Attempting uninstall: pyyaml
+    Found existing installation: PyYAML 5.3.1
+    Uninstalling PyYAML-5.3.1:
+      Successfully uninstalled PyYAML-5.3.1
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+dvc 1.0.0a10+c1e5b1.mod requires PyYAML<5.4,>=5.1.2, but you have pyyaml 5.4.1 which is incompatible.
+Successfully installed pyyaml-5.4.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install git+https://github.com/iterative/mock-ssh-server.git
+Collecting git+https://github.com/iterative/mock-ssh-server.git
+  Cloning https://github.com/iterative/mock-ssh-server.git to /tmp/pip-req-build-ccyvru62
+  Running command git clone --filter=blob:none --quiet https://github.com/iterative/mock-ssh-server.git /tmp/pip-req-build-ccyvru62
+  Resolved https://github.com/iterative/mock-ssh-server.git to commit cd2032aeb04bb142dbc964e50839133c3584cf08
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: paramiko in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from mock-ssh-server==0.8.1) (4.0.0)
+Requirement already satisfied: bcrypt>=3.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from paramiko->mock-ssh-server==0.8.1) (5.0.0)
+Requirement already satisfied: cryptography>=3.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from paramiko->mock-ssh-server==0.8.1) (43.0.3)
+Requirement already satisfied: invoke>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from paramiko->mock-ssh-server==0.8.1) (2.2.1)
+Requirement already satisfied: pynacl>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from paramiko->mock-ssh-server==0.8.1) (1.6.1)
+Requirement already satisfied: cffi>=1.12 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from cryptography>=3.3->paramiko->mock-ssh-server==0.8.1) (2.0.0)
+Requirement already satisfied: pycparser in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from cffi>=1.12->cryptography>=3.3->paramiko->mock-ssh-server==0.8.1) (2.23)
+Building wheels for collected packages: mock-ssh-server
+  Building wheel for mock-ssh-server (pyproject.toml): started
+  Building wheel for mock-ssh-server (pyproject.toml): finished with status 'done'
+  Created wheel for mock-ssh-server: filename=mock_ssh_server-0.8.1-py3-none-any.whl size=12977 sha256=e6fe0e99a89c8aea44d8028b15d1ea70689fa54ad981a54833974ef88d4b67b5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3z1gffqg/wheels/08/e6/a2/238a7b275c063937c00f0fb6dd3367cb276f70086abdcf42c0
+Successfully built mock-ssh-server
+Installing collected packages: mock-ssh-server
+  Attempting uninstall: mock-ssh-server
+    Found existing installation: mock-ssh-server 0.9.1
+    Uninstalling mock-ssh-server-0.9.1:
+      Successfully uninstalled mock-ssh-server-0.9.1
+Successfully installed mock-ssh-server-0.8.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install -r tests/requirements.txt
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'tests/requirements.txt'
++ true
++ python -m pip install -r test-requirements.txt
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'test-requirements.txt'
++ true
++ python -m pip install -e '.[tests,dev,all_remotes,all,testing]'
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: ply>=3.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (3.11)
+Requirement already satisfied: colorama>=0.3.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.4.6)
+Requirement already satisfied: configobj>=5.0.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (5.0.9)
+Requirement already satisfied: gitpython>3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (3.1.45)
+Requirement already satisfied: setuptools>=34.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (80.9.0)
+Requirement already satisfied: nanotime>=0.5.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.5.2)
+Requirement already satisfied: pyasn1>=0.4.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.6.1)
+Requirement already satisfied: voluptuous>=0.11.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.15.2)
+Requirement already satisfied: jsonpath-ng>=1.5.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.7.0)
+Requirement already satisfied: requests>=2.22.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.32.5)
+Requirement already satisfied: grandalf==0.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.6)
+Requirement already satisfied: distro>=1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.9.0)
+Requirement already satisfied: appdirs>=1.4.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.4.4)
+Collecting PyYAML<5.4,>=5.1.2 (from dvc==1.0.0a10+c1e5b1.mod)
+  Using cached pyyaml-5.3.1-cp39-cp39-linux_x86_64.whl
+Requirement already satisfied: ruamel.yaml>=0.16.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.18.16)
+Requirement already satisfied: funcy>=1.14 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.0)
+Requirement already satisfied: pathspec>=0.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.12.1)
+Requirement already satisfied: shortuuid>=0.5.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.0.13)
+Requirement already satisfied: tqdm<5,>=4.45.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (4.67.1)
+Requirement already satisfied: packaging>=19.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (25.0)
+Requirement already satisfied: zc.lockfile>=1.2.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (4.0)
+Requirement already satisfied: flufl.lock>=3.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (8.2.0)
+Requirement already satisfied: networkx<2.4,>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.3)
+Requirement already satisfied: pydot>=1.2.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (4.0.1)
+Requirement already satisfied: flatten_json>=0.1.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.1.14)
+Requirement already satisfied: tabulate>=0.8.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.9.0)
+Requirement already satisfied: pygtrie==2.3.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.3.2)
+Requirement already satisfied: dpath<3,>=2.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.2.0)
+WARNING: dvc 1.0.0a10+c1e5b1.mod does not provide the extra 'all-remotes'
+WARNING: dvc 1.0.0a10+c1e5b1.mod does not provide the extra 'dev'
+WARNING: dvc 1.0.0a10+c1e5b1.mod does not provide the extra 'testing'
+Requirement already satisfied: google-cloud-storage==1.19.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.19.0)
+Requirement already satisfied: boto3>=1.9.201 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.40.74)
+Requirement already satisfied: azure-storage-blob==2.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.1.0)
+Requirement already satisfied: paramiko>=2.5.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (4.0.0)
+Requirement already satisfied: oss2==2.6.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.6.1)
+Requirement already satisfied: pydrive2>=1.4.13 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.21.3)
+Requirement already satisfied: pyarrow>=0.17.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (21.0.0)
+Requirement already satisfied: wheel>=0.31.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.45.1)
+Requirement already satisfied: pytest>=4.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (7.4.4)
+Requirement already satisfied: pytest-timeout>=1.3.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.4.0)
+Requirement already satisfied: pytest-cov>=2.6.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (7.0.0)
+Requirement already satisfied: pytest-xdist>=1.26.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (3.8.0)
+Requirement already satisfied: pytest-mock==1.11.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.11.2)
+Requirement already satisfied: flaky>=3.5.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (3.8.1)
+Requirement already satisfied: mock>=3.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (5.2.0)
+Requirement already satisfied: xmltodict>=0.11.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.0.2)
+Requirement already satisfied: awscli>=1.16.297 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.42.74)
+Requirement already satisfied: google-compute-engine==2.8.13 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.8.13)
+Requirement already satisfied: Pygments in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (2.19.2)
+Requirement already satisfied: collective.checkdocs in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (0.2)
+Requirement already satisfied: flake8==3.7.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (3.7.9)
+Requirement already satisfied: psutil in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (7.1.3)
+Requirement already satisfied: flake8-docstrings in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.7.0)
+Requirement already satisfied: pydocstyle<4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (3.0.0)
+Requirement already satisfied: jaraco.windows==3.9.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (3.9.2)
+Collecting mock-ssh-server>=0.8.2 (from dvc==1.0.0a10+c1e5b1.mod)
+  Using cached mock_ssh_server-0.9.1-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: moto==1.3.14 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.3.14)
+Requirement already satisfied: rangehttpserver==1.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (1.2.0)
+Requirement already satisfied: beautifulsoup4==4.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (4.4.0)
+Requirement already satisfied: black==19.10b0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from dvc==1.0.0a10+c1e5b1.mod) (19.10b0)
+Requirement already satisfied: azure-common>=1.1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from azure-storage-blob==2.1.0->dvc==1.0.0a10+c1e5b1.mod) (1.1.28)
+Requirement already satisfied: azure-storage-common~=2.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from azure-storage-blob==2.1.0->dvc==1.0.0a10+c1e5b1.mod) (2.1.0)
+Requirement already satisfied: click>=6.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from black==19.10b0->dvc==1.0.0a10+c1e5b1.mod) (8.1.8)
+Requirement already satisfied: attrs>=18.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from black==19.10b0->dvc==1.0.0a10+c1e5b1.mod) (25.4.0)
+Requirement already satisfied: toml>=0.9.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from black==19.10b0->dvc==1.0.0a10+c1e5b1.mod) (0.10.2)
+Requirement already satisfied: typed-ast>=1.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from black==19.10b0->dvc==1.0.0a10+c1e5b1.mod) (1.5.5)
+Requirement already satisfied: regex in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from black==19.10b0->dvc==1.0.0a10+c1e5b1.mod) (2025.11.3)
+Requirement already satisfied: entrypoints<0.4.0,>=0.3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flake8==3.7.9->dvc==1.0.0a10+c1e5b1.mod) (0.3)
+Requirement already satisfied: pyflakes<2.2.0,>=2.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flake8==3.7.9->dvc==1.0.0a10+c1e5b1.mod) (2.1.1)
+Requirement already satisfied: pycodestyle<2.6.0,>=2.5.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flake8==3.7.9->dvc==1.0.0a10+c1e5b1.mod) (2.5.0)
+Requirement already satisfied: mccabe<0.7.0,>=0.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flake8==3.7.9->dvc==1.0.0a10+c1e5b1.mod) (0.6.1)
+Requirement already satisfied: google-auth>=1.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (1.35.0)
+Requirement already satisfied: google-cloud-core<2.0dev,>=1.0.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (1.7.3)
+Requirement already satisfied: google-resumable-media>=0.3.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (2.7.2)
+Requirement already satisfied: boto in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-compute-engine==2.8.13->dvc==1.0.0a10+c1e5b1.mod) (2.49.0)
+Requirement already satisfied: pyparsing in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from grandalf==0.6->dvc==1.0.0a10+c1e5b1.mod) (3.2.5)
+Requirement already satisfied: future in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from grandalf==0.6->dvc==1.0.0a10+c1e5b1.mod) (1.0.0)
+Requirement already satisfied: more-itertools in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (10.8.0)
+Requirement already satisfied: six in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (1.17.0)
+Requirement already satisfied: jaraco.ui in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (2.4.0)
+Requirement already satisfied: jaraco.collections in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (5.2.1)
+Requirement already satisfied: jaraco.text in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (4.0.0)
+Requirement already satisfied: jaraco.structures>=1.1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (2.2.0)
+Requirement already satisfied: path.py>=6.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (12.5.0)
+Requirement already satisfied: Jinja2>=2.10.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (3.1.6)
+Requirement already satisfied: botocore>=1.12.201 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (1.40.74)
+Requirement already satisfied: cryptography>=2.3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (43.0.3)
+Requirement already satisfied: werkzeug in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (3.1.3)
+Requirement already satisfied: pytz in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2025.2)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.9.0.post0)
+Requirement already satisfied: python-jose<4.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (3.5.0)
+Requirement already satisfied: docker>=2.5.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (7.1.0)
+Requirement already satisfied: jsondiff==1.1.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (1.1.2)
+Requirement already satisfied: aws-xray-sdk!=0.96,>=0.93 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.15.0)
+Requirement already satisfied: responses>=0.9.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (0.25.8)
+Requirement already satisfied: idna<2.9,>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.8)
+Requirement already satisfied: cfn-lint>=0.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (0.28.4)
+Requirement already satisfied: sshpubkeys<4.0,>=3.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (3.3.1)
+Requirement already satisfied: crcmod>=1.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from oss2==2.6.1->dvc==1.0.0a10+c1e5b1.mod) (1.7)
+Requirement already satisfied: pycryptodome>=3.4.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from oss2==2.6.1->dvc==1.0.0a10+c1e5b1.mod) (3.23.0)
+Requirement already satisfied: aliyun-python-sdk-kms>=2.4.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from oss2==2.6.1->dvc==1.0.0a10+c1e5b1.mod) (2.16.5)
+Requirement already satisfied: aliyun-python-sdk-core-v3>=2.5.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from oss2==2.6.1->dvc==1.0.0a10+c1e5b1.mod) (2.13.33)
+Requirement already satisfied: google-api-core<3.0.0dev,>=1.21.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-cloud-core<2.0dev,>=1.0.3->google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (2.10.2)
+Requirement already satisfied: googleapis-common-protos<2.0dev,>=1.56.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-cloud-core<2.0dev,>=1.0.3->google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (1.72.0)
+Requirement already satisfied: protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.19.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-api-core<3.0.0dev,>=1.21.0->google-cloud-core<2.0dev,>=1.0.3->google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (4.25.8)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-auth>=1.2.0->google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (4.2.4)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-auth>=1.2.0->google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (0.4.2)
+Requirement already satisfied: rsa<5,>=3.1.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-auth>=1.2.0->google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (4.7.2)
+Requirement already satisfied: decorator>=4.3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from networkx<2.4,>=2.1->dvc==1.0.0a10+c1e5b1.mod) (5.2.1)
+Requirement already satisfied: snowballstemmer in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pydocstyle<4.0->dvc==1.0.0a10+c1e5b1.mod) (3.0.1)
+Requirement already satisfied: ecdsa!=0.15 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from python-jose<4.0.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (0.19.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.22.0->dvc==1.0.0a10+c1e5b1.mod) (3.4.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.22.0->dvc==1.0.0a10+c1e5b1.mod) (1.26.20)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.22.0->dvc==1.0.0a10+c1e5b1.mod) (2025.11.12)
+Requirement already satisfied: jmespath<1.0.0,>=0.9.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from aliyun-python-sdk-core-v3>=2.5.5->oss2==2.6.1->dvc==1.0.0a10+c1e5b1.mod) (0.10.0)
+Requirement already satisfied: aliyun-python-sdk-core>=2.11.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from aliyun-python-sdk-kms>=2.4.1->oss2==2.6.1->dvc==1.0.0a10+c1e5b1.mod) (2.16.0)
+Requirement already satisfied: wrapt in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from aws-xray-sdk!=0.96,>=0.93->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.0.1)
+Requirement already satisfied: docutils<=0.19,>=0.18.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from awscli>=1.16.297->dvc==1.0.0a10+c1e5b1.mod) (0.19)
+Requirement already satisfied: s3transfer<0.15.0,>=0.14.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from awscli>=1.16.297->dvc==1.0.0a10+c1e5b1.mod) (0.14.0)
+Requirement already satisfied: aws-sam-translator>=1.19.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (1.101.0)
+Requirement already satisfied: jsonschema~=3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (3.2.0)
+Requirement already satisfied: jsonpatch in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (1.33)
+Requirement already satisfied: pyrsistent>=0.14.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jsonschema~=3.0->cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (0.20.0)
+Requirement already satisfied: typing_extensions>=4.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from aws-sam-translator>=1.19.1->cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (4.15.0)
+Requirement already satisfied: pydantic!=1.10.15,!=1.10.17,<3,>=1.8 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from aws-sam-translator>=1.19.1->cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.12.4)
+Requirement already satisfied: annotated-types>=0.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pydantic!=1.10.15,!=1.10.17,<3,>=1.8->aws-sam-translator>=1.19.1->cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pydantic!=1.10.15,!=1.10.17,<3,>=1.8->aws-sam-translator>=1.19.1->cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.41.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pydantic!=1.10.15,!=1.10.17,<3,>=1.8->aws-sam-translator>=1.19.1->cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (0.4.2)
+Requirement already satisfied: cffi>=1.12 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from cryptography>=2.3.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.0.0)
+Requirement already satisfied: pycparser in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from cffi>=1.12->cryptography>=2.3.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (2.23)
+Requirement already satisfied: atpublic in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flufl.lock>=3.2->dvc==1.0.0a10+c1e5b1.mod) (6.0.2)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from gitpython>3->dvc==1.0.0a10+c1e5b1.mod) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from gitdb<5,>=4.0.1->gitpython>3->dvc==1.0.0a10+c1e5b1.mod) (5.0.2)
+Requirement already satisfied: google-crc32c<2.0dev,>=1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-resumable-media>=0.3.1->google-cloud-storage==1.19.0->dvc==1.0.0a10+c1e5b1.mod) (1.7.1)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Jinja2>=2.10.1->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (3.0.3)
+Requirement already satisfied: bcrypt>=3.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from paramiko>=2.5.0->dvc==1.0.0a10+c1e5b1.mod) (5.0.0)
+Requirement already satisfied: invoke>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from paramiko>=2.5.0->dvc==1.0.0a10+c1e5b1.mod) (2.2.1)
+Requirement already satisfied: pynacl>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from paramiko>=2.5.0->dvc==1.0.0a10+c1e5b1.mod) (1.6.1)
+Requirement already satisfied: path in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from path.py>=6.2->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (17.1.1)
+Requirement already satisfied: google-api-python-client>=1.12.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pydrive2>=1.4.13->dvc==1.0.0a10+c1e5b1.mod) (2.187.0)
+Requirement already satisfied: oauth2client>=4.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pydrive2>=1.4.13->dvc==1.0.0a10+c1e5b1.mod) (4.1.3)
+Requirement already satisfied: pyOpenSSL<=24.2.1,>=19.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pydrive2>=1.4.13->dvc==1.0.0a10+c1e5b1.mod) (24.2.1)
+Requirement already satisfied: httplib2<1.0.0,>=0.19.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-api-python-client>=1.12.5->pydrive2>=1.4.13->dvc==1.0.0a10+c1e5b1.mod) (0.31.0)
+Requirement already satisfied: google-auth-httplib2<1.0.0,>=0.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-api-python-client>=1.12.5->pydrive2>=1.4.13->dvc==1.0.0a10+c1e5b1.mod) (0.2.1)
+Requirement already satisfied: uritemplate<5,>=3.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from google-api-python-client>=1.12.5->pydrive2>=1.4.13->dvc==1.0.0a10+c1e5b1.mod) (4.2.0)
+Requirement already satisfied: iniconfig in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6.0->dvc==1.0.0a10+c1e5b1.mod) (2.1.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6.0->dvc==1.0.0a10+c1e5b1.mod) (1.6.0)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6.0->dvc==1.0.0a10+c1e5b1.mod) (1.3.0)
+Requirement already satisfied: tomli>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest>=4.6.0->dvc==1.0.0a10+c1e5b1.mod) (2.3.0)
+Requirement already satisfied: coverage>=7.10.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from coverage[toml]>=7.10.6->pytest-cov>=2.6.1->dvc==1.0.0a10+c1e5b1.mod) (7.10.7)
+Requirement already satisfied: execnet>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest-xdist>=1.26.1->dvc==1.0.0a10+c1e5b1.mod) (2.1.2)
+Requirement already satisfied: ruamel.yaml.clib>=0.2.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ruamel.yaml>=0.16.1->dvc==1.0.0a10+c1e5b1.mod) (0.2.14)
+Requirement already satisfied: jaraco.functools in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.text->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (4.3.0)
+Requirement already satisfied: jaraco.context>=4.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.text->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (6.0.1)
+Requirement already satisfied: autocommand in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.text->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (2.2.2)
+Requirement already satisfied: backports.tarfile in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.context>=4.1->jaraco.text->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (1.2.0)
+Requirement already satisfied: jaraco.classes in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.ui->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (3.4.0)
+Requirement already satisfied: named in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.ui->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (1.4.2)
+Requirement already satisfied: typer in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jaraco.ui->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (0.20.0)
+Requirement already satisfied: jsonpointer>=1.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jsonpatch->cfn-lint>=0.4.0->moto==1.3.14->dvc==1.0.0a10+c1e5b1.mod) (3.0.0)
+Requirement already satisfied: shellingham>=1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from typer->jaraco.ui->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (1.5.4)
+Requirement already satisfied: rich>=10.11.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from typer->jaraco.ui->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (14.2.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from rich>=10.11.0->typer->jaraco.ui->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (3.0.0)
+Requirement already satisfied: mdurl~=0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from markdown-it-py>=2.2.0->rich>=10.11.0->typer->jaraco.ui->jaraco.windows==3.9.2->dvc==1.0.0a10+c1e5b1.mod) (0.1.2)
+Using cached mock_ssh_server-0.9.1-py3-none-any.whl (14 kB)
+Building wheels for collected packages: dvc
+  Building editable for dvc (pyproject.toml): started
+  Building editable for dvc (pyproject.toml): finished with status 'done'
+  Created wheel for dvc: filename=dvc-1.0.0a10+c1e5b1.mod-0.editable-py2.py3-none-any.whl size=12499 sha256=2cbd158522d4148bac1f9b4827f42e2915c18522fe5e13910c7fd28f151e0a38
+  Stored in directory: /tmp/pip-ephem-wheel-cache-xegaxyxr/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built dvc
+Installing collected packages: PyYAML, dvc, mock-ssh-server
+  Attempting uninstall: PyYAML
+    Found existing installation: PyYAML 5.4.1
+    Uninstalling PyYAML-5.4.1:
+      Successfully uninstalled PyYAML-5.4.1
+  Attempting uninstall: dvc
+    Found existing installation: dvc 1.0.0a10+c1e5b1.mod
+    Uninstalling dvc-1.0.0a10+c1e5b1.mod:
+      Successfully uninstalled dvc-1.0.0a10+c1e5b1.mod
+  Attempting uninstall: mock-ssh-server
+    Found existing installation: mock-ssh-server 0.8.1
+    Uninstalling mock-ssh-server-0.8.1:
+      Successfully uninstalled mock-ssh-server-0.8.1
+
+Successfully installed PyYAML-5.3.1 dvc-1.0.0a10+c1e5b1.mod mock-ssh-server-0.9.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install 'numpy<=1.20'
+Requirement already satisfied: numpy<=1.20 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (1.20.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install 'pytest<8'
+Requirement already satisfied: pytest<8 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (7.4.4)
+Requirement already satisfied: iniconfig in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<8) (2.1.0)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<8) (25.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<8) (1.6.0)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<8) (1.3.0)
+Requirement already satisfied: tomli>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<8) (2.3.0)
+Requirement already satisfied: typing-extensions>=4.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from exceptiongroup>=1.0.0rc8->pytest<8) (4.15.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git checkout c1e5b10cbd8d751c7036e26fe62f58edece0e507 tests/func/plots/test_plots.py
+Updated 0 paths from f31da0f5a
++ git apply -v -
+Checking patch tests/func/plots/test_plots.py...
+Applied patch tests/func/plots/test_plots.py cleanly.
++ pytest -rA tests/func/plots/test_plots.py
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.4, pluggy-1.6.0
+rootdir: /testbed
+plugins: flaky-3.8.1, mock-1.11.2, xdist-3.8.0, timeout-2.4.0, cov-7.0.0
+collected 23 items
+
+tests/func/plots/test_plots.py FFFFFFFFF.FFF.F.FFFFF..                   [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_plot_csv_one_column ___________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_csv_one_column0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_csv_one_column0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_csv_one_column0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc5a4e0d0>
+
+    def test_plot_csv_one_column(tmp_dir, scm, dvc, run_copy_metrics):
+        # no header
+        metric = [{"val": 2}, {"val": 3}]
+        _write_csv(metric, "metric_t.csv", header=False)
+>       run_copy_metrics(
+            "metric_t.csv", "metric.csv", plots_no_cache=["metric.csv"]
+        )
+
+/testbed/tests/func/plots/test_plots.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+________________________ test_plot_csv_multiple_columns ________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_csv_multiple_columns0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_csv_multiple_columns0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_csv_multiple_columns0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc50c4820>
+
+    def test_plot_csv_multiple_columns(tmp_dir, scm, dvc, run_copy_metrics):
+        metric = [
+            OrderedDict([("first_val", 100), ("second_val", 100), ("val", 2)]),
+            OrderedDict([("first_val", 200), ("second_val", 300), ("val", 3)]),
+        ]
+        _write_csv(metric, "metric_t.csv")
+>       run_copy_metrics(
+            "metric_t.csv", "metric.csv", plots_no_cache=["metric.csv"]
+        )
+
+/testbed/tests/func/plots/test_plots.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+__________________________ test_plot_csv_choose_axes ___________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_csv_choose_axes0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_csv_choose_axes0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_csv_choose_axes0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc50a7280>
+
+    def test_plot_csv_choose_axes(tmp_dir, scm, dvc, run_copy_metrics):
+        metric = [
+            OrderedDict([("first_val", 100), ("second_val", 100), ("val", 2)]),
+            OrderedDict([("first_val", 200), ("second_val", 300), ("val", 3)]),
+        ]
+        _write_csv(metric, "metric_t.csv")
+>       run_copy_metrics(
+            "metric_t.csv", "metric.csv", plots_no_cache=["metric.csv"]
+        )
+
+/testbed/tests/func/plots/test_plots.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+__________________________ test_plot_json_single_val ___________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_json_single_val0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_json_single_val0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_json_single_val0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc50a8a60>
+
+    def test_plot_json_single_val(tmp_dir, scm, dvc, run_copy_metrics):
+        metric = [{"val": 2}, {"val": 3}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="first run",
+        )
+
+/testbed/tests/func/plots/test_plots.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_________________________ test_plot_json_multiple_val __________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_json_multiple_val0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_json_multiple_val0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_json_multiple_val0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc50a7e50>
+
+    def test_plot_json_multiple_val(tmp_dir, scm, dvc, run_copy_metrics):
+        metric = [
+            {"first_val": 100, "val": 2},
+            {"first_val": 200, "val": 3},
+        ]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="first run",
+        )
+
+/testbed/tests/func/plots/test_plots.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_____________________________ test_plot_confusion ______________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_confusion0')
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_confusion0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc5058b80>
+
+    def test_plot_confusion(tmp_dir, dvc, run_copy_metrics):
+        confusion_matrix = [
+            {"predicted": "B", "actual": "A"},
+            {"predicted": "A", "actual": "A"},
+        ]
+        _write_json(tmp_dir, confusion_matrix, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="first run",
+        )
+
+/testbed/tests/func/plots/test_plots.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_______________________ test_plot_multiple_revs_default ________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_multiple_revs_defaul0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_multiple_revs_defaul0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_multiple_revs_defaul0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc50589d0>
+
+    def test_plot_multiple_revs_default(tmp_dir, scm, dvc, run_copy_metrics):
+        metric_1 = [{"y": 2}, {"y": 3}]
+        _write_json(tmp_dir, metric_1, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="init",
+            tag="v1",
+        )
+
+/testbed/tests/func/plots/test_plots.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+___________________________ test_plot_multiple_revs ____________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_multiple_revs0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_multiple_revs0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_multiple_revs0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc5054b80>
+
+    def test_plot_multiple_revs(tmp_dir, scm, dvc, run_copy_metrics):
+        shutil.copy(tmp_dir / ".dvc" / "plots" / "default.json", "template.json")
+    
+        metric_1 = [{"y": 2}, {"y": 3}]
+        _write_json(tmp_dir, metric_1, "metric_t.json")
+>       stage = run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="init",
+            tag="v1",
+        )
+
+/testbed/tests/func/plots/test_plots.py:269: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_______________________ test_plot_even_if_metric_missing _______________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_even_if_metric_missi0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_even_if_metric_missi0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_even_if_metric_missi0'
+caplog = <_pytest.logging.LogCaptureFixture object at 0x7fedc4e3b730>
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4ef7670>
+
+    def test_plot_even_if_metric_missing(
+        tmp_dir, scm, dvc, caplog, run_copy_metrics
+    ):
+        tmp_dir.scm_gen("some_file", "content", commit="there is no metric")
+        scm.tag("v1")
+    
+        metric = [{"y": 2}, {"y": 3}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="there is metric",
+            tag="v2",
+        )
+
+/testbed/tests/func/plots/test_plots.py:316: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_____________________________ test_custom_template _____________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_custom_template0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_custom_template0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_custom_template0'
+custom_template = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_custom_template0/custom_template.json')
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc50545e0>
+
+    def test_custom_template(tmp_dir, scm, dvc, custom_template, run_copy_metrics):
+        metric = [{"a": 1, "b": 2}, {"a": 2, "b": 3}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="init",
+            tag="v1",
+        )
+
+/testbed/tests/func/plots/test_plots.py:371: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+___________________ test_custom_template_with_specified_data ___________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_custom_template_with_spec0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_custom_template_with_spec0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_custom_template_with_spec0'
+custom_template = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_custom_template_with_spec0/custom_template.json')
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4ed8550>
+
+    def test_custom_template_with_specified_data(
+        tmp_dir, scm, dvc, custom_template, run_copy_metrics
+    ):
+        _replace(
+            custom_template, "DVC_METRIC_DATA", "DVC_METRIC_DATA,metric.json",
+        )
+    
+        metric = [{"a": 1, "b": 2}, {"a": 2, "b": 3}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            outs_no_cache=["metric.json"],
+            commit="init",
+            tag="v1",
+        )
+
+/testbed/tests/func/plots/test_plots.py:404: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+___________________ test_plot_override_specified_data_source ___________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_override_specified_d0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_override_specified_d0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_override_specified_d0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4ea3040>
+
+    def test_plot_override_specified_data_source(
+        tmp_dir, scm, dvc, run_copy_metrics
+    ):
+        shutil.copy(
+            tmp_dir / ".dvc" / "plots" / "default.json",
+            tmp_dir / "newtemplate.json",
+        )
+        _replace(
+            tmp_dir / "newtemplate.json",
+            "DVC_METRIC_DATA",
+            "DVC_METRIC_DATA,metric.json",
+        )
+    
+        metric = [{"a": 1, "b": 2}, {"a": 2, "b": 3}]
+        _write_json(tmp_dir, metric, "metric1.json")
+>       run_copy_metrics(
+            "metric1.json",
+            "metric2.json",
+            plots_no_cache=["metric2.json"],
+            commit="init",
+            tag="v1",
+        )
+
+/testbed/tests/func/plots/test_plots.py:439: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_______________________ test_should_raise_on_no_template _______________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_should_raise_on_no_templa0')
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_should_raise_on_no_templa0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4fad430>
+
+    def test_should_raise_on_no_template(tmp_dir, dvc, run_copy_metrics):
+        metric = [{"val": 2}, {"val": 3}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="first run",
+        )
+
+/testbed/tests/func/plots/test_plots.py:471: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_________________________ test_plot_wrong_metric_type __________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_wrong_metric_type0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_wrong_metric_type0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_wrong_metric_type0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4fc2ee0>
+
+    def test_plot_wrong_metric_type(tmp_dir, scm, dvc, run_copy_metrics):
+        tmp_dir.gen("metric_t.txt", "some text")
+>       run_copy_metrics(
+            "metric_t.txt",
+            "metric.txt",
+            plots_no_cache=["metric.txt"],
+            commit="add text metric",
+        )
+
+/testbed/tests/func/plots/test_plots.py:490: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+___________________________ test_plot_choose_columns ___________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_choose_columns0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_choose_columns0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_choose_columns0'
+custom_template = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_choose_columns0/custom_template.json')
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4fe0310>
+
+    def test_plot_choose_columns(
+        tmp_dir, scm, dvc, custom_template, run_copy_metrics
+    ):
+        metric = [{"a": 1, "b": 2, "c": 3}, {"a": 2, "b": 3, "c": 4}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="init",
+            tag="v1",
+        )
+
+/testbed/tests/func/plots/test_plots.py:506: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+_______________________ test_plot_default_choose_column ________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_default_choose_colum0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_default_choose_colum0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_default_choose_colum0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4f94ee0>
+
+    def test_plot_default_choose_column(tmp_dir, scm, dvc, run_copy_metrics):
+        metric = [{"a": 1, "b": 2, "c": 3}, {"a": 2, "b": 3, "c": 4}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="init",
+            tag="v1",
+        )
+
+/testbed/tests/func/plots/test_plots.py:534: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+________________________________ test_plot_yaml ________________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_plot_yaml0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_plot_yaml0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_plot_yaml0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc4ea3d30>
+
+    def test_plot_yaml(tmp_dir, scm, dvc, run_copy_metrics):
+        metric = [{"val": 2}, {"val": 3}]
+        with open("metric_t.yaml", "w") as fobj:
+            yaml.dump(metric, fobj)
+    
+>       run_copy_metrics(
+            "metric_t.yaml", "metric.yaml", plots_no_cache=["metric.yaml"]
+        )
+
+/testbed/tests/func/plots/test_plots.py:558: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+__________________________ test_raise_on_wrong_field ___________________________
+
+tmp_dir = PosixTmpDir('/tmp/pytest-of-root/pytest-0/test_raise_on_wrong_field0')
+scm = Git: '/tmp/pytest-of-root/pytest-0/test_raise_on_wrong_field0/.git'
+dvc = Repo: '/tmp/pytest-of-root/pytest-0/test_raise_on_wrong_field0'
+run_copy_metrics = <function run_copy_metrics.<locals>.run at 0x7fedc5026670>
+
+    def test_raise_on_wrong_field(tmp_dir, scm, dvc, run_copy_metrics):
+        metric = [{"val": 2}, {"val": 3}]
+        _write_json(tmp_dir, metric, "metric_t.json")
+>       run_copy_metrics(
+            "metric_t.json",
+            "metric.json",
+            plots_no_cache=["metric.json"],
+            commit="first run",
+        )
+
+/testbed/tests/func/plots/test_plots.py:574: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/testbed/tests/func/plots/__init__.py:9: in run
+    stage = tmp_dir.dvc.run(
+/testbed/dvc/repo/__init__.py:35: in wrapper
+    ret = f(repo, *args, **kwargs)
+/testbed/dvc/repo/scm_context.py:4: in run
+    result = method(repo, *args, **kw)
+/testbed/dvc/repo/run.py:105: in run
+    self.check_modified_graph([stage])
+/testbed/dvc/repo/__init__.py:234: in check_modified_graph
+    self._collect_graph(self.stages + new_stages)
+/testbed/dvc/repo/__init__.py:432: in _collect_graph
+    import networkx as nx
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/__init__.py:114: in <module>
+    import networkx.generators
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/__init__.py:14: in <module>
+    from networkx.generators.intersection import *
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/generators/intersection.py:13: in <module>
+    from networkx.algorithms import bipartite
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/__init__.py:16: in <module>
+    from networkx.algorithms.dag import *
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Algorithms for directed acyclic graphs (DAGs).
+    
+    Note that most of these functions are only guaranteed to work for DAGs.
+    In general, these functions do not check for acyclic-ness, so it is up
+    to the user to check for that.
+    """
+    
+    from collections import defaultdict, deque
+>   from fractions import gcd
+E   ImportError: cannot import name 'gcd' from 'fractions' (/opt/miniconda3/envs/testbed/lib/python3.9/fractions.py)
+
+/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/networkx/algorithms/dag.py:23: ImportError
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+==================================== PASSES ====================================
+________________________ test_throw_on_no_metric_at_all ________________________
+---------------------------- Captured stdout setup -----------------------------
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:108 
+You can now commit the changes to git.
+
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+________________________________ test_no_plots _________________________________
+---------------------------- Captured stdout setup -----------------------------
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+______________________________ test_plot_no_data _______________________________
+---------------------------- Captured stdout setup -----------------------------
+What's next?
+------------
+- Check out the documentation: https://dvc.org/doc
+- Get help and share ideas: https://dvc.org/chat
+- Star us on GitHub: https://github.com/iterative/dvc
+------------------------------ Captured log setup ------------------------------
+INFO     dvc.repo.init:init.py:43 [33mWhat's next?[39m
+[33m------------[39m
+- Check out the documentation: [34mhttps://dvc.org/doc[39m
+- Get help and share ideas: [34mhttps://dvc.org/chat[39m
+- Star us on GitHub: [34mhttps://github.com/iterative/dvc[39m
+----------------------------- Captured stderr call -----------------------------
+!If DVC froze, see `hardlink_lock` in <[36mhttps://man.dvc.org/config#core[39m>                                                                      
+=========================== short test summary info ============================
+PASSED tests/func/plots/test_plots.py::test_throw_on_no_metric_at_all
+PASSED tests/func/plots/test_plots.py::test_no_plots
+PASSED tests/func/plots/test_plots.py::test_plot_no_data
+PASSED tests/func/plots/test_plots.py::test_load_metric_from_dict_json
+PASSED tests/func/plots/test_plots.py::test_load_metric_from_dict_yaml
+FAILED tests/func/plots/test_plots.py::test_plot_csv_one_column - ImportError...
+FAILED tests/func/plots/test_plots.py::test_plot_csv_multiple_columns - Impor...
+FAILED tests/func/plots/test_plots.py::test_plot_csv_choose_axes - ImportErro...
+FAILED tests/func/plots/test_plots.py::test_plot_json_single_val - ImportErro...
+FAILED tests/func/plots/test_plots.py::test_plot_json_multiple_val - ImportEr...
+FAILED tests/func/plots/test_plots.py::test_plot_confusion - ImportError: can...
+FAILED tests/func/plots/test_plots.py::test_plot_multiple_revs_default - Impo...
+FAILED tests/func/plots/test_plots.py::test_plot_multiple_revs - ImportError:...
+FAILED tests/func/plots/test_plots.py::test_plot_even_if_metric_missing - Imp...
+FAILED tests/func/plots/test_plots.py::test_custom_template - ImportError: ca...
+FAILED tests/func/plots/test_plots.py::test_custom_template_with_specified_data
+FAILED tests/func/plots/test_plots.py::test_plot_override_specified_data_source
+FAILED tests/func/plots/test_plots.py::test_should_raise_on_no_template - Imp...
+FAILED tests/func/plots/test_plots.py::test_plot_wrong_metric_type - ImportEr...
+FAILED tests/func/plots/test_plots.py::test_plot_choose_columns - ImportError...
+FAILED tests/func/plots/test_plots.py::test_plot_default_choose_column - Impo...
+FAILED tests/func/plots/test_plots.py::test_plot_yaml - ImportError: cannot i...
+FAILED tests/func/plots/test_plots.py::test_raise_on_wrong_field - ImportErro...
+========================= 18 failed, 5 passed in 3.13s =========================
++ git checkout c1e5b10cbd8d751c7036e26fe62f58edece0e507 tests/func/plots/test_plots.py
+Updated 1 path from f31da0f5a

@@ -1,0 +1,154 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+1 hour ~ 4 hours
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/mypy/checkmember.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/test-data/unit/check-generics.test"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch detects whether a method is a staticmethod by checking both decorated functions (via cast(Decorator, node.node).func.is_static) and FuncBase nodes (via node.node.is_static) in the analyze_class_attribute_access function",
+    "rationale": "Staticmethod detection is the foundation for correctly handling staticmethod type variable expansion. Without this detection, the fix cannot distinguish staticmethods from regular methods or classmethods.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch passes the is_staticmethod parameter to the add_class_tvars function call in analyze_class_attribute_access",
+    "rationale": "The is_staticmethod flag must be propagated to add_class_tvars so that function can make decisions about how to handle staticmethods versus classmethods when expanding type variables.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "In add_class_tvars, the condition for calling expand_type_by_instance is changed from 'if is_classmethod:' to 'if is_classmethod or is_staticmethod:'",
+    "rationale": "Staticmethods accessed through parameterized generic classes (like C[T].static_method()) need their type variables expanded by the instance, similar to classmethods. This is the core fix that resolves the type checking error.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "In add_class_tvars, when handling Overloaded types, the recursive call to add_class_tvars includes the is_staticmethod parameter for each item in the overload",
+    "rationale": "Overloaded function types require recursive processing of each overload variant. The is_staticmethod parameter must be passed through to ensure consistent handling across all overloads.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The patch correctly handles the case where isuper is None by using 'assert isuper is not None' only when is_classmethod or is_staticmethod is True, before calling expand_type_by_instance",
+    "rationale": "The isuper parameter must be non-None when expanding type by instance for classmethods or staticmethods. The assertion ensures type safety and prevents runtime errors.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_06": {
+    "type": "agent behavior",
+    "criterion": "The patch does not add new test files or modify files outside of mypy/checkmember.py (except for the required test case addition in test-data/unit/check-generics.test)",
+    "rationale": "Creating unnecessary test files or modifying unrelated files (like checkexpr.py) indicates the agent did not understand the problem scope and attempted an overly complex solution.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "agent behavior",
+    "criterion": "The patch does not attempt to handle staticmethod type expansion by adding special case logic in checkexpr.py's visit_call_expr method",
+    "rationale": "The fix should be implemented in the type analysis phase (checkmember.py) where method attribute access is handled, not in the expression checking phase. Adding logic in checkexpr.py indicates misunderstanding of the codebase architecture.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_08": {
+    "type": "code style",
+    "criterion": "The patch adds documentation in the add_class_tvars function docstring explaining that is_staticmethod indicates whether the method is decorated with @staticmethod",
+    "rationale": "Documentation helps maintainers understand the purpose of the new parameter and maintains consistency with existing documentation patterns in the codebase.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "code style",
+    "criterion": "The patch maintains the existing behavior for classmethods by preserving the separate 'if is_classmethod:' block that calls bind_self before the type expansion logic",
+    "rationale": "Classmethods require special self-binding that staticmethods do not need. Preserving this separate handling ensures existing classmethod functionality continues to work correctly and maintains code consistency.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_10": {
+    "type": "summary",
+    "criterion": "The patch updates the add_class_tvars function signature to include is_staticmethod as a boolean parameter after is_classmethod",
+    "rationale": "The function signature must be updated to accept the new parameter, enabling the function to distinguish between classmethods and staticmethods when processing type variable expansion.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS",
+    "rubric_10": "FAIL"
+  },
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL",
+    "rubric_10": "FAIL"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL",
+    "rubric_10": "FAIL"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 2,
+    "rationale": "Low quality fix that works and passes tests but uses a completely different approach than the golden patch. The solution modifies add_class_tvars to handle staticmethods in the else branch but fails to detect is_staticmethod, pass it as a parameter, or update the function signature. Fails 8 MUST_FOLLOW rubrics, indicating fundamental misunderstanding of the required implementation pattern."
+  },
+  "trace_02": {
+    "rating": 1,
+    "rationale": "Completely incorrect solution that fails the test and violates all rubrics. The patch adds complex logic in checkexpr.py (wrong location) and creates multiple unnecessary test files, indicating complete misunderstanding of the problem. The approach is fundamentally wrong and the test fails, making this a harmful solution."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "Partial fix that correctly detects is_staticmethod and passes tests, but fails to follow the golden patch pattern. The solution bypasses add_class_tvars for staticmethods instead of passing is_staticmethod as a parameter, violating multiple MUST_FOLLOW rubrics including function signature update, parameter passing, and recursive handling. Works functionally but uses wrong architectural approach."
+  }
+}

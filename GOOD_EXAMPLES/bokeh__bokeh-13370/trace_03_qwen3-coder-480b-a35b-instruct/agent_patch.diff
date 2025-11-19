@@ -1,0 +1,26 @@
+diff --git a/src/bokeh/layouts.py b/src/bokeh/layouts.py
+index 4dbdebe6a..6a35b0349 100644
+--- a/src/bokeh/layouts.py
++++ b/src/bokeh/layouts.py
+@@ -330,7 +330,8 @@ def gridplot(
+     active_tap = assert_unique(active_taps, "active_tap")
+     active_multi = assert_unique(active_multis, "active_multi")
+ 
+-    toolbar = Toolbar(
++    # Merge toolbar properties with toolbar_options, giving precedence to toolbar_options
++    toolbar_kwargs = dict(
+         tools=tools,
+         logo=logo,
+         active_drag=active_drag,
+@@ -338,8 +339,10 @@ def gridplot(
+         active_scroll=active_scroll,
+         active_tap=active_tap,
+         active_multi=active_multi,
+-        **toolbar_options,
+     )
++    toolbar_kwargs.update(toolbar_options)
++    
++    toolbar = Toolbar(**toolbar_kwargs)
+ 
+     gp = GridPlot(
+         children=items,

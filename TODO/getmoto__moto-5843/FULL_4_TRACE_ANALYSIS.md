@@ -81,7 +81,7 @@ ValidationException: One or more parameter values were invalid: Type mismatch fo
     "is_positive": "true"
   },
   "rubric_05": {
-    "type": "correctness",
+    "type": "code style",
     "criterion": "The solution validates both Global Secondary Indexes (GSI) and Local Secondary Indexes (LSI) for NULL values",
     "rationale": "The issue specifically mentions GSI validation, and the golden patch only handles GSI. Validating LSI is scope creep beyond the reported bug - the problem statement never mentions LSI, and the test case only covers GSI.",
     "importance": "GOOD_TO_HAVE",
@@ -107,14 +107,22 @@ ValidationException: One or more parameter values were invalid: Type mismatch fo
     "rationale": "While a custom exception provides better code organization and type safety, it's not strictly necessary. The golden patch and some agent solutions successfully use MockValidationException directly. This is a stylistic choice rather than a requirement.",
     "importance": "GOOD_TO_HAVE",
     "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "summary",
+    "criterion": "The solution clearly modifies the put_item validation flow to check for NULL values in GSI key attributes",
+    "rationale": "The implementation should be understandable and follow a clear validation pattern that integrates naturally with existing DynamoDB validation logic",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
   }
 }
 ```
 
 **Rubrics Breakdown**:
-- Correctness: 5/8 (62.5%) ✓ (exceeds 40-50% requirement)
-- Agent Behavior: 2/8 (25%)
-- Code Style: 1/8 (12.5%)
+- Correctness: 4/9 (44%) ✓ (within 40-50% requirement)
+- Code Style: 3/9 (33%)
+- Agent Behavior: 2/9 (22%)
+- Summary: 1/9 (11%) ✓
 
 ---
 
@@ -204,7 +212,8 @@ ValidationException: One or more parameter values were invalid: Type mismatch fo
       "rubric_05": "FAIL",
       "rubric_06": "PASS",
       "rubric_07": "FAIL",
-      "rubric_08": "PASS"
+      "rubric_08": "PASS",
+      "rubric_09": "PASS"
     },
     "trace_02": {
       "rubric_01": "PASS",
@@ -214,7 +223,8 @@ ValidationException: One or more parameter values were invalid: Type mismatch fo
       "rubric_05": "FAIL",
       "rubric_06": "PASS",
       "rubric_07": "FAIL",
-      "rubric_08": "FAIL"
+      "rubric_08": "FAIL",
+      "rubric_09": "PASS"
     },
     "trace_03": {
       "rubric_01": "PASS",
@@ -224,7 +234,8 @@ ValidationException: One or more parameter values were invalid: Type mismatch fo
       "rubric_05": "PASS",
       "rubric_06": "PASS",
       "rubric_07": "PASS",
-      "rubric_08": "FAIL"
+      "rubric_08": "FAIL",
+      "rubric_09": "PASS"
     },
     "trace_04": {
       "rubric_01": "PASS",
@@ -234,17 +245,18 @@ ValidationException: One or more parameter values were invalid: Type mismatch fo
       "rubric_05": "PASS",
       "rubric_06": "PASS",
       "rubric_07": "PASS",
-      "rubric_08": "PASS"
+      "rubric_08": "PASS",
+      "rubric_09": "PASS"
     }
   }
 }
 ```
 
 **Rubrics Summary**:
-- **trace_01**: 6 PASS, 2 FAIL (fails: validates LSI, didn't run pytest)
-- **trace_02**: 6 PASS, 2 FAIL (fails: validates LSI, didn't run pytest)
-- **trace_03**: 7 PASS, 1 FAIL (fails: no custom exception)
-- **trace_04**: 8 PASS, 0 FAIL (perfect on all rubrics)
+- **trace_01**: 7 PASS, 2 FAIL (fails: validates LSI - scope creep, didn't run pytest)
+- **trace_02**: 7 PASS, 2 FAIL (fails: validates LSI - scope creep, didn't run pytest)
+- **trace_03**: 8 PASS, 1 FAIL (fails: no custom exception class)
+- **trace_04**: 9 PASS, 0 FAIL (perfect score)
 
 ---
 
@@ -255,19 +267,19 @@ ValidationException: One or more parameter values were invalid: Type mismatch fo
   "overall_rating": {
     "trace_01": {
       "rating": 4,
-      "rationale": "Good fix that successfully resolves the bug with all tests passing. Creates a well-organized custom exception class InvalidIndexKeyTypeError. However, it fails 2 rubrics: validates both GSI and LSI when only GSI was required (rubric_05 - scope creep beyond the issue description), and never runs pytest to verify the fix works (rubric_07 - relying only on manual repro scripts). The implementation is solid but includes unnecessary LSI validation and lacks test-based verification."
+      "rationale": "Successfully fixes the bug with all tests passing. Creates well-organized custom exception class InvalidIndexKeyTypeError showing good code organization. However, validates both GSI and LSI when only GSI was required (rubric_05 - scope creep beyond the issue description), and doesn't run pytest to verify the fix (rubric_07 - relying only on manual reproduction scripts). The custom exception demonstrates thoughtful design but the scope creep and lack of test-based verification are notable gaps."
     },
     "trace_02": {
       "rating": 4,
-      "rationale": "Clean, efficient solution that successfully fixes the bug with all tests passing. Most concise implementation at only 35 steps and 2 file edits. Uses MockValidationException directly without custom exception class. Fails 2 rubrics: validates both GSI and LSI using all_indexes() when only GSI was required (rubric_05 - scope creep), and doesn't run pytest tests (rubric_07 - no test-based verification). The minimalist approach is elegant but over-engineers the validation scope and skips test verification."
+      "rationale": "Clean, efficient solution that successfully fixes the bug with all tests passing. Uses MockValidationException directly without custom exception class. However, validates both GSI and LSI using all_indexes() when only GSI was required (rubric_05 - scope creep beyond the issue description), and doesn't run pytest tests (rubric_07 - relying only on manual reproduction scripts). The minimalist approach is elegant but over-engineers the validation scope by including LSI unnecessarily."
     },
     "trace_03": {
       "rating": 5,
-      "rationale": "Excellent implementation with correct scope (GSI only, matching golden patch intent) and thorough testing discipline (7 test runs including pytest). All tests pass successfully. Correctly validates only GSI keys as specified in the issue. Fails only 1 GOOD_TO_HAVE rubric: doesn't create a custom exception class (rubric_08), using MockValidationException directly instead. This is a stylistic choice rather than a functional deficiency. The focused scope and strong testing make this a high-quality, production-ready solution."
+      "rationale": "Excellent implementation with correct scope (GSI only, matching golden patch intent) and thorough testing discipline using pytest. All tests pass successfully. Correctly validates only GSI keys as specified in the issue. Fails only 1 GOOD_TO_HAVE rubric: doesn't create a custom exception class (rubric_08), using MockValidationException directly instead. This is a stylistic choice rather than a functional deficiency. The focused scope and strong testing make this a high-quality, production-ready solution."
     },
     "trace_04": {
       "rating": 5,
-      "rationale": "Perfect implementation that passes all rubrics. Correct scope (GSI only), well-organized custom exception class InvalidIndexKeyTypeError, and exceptional testing discipline (10 test runs). All tests pass. Creates a dedicated exception for better error handling and type safety. Validates comprehensive scenarios including NULL and type mismatches. The thorough testing, correct scope, and clean code organization make this the most complete and professional solution among all traces."
+      "rationale": "Perfect implementation that passes all 9 rubrics. Correct scope (GSI only), well-organized custom exception class InvalidIndexKeyTypeError, and exceptional testing discipline. All tests pass. Creates a dedicated exception for better error handling and type safety. Validates comprehensive scenarios including NULL and type mismatches. The thorough testing, correct scope, and clean code organization make this the most complete and professional solution among all traces."
     }
   }
 }

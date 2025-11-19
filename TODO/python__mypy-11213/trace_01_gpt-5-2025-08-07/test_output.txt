@@ -1,0 +1,732 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   mypy/semanal.py
+	modified:   test-requirements.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	repro.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit 8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc
+Author: Shantanu <12621235+hauntsaninja@users.noreply.github.com>
+Date:   Sun Sep 26 18:10:58 2021 -0700
+
+    Improve type narrowing for walrus operator in conditional statements (#11202)
+    
+    Authored-by: @kprzybyla <>
+
+diff --git a/mypy/binder.py b/mypy/binder.py
+index 523367a76..0d18668c5 100644
+--- a/mypy/binder.py
++++ b/mypy/binder.py
+@@ -13,10 +13,10 @@ from mypy.sametypes import is_same_type
+ from mypy.erasetype import remove_instance_last_known_values
+ from mypy.nodes import Expression, Var, RefExpr
+ from mypy.literals import Key, literal, literal_hash, subkeys
+-from mypy.nodes import IndexExpr, MemberExpr, NameExpr
++from mypy.nodes import IndexExpr, MemberExpr, AssignmentExpr, NameExpr
+ 
+ 
+-BindableExpression = Union[IndexExpr, MemberExpr, NameExpr]
++BindableExpression = Union[IndexExpr, MemberExpr, AssignmentExpr, NameExpr]
+ 
+ 
+ class Frame:
+@@ -136,7 +136,7 @@ class ConditionalTypeBinder:
+         return None
+ 
+     def put(self, expr: Expression, typ: Type) -> None:
+-        if not isinstance(expr, (IndexExpr, MemberExpr, NameExpr)):
++        if not isinstance(expr, (IndexExpr, MemberExpr, AssignmentExpr, NameExpr)):
+             return
+         if not literal(expr):
+             return
+diff --git a/mypy/checker.py b/mypy/checker.py
+index 102108499..11499d6b5 100644
+--- a/mypy/checker.py
++++ b/mypy/checker.py
+@@ -4286,12 +4286,10 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+         type_map = self.type_map
+         if is_true_literal(node):
+             return {}, None
+-        elif is_false_literal(node):
++        if is_false_literal(node):
+             return None, {}
+-        elif isinstance(node, CallExpr):
+-            self._check_for_truthy_type(type_map[node], node)
+-            if len(node.args) == 0:
+-                return {}, {}
++
++        if isinstance(node, CallExpr) and len(node.args) != 0:
+             expr = collapse_walrus(node.args[0])
+             if refers_to_fullname(node.callee, 'builtins.isinstance'):
+                 if len(node.args) != 2:  # the error will be reported elsewhere
+@@ -4472,21 +4470,27 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+ 
+             return reduce_conditional_maps(partial_type_maps)
+         elif isinstance(node, AssignmentExpr):
+-            return self.find_isinstance_check_helper(node.target)
+-        elif isinstance(node, RefExpr):
+-            # Restrict the type of the variable to True-ish/False-ish in the if and else branches
+-            # respectively
+-            vartype = type_map[node]
+-            self._check_for_truthy_type(vartype, node)
+-            if_type: Type = true_only(vartype)
+-            else_type: Type = false_only(vartype)
+-            ref: Expression = node
+-            if_map = ({ref: if_type} if not isinstance(get_proper_type(if_type), UninhabitedType)
+-                      else None)
+-            else_map = ({ref: else_type} if not isinstance(get_proper_type(else_type),
+-                                                           UninhabitedType)
+-                        else None)
+-            return if_map, else_map
++            if_map = {}
++            else_map = {}
++
++            if_assignment_map, else_assignment_map = self.find_isinstance_check_helper(node.target)
++
++            if if_assignment_map is not None:
++                if_map.update(if_assignment_map)
++            if else_assignment_map is not None:
++                else_map.update(else_assignment_map)
++
++            if_condition_map, else_condition_map = self.find_isinstance_check_helper(node.value)
++
++            if if_condition_map is not None:
++                if_map.update(if_condition_map)
++            if else_condition_map is not None:
++                else_map.update(else_condition_map)
++
++            return (
++                (None if if_assignment_map is None or if_condition_map is None else if_map),
++                (None if else_assignment_map is None or else_condition_map is None else else_map),
++            )
+         elif isinstance(node, OpExpr) and node.op == 'and':
+             left_if_vars, left_else_vars = self.find_isinstance_check_helper(node.left)
+             right_if_vars, right_else_vars = self.find_isinstance_check_helper(node.right)
+@@ -4507,8 +4511,24 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+             left, right = self.find_isinstance_check_helper(node.expr)
+             return right, left
+ 
+-        # Not a supported isinstance check
+-        return {}, {}
++        # Restrict the type of the variable to True-ish/False-ish in the if and else branches
++        # respectively
++        vartype = type_map[node]
++        self._check_for_truthy_type(vartype, node)
++        if_type = true_only(vartype)  # type: Type
++        else_type = false_only(vartype)  # type: Type
++        ref = node  # type: Expression
++        if_map = (
++            {ref: if_type}
++            if not isinstance(get_proper_type(if_type), UninhabitedType)
++            else None
++        )
++        else_map = (
++            {ref: else_type}
++            if not isinstance(get_proper_type(else_type), UninhabitedType)
++            else None
++        )
++        return if_map, else_map
+ 
+     def propagate_up_typemap_info(self,
+                                   existing_types: Mapping[Expression, Type],
+diff --git a/mypy/literals.py b/mypy/literals.py
+index 16288433b..00cf5916b 100644
+--- a/mypy/literals.py
++++ b/mypy/literals.py
+@@ -61,6 +61,9 @@ def literal(e: Expression) -> int:
+     elif isinstance(e, (MemberExpr, UnaryExpr, StarExpr)):
+         return literal(e.expr)
+ 
++    elif isinstance(e, AssignmentExpr):
++        return literal(e.target)
++
+     elif isinstance(e, IndexExpr):
+         if literal(e.index) == LITERAL_YES:
+             return literal(e.base)
+@@ -160,8 +163,8 @@ class _Hasher(ExpressionVisitor[Optional[Key]]):
+             return ('Index', literal_hash(e.base), literal_hash(e.index))
+         return None
+ 
+-    def visit_assignment_expr(self, e: AssignmentExpr) -> None:
+-        return None
++    def visit_assignment_expr(self, e: AssignmentExpr) -> Optional[Key]:
++        return literal_hash(e.target)
+ 
+     def visit_call_expr(self, e: CallExpr) -> None:
+         return None
+diff --git a/test-data/unit/check-python38.test b/test-data/unit/check-python38.test
+index 04be38b37..f033f7e65 100644
+--- a/test-data/unit/check-python38.test
++++ b/test-data/unit/check-python38.test
+@@ -384,6 +384,57 @@ reveal_type(z2)  # E: Name "z2" is not defined  # N: Revealed type is "Any"
+ 
+ [builtins fixtures/isinstancelist.pyi]
+ 
++[case testWalrusConditionalTypeBinder]
++from typing import Union
++from typing_extensions import Literal
++
++class Good:
++    @property
++    def is_good(self) -> Literal[True]: ...
++
++class Bad:
++    @property
++    def is_good(self) -> Literal[False]: ...
++
++def get_thing() -> Union[Good, Bad]: ...
++
++if (thing := get_thing()).is_good:
++    reveal_type(thing)  # N: Revealed type is "__main__.Good"
++else:
++    reveal_type(thing)  # N: Revealed type is "__main__.Bad"
++[builtins fixtures/property.pyi]
++
++[case testWalrusConditionalTypeCheck]
++# flags: --strict-optional
++from typing import Optional
++
++maybe_str: Optional[str]
++
++if (is_str := maybe_str is not None):
++    reveal_type(is_str)  # N: Revealed type is "builtins.bool"
++    reveal_type(maybe_str)  # N: Revealed type is "builtins.str"
++else:
++    reveal_type(is_str)  # N: Revealed type is "builtins.bool"
++    reveal_type(maybe_str)  # N: Revealed type is "None"
++
++reveal_type(maybe_str)  # N: Revealed type is "Union[builtins.str, None]"
++[builtins fixtures/bool.pyi]
++
++[case testWalrusConditionalTypeCheck2]
++from typing import Optional
++
++maybe_str: Optional[str]
++
++if (x := maybe_str) is not None:
++    reveal_type(x)  # N: Revealed type is "builtins.str"
++    reveal_type(maybe_str)  # N: Revealed type is "Union[builtins.str, None]"
++else:
++    reveal_type(x)  # N: Revealed type is "None"
++    reveal_type(maybe_str)  # N: Revealed type is "Union[builtins.str, None]"
++
++reveal_type(maybe_str)  # N: Revealed type is "Union[builtins.str, None]"
++[builtins fixtures/bool.pyi]
++
+ [case testWalrusPartialTypes]
+ from typing import List
+ 
+@@ -400,6 +451,77 @@ def check_partial_list() -> None:
+     reveal_type(z)  # N: Revealed type is "builtins.list[builtins.int]"
+ [builtins fixtures/list.pyi]
+ 
++[case testWalrusAssignmentAndConditionScopeForLiteral]
++# flags: --warn-unreachable
++
++if (x := 0):
++    reveal_type(x)  # E: Statement is unreachable
++else:
++    reveal_type(x)  # N: Revealed type is "builtins.int"
++
++reveal_type(x)  # N: Revealed type is "builtins.int"
++
++[case testWalrusAssignmentAndConditionScopeForProperty]
++# flags: --warn-unreachable
++
++from typing_extensions import Literal
++
++class PropertyWrapper:
++    @property
++    def f(self) -> str: ...
++    @property
++    def always_false(self) -> Literal[False]: ...
++
++wrapper = PropertyWrapper()
++
++if x := wrapper.f:
++    reveal_type(x)  # N: Revealed type is "builtins.str"
++else:
++    reveal_type(x)  # N: Revealed type is "builtins.str"
++
++reveal_type(x)  # N: Revealed type is "builtins.str"
++
++if y := wrapper.always_false:
++    reveal_type(y)  # E: Statement is unreachable
++else:
++    reveal_type(y)  # N: Revealed type is "Literal[False]"
++
++reveal_type(y)  # N: Revealed type is "Literal[False]"
++[builtins fixtures/property.pyi]
++
++[case testWalrusAssignmentAndConditionScopeForFunction]
++# flags: --warn-unreachable
++
++from typing_extensions import Literal
++
++def f() -> str: ...
++
++if x := f():
++    reveal_type(x)  # N: Revealed type is "builtins.str"
++else:
++    reveal_type(x)  # N: Revealed type is "builtins.str"
++
++reveal_type(x)  # N: Revealed type is "builtins.str"
++
++def always_false() -> Literal[False]: ...
++
++if y := always_false():
++    reveal_type(y)  # E: Statement is unreachable
++else:
++    reveal_type(y)  # N: Revealed type is "Literal[False]"
++
++reveal_type(y)  # N: Revealed type is "Literal[False]"
++
++def always_false_with_parameter(x: int) -> Literal[False]: ...
++
++if z := always_false_with_parameter(5):
++    reveal_type(z)  # E: Statement is unreachable
++else:
++    reveal_type(z)  # N: Revealed type is "Literal[False]"
++
++reveal_type(z)  # N: Revealed type is "Literal[False]"
++[builtins fixtures/tuple.pyi]
++
+ [case testWalrusExpr]
+ def func() -> None:
+     foo = Foo()
+diff --git a/test-data/unit/check-unreachable-code.test b/test-data/unit/check-unreachable-code.test
+index 010c944e3..3525cbf8c 100644
+--- a/test-data/unit/check-unreachable-code.test
++++ b/test-data/unit/check-unreachable-code.test
+@@ -1378,3 +1378,15 @@ def f(t: T) -> None:
+         except BaseException as e:
+             pass
+ [builtins fixtures/dict.pyi]
++
++
++[case testUnreachableLiteral]
++# flags: --warn-unreachable
++from typing_extensions import Literal
++
++def nope() -> Literal[False]: ...
++
++def f() -> None:
++    if nope():
++        x = 1  # E: Statement is unreachable
++[builtins fixtures/dict.pyi]
++ git diff 8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc
+diff --git a/mypy/semanal.py b/mypy/semanal.py
+index 7bfa3c66e..26afa3066 100644
+--- a/mypy/semanal.py
++++ b/mypy/semanal.py
+@@ -4960,10 +4960,17 @@ class SemanticAnalyzer(NodeVisitor[None],
+         - Yes outside functions.
+         - Yes in annotated functions.
+         - No otherwise.
++
++        Additionally, avoid reporting errors for any code nested within an
++        untyped (dynamic) function when check_untyped_defs is disabled.
++        This includes lambdas inside an untyped function.
+         """
+-        return (self.options.check_untyped_defs
+-                or not self.function_stack
+-                or not self.function_stack[-1].is_dynamic())
++        if self.options.check_untyped_defs or not self.function_stack:
++            return True
++        # If any enclosing function is dynamic (untyped), suppress errors.
++        # This prevents reporting errors for lambdas or nested code inside
++        # untyped functions under the default configuration.
++        return not any(fn.is_dynamic() for fn in self.function_stack)
+ 
+     def fail(self,
+              msg: str,
+diff --git a/test-requirements.txt b/test-requirements.txt
+index 93300baaa..1c0e4901d 100644
+--- a/test-requirements.txt
++++ b/test-requirements.txt
+@@ -1,3 +1,4 @@
++types-typing-extensions==3.7.3
+ -r mypy-requirements.txt
+ -r build-requirements.txt
+ attrs>=18.0
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -r test-requirements.txt
+Requirement already satisfied: types-typing-extensions==3.7.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 1)) (3.7.3)
+Requirement already satisfied: typing_extensions>=3.7.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r /testbed/mypy-requirements.txt (line 1)) (4.15.0)
+Requirement already satisfied: mypy_extensions<0.5.0,>=0.4.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r /testbed/mypy-requirements.txt (line 2)) (0.4.4)
+Requirement already satisfied: typed_ast<1.5.0,>=1.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r /testbed/mypy-requirements.txt (line 3)) (1.4.3)
+Requirement already satisfied: tomli<1.2.0,>=1.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r /testbed/mypy-requirements.txt (line 4)) (1.1.0)
+Requirement already satisfied: types-typed-ast<1.5.0,>=1.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r /testbed/build-requirements.txt (line 2)) (1.4.5)
+Requirement already satisfied: attrs>=18.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 4)) (25.4.0)
+Requirement already satisfied: flake8>=3.8.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 5)) (7.3.0)
+Requirement already satisfied: flake8-bugbear in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 6)) (24.12.12)
+Requirement already satisfied: flake8-pyi>=20.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 7)) (25.5.0)
+Requirement already satisfied: lxml>=4.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 8)) (6.0.2)
+Requirement already satisfied: psutil>=4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 9)) (7.1.3)
+Requirement already satisfied: pytest<7.0.0,>=6.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 10)) (6.2.5)
+Requirement already satisfied: pytest-xdist<2.0.0,>=1.34.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 11)) (1.34.0)
+Requirement already satisfied: pytest-forked<2.0.0,>=1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 12)) (1.6.0)
+Requirement already satisfied: pytest-cov<3.0.0,>=2.10.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 13)) (2.12.1)
+Requirement already satisfied: py>=1.5.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 14)) (1.11.0)
+Requirement already satisfied: virtualenv>=20.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 15)) (20.35.4)
+Requirement already satisfied: setuptools!=50 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 16)) (80.9.0)
+Requirement already satisfied: importlib-metadata<5.0.0,>=4.6.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from -r test-requirements.txt (line 17)) (4.13.0)
+Requirement already satisfied: iniconfig in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<7.0.0,>=6.2.0->-r test-requirements.txt (line 10)) (2.1.0)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<7.0.0,>=6.2.0->-r test-requirements.txt (line 10)) (25.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<7.0.0,>=6.2.0->-r test-requirements.txt (line 10)) (1.6.0)
+Requirement already satisfied: toml in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest<7.0.0,>=6.2.0->-r test-requirements.txt (line 10)) (0.10.2)
+Requirement already satisfied: execnet>=1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest-xdist<2.0.0,>=1.34.0->-r test-requirements.txt (line 11)) (2.1.2)
+Requirement already satisfied: six in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest-xdist<2.0.0,>=1.34.0->-r test-requirements.txt (line 11)) (1.17.0)
+Requirement already satisfied: coverage>=5.2.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest-cov<3.0.0,>=2.10.0->-r test-requirements.txt (line 13)) (7.10.7)
+Requirement already satisfied: zipp>=0.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from importlib-metadata<5.0.0,>=4.6.1->-r test-requirements.txt (line 17)) (3.23.0)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flake8>=3.8.1->-r test-requirements.txt (line 5)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.15.0,>=2.14.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flake8>=3.8.1->-r test-requirements.txt (line 5)) (2.14.0)
+Requirement already satisfied: pyflakes<3.5.0,>=3.4.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from flake8>=3.8.1->-r test-requirements.txt (line 5)) (3.4.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from virtualenv>=20.6.0->-r test-requirements.txt (line 15)) (0.4.0)
+Requirement already satisfied: filelock<4,>=3.12.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from virtualenv>=20.6.0->-r test-requirements.txt (line 15)) (3.19.1)
+Requirement already satisfied: platformdirs<5,>=3.9.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from virtualenv>=20.6.0->-r test-requirements.txt (line 15)) (4.4.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: typing_extensions>=3.7.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from mypy==0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty) (4.15.0)
+Requirement already satisfied: mypy_extensions<0.5.0,>=0.4.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from mypy==0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty) (0.4.4)
+Requirement already satisfied: tomli<1.2.0,>=1.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from mypy==0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty) (1.1.0)
+Building wheels for collected packages: mypy
+  Building editable for mypy (pyproject.toml): started
+  Building editable for mypy (pyproject.toml): finished with status 'done'
+  Created wheel for mypy: filename=mypy-0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty-0.editable-py3-none-any.whl size=9343 sha256=f526b4443694b50c1a9cdec37431f45295ee4397bf45accb68a6c55920beb8e7
+  Stored in directory: /tmp/pip-ephem-wheel-cache-hwx0vja7/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built mypy
+Installing collected packages: mypy
+  Attempting uninstall: mypy
+    Found existing installation: mypy 0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty
+    Uninstalling mypy-0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty:
+      Successfully uninstalled mypy-0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty
+Successfully installed mypy-0.920+dev.8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc.dirty
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ pip install pytest pytest-xdist
+Requirement already satisfied: pytest in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (6.2.5)
+Requirement already satisfied: pytest-xdist in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (1.34.0)
+Requirement already satisfied: attrs>=19.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest) (25.4.0)
+Requirement already satisfied: iniconfig in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest) (2.1.0)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest) (25.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest) (1.6.0)
+Requirement already satisfied: py>=1.8.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest) (1.11.0)
+Requirement already satisfied: toml in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest) (0.10.2)
+Requirement already satisfied: execnet>=1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest-xdist) (2.1.2)
+Requirement already satisfied: pytest-forked in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest-xdist) (1.6.0)
+Requirement already satisfied: six in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest-xdist) (1.17.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ hash -r
++ git checkout 8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc mypy/test/testsemanal.py test-data/unit/check-expressions.test
+Updated 0 paths from b6ad1eb45
++ git apply -v -
+Checking patch mypy/test/testsemanal.py...
+Checking patch test-data/unit/check-expressions.test...
+Checking patch test-data/unit/semanal-lambda.test...
+Applied patch mypy/test/testsemanal.py cleanly.
+Applied patch test-data/unit/check-expressions.test cleanly.
+Applied patch test-data/unit/semanal-lambda.test cleanly.
++ pytest -n0 -rA -k 'testLambdaTypedContext or testLambdaUnypedContext or testLambdaCheckUnypedContext or testEqNone or testLambdaInheritsCheckedContextFromFunc or testLambdaInheritsCheckedContextFromFuncForced or testLambdaInheritsCheckedContextFromTypedFunc or testLambdaInheritsCheckedContextFromTypedFuncForced or testLambdaInheritsCheckedContextFromModule or testLambdaInheritsCheckedContextFromModuleForce or testLambdaInheritsCheckedContextFromModuleLambdaStack or testLambdaInheritsCheckedContextFromModuleLambdaStackForce or testLambdaInheritsCheckedContextFromFuncLambdaStack or testLambdaInheritsCheckedContextFromFuncLambdaStackForce or testLambdaInheritsCheckedContextFromTypedFuncLambdaStack or testLambdaInheritsCheckedContextFromTypedFuncLambdaStackForce or testLambdaInheritsCheckedContextFromClassLambdaStack or testLambdaInheritsCheckedContextFromClassLambdaStackForce'
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-6.2.5, py-1.11.0, pluggy-1.6.0
+rootdir: /testbed, configfile: pytest.ini, testpaths: mypy/test, mypyc/test
+plugins: forked-1.6.0, cov-2.12.1, xdist-1.34.0
+collected 9844 items / 9826 deselected / 18 selected
+
+mypy/test/testcheck.py ....                                              [ 22%]
+mypy/test/testsemanal.py ..............                                  [100%]
+
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED mypy/test/testcheck.py::TypeCheckSuite::testLambdaTypedContext
+PASSED mypy/test/testcheck.py::TypeCheckSuite::testLambdaUnypedContext
+PASSED mypy/test/testcheck.py::TypeCheckSuite::testLambdaCheckUnypedContext
+PASSED mypy/test/testcheck.py::TypeCheckSuite::testEqNone
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFunc
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFuncForced
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFunc
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFuncForced
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModule
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModuleForce
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModuleLambdaStack
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromModuleLambdaStackForce
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFuncLambdaStack
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromFuncLambdaStackForce
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFuncLambdaStack
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromTypedFuncLambdaStackForce
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromClassLambdaStack
+PASSED mypy/test/testsemanal.py::SemAnalSuite::testLambdaInheritsCheckedContextFromClassLambdaStackForce
+===================== 18 passed, 9826 deselected in 2.32s ======================
++ git checkout 8e82171a3e68a5180fab267cad4d2b7cfa1f5cdc mypy/test/testsemanal.py test-data/unit/check-expressions.test
+Updated 2 paths from b6ad1eb45
