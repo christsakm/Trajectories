@@ -178,7 +178,7 @@ Every rubric requires exactly 5 fields:
 
 ### 4.2 Rubric Types Breakdown
 
-#### Correctness (40-60% of all rubrics)
+#### Correctness (5-7 of all rubrics)
 
 **Scope**: Final agent-generated code
 
@@ -214,7 +214,7 @@ Every rubric requires exactly 5 fields:
 }
 ```
 
-#### Agent Behavior (15-30% of all rubrics)
+#### Agent Behavior (2-4 of all rubrics)
 
 **Scope**: Entire trajectory including intermediate tool calls and actions
 
@@ -250,7 +250,7 @@ Every rubric requires exactly 5 fields:
 }
 ```
 
-#### Code Style (10-20% of all rubrics)
+#### Code Style (1-2 of all rubrics)
 
 **Scope**: Final agent-generated code
 
@@ -286,7 +286,7 @@ Every rubric requires exactly 5 fields:
 }
 ```
 
-#### Summary (0-10% of all rubrics)
+#### Summary (1-2 of all rubrics)
 
 **Scope**: Final agent summary at the end of the trace
 
@@ -1797,3 +1797,7 @@ each trace rationale must be around 50-75 words.
 each rubric rationale must be around 8-15 words.
 
 each rubric criterion must be around 8-15 words.
+
+in Must-read files and Must-check tests, just use the files that are in the golden pr.
+
+you can use the traj_search.py to be helped in the evals.

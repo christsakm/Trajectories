@@ -1,0 +1,159 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase
+
+0 ~ 15 min
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/dask/array/creation.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/dask/array/tests/test_creation.py"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch adds None check for dtype in eye function",
+    "rationale": "The None check converts dtype=None to float matching NumPy behavior.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The None check sets dtype to float not complex logic",
+    "rationale": "Simple assignment dtype=float matches NumPy's default without calling np.eye unnecessarily.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The None check occurs before normalize_chunks call avoiding TypeError",
+    "rationale": "normalize_chunks requires valid dtype so None must be converted first.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The failing test test_eye passes after the patch applied",
+    "rationale": "Test validates dtype=None works matching NumPy eye function behavior.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The patch does not break PASS_TO_PASS tests in test_creation.py",
+    "rationale": "Ensures the fix maintains backward compatibility with existing functionality.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_06": {
+    "type": "agent behavior",
+    "criterion": "The agent does not change eye function signature defaults",
+    "rationale": "Changing dtype=float to dtype=None in signature requires updating callers unnecessarily.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "agent behavior",
+    "criterion": "The agent does not create unnecessary reproduction or infrastructure files",
+    "rationale": "Reproduction scripts outside test suite add clutter without project value.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_08": {
+    "type": "code style",
+    "criterion": "The docstring is updated if dtype parameter documentation is modified",
+    "rationale": "Documentation should reflect that dtype=None defaults to float for clarity.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_09": {
+    "type": "summary",
+    "criterion": "The summary correctly explains dtype=None causes TypeError without the fix",
+    "rationale": "Accurate root cause shows understanding that normalize_chunks rejects None dtype.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS"
+  },
+  "trace_02": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "PASS"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "PASS"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 4,
+    "rationale": "Good fix that correctly handles dtype=None with proper None check before normalize_chunks call. All core functionality works and tests pass. However, unnecessarily modifies function signature changing dtype default from float to None (fails rubric_06) and creates extraneous reproduction script file repro_eye_dtype_none.py (fails rubric_07). These are style issues that don't affect correctness but deviate from minimal change approach shown in golden patch."
+  },
+  "trace_02": {
+    "rating": 5,
+    "rationale": "Perfect implementation matching golden patch exactly. Adds dtype=None check converting to float before normalize_chunks call. All tests pass with no regressions. Includes helpful docstring update documenting the None behavior. Makes only necessary changes without modifying function signature or creating extra files. Clean minimal approach that solves the issue completely."
+  },
+  "trace_03": {
+    "rating": 4,
+    "rationale": "Correct implementation with proper None check that matches golden patch logic exactly. All core functionality works and tests pass without regressions. However, fails to update the docstring to document that dtype=None defaults to float (fails rubric_08), which is a minor documentation gap. The implementation itself is clean and minimal."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "Partial fix with correct placement of None check before normalize_chunks call. Tests pass and functionality works. However, uses unnecessarily complex logic `dtype = np.eye(1, dtype=None).dtype` instead of simple `dtype = float` (fails rubric_02), calling NumPy's eye function just to extract dtype adds overhead. Also fails to update docstring documentation (fails rubric_08). The approach works but is over-engineered compared to the straightforward solution."
+  }
+}

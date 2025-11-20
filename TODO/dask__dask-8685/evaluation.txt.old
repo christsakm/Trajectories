@@ -1,0 +1,142 @@
+Evaluation Form
+Language *
+Python
+Category *
+bug fixing
+Difficulty *
+15 min ~ 1 hour
+
+Must-read files *
+[
+  "/testbed/dask/array/creation.py"
+]
+
+Must-check tests *
+[
+  "/testbed/dask/array/tests/test_creation.py::test_eye",
+  "/testbed/dask/array/tests/test_creation.py"
+]
+
+Rubrics *
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "Adds dtype None check before normalize_chunks call",
+    "rationale": "Prevents TypeError by handling None before normalize_chunks needs known dtype.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "Sets dtype to float when None detected",
+    "rationale": "Matches NumPy default behavior of using float dtype.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "FAIL_TO_PASS test test_eye passes after fix",
+    "rationale": "Validates da.eye with dtype=None now matches np.eye behavior.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "All PASS_TO_PASS tests continue passing with no regressions",
+    "rationale": "Ensures existing eye function behavior remains unchanged for other dtypes.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "Does not call np.eye or create arrays at runtime",
+    "rationale": "Unnecessary overhead; simple assignment dtype=float is more efficient and clearer.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "agent behavior",
+    "criterion": "Agent modifies only creation.py, not unrelated test files",
+    "rationale": "Keeps changes focused on bug fix location, avoiding scope creep.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "code style",
+    "criterion": "Includes inline comment explaining NumPy compatibility for dtype None",
+    "rationale": "Documents non-obvious behavior that dtype=None should default to float.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "summary",
+    "criterion": "Summary explains dtype=None now defaults to float matching NumPy",
+    "rationale": "Demonstrates understanding that fix achieves NumPy API compatibility for eye function.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+
+Rubrics rating *
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS"
+  },
+  "trace_02": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL",
+    "rubric_08": "PASS"
+  }
+}
+
+Overall rating *
+{
+  "trace_01": {
+    "rating": 4,
+    "rationale": "Correct implementation with dtype=None check converting to float (rubric_01, rubric_02 PASS). Tests pass with zero regressions (rubric_03, rubric_04 PASS). Clean implementation without runtime np.eye calls (rubric_05 PASS). Added helpful NumPy compatibility comment (rubric_07 PASS). Summary correctly explains behavior (rubric_08 PASS). However, created reproduction script file that should be removed (rubric_06 FAIL). 1 GOOD_TO_HAVE failure."
+  },
+  "trace_02": {
+    "rating": 4,
+    "rationale": "Correct implementation adding dtype None check with float assignment (rubric_01, rubric_02 PASS). FAIL_TO_PASS test passes with no regressions (rubric_03, rubric_04 PASS). Efficient implementation without np.eye calls (rubric_05 PASS). Properly scoped to creation.py only (rubric_06 PASS). Summary explains NumPy compatibility correctly (rubric_08 PASS). Missing inline comment explaining why dtype=None defaults to float (rubric_07 FAIL). 1 GOOD_TO_HAVE failure."
+  },
+  "trace_03": {
+    "rating": 5,
+    "rationale": "Perfect implementation with dtype None check converting to float (rubric_01, rubric_02 PASS). All tests pass including FAIL_TO_PASS with zero regressions (rubric_03, rubric_04 PASS). Clean direct assignment without overhead (rubric_05 PASS). Properly scoped changes to creation.py only (rubric_06 PASS). Includes clear comment explaining NumPy compatibility (rubric_07 PASS). Summary correctly describes dtype=None defaulting to float (rubric_08 PASS). 0 failures."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "Correct dtype None check placement and tests pass (rubric_01, rubric_02, rubric_03, rubric_04 PASS). Properly scoped to creation.py only (rubric_06 PASS). Summary explains behavior correctly (rubric_08 PASS). However, over-engineered by calling np.eye(1, dtype=None).dtype at runtime instead of simple dtype=float assignment (rubric_05 FAIL) - creates unnecessary array allocation overhead. Missing explanatory comment (rubric_07 FAIL). 2 GOOD_TO_HAVE failures."
+  }
+}
