@@ -1794,6 +1794,6 @@ for Must-read files and Must-check tests what you should do is look at the golde
 
 each trace rationale must be around 50-75 words.
 
-each rubric rationale must be around 5-15 words.
+each rubric rationale must be around 8-15 words.
 
-each rubric criterion must be around 5-15 words.
+each rubric criterion must be around 8-15 words.

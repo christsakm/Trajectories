@@ -1,0 +1,51 @@
+diff --git a/dask/array/creation.py b/dask/array/creation.py
+index 1bc5a2793..190d0cb7c 100644
+--- a/dask/array/creation.py
++++ b/dask/array/creation.py
+@@ -505,7 +505,7 @@ def indices(dimensions, dtype=int, chunks="auto"):
+     return grid
+ 
+ 
+-def eye(N, chunks="auto", M=None, k=0, dtype=float):
++def eye(N, chunks="auto", M=None, k=0, dtype=None):
+     """
+     Return a 2-D Array with ones on the diagonal and zeros elsewhere.
+ 
+@@ -528,7 +528,7 @@ def eye(N, chunks="auto", M=None, k=0, dtype=float):
+       a positive value refers to an upper diagonal, and a negative value
+       to a lower diagonal.
+     dtype : data-type, optional
+-      Data-type of the returned array.
++      Data-type of the returned array. If None, defaults to float.
+ 
+     Returns
+     -------
+@@ -543,6 +543,10 @@ def eye(N, chunks="auto", M=None, k=0, dtype=float):
+     if not isinstance(chunks, (int, str)):
+         raise ValueError("chunks must be an int or string")
+ 
++    # NumPy treats dtype=None as the default float dtype
++    if dtype is None:
++        dtype = float
++
+     vchunks, hchunks = normalize_chunks(chunks, shape=(N, M), dtype=dtype)
+     chunks = vchunks[0]
+ 
+diff --git a/repro_eye_dtype_none.py b/repro_eye_dtype_none.py
+new file mode 100644
+index 000000000..284d29d19
+--- /dev/null
++++ b/repro_eye_dtype_none.py
+@@ -0,0 +1,12 @@
++import dask.array as da
++import numpy as np
++
++print('Creating da.eye with dtype=None...')
++a = da.eye(2, dtype=None)
++print('Dask eye dtype:', a.dtype)
++print('As numpy array:', a.compute())
++
++print('Comparing with np.eye dtype=None...')
++b = np.eye(2, dtype=None)
++print('NumPy eye dtype:', b.dtype)
++print('NumPy eye array:', b)

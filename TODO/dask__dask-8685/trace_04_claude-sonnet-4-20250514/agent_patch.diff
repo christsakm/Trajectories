@@ -1,0 +1,14 @@
+diff --git a/dask/array/creation.py b/dask/array/creation.py
+index 1bc5a2793..5bc3a5cb5 100644
+--- a/dask/array/creation.py
++++ b/dask/array/creation.py
+@@ -543,6 +543,9 @@ def eye(N, chunks="auto", M=None, k=0, dtype=float):
+     if not isinstance(chunks, (int, str)):
+         raise ValueError("chunks must be an int or string")
+ 
++    if dtype is None:
++        dtype = np.eye(1, dtype=None).dtype
++
+     vchunks, hchunks = normalize_chunks(chunks, shape=(N, M), dtype=dtype)
+     chunks = vchunks[0]
+ 
