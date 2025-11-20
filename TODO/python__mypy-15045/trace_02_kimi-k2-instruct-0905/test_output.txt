@@ -1,0 +1,436 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   mypy/subtypes.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+Author: Ondřej Cvacho <ondrej.cvacho@gmail.com>
+Date:   Wed Apr 12 19:59:01 2023 +0200
+
+    Fix alignment of cheat sheet example (#15039)
+    
+    In `cheat_sheep_py3.rst` functions examples, there is one function
+    example misaligned with to other examples in the code block. This PR
+    just removes leading space.
+
+diff --git a/docs/source/cheat_sheet_py3.rst b/docs/source/cheat_sheet_py3.rst
+index 24621537c..9533484e9 100644
+--- a/docs/source/cheat_sheet_py3.rst
++++ b/docs/source/cheat_sheet_py3.rst
+@@ -103,10 +103,10 @@ Functions
+    def show(value: str, excitement: int = 10) -> None:
+        print(value + "!" * excitement)
+ 
+-    # Note that arguments without a type are dynamically typed (treated as Any)
+-    # and that functions without any annotations not checked
+-    def untyped(x):
+-        x.anything() + 1 + "string"  # no errors
++   # Note that arguments without a type are dynamically typed (treated as Any)
++   # and that functions without any annotations not checked
++   def untyped(x):
++       x.anything() + 1 + "string"  # no errors
+ 
+    # This is how you annotate a callable (function) value
+    x: Callable[[int, float], float] = f
++ git diff 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+diff --git a/mypy/subtypes.py b/mypy/subtypes.py
+index 882858adc..44df87eac 100644
+--- a/mypy/subtypes.py
++++ b/mypy/subtypes.py
+@@ -850,6 +850,17 @@ class SubtypeVisitor(TypeVisitor[bool]):
+ 
+                     # Order matters: we need to make sure that the index of
+                     # this item is at least the index of the previous one.
++                    # If the left item (subtype) returns a subtype of the right item (supertype),
++                    # or if the right item returns a type variable and the left item returns
++                    # a concrete type that is a subtype of the type variable's bound,
++                    # consider them compatible
++                    if is_subtype(left_item.ret_type, right_item.ret_type):
++                        subtype_match = True
++                    elif (isinstance(right_item.ret_type, TypeVarType) and
++                          isinstance(left_item.ret_type, Instance) and
++                          is_subtype(left_item.ret_type, right_item.ret_type.upper_bound)):
++                        subtype_match = True
++
+                     if subtype_match and previous_match_left_index <= left_index:
+                         previous_match_left_index = left_index
+                         found_match = True
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -r test-requirements.txt
+Ignoring typed_ast: markers 'python_version < "3.8"' don't match your environment
+Ignoring tomli: markers 'python_version < "3.11"' don't match your environment
+Ignoring typed_ast: markers 'python_version < "3.8"' don't match your environment
+Ignoring tomli: markers 'python_version < "3.11"' don't match your environment
+Requirement already satisfied: typing_extensions>=3.10 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/mypy-requirements.txt (line 2)) (4.15.0)
+Requirement already satisfied: mypy_extensions>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/mypy-requirements.txt (line 3)) (1.1.0)
+Requirement already satisfied: types-psutil in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/build-requirements.txt (line 3)) (7.0.0.20251116)
+Requirement already satisfied: types-setuptools in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/build-requirements.txt (line 4)) (80.9.0.20250822)
+Requirement already satisfied: types-typed-ast<1.6.0,>=1.5.8.5 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/build-requirements.txt (line 5)) (1.5.8.7)
+Requirement already satisfied: attrs>=18.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 3)) (25.4.0)
+Requirement already satisfied: black==22.12.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 4)) (22.12.0)
+Requirement already satisfied: filelock>=3.3.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 5)) (3.20.0)
+Requirement already satisfied: flake8==5.0.4 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 6)) (5.0.4)
+Requirement already satisfied: flake8-bugbear==22.12.6 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 7)) (22.12.6)
+Requirement already satisfied: flake8-noqa==1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 8)) (1.3.0)
+Requirement already satisfied: isort==5.11.5 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from isort[colors]==5.11.5->-r test-requirements.txt (line 9)) (5.11.5)
+Requirement already satisfied: lxml>=4.9.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 10)) (6.0.2)
+Requirement already satisfied: psutil>=4.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 11)) (7.1.3)
+Requirement already satisfied: pytest>=6.2.4 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 13)) (9.0.1)
+Requirement already satisfied: pytest-xdist>=1.34.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 14)) (3.8.0)
+Requirement already satisfied: pytest-forked<2.0.0,>=1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 15)) (1.6.0)
+Requirement already satisfied: pytest-cov>=2.10.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 16)) (7.0.0)
+Requirement already satisfied: py>=1.5.2 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 17)) (1.11.0)
+Requirement already satisfied: setuptools>=65.5.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 18)) (80.9.0)
+Requirement already satisfied: six in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 19)) (1.17.0)
+Requirement already satisfied: tomli>=1.1.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 20)) (2.3.0)
+Requirement already satisfied: click>=8.0.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from black==22.12.0->-r test-requirements.txt (line 4)) (8.3.1)
+Requirement already satisfied: pathspec>=0.9.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from black==22.12.0->-r test-requirements.txt (line 4)) (0.12.1)
+Requirement already satisfied: platformdirs>=2 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from black==22.12.0->-r test-requirements.txt (line 4)) (4.5.0)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from flake8==5.0.4->-r test-requirements.txt (line 6)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.10.0,>=2.9.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from flake8==5.0.4->-r test-requirements.txt (line 6)) (2.9.1)
+Requirement already satisfied: pyflakes<2.6.0,>=2.5.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from flake8==5.0.4->-r test-requirements.txt (line 6)) (2.5.0)
+Requirement already satisfied: colorama<0.5.0,>=0.4.3 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from isort[colors]==5.11.5->-r test-requirements.txt (line 9)) (0.4.6)
+Requirement already satisfied: iniconfig>=1.0.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (2.3.0)
+Requirement already satisfied: packaging>=22 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (25.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (2.19.2)
+Requirement already satisfied: execnet>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest-xdist>=1.34.0->-r test-requirements.txt (line 14)) (2.1.2)
+Requirement already satisfied: coverage>=7.10.6 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from coverage[toml]>=7.10.6->pytest-cov>=2.10.0->-r test-requirements.txt (line 16)) (7.12.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: typing_extensions>=3.10 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from mypy==1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty) (4.15.0)
+Requirement already satisfied: mypy_extensions>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from mypy==1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty) (1.1.0)
+Building wheels for collected packages: mypy
+  Building editable for mypy (pyproject.toml): started
+  Building editable for mypy (pyproject.toml): finished with status 'done'
+  Created wheel for mypy: filename=mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty-0.editable-py3-none-any.whl size=8371 sha256=96c8d59ef2645e2cfb1c55765b1547d03f67f340d5b758245ae20ef3654d31f8
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s_es8o4g/wheels/49/5f/4f/01b7d31ea6ddac9643da788242d33e5fd3467d95d17b032c6b
+Successfully built mypy
+Installing collected packages: mypy
+  Attempting uninstall: mypy
+    Found existing installation: mypy 1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+    Uninstalling mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14:
+      Successfully uninstalled mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+Successfully installed mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ hash -r
++ git checkout 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14 test-data/unit/check-selftype.test
+Updated 0 paths from 75f032722
++ git apply -v -
+Checking patch test-data/unit/check-selftype.test...
+Applied patch test-data/unit/check-selftype.test cleanly.
++ pytest -n0 -rA -k 'testSelfTypeOverrideCompatibilityTypeVar-xfail or testSelfTypeOverrideCompatibilityTypeVar or testSelfTypeOverrideCompatibilitySelfTypeVar or testSelfTypeSuper'
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.1, pluggy-1.6.0
+rootdir: /testbed
+configfile: pytest.ini
+testpaths: mypy/test, mypyc/test
+plugins: forked-1.6.0, xdist-3.8.0, cov-7.0.0
+collected 11246 items / 11243 deselected / 3 selected
+
+mypy/test/testcheck.py F..                                               [100%]
+
+=================================== FAILURES ===================================
+___________________ testSelfTypeOverrideCompatibilityTypeVar ___________________
+data: /testbed/test-data/unit/check-selftype.test:235:
+Failed: Unexpected type checker output (/testbed/test-data/unit/check-selftype.test, line 235)
+----------------------------- Captured stderr call -----------------------------
+Expected:
+  main:15: error: Signature of "f" incompatible with supertype "A" (diff)
+  main:15: note:      Superclass:               (diff)
+  main:15: note:          @overload             (diff)
+  main:15: note:          def f(self, x: int) -> B (diff)
+  main:15: note:          @overload             (diff)
+  main:15: note:          def f(self, x: str) -> None (diff)
+  main:15: note:          @overload             (diff)
+  main:15: note:          def f(self) -> bytes  (diff)
+  main:15: note:      Subclass:                 (diff)
+  main:15: note:          @overload             (diff)
+  main:15: note:          def f(self, x: int) -> B (diff)
+  main:15: note:          @overload             (diff)
+  main:15: note:          def f(self, x: str) -> None (diff)
+Actual:
+  (empty)
+
+=============================== warnings summary ===============================
+mypy/build.py:354
+  /testbed/mypy/build.py:354: DeprecationWarning: mypy_extensions.TypedDict is deprecated, and will be removed in a future version. Use typing.TypedDict or typing_extensions.TypedDict instead.
+    FgDepMeta = TypedDict("FgDepMeta", {"path": str, "mtime": int})
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED mypy/test/testcheck.py::TypeCheckSuite::check-selftype.test::testSelfTypeOverrideCompatibilitySelfTypeVar
+PASSED mypy/test/testcheck.py::TypeCheckSuite::check-selftype.test::testSelfTypeSuper
+FAILED mypy/test/testcheck.py::TypeCheckSuite::check-selftype.test::testSelfTypeOverrideCompatibilityTypeVar
+=========== 1 failed, 2 passed, 11243 deselected, 1 warning in 1.99s ===========
++ git checkout 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14 test-data/unit/check-selftype.test
+Updated 1 path from 75f032722

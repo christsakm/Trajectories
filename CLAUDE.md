@@ -1801,3 +1801,6 @@ each rubric criterion must be around 8-15 words.
 in Must-read files and Must-check tests, just use the files that are in the golden pr.
 
 you can use the traj_search.py to be helped in the evals.
+- Describe what went wrong without referencing rubric numbers
+  - Mention specific issues (wrong file, wrong logic, test failures, extra files)
+  - State the count of MUST_FOLLOW failures at the en

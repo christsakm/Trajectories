@@ -1,0 +1,141 @@
+diff --git a/mwe.py b/mwe.py
+new file mode 100644
+index 000000000..8f406f9f1
+--- /dev/null
++++ b/mwe.py
+@@ -0,0 +1,47 @@
++#!/usr/bin/env python3
++
++import typing
++if typing.TYPE_CHECKING:
++    from typing_extensions import Self
++
++T_co = typing.TypeVar('T_co', covariant=True)
++
++
++class Config(typing.Generic[T_co]):
++
++    def __init__(self, value: T_co) -> None:
++        self.value = value
++
++    @typing.overload
++    def __get__(self, instance: None, owner: typing.Any = None) -> 'Self':
++        ...
++
++    @typing.overload
++    def __get__(self, instance: typing.Any, owner: typing.Any = None) -> T_co:
++        ...
++
++    def __get__(self, instance: typing.Any, owner: typing.Any = None) -> 'T_co|Self':
++        if instance is None:
++            return self
++
++        return self.value
++
++class MultiConfig(Config[T_co]):
++
++    def __init__(self, val: T_co) -> None:
++        super().__init__(val)
++        self.values: 'dict[object, T_co]' = {}
++
++    @typing.overload
++    def __get__(self, instance: None, owner: typing.Any = None) -> 'Self':
++        ...
++
++    @typing.overload
++    def __get__(self, instance: typing.Any, owner: typing.Any = None) -> T_co:
++        ...
++
++    def __get__(self, instance: typing.Any, owner: typing.Any = None) -> 'T_co|Self':
++        if instance is None:
++            return self
++
++        return self.values.get(instance.config_id, self.value)
+diff --git a/mypy/checker.py b/mypy/checker.py
+index cdf2ab648..660fcb057 100644
+--- a/mypy/checker.py
++++ b/mypy/checker.py
+@@ -1902,16 +1902,44 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+             elif isinstance(original_type, FunctionLike) and isinstance(typ, FunctionLike):
+                 # Check that the types are compatible.
+                 # TODO overloaded signatures
+-                self.check_override(
+-                    typ,
+-                    original_type,
+-                    defn.name,
+-                    name,
+-                    base.name,
+-                    original_class_or_static,
+-                    override_class_or_static,
+-                    context,
+-                )
++                # Special-case descriptor __get__: allow subclasses to add a class access
++                # overload (instance: None -> Self) without being incompatible.
++                if defn.name == "__get__":
++                    from mypy.types import CallableType as _CT
++                    def drop_class_access(tp: FunctionLike) -> FunctionLike:
++                        if isinstance(tp, Overloaded):
++                            items: list[_CT] = []
++                            for it in tp.items:
++                                if isinstance(it, _CT):
++                                    if len(it.arg_types) >= 2 and isinstance(get_proper_type(it.arg_types[1]), NoneType):
++                                        continue
++                                    items.append(it)
++                            if items:
++                                return Overloaded(items)
++                        return tp
++                    ovr = drop_class_access(typ)
++                    org = drop_class_access(original_type)
++                    self.check_override(
++                        ovr,
++                        org,
++                        defn.name,
++                        name,
++                        base.name,
++                        original_class_or_static,
++                        override_class_or_static,
++                        context,
++                    )
++                else:
++                    self.check_override(
++                        typ,
++                        original_type,
++                        defn.name,
++                        name,
++                        base.name,
++                        original_class_or_static,
++                        override_class_or_static,
++                        context,
++                    )
+             elif is_equivalent(original_type, typ):
+                 # Assume invariance for a non-callable attribute here. Note
+                 # that this doesn't affect read-only properties which can have
+@@ -2004,6 +2032,28 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+                      only used for generating error messages.
+           supertype: The name of the supertype.
+         """
++
++        # Special-case descriptor __get__(): allow subclasses to add the class-access
++        # overload (instance is None -> Self) without being considered incompatible.
++        # This restores behavior from mypy<=1.1.x and matches common descriptor typing.
++        if name == "__get__":
++            from mypy.types import CallableType
++            def drop_class_access_overload(tp: FunctionLike) -> FunctionLike:
++                if isinstance(tp, Overloaded):
++                    items: list[CallableType] = []
++                    none_matches = 0
++                    for it in tp.items:
++                        if isinstance(it, CallableType):
++                            if len(it.arg_types) >= 1 and isinstance(get_proper_type(it.arg_types[0]), NoneType):
++                                none_matches += 1
++                                # Skip the "instance is None" overload
++                                continue
++                            items.append(it)
++                    if items:
++                        return Overloaded(items)
++                return tp
++            override = drop_class_access_overload(override)
++            original = drop_class_access_overload(original)
+         # Use boolean variable to clarify code.
+         fail = False
+         op_method_wider_note = False

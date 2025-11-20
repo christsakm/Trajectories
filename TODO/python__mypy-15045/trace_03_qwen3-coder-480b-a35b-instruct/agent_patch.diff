@@ -1,0 +1,30 @@
+diff --git a/mypy/checker.py b/mypy/checker.py
+index cdf2ab648..b1ed8f9ed 100644
+--- a/mypy/checker.py
++++ b/mypy/checker.py
+@@ -1876,6 +1876,25 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+                 original_class_or_static = False  # a variable can't be class or static
+ 
+             if isinstance(original_type, FunctionLike):
++                # Filter overload variants before mapping to subclass context.
++                # This avoids false positives for concrete subclasses of generic classes.
++                # See the commit e2e5d7f2c and issue #14866
++                active_self_type = self.scope.active_self_type()
++                if isinstance(original_type, Overloaded) and active_self_type:
++                    # DEBUG: Print information about what we're filtering
++                    # print(f"DEBUG: Filtering original method with active_self_type: {active_self_type}")
++                    # print(f"DEBUG: Original method has {len(original_type.items)} overloads")
++                    # for i, item in enumerate(original_type.items):
++                    #     print(f"DEBUG: Overload {i}: self_type={item.arg_types[0] if item.arg_types else 'None'}")
++                    # Filter to overloads that match the self type in the original context
++                    filtered_items = [
++                        item
++                        for item in original_type.items
++                        if not item.arg_types or is_subtype(active_self_type, item.arg_types[0])
++                    ]
++                    # If we don't have any filtered_items, preserve the original type
++                    if filtered_items:
++                        original_type = Overloaded(filtered_items)
+                 original_type = self.bind_and_map_method(base_attr, original_type, defn.info, base)
+                 if original_node and is_property(original_node):
+                     original_type = get_property_type(original_type)

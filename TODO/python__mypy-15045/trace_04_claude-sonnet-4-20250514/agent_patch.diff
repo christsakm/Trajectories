@@ -1,0 +1,31 @@
+diff --git a/mypy/checker.py b/mypy/checker.py
+index cdf2ab648..34bac2c82 100644
+--- a/mypy/checker.py
++++ b/mypy/checker.py
+@@ -1950,7 +1950,14 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+ 
+             mapped_typ = cast(FunctionLike, map_type_from_supertype(typ, sub_info, super_info))
+             active_self_type = self.scope.active_self_type()
+-            if isinstance(mapped_typ, Overloaded) and active_self_type:
++            # Descriptor methods like __get__, __set__, __delete__ have special semantics
++            # where the first parameter after self is not a self-type, so we shouldn't
++            # filter overloads based on self-type compatibility for these methods.
++            is_descriptor_method = (
++                hasattr(sym.node, 'name') and 
++                sym.node.name in ('__get__', '__set__', '__delete__')
++            )
++            if isinstance(mapped_typ, Overloaded) and active_self_type and not is_descriptor_method:
+                 # If we have an overload, filter to overloads that match the self type.
+                 # This avoids false positives for concrete subclasses of generic classes,
+                 # see testSelfTypeOverrideCompatibility for an example.
+diff --git a/test-data/unit/check-selftype.test b/test-data/unit/check-selftype.test
+index 8083aaf7c..d5780b167 100644
+--- a/test-data/unit/check-selftype.test
++++ b/test-data/unit/check-selftype.test
+@@ -1846,4 +1846,5 @@ class B:
+         else:
+             return B()  # E: Incompatible return value type (got "B", expected "A")
+ 
+-[builtins fixtures/isinstancelist.pyi]
++
++[case testSelfTypeOverrideCompatibilityDescriptor]

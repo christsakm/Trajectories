@@ -1,0 +1,170 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase
+
+1 hour ~ 4 hours
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/mypy/checker.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/test-data/unit/check-selftype.test"
+]
+Rubrics *
+Remember to do this based on the 3 traces you select out of the 4, the trace you rule out, you should ignore it entirely.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch modifies bind_and_map_method function in checker.py filtering logic",
+    "rationale": "The bug is in overload filtering when mapping from supertype context.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch checks if first argument is TypeVarType before subtype check",
+    "rationale": "TypeVarType arguments need special handling to avoid false incompatibility errors.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The patch uses upper_bound when argument is TypeVarType for subtype check",
+    "rationale": "TypeVarType upper_bound is the concrete type for compatibility checking purposes.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The test testSelfTypeOverrideCompatibilityTypeVar passes after the patch applied",
+    "rationale": "This test validates TypeVar parameter compatibility in method override checking.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The test testSelfTypeOverrideCompatibilitySelfTypeVar passes after the patch applied",
+    "rationale": "This test validates Self return type works with TypeVar parameters.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_06": {
+    "type": "correctness",
+    "criterion": "The patch does not break testSelfTypeSuper PASS_TO_PASS test",
+    "rationale": "Ensures no regressions in existing Self type super() functionality.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_07": {
+    "type": "agent behavior",
+    "criterion": "The agent does not modify wrong files like subtypes.py or messages.py",
+    "rationale": "The fix location is checker.py bind_and_map_method not subtype checking.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_08": {
+    "type": "agent behavior",
+    "criterion": "The agent does not create unnecessary test or reproduction script files",
+    "rationale": "Test infrastructure already exists; creating extra files adds clutter unnecessarily.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_09": {
+    "type": "code style",
+    "criterion": "The patch expands list comprehension to explicit loop for clarity",
+    "rationale": "Golden patch uses explicit loop making TypeVarType handling logic clearer.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_10": {
+    "type": "summary",
+    "criterion": "The summary explains TypeVarType arguments need upper_bound for subtype checking",
+    "rationale": "Demonstrates understanding that TypeVarType itself cannot be used for is_subtype.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+After you select 3 traces out of the 4, ignore the one you ruled out entirely, but keep using the exact trace name.
+
+{
+  "trace_01": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL",
+    "rubric_10": "FAIL"
+  },
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "FAIL",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL",
+    "rubric_10": "PASS"
+  },
+  "trace_03": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL",
+    "rubric_10": "FAIL"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "FAIL",
+    "rubric_10": "FAIL"
+  }
+}
+Overall rating *
+Remember to keep using the exact 3 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 1,
+    "rationale": "Fundamentally incorrect solution that misunderstands the problem entirely. Creates descriptor-specific __get__ filtering logic to remove class-access overloads which is completely wrong approach. Modifies check_override and check_method_override instead of bind_and_map_method filtering logic. Doesn't handle TypeVarType or use upper_bound for compatibility checking. All tests fail including PASS_TO_PASS regression. Creates unnecessary mwe.py reproduction file. Wrong location, wrong logic, and completely broken functionality with 6 critical MUST_FOLLOW failures."
+  },
+  "trace_02": {
+    "rating": 3,
+    "rationale": "Partial fix with correct understanding of TypeVarType upper_bound handling but wrong file location. Modifies subtypes.py return type checking instead of checker.py bind_and_map_method overload filtering. However correctly identifies TypeVarType arguments need upper_bound checking for compatibility. One FAIL_TO_PASS test passes (testSelfTypeOverrideCompatibilitySelfTypeVar) and PASS_TO_PASS succeeds, but testSelfTypeOverrideCompatibilityTypeVar still fails. Creates unnecessary reproduce.py files. Good understanding but incorrect implementation location with 2 critical MUST_FOLLOW failures."
+  },
+  "trace_03": {
+    "rating": 1,
+    "rationale": "Wrong approach that filters overloads before bind_and_map_method instead of inside the filtering logic. Doesn't handle TypeVarType or check upper_bound at all for compatibility checking. Both FAIL_TO_PASS tests fail though PASS_TO_PASS succeeds. Creates many unnecessary test files: comprehensive_test.py, debug_issue.py, debug_mypy.py, original_issue.py, test_self_overload_inheritance.py showing excessive debugging without understanding the root cause. Wrong modification location and no TypeVarType handling with 5 critical MUST_FOLLOW failures."
+  },
+  "trace_04": {
+    "rating": 2,
+    "rationale": "Wrong approach that skips descriptor methods entirely from overload filtering instead of fixing TypeVarType handling. Correctly modifies bind_and_map_method location but with incorrect logic that exempts __get__, __set__, __delete__ completely from filtering. Doesn't check TypeVarType or use upper_bound. Both FAIL_TO_PASS tests fail though PASS_TO_PASS succeeds. Creates multiple unnecessary files: debug_overload.py, reproduce_issue.py, test_descriptor_fix.py, test_non_descriptor_fix.py. Right file location but fundamentally wrong solution with 4 critical MUST_FOLLOW failures."
+  }
+}

@@ -1,0 +1,826 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   mypy/checker.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	mwe.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+Author: Ondřej Cvacho <ondrej.cvacho@gmail.com>
+Date:   Wed Apr 12 19:59:01 2023 +0200
+
+    Fix alignment of cheat sheet example (#15039)
+    
+    In `cheat_sheep_py3.rst` functions examples, there is one function
+    example misaligned with to other examples in the code block. This PR
+    just removes leading space.
+
+diff --git a/docs/source/cheat_sheet_py3.rst b/docs/source/cheat_sheet_py3.rst
+index 24621537c..9533484e9 100644
+--- a/docs/source/cheat_sheet_py3.rst
++++ b/docs/source/cheat_sheet_py3.rst
+@@ -103,10 +103,10 @@ Functions
+    def show(value: str, excitement: int = 10) -> None:
+        print(value + "!" * excitement)
+ 
+-    # Note that arguments without a type are dynamically typed (treated as Any)
+-    # and that functions without any annotations not checked
+-    def untyped(x):
+-        x.anything() + 1 + "string"  # no errors
++   # Note that arguments without a type are dynamically typed (treated as Any)
++   # and that functions without any annotations not checked
++   def untyped(x):
++       x.anything() + 1 + "string"  # no errors
+ 
+    # This is how you annotate a callable (function) value
+    x: Callable[[int, float], float] = f
++ git diff 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+diff --git a/mypy/checker.py b/mypy/checker.py
+index cdf2ab648..660fcb057 100644
+--- a/mypy/checker.py
++++ b/mypy/checker.py
+@@ -1902,16 +1902,44 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+             elif isinstance(original_type, FunctionLike) and isinstance(typ, FunctionLike):
+                 # Check that the types are compatible.
+                 # TODO overloaded signatures
+-                self.check_override(
+-                    typ,
+-                    original_type,
+-                    defn.name,
+-                    name,
+-                    base.name,
+-                    original_class_or_static,
+-                    override_class_or_static,
+-                    context,
+-                )
++                # Special-case descriptor __get__: allow subclasses to add a class access
++                # overload (instance: None -> Self) without being incompatible.
++                if defn.name == "__get__":
++                    from mypy.types import CallableType as _CT
++                    def drop_class_access(tp: FunctionLike) -> FunctionLike:
++                        if isinstance(tp, Overloaded):
++                            items: list[_CT] = []
++                            for it in tp.items:
++                                if isinstance(it, _CT):
++                                    if len(it.arg_types) >= 2 and isinstance(get_proper_type(it.arg_types[1]), NoneType):
++                                        continue
++                                    items.append(it)
++                            if items:
++                                return Overloaded(items)
++                        return tp
++                    ovr = drop_class_access(typ)
++                    org = drop_class_access(original_type)
++                    self.check_override(
++                        ovr,
++                        org,
++                        defn.name,
++                        name,
++                        base.name,
++                        original_class_or_static,
++                        override_class_or_static,
++                        context,
++                    )
++                else:
++                    self.check_override(
++                        typ,
++                        original_type,
++                        defn.name,
++                        name,
++                        base.name,
++                        original_class_or_static,
++                        override_class_or_static,
++                        context,
++                    )
+             elif is_equivalent(original_type, typ):
+                 # Assume invariance for a non-callable attribute here. Note
+                 # that this doesn't affect read-only properties which can have
+@@ -2004,6 +2032,28 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
+                      only used for generating error messages.
+           supertype: The name of the supertype.
+         """
++
++        # Special-case descriptor __get__(): allow subclasses to add the class-access
++        # overload (instance is None -> Self) without being considered incompatible.
++        # This restores behavior from mypy<=1.1.x and matches common descriptor typing.
++        if name == "__get__":
++            from mypy.types import CallableType
++            def drop_class_access_overload(tp: FunctionLike) -> FunctionLike:
++                if isinstance(tp, Overloaded):
++                    items: list[CallableType] = []
++                    none_matches = 0
++                    for it in tp.items:
++                        if isinstance(it, CallableType):
++                            if len(it.arg_types) >= 1 and isinstance(get_proper_type(it.arg_types[0]), NoneType):
++                                none_matches += 1
++                                # Skip the "instance is None" overload
++                                continue
++                            items.append(it)
++                    if items:
++                        return Overloaded(items)
++                return tp
++            override = drop_class_access_overload(override)
++            original = drop_class_access_overload(original)
+         # Use boolean variable to clarify code.
+         fail = False
+         op_method_wider_note = False
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -r test-requirements.txt
+Ignoring typed_ast: markers 'python_version < "3.8"' don't match your environment
+Ignoring tomli: markers 'python_version < "3.11"' don't match your environment
+Ignoring typed_ast: markers 'python_version < "3.8"' don't match your environment
+Ignoring tomli: markers 'python_version < "3.11"' don't match your environment
+Requirement already satisfied: typing_extensions>=3.10 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/mypy-requirements.txt (line 2)) (4.15.0)
+Requirement already satisfied: mypy_extensions>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/mypy-requirements.txt (line 3)) (1.1.0)
+Requirement already satisfied: types-psutil in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/build-requirements.txt (line 3)) (7.0.0.20251116)
+Requirement already satisfied: types-setuptools in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/build-requirements.txt (line 4)) (80.9.0.20250822)
+Requirement already satisfied: types-typed-ast<1.6.0,>=1.5.8.5 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r /testbed/build-requirements.txt (line 5)) (1.5.8.7)
+Requirement already satisfied: attrs>=18.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 3)) (25.4.0)
+Requirement already satisfied: black==22.12.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 4)) (22.12.0)
+Requirement already satisfied: filelock>=3.3.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 5)) (3.20.0)
+Requirement already satisfied: flake8==5.0.4 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 6)) (5.0.4)
+Requirement already satisfied: flake8-bugbear==22.12.6 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 7)) (22.12.6)
+Requirement already satisfied: flake8-noqa==1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 8)) (1.3.0)
+Requirement already satisfied: isort==5.11.5 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from isort[colors]==5.11.5->-r test-requirements.txt (line 9)) (5.11.5)
+Requirement already satisfied: lxml>=4.9.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 10)) (6.0.2)
+Requirement already satisfied: psutil>=4.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 11)) (7.1.3)
+Requirement already satisfied: pytest>=6.2.4 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 13)) (9.0.1)
+Requirement already satisfied: pytest-xdist>=1.34.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 14)) (3.8.0)
+Requirement already satisfied: pytest-forked<2.0.0,>=1.3.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 15)) (1.6.0)
+Requirement already satisfied: pytest-cov>=2.10.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 16)) (7.0.0)
+Requirement already satisfied: py>=1.5.2 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 17)) (1.11.0)
+Requirement already satisfied: setuptools>=65.5.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 18)) (80.9.0)
+Requirement already satisfied: six in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 19)) (1.17.0)
+Requirement already satisfied: tomli>=1.1.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from -r test-requirements.txt (line 20)) (2.3.0)
+Requirement already satisfied: click>=8.0.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from black==22.12.0->-r test-requirements.txt (line 4)) (8.3.1)
+Requirement already satisfied: pathspec>=0.9.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from black==22.12.0->-r test-requirements.txt (line 4)) (0.12.1)
+Requirement already satisfied: platformdirs>=2 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from black==22.12.0->-r test-requirements.txt (line 4)) (4.5.0)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from flake8==5.0.4->-r test-requirements.txt (line 6)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.10.0,>=2.9.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from flake8==5.0.4->-r test-requirements.txt (line 6)) (2.9.1)
+Requirement already satisfied: pyflakes<2.6.0,>=2.5.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from flake8==5.0.4->-r test-requirements.txt (line 6)) (2.5.0)
+Requirement already satisfied: colorama<0.5.0,>=0.4.3 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from isort[colors]==5.11.5->-r test-requirements.txt (line 9)) (0.4.6)
+Requirement already satisfied: iniconfig>=1.0.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (2.3.0)
+Requirement already satisfied: packaging>=22 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (25.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest>=6.2.4->-r test-requirements.txt (line 13)) (2.19.2)
+Requirement already satisfied: execnet>=2.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from pytest-xdist>=1.34.0->-r test-requirements.txt (line 14)) (2.1.2)
+Requirement already satisfied: coverage>=7.10.6 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from coverage[toml]>=7.10.6->pytest-cov>=2.10.0->-r test-requirements.txt (line 16)) (7.11.3)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: typing_extensions>=3.10 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from mypy==1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty) (4.15.0)
+Requirement already satisfied: mypy_extensions>=1.0.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from mypy==1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty) (1.1.0)
+Building wheels for collected packages: mypy
+  Building editable for mypy (pyproject.toml): started
+  Building editable for mypy (pyproject.toml): finished with status 'done'
+  Created wheel for mypy: filename=mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty-0.editable-py3-none-any.whl size=8371 sha256=a45cb8de3ba0e18cae37ef56b88c2ea98fb0894bcdeadacb19718e8e56bbfbb6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-efd4rzaa/wheels/49/5f/4f/01b7d31ea6ddac9643da788242d33e5fd3467d95d17b032c6b
+Successfully built mypy
+Installing collected packages: mypy
+  Attempting uninstall: mypy
+    Found existing installation: mypy 1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+    Uninstalling mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14:
+      Successfully uninstalled mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14
+Successfully installed mypy-1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ hash -r
++ git checkout 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14 test-data/unit/check-selftype.test
+Updated 0 paths from 75f032722
++ git apply -v -
+Checking patch test-data/unit/check-selftype.test...
+Applied patch test-data/unit/check-selftype.test cleanly.
++ pytest -n0 -rA -k 'testSelfTypeOverrideCompatibilityTypeVar-xfail or testSelfTypeOverrideCompatibilityTypeVar or testSelfTypeOverrideCompatibilitySelfTypeVar or testSelfTypeSuper'
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.1, pluggy-1.6.0
+rootdir: /testbed
+configfile: pytest.ini
+testpaths: mypy/test, mypyc/test
+plugins: forked-1.6.0, xdist-3.8.0, cov-7.0.0
+collected 11246 items / 11243 deselected / 3 selected
+
+mypy/test/testcheck.py FFF                                               [100%]
+
+=================================== FAILURES ===================================
+___________________ testSelfTypeOverrideCompatibilityTypeVar ___________________
+data: /testbed/test-data/unit/check-selftype.test:235:
+SystemExit: 2
+----------------------------- Captured stdout call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/bin/pytest", line 7, in <module>
+    sys.exit(console_main())
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/config/__init__.py", line 221, in console_main
+    code = main()
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/config/__init__.py", line 197, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 365, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 318, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 372, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 396, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 118, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 137, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 244, in call_and_report
+    call = CallInfo.from_call(
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 353, in from_call
+    result: TResult | None = func()
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 245, in <lambda>
+    lambda: runtest_hook(item=item, **kwds),
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 179, in pytest_runtest_call
+    item.runtest()
+  File "/testbed/mypy/test/data.py", line 308, in runtest
+    suite.run_case(self)
+  File "/testbed/mypy/test/testcheck.py", line 85, in run_case
+    self.run_case_once(testcase)
+  File "/testbed/mypy/test/testcheck.py", line 150, in run_case_once
+    res = build.build(sources=sources, options=options, alt_lib_path=test_temp_dir)
+  File "/testbed/mypy/build.py", line 194, in build
+    result = _build(
+  File "/testbed/mypy/build.py", line 277, in _build
+    graph = dispatch(sources, manager, stdout)
+  File "/testbed/mypy/build.py", line 2930, in dispatch
+    process_graph(graph, manager)
+  File "/testbed/mypy/build.py", line 3328, in process_graph
+    process_stale_scc(graph, scc, manager)
+  File "/testbed/mypy/build.py", line 3429, in process_stale_scc
+    graph[id].type_check_first_pass()
+  File "/testbed/mypy/build.py", line 2318, in type_check_first_pass
+    self.type_checker().check_first_pass()
+  File "/testbed/mypy/checker.py", line 474, in check_first_pass
+    self.accept(d)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 1127, in accept
+    return visitor.visit_class_def(self)
+  File "/testbed/mypy/checker.py", line 2214, in visit_class_def
+    self.accept(defn.defs)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 1208, in accept
+    return visitor.visit_block(self)
+  File "/testbed/mypy/checker.py", line 2664, in visit_block
+    self.accept(s)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 774, in accept
+    return visitor.visit_func_def(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 960, in visit_func_def
+    self._visit_func_def(defn)
+  File "/testbed/mypy/checker.py", line 971, in _visit_func_def
+    self.check_method_override(defn)
+  File "/testbed/mypy/checker.py", line 1769, in check_method_override
+    if self.check_method_or_accessor_override_for_base(defn, base):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 1796, in check_method_or_accessor_override_for_base
+    if self.check_method_override_for_base_with_name(defn, name, base):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 1933, in check_method_override_for_base_with_name
+    self.check_override(
+  File "/testbed/mypy/checker.py", line 2077, in check_override
+    elif isinstance(original, CallableType) and isinstance(override, CallableType):
+                              ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'CallableType' where it is not associated with a value
+----------------------------- Captured stderr call -----------------------------
+/testbed/test-data/unit/lib-stub/typing.pyi:47: error: INTERNAL ERROR -- Please try using mypy master on GitHub:
+https://mypy.readthedocs.io/en/stable/common_issues.html#using-a-development-mypy-build
+Please report a bug at https://github.com/python/mypy/issues
+version: 1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty
+/testbed/test-data/unit/lib-stub/typing.pyi:47: : note: use --pdb to drop into pdb
+_________________ testSelfTypeOverrideCompatibilitySelfTypeVar _________________
+data: /testbed/test-data/unit/check-selftype.test:269:
+SystemExit: 2
+----------------------------- Captured stdout call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/bin/pytest", line 7, in <module>
+    sys.exit(console_main())
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/config/__init__.py", line 221, in console_main
+    code = main()
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/config/__init__.py", line 197, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 365, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 318, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 372, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 396, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 118, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 137, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 244, in call_and_report
+    call = CallInfo.from_call(
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 353, in from_call
+    result: TResult | None = func()
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 245, in <lambda>
+    lambda: runtest_hook(item=item, **kwds),
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 179, in pytest_runtest_call
+    item.runtest()
+  File "/testbed/mypy/test/data.py", line 308, in runtest
+    suite.run_case(self)
+  File "/testbed/mypy/test/testcheck.py", line 85, in run_case
+    self.run_case_once(testcase)
+  File "/testbed/mypy/test/testcheck.py", line 150, in run_case_once
+    res = build.build(sources=sources, options=options, alt_lib_path=test_temp_dir)
+  File "/testbed/mypy/build.py", line 194, in build
+    result = _build(
+  File "/testbed/mypy/build.py", line 277, in _build
+    graph = dispatch(sources, manager, stdout)
+  File "/testbed/mypy/build.py", line 2930, in dispatch
+    process_graph(graph, manager)
+  File "/testbed/mypy/build.py", line 3328, in process_graph
+    process_stale_scc(graph, scc, manager)
+  File "/testbed/mypy/build.py", line 3429, in process_stale_scc
+    graph[id].type_check_first_pass()
+  File "/testbed/mypy/build.py", line 2318, in type_check_first_pass
+    self.type_checker().check_first_pass()
+  File "/testbed/mypy/checker.py", line 474, in check_first_pass
+    self.accept(d)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 1127, in accept
+    return visitor.visit_class_def(self)
+  File "/testbed/mypy/checker.py", line 2214, in visit_class_def
+    self.accept(defn.defs)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 1208, in accept
+    return visitor.visit_block(self)
+  File "/testbed/mypy/checker.py", line 2664, in visit_block
+    self.accept(s)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 774, in accept
+    return visitor.visit_func_def(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 960, in visit_func_def
+    self._visit_func_def(defn)
+  File "/testbed/mypy/checker.py", line 971, in _visit_func_def
+    self.check_method_override(defn)
+  File "/testbed/mypy/checker.py", line 1769, in check_method_override
+    if self.check_method_or_accessor_override_for_base(defn, base):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 1796, in check_method_or_accessor_override_for_base
+    if self.check_method_override_for_base_with_name(defn, name, base):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 1933, in check_method_override_for_base_with_name
+    self.check_override(
+  File "/testbed/mypy/checker.py", line 2077, in check_override
+    elif isinstance(original, CallableType) and isinstance(override, CallableType):
+                              ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'CallableType' where it is not associated with a value
+----------------------------- Captured stderr call -----------------------------
+/testbed/test-data/unit/lib-stub/typing.pyi:47: error: INTERNAL ERROR -- Please try using mypy master on GitHub:
+https://mypy.readthedocs.io/en/stable/common_issues.html#using-a-development-mypy-build
+Please report a bug at https://github.com/python/mypy/issues
+version: 1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty
+/testbed/test-data/unit/lib-stub/typing.pyi:47: : note: use --pdb to drop into pdb
+______________________________ testSelfTypeSuper _______________________________
+data: /testbed/test-data/unit/check-selftype.test:289:
+SystemExit: 2
+----------------------------- Captured stdout call -----------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/bin/pytest", line 7, in <module>
+    sys.exit(console_main())
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/config/__init__.py", line 221, in console_main
+    code = main()
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/config/__init__.py", line 197, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 365, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 318, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 372, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/main.py", line 396, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 118, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 137, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 244, in call_and_report
+    call = CallInfo.from_call(
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 353, in from_call
+    result: TResult | None = func()
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 245, in <lambda>
+    lambda: runtest_hook(item=item, **kwds),
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/opt/miniconda3/envs/testbed/lib/python3.11/site-packages/_pytest/runner.py", line 179, in pytest_runtest_call
+    item.runtest()
+  File "/testbed/mypy/test/data.py", line 308, in runtest
+    suite.run_case(self)
+  File "/testbed/mypy/test/testcheck.py", line 85, in run_case
+    self.run_case_once(testcase)
+  File "/testbed/mypy/test/testcheck.py", line 150, in run_case_once
+    res = build.build(sources=sources, options=options, alt_lib_path=test_temp_dir)
+  File "/testbed/mypy/build.py", line 194, in build
+    result = _build(
+  File "/testbed/mypy/build.py", line 277, in _build
+    graph = dispatch(sources, manager, stdout)
+  File "/testbed/mypy/build.py", line 2930, in dispatch
+    process_graph(graph, manager)
+  File "/testbed/mypy/build.py", line 3328, in process_graph
+    process_stale_scc(graph, scc, manager)
+  File "/testbed/mypy/build.py", line 3429, in process_stale_scc
+    graph[id].type_check_first_pass()
+  File "/testbed/mypy/build.py", line 2318, in type_check_first_pass
+    self.type_checker().check_first_pass()
+  File "/testbed/mypy/checker.py", line 474, in check_first_pass
+    self.accept(d)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 1127, in accept
+    return visitor.visit_class_def(self)
+  File "/testbed/mypy/checker.py", line 2214, in visit_class_def
+    self.accept(defn.defs)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 1208, in accept
+    return visitor.visit_block(self)
+  File "/testbed/mypy/checker.py", line 2664, in visit_block
+    self.accept(s)
+  File "/testbed/mypy/checker.py", line 582, in accept
+    stmt.accept(self)
+  File "/testbed/mypy/nodes.py", line 774, in accept
+    return visitor.visit_func_def(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 960, in visit_func_def
+    self._visit_func_def(defn)
+  File "/testbed/mypy/checker.py", line 971, in _visit_func_def
+    self.check_method_override(defn)
+  File "/testbed/mypy/checker.py", line 1769, in check_method_override
+    if self.check_method_or_accessor_override_for_base(defn, base):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 1796, in check_method_or_accessor_override_for_base
+    if self.check_method_override_for_base_with_name(defn, name, base):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/testbed/mypy/checker.py", line 1933, in check_method_override_for_base_with_name
+    self.check_override(
+  File "/testbed/mypy/checker.py", line 2077, in check_override
+    elif isinstance(original, CallableType) and isinstance(override, CallableType):
+                              ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'CallableType' where it is not associated with a value
+----------------------------- Captured stderr call -----------------------------
+/testbed/test-data/unit/lib-stub/typing.pyi:47: error: INTERNAL ERROR -- Please try using mypy master on GitHub:
+https://mypy.readthedocs.io/en/stable/common_issues.html#using-a-development-mypy-build
+Please report a bug at https://github.com/python/mypy/issues
+version: 1.3.0+dev.5005428f6bf143d4f8d75b7cb9dd258d00e8ef14.dirty
+/testbed/test-data/unit/lib-stub/typing.pyi:47: : note: use --pdb to drop into pdb
+=============================== warnings summary ===============================
+mypy/build.py:354
+  /testbed/mypy/build.py:354: DeprecationWarning: mypy_extensions.TypedDict is deprecated, and will be removed in a future version. Use typing.TypedDict or typing_extensions.TypedDict instead.
+    FgDepMeta = TypedDict("FgDepMeta", {"path": str, "mtime": int})
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED mypy/test/testcheck.py::TypeCheckSuite::check-selftype.test::testSelfTypeOverrideCompatibilityTypeVar
+FAILED mypy/test/testcheck.py::TypeCheckSuite::check-selftype.test::testSelfTypeOverrideCompatibilitySelfTypeVar
+FAILED mypy/test/testcheck.py::TypeCheckSuite::check-selftype.test::testSelfTypeSuper
+================ 3 failed, 11243 deselected, 1 warning in 1.79s ================
++ git checkout 5005428f6bf143d4f8d75b7cb9dd258d00e8ef14 test-data/unit/check-selftype.test
+Updated 1 path from 75f032722

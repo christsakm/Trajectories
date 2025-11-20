@@ -1,0 +1,22 @@
+diff --git a/mypy/subtypes.py b/mypy/subtypes.py
+index 882858adc..44df87eac 100644
+--- a/mypy/subtypes.py
++++ b/mypy/subtypes.py
+@@ -850,6 +850,17 @@ class SubtypeVisitor(TypeVisitor[bool]):
+ 
+                     # Order matters: we need to make sure that the index of
+                     # this item is at least the index of the previous one.
++                    # If the left item (subtype) returns a subtype of the right item (supertype),
++                    # or if the right item returns a type variable and the left item returns
++                    # a concrete type that is a subtype of the type variable's bound,
++                    # consider them compatible
++                    if is_subtype(left_item.ret_type, right_item.ret_type):
++                        subtype_match = True
++                    elif (isinstance(right_item.ret_type, TypeVarType) and
++                          isinstance(left_item.ret_type, Instance) and
++                          is_subtype(left_item.ret_type, right_item.ret_type.upper_bound)):
++                        subtype_match = True
++
+                     if subtype_match and previous_match_left_index <= left_index:
+                         previous_match_left_index = left_index
+                         found_match = True
