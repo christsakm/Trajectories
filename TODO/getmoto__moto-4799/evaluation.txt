@@ -1,0 +1,160 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+15 min ~ 1 hour
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/moto/core/models.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/tests/test_core/test_decorator_calls.py"
+]
+Rubrics *
+Remember to do this based on all 4 traces.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch checks parent classes via MRO for setUp method in decorate_class function.",
+    "rationale": "Root cause was only checking direct_methods. Must check parent classes to detect inherited setUp.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch excludes unittest.TestCase and object when checking parent classes for setUp.",
+    "rationale": "Framework base classes should not be considered when detecting user-defined setUp methods.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The patch sets has_setup_method to True when inherited setUp is found in parent classes.",
+    "rationale": "This flag prevents test method backend resets. Must be set correctly to avoid NoSuchBucket errors.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The patch uses inspect.getmro() or klass.__mro__ to traverse inheritance hierarchy.",
+    "rationale": "MRO is the correct Python mechanism to find methods in parent classes according to inheritance rules.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The patch passes all PASS_TO_PASS tests without introducing regressions.",
+    "rationale": "A correct fix must not break existing functionality while fixing the FAIL_TO_PASS test.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_06": {
+    "type": "agent behavior",
+    "criterion": "The patch does not create reproduction scripts like repro_child_only_decorated.py.",
+    "rationale": "Extra files are unnecessary since test cases already exist in test_decorator_calls.py.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "code style",
+    "criterion": "The patch includes comments explaining why parent classes are checked for setUp.",
+    "rationale": "Comments help maintainers understand the fix addresses inherited setUp methods.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  },
+  "rubric_08": {
+    "type": "agent behavior",
+    "criterion": "The patch does not add decoration logic for inherited setUp/tearDown methods.",
+    "rationale": "Fix only needs to detect setUp presence. Extra decoration logic is unnecessary complexity.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_09": {
+    "type": "summary",
+    "criterion": "The patch modifies decorate_class method to detect inherited setUp from parent classes.",
+    "rationale": "The fix must be in decorate_class where has_setup_method is determined, not in other methods.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+Evaluate all 4 traces using the exact trace names.
+
+{
+  "trace_01": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS"
+  },
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "FAIL"
+  },
+  "trace_03": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "FAIL",
+    "rubric_09": "PASS"
+  },
+  "trace_04": {
+    "rubric_01": "PASS",
+    "rubric_02": "PASS",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "PASS",
+    "rubric_07": "PASS",
+    "rubric_08": "PASS",
+    "rubric_09": "PASS"
+  }
+}
+Overall rating *
+Remember to keep using the exact 4 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 4,
+    "rationale": "Correct fix that uses inspect.getmro() to check parent classes for setUp, correctly excluding unittest.TestCase and object. The implementation initializes has_setup_method = False and sets it to True when inherited setUp is detected. However, creates two unnecessary reproduction script files (repro_child_only_decorated.py and repro_inherited_teardown.py) that duplicate existing test scenarios. All MUST_FOLLOW rubrics pass, one GOOD_TO_HAVE fails."
+  },
+  "trace_02": {
+    "rating": 1,
+    "rationale": "Incorrect approach that modifies decorate_callable instead of fixing has_setup_method detection in decorate_class. The patch checks hasattr(args[0], 'setUp') at runtime and changes test method reset logic to always reset, breaking 6 PASS_TO_PASS tests. The solution misunderstands the root cause - detection should happen during class decoration, not method execution. Failed 6 MUST_FOLLOW rubrics."
+  },
+  "trace_03": {
+    "rating": 4,
+    "rationale": "Correct fix that checks direct_methods first, then uses inspect.getmro() to search parent classes. Correctly excludes unittest.TestCase and object. However, adds unnecessary decoration logic for inherited setUp/tearDown methods using getattr and setattr, which goes beyond detecting setUp presence. The inherited methods are already accessible through normal Python inheritance. All MUST_FOLLOW rubrics pass, one GOOD_TO_HAVE fails."
+  },
+  "trace_04": {
+    "rating": 5,
+    "rationale": "Excellent solution that uses issubclass check to only traverse MRO for unittest classes, then uses klass.__mro__[1:] to skip the class itself and breaks when reaching unittest.TestCase. Includes clear comments and demonstrates thorough verification with 20 test runs. The implementation is clean, focused, and adds no unnecessary files or complexity. All MUST_FOLLOW and GOOD_TO_HAVE rubrics pass."
+  }
+}
+
