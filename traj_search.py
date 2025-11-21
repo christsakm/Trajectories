@@ -8,6 +8,7 @@ import json
 import re
 import sys
 import argparse
+import os
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from collections import Counter
@@ -491,6 +492,307 @@ class TrajSearcher:
 
         return evidence
 
+    def find_report_json(self) -> Optional[Path]:
+        """
+        Find report.json in same directory as .traj file.
+
+        Returns:
+            Path to report.json if found, None otherwise
+        """
+        traj_dir = self.traj_file.parent
+        report_path = traj_dir / 'report.json'
+        return report_path if report_path.exists() else None
+
+    def load_report_json(self) -> Optional[Dict[str, Any]]:
+        """
+        Load and parse report.json if it exists.
+
+        Returns:
+            Report data dict, or None if not found
+        """
+        report_path = self.find_report_json()
+        if report_path:
+            try:
+                with open(report_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except (json.JSONDecodeError, IOError) as e:
+                print(f"Warning: Could not read report.json: {e}", file=sys.stderr)
+        return None
+
+    def find_agent_patch(self) -> Optional[Path]:
+        """
+        Find agent_patch.diff in same directory as .traj file.
+
+        Returns:
+            Path to agent_patch.diff if found, None otherwise
+        """
+        traj_dir = self.traj_file.parent
+        patch_path = traj_dir / 'agent_patch.diff'
+        return patch_path if patch_path.exists() else None
+
+    def analyze_patch(self) -> Optional[Dict[str, Any]]:
+        """
+        Analyze agent_patch.diff to extract summary information.
+
+        Returns:
+            Dict with patch analysis, or None if patch not found
+        """
+        patch_path = self.find_agent_patch()
+        if not patch_path:
+            return None
+
+        try:
+            with open(patch_path, 'r', encoding='utf-8') as f:
+                patch_content = f.read()
+
+            files_modified = set()
+            changes_by_file = {}
+            current_file = None
+            additions = 0
+            deletions = 0
+
+            for line in patch_content.split('\n'):
+                # Detect file being modified
+                if line.startswith('---') or line.startswith('+++'):
+                    match = re.search(r'[ab]/(.*?)(?:\s|$)', line)
+                    if match:
+                        current_file = match.group(1)
+                        files_modified.add(current_file)
+                        if current_file not in changes_by_file:
+                            changes_by_file[current_file] = {'additions': 0, 'deletions': 0}
+                # Count changes
+                elif line.startswith('+') and not line.startswith('+++'):
+                    additions += 1
+                    if current_file:
+                        changes_by_file[current_file]['additions'] += 1
+                elif line.startswith('-') and not line.startswith('---'):
+                    deletions += 1
+                    if current_file:
+                        changes_by_file[current_file]['deletions'] += 1
+
+            return {
+                'exists': True,
+                'files_modified': sorted(files_modified),
+                'total_files': len(files_modified),
+                'total_additions': additions,
+                'total_deletions': deletions,
+                'changes_by_file': changes_by_file
+            }
+
+        except IOError as e:
+            print(f"Warning: Could not read agent_patch.diff: {e}", file=sys.stderr)
+            return None
+
+    def detect_loops(self, threshold: int = 50) -> Optional[Dict[str, Any]]:
+        """
+        Detect if same action is repeated many times in sequence.
+
+        Args:
+            threshold: Number of repetitions to flag as a loop
+
+        Returns:
+            Dict with loop info if detected, None otherwise
+        """
+        if len(self.trajectory) < threshold:
+            return None
+
+        max_sequence = 0
+        max_sequence_action = None
+        max_sequence_start = None
+        max_sequence_end = None
+
+        current_action = None
+        current_count = 0
+        current_start = 0
+
+        for i, step in enumerate(self.trajectory):
+            action = step.get('action', '')
+            # Normalize action for comparison (first 100 chars)
+            normalized_action = action[:100]
+
+            if normalized_action == current_action and normalized_action:
+                current_count += 1
+            else:
+                # Check if previous sequence was significant
+                if current_count > max_sequence:
+                    max_sequence = current_count
+                    max_sequence_action = current_action
+                    max_sequence_start = current_start
+                    max_sequence_end = i - 1
+
+                # Start new sequence
+                current_action = normalized_action
+                current_count = 1
+                current_start = i
+
+        # Check final sequence
+        if current_count > max_sequence:
+            max_sequence = current_count
+            max_sequence_action = current_action
+            max_sequence_start = current_start
+            max_sequence_end = len(self.trajectory) - 1
+
+        if max_sequence >= threshold:
+            return {
+                'detected': True,
+                'pattern': max_sequence_action,
+                'count': max_sequence,
+                'start_step': max_sequence_start,
+                'end_step': max_sequence_end
+            }
+
+        return None
+
+    def get_summary(self) -> Dict[str, Any]:
+        """
+        Get comprehensive summary combining trajectory stats and report.json.
+
+        Returns:
+            Dict with all summary information
+        """
+        # Get basic trajectory stats
+        stats = self.get_stats()
+
+        # Try to load report.json
+        report = self.load_report_json()
+
+        # Try to analyze patch
+        patch_info = self.analyze_patch()
+
+        # Detect loops
+        loop_info = self.detect_loops()
+
+        summary = {
+            'trajectory': {
+                'total_steps': stats['total_steps'],
+                'files_viewed': stats['files_viewed'],
+                'files_edited': stats['files_edited'],
+                'tests_run': stats['tests_run'],
+                'has_thoughts': stats['has_thoughts']
+            },
+            'report': None,
+            'patch': patch_info,
+            'loop_detected': loop_info
+        }
+
+        if report:
+            # Extract key info from report.json
+            # Structure varies, but commonly has structure like:
+            # { "task_id": { "resolved": bool, "tests_status": {...} } }
+            task_data = None
+            for key, value in report.items():
+                if isinstance(value, dict) and 'resolved' in value:
+                    task_data = value
+                    break
+
+            if task_data:
+                summary['report'] = {
+                    'resolved': task_data.get('resolved', False),
+                    'patch_exists': task_data.get('patch_exists', False),
+                    'patch_applied': task_data.get('patch_successfully_applied', False),
+                    'tests_status': task_data.get('tests_status', {})
+                }
+
+        return summary
+
+    def format_summary(self, summary: Dict[str, Any]) -> str:
+        """
+        Format summary dict into human-readable output.
+
+        Args:
+            summary: Summary dict from get_summary()
+
+        Returns:
+            Formatted string
+        """
+        lines = ["=== Trace Summary ==="]
+
+        # Report status (if available)
+        if summary['report']:
+            report = summary['report']
+            status_emoji = "✅" if report['resolved'] else "❌"
+            lines.append(f"Status: {status_emoji} {'RESOLVED' if report['resolved'] else 'NOT RESOLVED'} (from report.json)")
+
+            # Test results
+            tests_status = report.get('tests_status', {})
+            fail_to_pass = tests_status.get('FAIL_TO_PASS', {})
+            if fail_to_pass:
+                passed = len(fail_to_pass.get('success', []))
+                failed = len(fail_to_pass.get('failure', []))
+                lines.append(f"Tests: {passed} FAIL_TO_PASS passed, {failed} failed")
+
+                # Show which tests passed/failed
+                if passed > 0:
+                    lines.append("")
+                    lines.append("=== Test Results ===")
+                    lines.append("FAIL_TO_PASS passed:")
+                    for test in fail_to_pass.get('success', [])[:10]:  # Show first 10
+                        lines.append(f"  ✅ {test}")
+                    if len(fail_to_pass.get('success', [])) > 10:
+                        lines.append(f"  ... and {len(fail_to_pass.get('success', []))-10} more")
+
+                if failed > 0:
+                    lines.append("")
+                    lines.append("FAIL_TO_PASS failed:")
+                    for test in fail_to_pass.get('failure', [])[:10]:
+                        lines.append(f"  ❌ {test}")
+                    if len(fail_to_pass.get('failure', [])) > 10:
+                        lines.append(f"  ... and {len(fail_to_pass.get('failure', []))-10} more")
+
+            pass_to_pass = tests_status.get('PASS_TO_PASS', {})
+            if pass_to_pass:
+                passed = len(pass_to_pass.get('success', []))
+                failed = len(pass_to_pass.get('failure', []))
+                if passed > 0 or failed > 0:
+                    lines.append("")
+                    lines.append(f"PASS_TO_PASS: {passed} passed, {failed} failed")
+        else:
+            lines.append("Status: ⚠️  NO report.json found")
+
+        # Trajectory stats
+        traj = summary['trajectory']
+        lines.append("")
+        lines.append("=== Trajectory Stats ===")
+        lines.append(f"Total Steps: {traj['total_steps']}")
+        lines.append(f"Files Viewed: {traj['files_viewed']}")
+        lines.append(f"Files Edited: {traj['files_edited']}")
+        lines.append(f"Tests Run: {traj['tests_run']}")
+        lines.append(f"Steps with Thoughts: {traj['has_thoughts']}")
+
+        # Patch info
+        if summary['patch']:
+            patch = summary['patch']
+            lines.append("")
+            lines.append("=== Patch Info ===")
+            lines.append(f"Agent Patch: ✅ EXISTS")
+            lines.append(f"Files Modified in Patch: {patch['total_files']}")
+            if patch['files_modified']:
+                for file in patch['files_modified'][:5]:
+                    changes = patch['changes_by_file'].get(file, {})
+                    lines.append(f"  {file} (+{changes.get('additions', 0)}, -{changes.get('deletions', 0)})")
+                if len(patch['files_modified']) > 5:
+                    lines.append(f"  ... and {len(patch['files_modified'])-5} more")
+        else:
+            lines.append("")
+            lines.append("=== Patch Info ===")
+            lines.append("Agent Patch: ❌ NOT FOUND")
+
+        # Loop detection
+        if summary['loop_detected']:
+            loop = summary['loop_detected']
+            lines.append("")
+            lines.append("=== Loop Detection ===")
+            lines.append(f"⚠️  LOOP DETECTED")
+            lines.append(f"Pattern: {loop['pattern']}")
+            lines.append(f"Repeated: {loop['count']} times (steps {loop['start_step']}-{loop['end_step']})")
+            lines.append(f"Status: Agent appears stuck in infinite loop")
+        else:
+            lines.append("")
+            lines.append("=== Loop Detection ===")
+            lines.append("✅ No loops detected")
+
+        return '\n'.join(lines)
+
     def generate_evidence(self, evidence_type: str = 'all', **kwargs) -> str:
         """
         Generate formatted evidence for annotation.
@@ -575,6 +877,140 @@ class TrajSearcher:
         return '\n'.join(output_lines)
 
 
+def compare_traces(traj_files: List[Path]) -> str:
+    """
+    Compare multiple traces side-by-side.
+
+    Args:
+        traj_files: List of .traj file paths to compare
+
+    Returns:
+        Formatted comparison table
+    """
+    if len(traj_files) < 2:
+        return "Error: Need at least 2 traces to compare"
+
+    # Load all traces
+    searchers = []
+    summaries = []
+    for traj_file in traj_files:
+        try:
+            searcher = TrajSearcher(traj_file)
+            summary = searcher.get_summary()
+            searchers.append(searcher)
+            summaries.append(summary)
+        except Exception as e:
+            print(f"Warning: Could not load {traj_file}: {e}", file=sys.stderr)
+            return f"Error loading traces"
+
+    # Get trace names (directory names)
+    trace_names = [f.parent.name for f in traj_files]
+
+    # Build comparison table
+    lines = [f"=== Comparison: {len(traj_files)} Traces ===\n"]
+
+    # Calculate column widths
+    max_metric_len = 25
+    max_name_len = max(len(name) for name in trace_names)
+    col_width = max(max_name_len, 12)
+
+    # Header row
+    header = f"{'Metric':<{max_metric_len}}"
+    for name in trace_names:
+        header += f" | {name:<{col_width}}"
+    lines.append(header)
+    lines.append("-" * len(header))
+
+    # Resolved status
+    row = f"{'Resolved':<{max_metric_len}}"
+    for summary in summaries:
+        if summary['report']:
+            status = "✅" if summary['report']['resolved'] else "❌"
+        else:
+            status = "?"
+        row += f" | {status:<{col_width}}"
+    lines.append(row)
+
+    # Steps
+    row = f"{'Steps':<{max_metric_len}}"
+    for summary in summaries:
+        steps = str(summary['trajectory']['total_steps'])
+        row += f" | {steps:<{col_width}}"
+    lines.append(row)
+
+    # Files Modified (from patch)
+    row = f"{'Files Modified (patch)':<{max_metric_len}}"
+    for summary in summaries:
+        if summary['patch']:
+            count = str(summary['patch']['total_files'])
+        else:
+            count = "0"
+        row += f" | {count:<{col_width}}"
+    lines.append(row)
+
+    # Files Viewed
+    row = f"{'Files Viewed':<{max_metric_len}}"
+    for summary in summaries:
+        count = str(summary['trajectory']['files_viewed'])
+        row += f" | {count:<{col_width}}"
+    lines.append(row)
+
+    # Tests Run
+    row = f"{'Tests Run':<{max_metric_len}}"
+    for summary in summaries:
+        count = str(summary['trajectory']['tests_run'])
+        row += f" | {count:<{col_width}}"
+    lines.append(row)
+
+    # FAIL_TO_PASS Passed
+    row = f"{'FAIL_TO_PASS Passed':<{max_metric_len}}"
+    for summary in summaries:
+        if summary['report']:
+            fail_to_pass = summary['report']['tests_status'].get('FAIL_TO_PASS', {})
+            passed = len(fail_to_pass.get('success', []))
+            count = str(passed)
+        else:
+            count = "?"
+        row += f" | {count:<{col_width}}"
+    lines.append(row)
+
+    # FAIL_TO_PASS Failed
+    row = f"{'FAIL_TO_PASS Failed':<{max_metric_len}}"
+    for summary in summaries:
+        if summary['report']:
+            fail_to_pass = summary['report']['tests_status'].get('FAIL_TO_PASS', {})
+            failed = len(fail_to_pass.get('failure', []))
+            count = str(failed)
+        else:
+            count = "?"
+        row += f" | {count:<{col_width}}"
+    lines.append(row)
+
+    # Loops Detected
+    row = f"{'Loops Detected':<{max_metric_len}}"
+    for summary in summaries:
+        if summary['loop_detected']:
+            status = f"Yes ({summary['loop_detected']['count']})"
+        else:
+            status = "No"
+        row += f" | {status:<{col_width}}"
+    lines.append(row)
+
+    # Patch Changes
+    row = f"{'Patch Changes (+/-)':<{max_metric_len}}"
+    for summary in summaries:
+        if summary['patch']:
+            adds = summary['patch']['total_additions']
+            dels = summary['patch']['total_deletions']
+            changes = f"+{adds}/-{dels}"
+        else:
+            changes = "N/A"
+        row += f" | {changes:<{col_width}}"
+    lines.append(row)
+
+    return '\n'.join(lines)
+
+
 def main():
     """CLI interface for trajectory search."""
     parser = argparse.ArgumentParser(
@@ -625,7 +1061,7 @@ Examples:
         """
     )
 
-    parser.add_argument('traj_file', type=Path, help='Path to .traj file')
+    parser.add_argument('traj_file', type=Path, nargs='*', help='Path to .traj file(s)')
     parser.add_argument('--search', '-s', help='Search pattern (regex)')
     parser.add_argument('--field', '-f', choices=['action', 'observation', 'thought', 'response'],
                        help='Specific field to search in')
@@ -665,6 +1101,12 @@ Examples:
                        help='Generate evidence for annotation (all, files-modified, files-viewed, search, tests)')
     parser.add_argument('--evidence-pattern', type=str,
                        help='Search pattern for evidence mode (use with --evidence search)')
+    parser.add_argument('--summary', action='store_true',
+                       help='Show comprehensive summary combining trajectory stats and report.json')
+    parser.add_argument('--diff-summary', action='store_true',
+                       help='Show summary of changes in agent_patch.diff')
+    parser.add_argument('--compare', action='store_true',
+                       help='Compare multiple traces side-by-side (provide multiple .traj files)')
 
     # Parse args with custom error handling
     try:
@@ -678,14 +1120,65 @@ Examples:
                 print("   Use --case-sensitive if you want case-sensitive search.\n", file=sys.stderr)
         raise
 
-    if not args.traj_file.exists():
-        print(f"Error: File not found: {args.traj_file}")
+    # Handle compare mode (multiple files)
+    if args.compare:
+        if len(args.traj_file) < 2:
+            print("Error: --compare requires at least 2 .traj files")
+            return 1
+        for traj_file in args.traj_file:
+            if not traj_file.exists():
+                print(f"Error: File not found: {traj_file}")
+                return 1
+        comparison = compare_traces(args.traj_file)
+        print(comparison)
+        return 0
+
+    # For non-compare modes, need exactly one file
+    if not args.traj_file:
+        print("Error: Please provide a .traj file")
+        parser.print_help()
         return 1
 
-    searcher = TrajSearcher(args.traj_file)
+    if len(args.traj_file) > 1:
+        print("Error: Multiple files provided but --compare not specified")
+        print("Use --compare to compare multiple traces")
+        return 1
+
+    traj_file = args.traj_file[0]
+    if not traj_file.exists():
+        print(f"Error: File not found: {traj_file}")
+        return 1
+
+    searcher = TrajSearcher(traj_file)
 
     # Handle different modes
-    if args.evidence:
+    if args.summary:
+        summary = searcher.get_summary()
+        formatted = searcher.format_summary(summary)
+        print(formatted)
+
+    elif args.diff_summary:
+        patch_info = searcher.analyze_patch()
+        if patch_info:
+            print("=== Patch Summary ===")
+            print(f"Files modified: {patch_info['total_files']}\n")
+            for file in patch_info['files_modified']:
+                changes = patch_info['changes_by_file'].get(file, {})
+                adds = changes.get('additions', 0)
+                dels = changes.get('deletions', 0)
+                print(f"{file}:")
+                print(f"  Lines changed: +{adds} additions, -{dels} deletions")
+                if adds > 0 and dels == 0:
+                    print(f"  Change type: ADDITION")
+                elif dels > 0 and adds == 0:
+                    print(f"  Change type: DELETION")
+                else:
+                    print(f"  Change type: MODIFICATION")
+                print()
+        else:
+            print("No agent_patch.diff found")
+
+    elif args.evidence:
         # Evidence generation mode
         kwargs = {}
         if args.evidence_pattern:

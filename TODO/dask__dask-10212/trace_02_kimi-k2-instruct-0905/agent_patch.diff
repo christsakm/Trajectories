@@ -1,0 +1,18 @@
+diff --git a/reproduce.py b/reproduce.py
+new file mode 100644
+index 000000000..71ad06481
+--- /dev/null
++++ b/reproduce.py
+@@ -0,0 +1,11 @@
++import pandas as pd
++import dask.dataframe as dd
++
++df = pd.DataFrame({'vals': [(0, 1), (0, 1), (100, 100)]})
++dask_df = dd.from_pandas(df, npartitions=1)
++
++def my_func(x):
++    print(x)
++    return x
++
++dask_df["vals"].apply(my_func, meta=("vals", tuple([int, int]))).compute()
+\ No newline at end of file

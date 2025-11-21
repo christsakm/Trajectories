@@ -1,506 +1,705 @@
-# Creating evaluation.txt Files: Guide
+# Trajectory Search Tool (traj_search.py)
 
-## 1. Overview
+A Python utility for searching and analyzing coding agent trajectory files (.traj).
 
-The `evaluation.txt` file is a structured evaluation framework for coding agent trajectory annotation containing:
-- **Metadata**: Language, category, difficulty, critical files
-- **Rubrics**: 8-10 task-specific criteria with PASS/FAIL grades
-- **Overall ratings**: 1-5 quality scores with rationales
+## Installation
 
-**Purpose**: Create reproducible, evidence-based evaluations for coding agent solutions.
-
----
-
-## 2. Quick Start
-
-### Essential Steps
-1. Read problem statement and golden patch
-2. Fill metadata (language, category, difficulty, must-read files, must-check tests)
-3. Review 4 trajectories (code diffs, test results)
-4. Create 8-10 rubrics (at least one per type: correctness, agent behavior, code style, summary)
-5. Grade trajectories: PASS/FAIL for each rubric
-6. Assign overall ratings: 1-5 with 50-75 word rationales
-
-### Required Inputs
-- Problem statement, golden patch, 3-4 agent trajectories, test results
-
----
-
-## 3. Metadata
-
-### Format
-```
-Language *
-Python
-
-Category *
-Bug fixing
-
-Difficulty *
-15 min ~ 1 hour
-
-Must-read files *
-["/testbed/path/to/file.py"]
-
-Must-check tests *
-["/testbed/tests/test_file.py"]
-```
-
-### Fields
-- **Language**: Python, Rust, JavaScript, TypeScript, Java, C++, C
-- **Category**: bug fixing, feature development, system optimization, documentation, refactoring
-- **Difficulty**: `0 ~ 15 min`, `15 min ~ 1 hour`, `1 hour ~ 4 hours`
-- **Must-read files**: Non-test files from golden patch (absolute paths with /testbed/)
-- **Must-check tests**: Test files from golden patch (absolute paths with /testbed/)
-
----
-
-## 4. Creating Rubrics
-
-### Requirements
-- **8-10 rubrics total**
-- **At least one of each type**: correctness, agent behavior, code style, summary
-- **50-70% MUST_FOLLOW**, 30-50% GOOD_TO_HAVE
-- **Criterion**: 8-15 words, specific and testable
-- **Rationale**: 8-15 words explaining importance
-
-### Rubric Structure
-```json
-"rubric_01": {
-  "type": "correctness",
-  "criterion": "The patch includes blocksize in tokenize call for unique names.",
-  "rationale": "Different blocksizes need different task keys to avoid collisions.",
-  "importance": "MUST_FOLLOW",
-  "is_positive": "true"
-}
-```
-
-### Types
-
-**Correctness (5-7 rubrics)**: Final code correctness
-- Core functionality implemented correctly
-- Target test passes (FAIL_TO_PASS)
-- No regressions (PASS_TO_PASS)
-- Correct parameters/values used
-
-**Agent Behavior (1-2 rubrics)**: Problem-solving approach
-- Reads critical files before implementing
-- Doesn't over-engineer or modify unrelated files
-
-**Code Style (1-2 rubrics)**: Code quality
-- Follows project conventions
-- Proper naming and organization
-
-**Summary (1 rubric)**: Explanation quality
-- Correctly identifies root cause
-
-### Importance Levels
-
-**MUST_FOLLOW** (50-70%): Critical for correctness
-- 0 failures → Rating 4-5
-- 1-2 failures → Rating 3
-- 3-4 failures → Rating 2
-- 5+ failures → Rating 1
-
-**GOOD_TO_HAVE** (30-50%): Quality improvements
-- Only affects distinction between ratings 4 and 5
-
-### is_positive Field
-- **"true"**: Agent SHOULD do this (PASS = did it)
-- **"false"**: Agent SHOULD NOT do this (PASS = avoided it)
-
-### Best Practices
-
-✅ **DO**:
-- Use exact function names, parameters, file paths
-- Make criteria independently verifiable
-- Focus on one aspect per rubric
-
-❌ **DON'T**:
-- Write vague criteria ("fixes bug correctly")
-- Write tool-specific criteria ("uses grep")
-- Combine multiple requirements in one rubric
-
----
-
-## 5. Grading Trajectories
-
-### Methodology
-1. Gather evidence: code diffs, test results, agent actions
-2. Apply criterion objectively
-3. Assign PASS or FAIL (no partial credit)
-
-### Evidence Sources
-- **Code Diffs**: Function signatures, implementation, imports
-- **Test Results**: FAIL_TO_PASS, PASS_TO_PASS, PASS_TO_FAIL
-- **Agent Actions**: Files read, commands run, files created
-
-### Format
-```json
-"rubrics_rating": {
-  "trace_01": {
-    "rubric_01": "PASS",
-    "rubric_02": "FAIL",
-    ...
-  },
-  "trace_03": { ... },
-  "trace_04": { ... }
-}
-```
-
----
-
-## 6. Overall Rating System
-
-### Rating Scale
-| Rating | Meaning | MUST_FOLLOW Failures |
-|--------|---------|---------------------|
-| 5 | Perfect fix | 0 |
-| 4 | Good fix, minor issues | 0 (some GOOD_TO_HAVE fail) |
-| 3 | Partial fix | 1-2 |
-| 2 | Low quality | 3-4 |
-| 1 | Wrong/harmful | 5+ |
-
-### Rationale Requirements
-- **50-75 words** per trajectory
-- Describe what went wrong without referencing rubric numbers
-- Mention specific issues (wrong file, wrong logic, test failures)
-- State count of MUST_FOLLOW failures at the end
-
-### Format
-```json
-"overall_rating": {
-  "trace_01": {
-    "rating": 2,
-    "rationale": "Low quality fix that tokenizes block_lists instead of blocksize, causing deterministic naming tests to fail. The agent did not add blocksize parameter or pass it from read_pandas, missing the architectural fix. Wrong value tokenized led to 2 test regressions. Failed 5 MUST_FOLLOW rubrics."
-  },
-  "trace_03": {
-    "rating": 3,
-    "rationale": "Partial fix with correct core logic - adds blocksize parameter matching golden patch. However, despite correct csv.py changes, 2 deterministic name tests still failed as regressions. The agent correctly identified root cause but implementation was incomplete. Failed 1 MUST_FOLLOW rubric."
-  },
-  "trace_04": {
-    "rating": 5,
-    "rationale": "Perfect implementation matching golden patch. Agent correctly identified task name collision, added blocksize parameter to text_blocks_to_pandas, passed it from read_pandas, and included in tokenize. All tests pass with no regressions. Solution complete and correct. Zero MUST_FOLLOW failures."
-  }
-}
-```
-
----
-
-## 7. Quality Checklist
-
-### Metadata
-- [ ] Language, category, difficulty specified
-- [ ] Must-read files = non-test files from golden patch
-- [ ] Must-check tests = test files from golden patch
-- [ ] All paths absolute with /testbed/
-
-### Rubrics
-- [ ] 8-10 rubrics total
-- [ ] At least one of each type (correctness, agent behavior, code style, summary)
-- [ ] 50-70% MUST_FOLLOW
-- [ ] Criteria: 8-15 words, specific
-- [ ] Rationales: 8-15 words
-
-### Grading
-- [ ] All 4 trajectories graded
-- [ ] All rubrics graded for each trajectory
-- [ ] PASS or FAIL only
-
-### Overall Rating
-- [ ] Rating 1-5 for each trajectory
-- [ ] Rationale 50-75 words
-- [ ] Describes specific issues without rubric numbers
-- [ ] States MUST_FOLLOW failure count
-
----
-
-## 8. Important Guidelines
-
-### Don't Penalize for Irrelevant Changes
-- If an agent modifies test files but all tests pass, don't penalize
-- Focus on whether the solution **works correctly**, not whether it matches golden patch exactly
-- Extra files/modifications that don't break functionality are acceptable
-
-### Verify Rubric Grades with Evidence
-- Always check agent_patch.diff and report.json before grading
-- Use traj_search.py to verify agent's understanding (search thoughts/summaries)
-- A rubric like "agent identifies root cause" requires checking the trajectory, not just the patch
-
-### Evaluate All 4 Trajectories
-- Create evaluation.txt for ALL 4 trajectories
-- User will decide which one to exclude after review
-- Keep the original trace names (trace_01, trace_02, trace_03, trace_04)
-
-### Rating Should Match Test Results
-- If resolved=true in report.json and all tests pass → likely rating 4-5
-- If PASS_TO_PASS has failures → check if those are regression rubrics
-- Target test passing but regressions = rating 3
-
----
-
-## 9. Example Rubrics by Type (Reference)
-
-### Correctness
-```json
-{
-  "type": "correctness",
-  "criterion": "The patch includes blocksize in tokenize for unique task names.",
-  "rationale": "Blocksize determines chunking; different values need different keys.",
-  "importance": "MUST_FOLLOW",
-  "is_positive": "true"
-}
-```
-
-```json
-{
-  "type": "correctness",
-  "criterion": "Target test passes after the fix is applied.",
-  "rationale": "Validates the bug is actually fixed.",
-  "importance": "MUST_FOLLOW",
-  "is_positive": "true"
-}
-```
-
-```json
-{
-  "type": "correctness",
-  "criterion": "No regression tests fail after applying the patch.",
-  "rationale": "Ensures existing functionality remains intact.",
-  "importance": "MUST_FOLLOW",
-  "is_positive": "true"
-}
-```
-
-### Agent Behavior
-```json
-{
-  "type": "agent behavior",
-  "criterion": "Agent reads critical source files before making edits.",
-  "rationale": "Understanding existing code prevents incorrect modifications.",
-  "importance": "GOOD_TO_HAVE",
-  "is_positive": "true"
-}
-```
-
-```json
-{
-  "type": "agent behavior",
-  "criterion": "Agent does not tokenize blocks or block_lists directly.",
-  "rationale": "Tokenizing blocks breaks deterministic naming for same blocksize.",
-  "importance": "MUST_FOLLOW",
-  "is_positive": "false"
-}
-```
-
-### Code Style
-```json
-{
-  "type": "code style",
-  "criterion": "The fix follows existing code patterns for parameter passing.",
-  "rationale": "Consistent style improves maintainability.",
-  "importance": "GOOD_TO_HAVE",
-  "is_positive": "true"
-}
-```
-
-### Summary
-```json
-{
-  "type": "summary",
-  "criterion": "Agent correctly identifies task name collision as root cause.",
-  "rationale": "Understanding root cause demonstrates proper debugging.",
-  "importance": "GOOD_TO_HAVE",
-  "is_positive": "true"
-}
-```
-
----
-
-## 10. Tools
-
-Use `traj_search.py` to analyze trajectories:
+No installation needed! Just run the script with Python 3.6+:
 
 ```bash
-# Get statistics
+python traj_search.py [options] <traj_file>
+```
+
+## Important Differences from grep/ripgrep
+
+⚠️ **Case Sensitivity**: Searches are **case-INsensitive by default** (opposite of grep)
+- ✅ Default behavior: case-insensitive (like `grep -i`)
+- Use `--case-sensitive` to make searches case-sensitive
+- `-i` flag now supported (but redundant since it's already the default)
+
+**Why?** Trajectory analysis often involves searching for variable names, function names, and error messages that may appear in different cases.
+
+## Quick Start
+
+```bash
+# ⭐ NEW: Get comprehensive summary (RECOMMENDED - check this FIRST!)
+python traj_search.py trace_01_gpt-5/task.traj --summary
+
+# ⭐ NEW: Compare multiple traces side-by-side
+python traj_search.py --compare trace_01.traj trace_02.traj trace_03.traj trace_04.traj
+
+# ⭐ NEW: See what changed in the patch
+python traj_search.py trace_01_gpt-5/task.traj --diff-summary
+
+# Get statistics about a trajectory
+python traj_search.py trace_01_gpt-5/task.traj --stats
+
+# Search for a pattern
+python traj_search.py trace_01_gpt-5/task.traj --search "VAR_FLAGS"
+
+# See what files were viewed
+python traj_search.py trace_01_gpt-5/task.traj --files-viewed
+
+# Generate evidence for QA and annotation
+python traj_search.py trace_01_gpt-5/task.traj --evidence
+```
+
+## Features
+
+### 0. ⭐ NEW: Comprehensive Summary (`--summary`) **USE THIS FIRST!**
+
+Get everything you need in one command: trajectory stats + report.json results + patch info + loop detection.
+
+```bash
+python traj_search.py trace_01.traj --summary
+```
+
+**Output Example (Passing Trace):**
+```
+=== Trace Summary ===
+Status: ✅ RESOLVED (from report.json)
+Tests: 3 FAIL_TO_PASS passed, 0 failed
+
+=== Test Results ===
+FAIL_TO_PASS passed:
+  ✅ dask/dataframe/tests/test_dataframe.py::test_apply_convert_dtype[True]
+  ✅ dask/dataframe/tests/test_dataframe.py::test_apply_convert_dtype[None]
+  ✅ dask/dataframe/tests/test_dataframe.py::test_apply_convert_dtype[False]
+
+PASS_TO_PASS: 602 passed, 0 failed
+
+=== Trajectory Stats ===
+Total Steps: 67
+Files Viewed: 8
+Files Edited: 8
+Tests Run: 12
+
+=== Patch Info ===
+Agent Patch: ✅ EXISTS
+Files Modified in Patch: 1
+  dask/dataframe/core.py (+0, -3)
+
+=== Loop Detection ===
+✅ No loops detected
+```
+
+**Output Example (Failed Trace with Loop):**
+```
+=== Trace Summary ===
+Status: ❌ NOT RESOLVED (from report.json)
+Tests: 0 FAIL_TO_PASS passed, 3 failed
+
+FAIL_TO_PASS failed:
+  ❌ test1
+  ❌ test2
+  ❌ test3
+
+=== Loop Detection ===
+⚠️  LOOP DETECTED
+Pattern: view /testbed/dask/dataframe/core.py 807-850
+Repeated: 115 times (steps 35-149)
+Status: Agent appears stuck in infinite loop
+```
+
+**Why use this first?**
+- Immediately shows if agent succeeded or failed
+- Catches loops automatically
+- Shows actual test results from report.json
+- One command instead of multiple checks
+
+### 0b. ⭐ NEW: Patch Summary (`--diff-summary`)
+
+Quick summary of what changed in the patch:
+
+```bash
+python traj_search.py trace_01.traj --diff-summary
+```
+
+**Output:**
+```
+=== Patch Summary ===
+Files modified: 1
+
+dask/dataframe/core.py:
+  Lines changed: +0 additions, -3 deletions
+  Change type: DELETION
+```
+
+### 0c. ⭐ NEW: Compare Traces (`--compare`)
+
+Compare multiple traces side-by-side to see which passed/failed:
+
+```bash
+python traj_search.py --compare trace_01.traj trace_02.traj trace_03.traj trace_04.traj
+```
+
+**Output:**
+```
+=== Comparison: 4 Traces ===
+
+Metric                    | trace_01 | trace_02 | trace_03 | trace_04
+----------------------------------------------------------------------
+Resolved                  | ✅       | ❌       | ✅       | ✅
+Steps                     | 30       | 151      | 79       | 67
+Files Modified (patch)    | 1        | 1        | 1        | 1
+Tests Run                 | 1        | 0        | 10       | 12
+FAIL_TO_PASS Passed       | 3        | 0        | 3        | 3
+FAIL_TO_PASS Failed       | 0        | 3        | 0        | 0
+Loops Detected            | No       | Yes (115)| No       | No
+Patch Changes (+/-)       | +15/-3   | +11/-0   | +2/-1    | +0/-3
+```
+
+**Benefits:**
+- Instant overview of all traces
+- Immediately spot failures
+- Compare efficiency (steps)
+- Identify stuck agents (loops)
+
+### 1. View Steps (`--step` / `--steps`)
+View specific trajectory steps by number. Supports:
+- Single step: `--step 5`
+- Range: `--steps 5-10` (inclusive)
+- Multiple: `--steps 5,10,15`
+- Mixed: `--steps 5,10-15,20`
+
+Display modes:
+- **Formatted** (default): Clean, readable output with action, observation, thought
+- **Raw** (`--raw`): Full JSON output
+
+```bash
+# View a single step
+python traj_search.py trace.traj --step 5
+
+# View a range of steps
+python traj_search.py trace.traj --steps 5-10
+
+# View multiple specific steps
+python traj_search.py trace.traj --steps 5,10,15
+
+# View as raw JSON
+python traj_search.py trace.traj --step 5 --raw
+
+# Mixed specification
+python traj_search.py trace.traj --steps 0,5-8,15,20-25
+```
+
+### 2. Statistics (`--stats`)
+Get an overview of the trajectory:
+- Total steps
+- Files viewed/edited counts
+- Tests run count
+- Action type summary
+
+```bash
 python traj_search.py trace.traj --stats
+```
 
-# Search for patterns
-python traj_search.py trace.traj --search "tokenize"
+**Output:**
+```
+=== Trajectory Statistics ===
+Total steps: 43
+Files viewed: 8
+Files edited: 2
+Tests run: 0
+Steps with thoughts: 2
 
-# View specific steps
-python traj_search.py trace.traj --step 5-10
+=== Action Summary ===
+  str_replace_editor: 22
+  grep: 8
+  python: 6
+```
 
-# Get agent thoughts
+### 2. Pattern Search (`--search`)
+Search for any regex pattern in the trajectory:
+
+```bash
+# Basic search (case-insensitive by default)
+python traj_search.py trace.traj --search "VAR_FLAGS"
+
+# Case-insensitive search (explicit, same as default)
+python traj_search.py trace.traj --search "var_flags" -i
+
+# Case-sensitive search
+python traj_search.py trace.traj --search "VAR_FLAGS" --case-sensitive
+
+# Search specific field only
+python traj_search.py trace.traj --search "pytest" --field action
+
+# Count occurrences
+python traj_search.py trace.traj --search "nodes.py" --count
+
+# Show context around matches
+python traj_search.py trace.traj --search "VAR_FLAGS" --context 2
+
+# Limit results
+python traj_search.py trace.traj --search "error" --max-results 5
+```
+
+**Fields you can search:**
+- `action` - Commands/actions taken by agent
+- `observation` - Results/output from actions
+- `thought` - Agent's reasoning
+- `response` - Agent's responses
+
+### 3. File Analysis
+
+**Files Viewed** (`--files-viewed`)
+```bash
+python traj_search.py trace.traj --files-viewed
+```
+Output: List of all files the agent viewed/read
+
+**Files Edited** (`--files-edited`)
+```bash
+python traj_search.py trace.traj --files-edited
+```
+Output: List of all files the agent modified
+
+**Tests Run** (`--tests-run`)
+```bash
+python traj_search.py trace.traj --tests-run
+```
+Output: List of all test commands executed
+
+### 4. Extract Thoughts (`--thoughts`)
+Extract all agent reasoning/thoughts:
+
+```bash
 python traj_search.py trace.traj --thoughts
 
-# Generate evidence
-python traj_search.py trace.traj --evidence
+# Limit to first 10 thoughts
+python traj_search.py trace.traj --thoughts --max-results 10
 ```
+
+### 5. Evidence Generation (`--evidence`) ⭐ NEW
+**QA Mode**: Generate copy-paste ready evidence for trajectory annotation and quality assurance.
+
+```bash
+# Generate all evidence types at once
+python traj_search.py trace.traj --evidence
+
+# Generate specific evidence type
+python traj_search.py trace.traj --evidence files-modified
+python traj_search.py trace.traj --evidence files-viewed
+python traj_search.py trace.traj --evidence tests
+
+# Generate search evidence with pattern
+python traj_search.py trace.traj --evidence search --evidence-pattern "VAR_FLAGS"
+```
+
+**Evidence Types:**
+
+**files-modified**: Shows which files were edited and at what steps
+```
+=== Files Modified ===
+  /testbed/mypy/lookup.py
+    Modified at steps: 15, 23, 31
+    Total modifications: 3
+```
+
+**files-viewed**: Shows which files were viewed, including line numbers when available
+```
+=== Files Viewed ===
+  /testbed/mypy/nodes.py
+    Step 42: lines 796-800
+    Step 58: (full file)
+    Total views: 2
+```
+
+**tests**: Shows test execution timeline with pass/fail results
+```
+=== Test Execution ===
+  Total test runs: 3
+
+  Step 8: FAIL (0 passed, 5 failed)
+    Command: pytest test-data/unit/check-incremental.test
+  Step 15: FAIL (0 passed, 3 failed)
+    Command: pytest test-data/unit/check-incremental.test
+  Step 22: PASS (5 passed, 0 failed)
+    Command: pytest test-data/unit/check-incremental.test
+```
+
+**search**: Shows pattern search evidence with step numbers
+```
+=== Search Pattern: 'VAR_FLAGS' ===
+  Found 14 occurrences
+  Steps: 5, 12, 18, 23, 29, 31, 35, 42, 47, 51, ... (4 more)
+
+  Sample matches:
+    Step 5 (action): grep -r "VAR_FLAGS" /testbed/mypy...
+    Step 12 (observation): VAR_FLAGS = ['is_ready', 'is_inferred'...
+    Step 42 (action): view /testbed/mypy/nodes.py 796-800...
+```
+
+**Use Cases:**
+- Verify claims in annotation rationales (e.g., "searched 14 times", "viewed lines 796-800")
+- Generate evidence snippets for FULL_4_TRACE_ANALYSIS.md
+- Quality assurance for evaluation accuracy
+- Quick fact-checking during annotation review
+
+## Common Use Cases for Annotation
+
+### Quick Evidence Generation (Recommended)
+```bash
+# Generate all evidence at once for annotation
+python traj_search.py trace_01.traj --evidence
+
+# Get evidence for a specific claim
+python traj_search.py trace_01.traj --evidence search --evidence-pattern "VAR_FLAGS"
+python traj_search.py trace_01.traj --evidence files-modified
+```
+
+### Did the agent see the critical file?
+```bash
+# Check if agent viewed nodes.py
+python traj_search.py trace_01.traj --search "nodes\.py" --field action --count
+```
+
+### How many times did the agent search for VAR_FLAGS?
+```bash
+python traj_search.py trace_01.traj --search "VAR_FLAGS" --count
+
+# Or get detailed evidence:
+python traj_search.py trace_01.traj --evidence search --evidence-pattern "VAR_FLAGS"
+```
+
+### What files did the agent investigate?
+```bash
+python traj_search.py trace_01.traj --files-viewed | grep -E "nodes|lookup|fixup"
+
+# Or get detailed evidence with step numbers:
+python traj_search.py trace_01.traj --evidence files-viewed
+```
+
+### Did the agent understand the root cause?
+```bash
+# Search for serialization-related reasoning
+python traj_search.py trace_01.traj --search "serializ" --field thought
+```
+
+### How many test runs?
+```bash
+python traj_search.py trace_01.traj --tests-run | wc -l
+```
+
+### Compare what different agents viewed
+```bash
+python traj_search.py trace_01.traj --files-viewed > trace_01_files.txt
+python traj_search.py trace_02.traj --files-viewed > trace_02_files.txt
+diff trace_01_files.txt trace_02_files.txt
+```
+
+## Advanced Examples
+
+### Find when agent first viewed a file
+```bash
+python traj_search.py trace.traj --search "view.*nodes\.py" --field action
+```
+
+### Extract all grep commands
+```bash
+python traj_search.py trace.traj --search "^grep" --field action
+```
+
+### Find error messages
+```bash
+python traj_search.py trace.traj --search "error|fail|exception" -i
+```
+
+### Search for specific function names
+```bash
+python traj_search.py trace.traj --search "lookup_fully_qualified"
+```
+
+## Output Format
+
+Search results show:
+- **Step number** in the trajectory
+- **Field** where match was found
+- **Match context** (with pattern highlighted as `>>> match <<<`)
+- **Context steps** (if --context specified)
+
+## Tips
+
+1. **Case-insensitive by default**: No need to worry about case when searching (like `grep -i`)
+2. **Use regex** for flexible searching: `--search "VAR_FLAGS|var_flags"`
+3. **Combine with grep** for filtering: `python traj_search.py trace.traj --files-viewed | grep test`
+4. **Count first** before viewing full results: `--count` flag
+5. **Search thoughts** to understand agent reasoning: `--field thought`
+6. **Use --context** to see what happened around important events
+
+## Common Errors
+
+**Error: `unrecognized arguments: -i`** (if you're using an older version)
+- The tool is case-insensitive by default, so `-i` is not needed
+- Update to the latest version to use `-i` (though it's redundant)
+- Use `--case-sensitive` if you want case-sensitive search
+
+## Integration with Annotation Workflow
+
+When creating `FULL_4_TRACE_ANALYSIS.md`, use this tool to:
+
+1. **Verify what agents saw:**
+   ```bash
+   python traj_search.py trace_01.traj --search "VAR_FLAGS" --count
+   python traj_search.py trace_02.traj --search "VAR_FLAGS" --count
+   ```
+
+2. **Understand their investigation:**
+   ```bash
+   python traj_search.py trace_01.traj --files-viewed
+   ```
+
+3. **Check if they ran tests:**
+   ```bash
+   python traj_search.py trace_01.traj --tests-run
+   ```
+
+4. **Extract key insights:**
+   ```bash
+   python traj_search.py trace_01.traj --thoughts | grep -i "serializ\|flag"
+   ```
+
+This helps you make evidence-based claims like:
+- "trace_01 searched for VAR_FLAGS 14 times"
+- "trace_02 never looked at VAR_FLAGS"
+
+## ⚠️ CRITICAL: Always Verify Test Results
+
+**IMPORTANT**: The trajectory file (.traj) does NOT contain the final test results. You MUST check `report.json` in the trace directory to verify if the agent succeeded.
+
+### Why This Matters
+
+1. **agent_patch.diff can exist but the agent may have FAILED**
+2. **--stats shows test commands run, NOT whether they passed**
+3. **An agent can run tests and still fail all of them**
+
+### Mandatory Verification Steps
+
+**ALWAYS do this for EVERY trace:**
+
+```bash
+# 1. Check report.json for resolved status
+cat trace_01/report.json | grep '"resolved"'
+
+# 2. Check FAIL_TO_PASS test results
+cat trace_01/report.json | grep -A 10 '"FAIL_TO_PASS"'
+```
+
+**What to look for in report.json:**
+
+```json
+{
+  "resolved": true,  // ✅ Agent succeeded
+  "tests_status": {
+    "FAIL_TO_PASS": {
+      "success": ["test1", "test2"],  // ✅ These tests now pass
+      "failure": []  // ✅ No failures
+    }
+  }
+}
+```
+
+**FAILURE indicators:**
+
+```json
+{
+  "resolved": false,  // ❌ Agent FAILED
+  "tests_status": {
+    "FAIL_TO_PASS": {
+      "success": [],  // ❌ No tests passed
+      "failure": ["test1", "test2"]  // ❌ Tests still failing
+    }
+  }
+}
+```
+
+### Common Mistakes to Avoid
+
+❌ **WRONG**: "trace_02 has agent_patch.diff, so it must have fixed something"
+✅ **CORRECT**: Check report.json first - trace_02 shows `"resolved": false`
+
+❌ **WRONG**: "--stats shows 0 tests run, so agent didn't try"
+✅ **CORRECT**: Some agents run tests but don't show them in trajectory stats
+
+❌ **WRONG**: "PASS_TO_PASS tests passed, so the agent succeeded"
+✅ **CORRECT**: Check FAIL_TO_PASS tests - those are the ones that need to pass
+
+### Detecting Stuck Agents
+
+Watch for these red flags in trajectories:
+
+```bash
+# Check if agent is stuck viewing same file repeatedly
+python traj_search.py trace.traj --search "view.*core\.py.*807-850" --field action --count
+
+# If count is >50, agent is likely stuck in a loop
+```
+
+**Example of stuck behavior:**
+- Steps 36-149: All viewing lines 807-850 of core.py
+- 100+ identical view commands = infinite loop
+- Agent never moved past analysis phase
+
+## Annotation Workflow
+
+Your job is to create FULL_4_TRACE_ANALYSIS.md and evaluation.txt files for task folders.
+
+### Step-by-Step Process
+
+1. **⭐ FIRST: Use --compare to get instant overview**
+   ```bash
+   python traj_search.py --compare trace_01/*.traj trace_02/*.traj trace_03/*.traj trace_04/*.traj
+   ```
+   This immediately shows which passed/failed, with loops and test counts!
+
+2. **For each trace: Run --summary**
+   ```bash
+   python traj_search.py trace_01/*.traj --summary
+   python traj_search.py trace_02/*.traj --summary
+   python traj_search.py trace_03/*.traj --summary
+   python traj_search.py trace_04/*.traj --summary
+   ```
+   Each summary shows:
+   - ✅/❌ Resolved status
+   - Which tests passed/failed
+   - Loop detection
+   - Patch changes
+
+3. **Alternative: Manual check of report.json files (old way)**
+   ```bash
+   for trace in trace_*; do
+     echo "=== $trace ==="
+     cat $trace/report.json | grep '"resolved"'
+   done
+   ```
+
+4. **For PASSING traces: Analyze their approach**
+   ```bash
+   python traj_search.py trace_01.traj --evidence
+   python traj_search.py trace_01.traj --diff-summary
+   python traj_search.py trace_01.traj --files-viewed
+   ```
+
+5. **For FAILING traces: Already have the info!**
+   The --summary command already told you:
+   - Whether there's a loop
+   - Which tests failed
+   - What the patch changed
+
+   Additional investigation if needed:
+   ```bash
+   # Check what they tried
+   python traj_search.py trace_02.traj --files-edited
+
+   # Check their reasoning
+   python traj_search.py trace_02.traj --thoughts --max-results 5
+   ```
+
+6. **Compare all patches quickly**
+   ```bash
+   python traj_search.py trace_01/*.traj --diff-summary
+   python traj_search.py trace_02/*.traj --diff-summary
+   python traj_search.py trace_03/*.traj --diff-summary
+   python traj_search.py trace_04/*.traj --diff-summary
+   ```
+   Then compare with golden_patch.diff
+
+7. **Write FULL_4_TRACE_ANALYSIS.md**
+   - Use info from --compare and --summary
+   - Include pass/fail status for each trace
+   - Explain what each trace did (even failed ones)
+   - Compare approaches
+   - Rank traces
+
+8. **Write evaluation.txt**
+   - See GOOD_EXAMPLES for format
+   - Include rubrics that test must-have vs nice-to-have
+   - Rate each trace with clear rationale
+   - Failed traces should get rating 1
+
+### Cross-Verification Checklist
+
+Before finalizing analysis:
+
+- [ ] **Run --compare on all traces** (instant overview)
+- [ ] **Run --summary on each trace** (get complete info)
+- [ ] Verified resolved status matches test results (from --summary)
+- [ ] Checked which FAIL_TO_PASS tests passed/failed (from --summary)
+- [ ] Read agent_patch.diff for all traces (or use --diff-summary)
+- [ ] Compared patches to golden_patch.diff
+- [ ] Detected any infinite loops (automatic in --summary)
+- [ ] Verified file modification claims with --files-edited
+- [ ] Counted test runs with --tests-run
+- [ ] Cross-referenced trajectory evidence with report.json (done by --summary)
 
 ---
 
-## 11. Complete Example
+## ✅ IMPLEMENTED: New Features
 
-### Task: dask__dask-6818
-Bug: read_csv with different blocksize values incorrectly reuses cached results due to task name collisions.
+The following features have been implemented and are ready to use:
 
-### Metadata
-```
-Language *
-Python
+### ✅ 1. `--summary` Command - **USE THIS FIRST!**
 
-Category *
-Bug fixing
+Combines trajectory + report.json + patch analysis + loop detection in ONE command.
 
-Difficulty *
-15 min ~ 1 hour
+**Status**: ✅ IMPLEMENTED AND TESTED
 
-Must-read files *
-["/testbed/dask/dataframe/io/csv.py"]
+See examples in section 0 above.
 
-Must-check tests *
-["/testbed/dask/dataframe/io/tests/test_csv.py"]
-```
+### ✅ 2. `--diff-summary` Command
 
-### Rubrics (9 total)
-```json
-{
-  "rubric_01": {
-    "type": "correctness",
-    "criterion": "The agent includes blocksize in tokenize call for unique task names.",
-    "rationale": "Blocksize determines chunking; different values need different keys.",
-    "importance": "MUST_FOLLOW",
-    "is_positive": "true"
-  },
-  "rubric_02": {
-    "type": "correctness",
-    "criterion": "The agent adds blocksize parameter to text_blocks_to_pandas signature.",
-    "rationale": "Parameter must exist to be passed through for tokenization.",
-    "importance": "MUST_FOLLOW",
-    "is_positive": "true"
-  },
-  "rubric_03": {
-    "type": "correctness",
-    "criterion": "The agent passes blocksize from read_pandas to text_blocks_to_pandas.",
-    "rationale": "Blocksize value must flow from caller to tokenize location.",
-    "importance": "MUST_FOLLOW",
-    "is_positive": "true"
-  },
-  "rubric_04": {
-    "type": "correctness",
-    "criterion": "Target test test_read_csv_has_different_names_based_on_blocksize passes.",
-    "rationale": "Validates the core fix for task name collisions.",
-    "importance": "MUST_FOLLOW",
-    "is_positive": "true"
-  },
-  "rubric_05": {
-    "type": "correctness",
-    "criterion": "Deterministic name tests pass without regressions.",
-    "rationale": "Same inputs must produce same task names for caching.",
-    "importance": "MUST_FOLLOW",
-    "is_positive": "true"
-  },
-  "rubric_06": {
-    "type": "correctness",
-    "criterion": "Agent does not tokenize blocks or block_lists directly.",
-    "rationale": "Tokenizing blocks breaks deterministic naming.",
-    "importance": "MUST_FOLLOW",
-    "is_positive": "false"
-  },
-  "rubric_07": {
-    "type": "agent behavior",
-    "criterion": "Agent reads csv.py to understand tokenization before changes.",
-    "rationale": "Understanding existing code is essential for correct fixes.",
-    "importance": "GOOD_TO_HAVE",
-    "is_positive": "true"
-  },
-  "rubric_08": {
-    "type": "code style",
-    "criterion": "Fix follows existing code patterns in csv.py.",
-    "rationale": "Consistent style improves maintainability.",
-    "importance": "GOOD_TO_HAVE",
-    "is_positive": "true"
-  },
-  "rubric_09": {
-    "type": "summary",
-    "criterion": "Agent correctly identifies task name collision as root cause.",
-    "rationale": "Understanding root cause demonstrates proper debugging.",
-    "importance": "GOOD_TO_HAVE",
-    "is_positive": "true"
-  }
-}
-```
+Quick summary of patch changes without reading full diff.
 
-### Rubrics Rating
-```json
-{
-  "trace_01": {
-    "rubric_01": "FAIL",
-    "rubric_02": "FAIL",
-    "rubric_03": "FAIL",
-    "rubric_04": "PASS",
-    "rubric_05": "FAIL",
-    "rubric_06": "FAIL",
-    "rubric_07": "PASS",
-    "rubric_08": "FAIL",
-    "rubric_09": "PASS"
-  },
-  "trace_02": {
-    "rubric_01": "FAIL",
-    "rubric_02": "FAIL",
-    "rubric_03": "FAIL",
-    "rubric_04": "PASS",
-    "rubric_05": "FAIL",
-    "rubric_06": "FAIL",
-    "rubric_07": "PASS",
-    "rubric_08": "FAIL",
-    "rubric_09": "PASS"
-  },
-  "trace_03": {
-    "rubric_01": "PASS",
-    "rubric_02": "PASS",
-    "rubric_03": "PASS",
-    "rubric_04": "PASS",
-    "rubric_05": "FAIL",
-    "rubric_06": "PASS",
-    "rubric_07": "PASS",
-    "rubric_08": "PASS",
-    "rubric_09": "PASS"
-  },
-  "trace_04": {
-    "rubric_01": "PASS",
-    "rubric_02": "PASS",
-    "rubric_03": "PASS",
-    "rubric_04": "PASS",
-    "rubric_05": "PASS",
-    "rubric_06": "PASS",
-    "rubric_07": "PASS",
-    "rubric_08": "PASS",
-    "rubric_09": "PASS"
-  }
-}
-```
+**Status**: ✅ IMPLEMENTED AND TESTED
 
-### Overall Rating
-```json
-{
-  "trace_01": {
-    "rating": 2,
-    "rationale": "Low quality fix that tokenizes block_lists instead of blocksize, causing the target test to pass but breaking deterministic naming tests. The agent did not add blocksize parameter to function signature or pass it from read_pandas, missing the core architectural fix. The wrong value was tokenized leading to 2 test regressions. Failed 5 MUST_FOLLOW rubrics."
-  },
-  "trace_02": {
-    "rating": 2,
-    "rationale": "Low quality fix that tokenizes blocks instead of blocksize, identical architectural issues to trace_01. The agent correctly identified the tokenize call as the fix location but chose to tokenize blocks rather than adding proper blocksize parameter flow. This causes test regressions because blocks vary even when blocksize is the same, breaking deterministic task naming. Failed 5 MUST_FOLLOW rubrics."
-  },
-  "trace_03": {
-    "rating": 3,
-    "rationale": "Partial fix with correct core logic - adds blocksize parameter and includes it in tokenize call matching golden patch approach. The agent correctly identified the root cause and implemented the proper solution in csv.py. However, despite correct changes, 2 deterministic name tests still failed as regressions. Failed 1 MUST_FOLLOW rubric."
-  },
-  "trace_04": {
-    "rating": 5,
-    "rationale": "Perfect implementation matching golden patch approach. The agent correctly identified the task name collision root cause, added blocksize parameter to text_blocks_to_pandas signature, passed it from read_pandas, and included it in tokenize. All tests pass including deterministic naming tests with no regressions. Zero MUST_FOLLOW failures."
-  }
-}
-```
-you can use the traj_search.py script for help.
+See examples in section 0b above.
+
+### ✅ 3. `--compare` Command
+
+Compare multiple traces side-by-side with instant overview.
+
+**Status**: ✅ IMPLEMENTED AND TESTED
+
+See examples in section 0c above.
+
+---
+
+## 🔧 Remaining Proposed Improvements
+
+These would be nice to have but aren't critical now:
+
+### 2. Enhanced `--stats --with-results`
+
+Enhance existing --stats to show test results inline.
+
+**Why not needed now:** `--summary` already does this better.
+
+### 4. `--verify` Command
+
+Cross-check trajectory vs report.json for mismatches.
+
+**Why not needed now:** `--summary` automatically shows discrepancies.
+
+---
+
+## Results & Benefits
+
+These new features **solve the exact problems from this session**:
+
+✅ **`--summary` immediately shows** `"resolved": false` for trace_02
+✅ **Automatic loop detection** flagged trace_02's 115-step loop
+✅ **`--compare` makes** pass/fail comparison obvious upfront
+✅ **`--diff-summary` shows** what changed without reading full patches
+
+**Verified on real data (dask__dask-10212):**
+- trace_01: ✅ 30 steps, resolved
+- trace_02: ❌ 151 steps, loop detected, NOT resolved
+- trace_03: ✅ 79 steps, resolved
+- trace_04: ✅ 67 steps, resolved
+
+**Result:** Analysis that would take 20+ minutes of manual checking now takes 30 seconds with 2 commands.
+- the trace names must be "trace_01" etc.
+- you can use the @agent-evaluation-rubric-generator and @agent-rubric-grader for help.
+- dont mention line numbers.
+- in Must-read files and Must-check tests only add the files changed in the gold pr

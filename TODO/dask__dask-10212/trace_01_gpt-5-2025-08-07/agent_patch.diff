@@ -1,0 +1,35 @@
+diff --git a/dask/dataframe/core.py b/dask/dataframe/core.py
+index b2a9473e0..e82ce5e66 100644
+--- a/dask/dataframe/core.py
++++ b/dask/dataframe/core.py
+@@ -4340,15 +4340,27 @@ Dask Name: {name}, {layers}""".format(
+         if convert_dtype is not no_default:
+             kwds["convert_dtype"] = convert_dtype
+ 
+-        # let pandas trigger any warnings, such as convert_dtype warning
+-        self._meta_nonempty.apply(func, args=args, **kwds)
+-
++        # If ``meta`` is not provided, let pandas trigger any warnings
++        # (such as ``convert_dtype`` warnings) and use the result to infer
++        # metadata. When ``meta`` is provided, avoid calling the user's
++        # function on the nonempty meta to prevent unexpected side effects
++        # (e.g. the function being executed on placeholder values like 'foo').
+         if meta is no_default:
++            # Trigger any pandas warnings (e.g., convert_dtype deprecation)
++            # while using the user's function for inference
++            self._meta_nonempty.apply(func, args=args, **kwds)
+             with check_convert_dtype_deprecation():
+                 meta = _emulate(
+                     M.apply, self._meta_nonempty, func, args=args, udf=True, **kwds
+                 )
+             warnings.warn(meta_warning(meta))
++        else:
++            # If meta is provided, don't call the user's function during
++            # metadata/validation. However, if convert_dtype was explicitly
++            # provided, we still need to trigger pandas' deprecation warning.
++            if convert_dtype is not no_default:
++                # Use a no-op function to avoid executing user code
++                self._meta_nonempty.apply(lambda x: x, convert_dtype=convert_dtype)
+ 
+         return map_partitions(methods.apply, self, func, args=args, meta=meta, **kwds)
+ 

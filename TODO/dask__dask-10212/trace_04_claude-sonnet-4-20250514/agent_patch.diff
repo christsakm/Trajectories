@@ -1,0 +1,14 @@
+diff --git a/dask/dataframe/core.py b/dask/dataframe/core.py
+index b2a9473e0..035004438 100644
+--- a/dask/dataframe/core.py
++++ b/dask/dataframe/core.py
+@@ -4340,9 +4340,6 @@ Dask Name: {name}, {layers}""".format(
+         if convert_dtype is not no_default:
+             kwds["convert_dtype"] = convert_dtype
+ 
+-        # let pandas trigger any warnings, such as convert_dtype warning
+-        self._meta_nonempty.apply(func, args=args, **kwds)
+-
+         if meta is no_default:
+             with check_convert_dtype_deprecation():
+                 meta = _emulate(

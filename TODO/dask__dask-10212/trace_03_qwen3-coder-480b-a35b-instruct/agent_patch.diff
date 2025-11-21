@@ -1,0 +1,14 @@
+diff --git a/dask/dataframe/core.py b/dask/dataframe/core.py
+index b2a9473e0..61b812c5d 100644
+--- a/dask/dataframe/core.py
++++ b/dask/dataframe/core.py
+@@ -4341,7 +4341,8 @@ Dask Name: {name}, {layers}""".format(
+             kwds["convert_dtype"] = convert_dtype
+ 
+         # let pandas trigger any warnings, such as convert_dtype warning
+-        self._meta_nonempty.apply(func, args=args, **kwds)
++        # Use a dummy function to avoid calling user function with fake data
++        self._meta_nonempty.apply(lambda x: x, args=args, **kwds)
+ 
+         if meta is no_default:
+             with check_convert_dtype_deprecation():
