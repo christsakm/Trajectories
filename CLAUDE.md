@@ -298,15 +298,17 @@ python traj_search.py trace_01/*.traj --thoughts
 
 ### Step 7: Assign Overall Ratings (1-5)
 
-**Rating Scale:**
+**Baseline Rating Scale:**
 
 | Rating | Meaning | MUST_FOLLOW Failures | Test Results |
 |--------|---------|---------------------|--------------|
 | 5 | Perfect | 0 | resolved: true |
-| 4 | Good, minor issues | 0 | resolved: true |
-| 3 | Partial fix | 1-2 | may be true/false |
-| 2 | Low quality | 3-4 | usually false |
+| 4 | Good, minor issues | 0-2 | resolved: true |
+| 3 | Partial fix | 1-3 | may be true/false |
+| 2 | Low quality | 3-5 | usually false |
 | 1 | Wrong/harmful | 5+ | resolved: false |
+
+**Note:** This is a baseline. When all traces pass tests (resolved: true), use the **Rating Differentiation** section below to create meaningful spread based on scope matching, code quality, and compounding errors.
 
 **Rationale Requirements (50-75 words):**
 - Describe specific code issues (wrong file, wrong logic, missing parameters)
@@ -324,6 +326,105 @@ python traj_search.py trace_01/*.traj --thoughts
 "Failed rubric_01, rubric_03, and rubric_05. Some tests passed but others failed."
 // ❌ Too vague, references rubric numbers, doesn't explain what went wrong
 ```
+
+---
+
+## 🎨 Rating Differentiation: Creating Meaningful Spread
+
+### The Problem: Rating Clusters
+
+A common mistake is giving similar ratings (e.g., 2, 3, 3, 2) to traces that have qualitatively different approaches. This happens when you only count MUST_FOLLOW failures without considering:
+- **Scope accuracy**: Did the agent do exactly what was needed, or add unnecessary scope?
+- **Compounding errors**: Multiple mistakes together are worse than individual issues
+- **Code quality**: Clean minimal code vs unnecessary complexity
+- **Architectural understanding**: Even if wrong location, did they grasp the actual requirement?
+
+### When All Traces Pass Tests (resolved: true)
+
+The original rating scale assumes failed tests = lower ratings. But what if all 4 traces pass tests yet have different quality levels?
+
+**Revised Rating Guidelines for resolved: true scenarios:**
+
+| Rating | MUST_FOLLOW Failures | Quality Indicators | Example |
+|--------|---------------------|-------------------|---------|
+| **5** | 0 | Perfect match to golden patch | Correct file, correct logic, all type hints |
+| **4** | 1-2 | Minor issues, excellent scope match | Wrong location BUT perfect scope (exact requirements only) |
+| **3** | 3-4 | Moderate issues, some scope creep | Wrong location + validates extra cases beyond requirement |
+| **2** | 4-5 | Multiple quality problems | Wrong location + custom exception + broader scope |
+| **1** | 5+ | Compounding errors, major scope creep | Wrong location + custom exception + test files + LSI validation |
+
+### Differentiation Factors Beyond MUST_FOLLOW Count
+
+**1. Scope Matching (Most Important)**
+- ✅ **Best**: Exactly what golden patch does (GSI only, NULL only)
+- ⚠️ **Scope Creep**: Validates LSI when only GSI needed
+- ⚠️ **Over-engineering**: Type mismatch validation when only NULL needed
+
+**2. Unnecessary Complexity**
+- ❌ Custom exception classes when existing ones work
+- ❌ Test files outside official test directory
+- ❌ Extra validation logic beyond requirements
+
+**3. Code Cleanliness**
+- ✅ Minimal line changes (+22 lines vs +138 lines)
+- ✅ Single file modified vs multiple files
+- ✅ Focused function names matching purpose
+
+**4. Compounding Errors**
+- One error (wrong location) = Rating 4
+- Two errors (wrong location + custom exception) = Rating 3
+- Three errors (wrong location + custom exception + test files) = Rating 2
+- Four+ errors (all above + LSI validation + type checks) = Rating 1
+
+### Example: Differentiating 4 Traces (All resolved: true)
+
+**Scenario**: All 4 agents implement validation in models/__init__.py instead of responses.py (all fail same architectural rubric)
+
+**trace_03**: Rating 4
+- Wrong location (FAIL rubric_03)
+- Missing type hints (FAIL rubric_04, rubric_05)
+- ✅ BUT: Only validates GSI (correct scope)
+- ✅ AND: Only checks NULL (correct scope)
+- ✅ AND: No custom exception
+- ✅ AND: Smallest change (+22 lines)
+- **2 MUST_FOLLOW failures, perfect scope understanding**
+
+**trace_04**: Rating 3
+- Wrong location (FAIL rubric_03)
+- Missing type hints (FAIL rubric_04, rubric_05)
+- Custom exception added (FAIL rubric_07)
+- ✅ Only validates GSI (correct scope)
+- ❌ Validates type mismatches beyond NULL (scope creep)
+- **5 MUST_FOLLOW failures, partial scope understanding**
+
+**trace_02**: Rating 2
+- Wrong location (FAIL rubric_03)
+- Missing type hints (FAIL rubric_04, rubric_05)
+- ❌ Validates LSI + GSI (scope creep)
+- ❌ Validates type mismatches beyond NULL (scope creep)
+- ✅ No custom exception (cleaner than trace_04)
+- **4 MUST_FOLLOW failures, moderate scope creep**
+
+**trace_01**: Rating 1
+- Wrong location (FAIL rubric_03)
+- Missing type hints (FAIL rubric_04, rubric_05)
+- Custom exception added (FAIL rubric_07)
+- Test files added (FAIL rubric_08)
+- ❌ Validates LSI + GSI (scope creep)
+- ❌ Validates type mismatches beyond NULL (scope creep)
+- **5 MUST_FOLLOW failures, compounding errors, major scope creep**
+
+**Key Insight**: trace_03 gets Rating 4 despite wrong location because it has the **best scope match** to golden intent (GSI + NULL only, minimal code). trace_01 gets Rating 1 despite passing tests because it has **compounding errors** (custom exception + test files + LSI + type checks).
+
+### Practical Guidelines
+
+1. **Don't cluster ratings** - Use the full 1-5 scale when traces have distinct qualities
+2. **Scope matching matters most** - Perfect scope with wrong location > correct location with scope creep
+3. **Count compounding errors** - Multiple mistakes together are worse than sum of parts
+4. **Value simplicity** - Minimal clean code > over-engineered complex solutions
+5. **Rationale must explain differentiation** - State why trace_03 is 4 while trace_01 is 1
+
+---
 
 ### Step 8: Create Single Deliverable File
 
@@ -684,9 +785,13 @@ Before finalizing your deliverable:
 
 ### Rating Quality
 - [ ] Each trace has rating 1-5
-- [ ] Ratings align with MUST_FOLLOW failures
+- [ ] Ratings are differentiated (not clustered like 2, 3, 3, 2)
+- [ ] When all traces pass tests, used Rating Differentiation guidelines
+- [ ] Considered scope matching, compounding errors, and code quality
+- [ ] Ratings align with MUST_FOLLOW failures AND qualitative differences
 - [ ] Rating rationales are 50-75 words
 - [ ] Rationales mention specific code issues and test results
+- [ ] Rationales explain why ratings differ between traces
 - [ ] Rationales state MUST_FOLLOW failure count at end
 - [ ] NO references to rubric numbers (rubric_01, etc.)
 
@@ -750,6 +855,19 @@ Before finalizing your deliverable:
 Creating rubrics without checking diffs or using traj_search.py.
 
 **✅ Instead:** Always verify each rubric with concrete evidence before finalizing.
+
+### ❌ Mistake 6: Rating Clusters
+Giving similar ratings (2, 3, 3, 2) to traces with qualitatively different approaches:
+```
+trace_01: Rating 2 (LSI validation + custom exception + test files)
+trace_02: Rating 3 (LSI validation + type checks)
+trace_03: Rating 3 (perfect scope: GSI only, NULL only)
+trace_04: Rating 2 (custom exception + type checks)
+```
+
+**Why wrong:** trace_03 has perfect scope match and should be rated 4, while trace_01 has compounding errors and should be rated 1. The ratings don't reflect the qualitative differences.
+
+**✅ Instead:** Use Rating Differentiation guidelines to spread ratings (1, 2, 4, 3) based on scope matching, compounding errors, and code quality.
 
 ---
 

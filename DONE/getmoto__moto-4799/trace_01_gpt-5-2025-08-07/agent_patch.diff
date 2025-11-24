@@ -1,0 +1,84 @@
+diff --git a/moto/core/models.py b/moto/core/models.py
+index 9a54dd5ed..1c0ea1216 100644
+--- a/moto/core/models.py
++++ b/moto/core/models.py
+@@ -136,7 +136,15 @@ class BaseMockAWS:
+             x for x, y in klass.__dict__.items() if inspect.isclass(y)
+         )
+ 
+-        has_setup_method = "setUp" in direct_methods
++        # Detect if this class, or any of its parents (except unittest.TestCase/object),
++        # defines a setUp method. If so, test methods should not reset the backends,
++        # as setUp is responsible for initializing state.
++        has_setup_method = False
++        for cls in inspect.getmro(klass):
++            if "setUp" in getattr(cls, "__dict__", {}):
++                if cls is not unittest.TestCase and cls is not object:
++                    has_setup_method = True
++                break
+ 
+         for attr in itertools.chain(direct_methods, defined_classes):
+             if attr.startswith("_"):
+diff --git a/repro_child_only_decorated.py b/repro_child_only_decorated.py
+new file mode 100644
+index 000000000..7d7b94a99
+--- /dev/null
++++ b/repro_child_only_decorated.py
+@@ -0,0 +1,24 @@
++import unittest
++import boto3
++from moto import mock_s3
++
++
++class BaseTest(unittest.TestCase):
++    def setUp(self) -> None:
++        self.s3 = boto3.resource('s3', region_name='us-east-1')
++        self.test_bucket = self.s3.Bucket("testbucket")
++        self.test_bucket.create()
++
++    def tearDown(self) -> None:
++        self.test_bucket.delete()
++
++
++@mock_s3
++class MyTest(BaseTest):
++    def test_a_thing(self):
++        assert list(self.s3.buckets.all())
++
++
++if __name__ == '__main__':
++    suite = unittest.TestLoader().loadTestsFromTestCase(MyTest)
++    unittest.TextTestRunner().run(suite)
+diff --git a/repro_inherited_teardown.py b/repro_inherited_teardown.py
+new file mode 100644
+index 000000000..7f45b5570
+--- /dev/null
++++ b/repro_inherited_teardown.py
+@@ -0,0 +1,27 @@
++import unittest
++import boto3
++from moto import mock_s3
++
++
++@mock_s3
++class BaseTest(unittest.TestCase):
++    def setUp(self) -> None:
++        self.s3 = boto3.resource('s3', region_name='us-east-1')
++        self.test_bucket = self.s3.Bucket("testbucket")
++        self.test_bucket.create()
++
++    def tearDown(self) -> None:
++        # This will fail in moto 3.0.1 behavior when subclass test resets state
++        self.test_bucket.delete()
++
++
++@mock_s3
++class MyTest(BaseTest):
++    def test_a_thing(self):
++        # Bucket exists here
++        assert list(self.s3.buckets.all())
++
++
++if __name__ == '__main__':
++    suite = unittest.TestLoader().loadTestsFromTestCase(MyTest)
++    unittest.TextTestRunner().run(suite)

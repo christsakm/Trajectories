@@ -1,0 +1,24 @@
+diff --git a/moto/core/models.py b/moto/core/models.py
+index 9a54dd5ed..dcecbb09d 100644
+--- a/moto/core/models.py
++++ b/moto/core/models.py
+@@ -136,7 +136,19 @@ class BaseMockAWS:
+             x for x, y in klass.__dict__.items() if inspect.isclass(y)
+         )
+ 
++        # Check if this is a unittest class and if it has setUp method (including inherited)
++        is_unittest_class = issubclass(klass, unittest.TestCase)
+         has_setup_method = "setUp" in direct_methods
++        if is_unittest_class and not has_setup_method:
++            # Check if setUp is inherited from a parent class (not just unittest.TestCase)
++            for parent_class in klass.__mro__[1:]:  # Skip the class itself
++                if parent_class is unittest.TestCase:
++                    # We've reached the base TestCase, no custom setUp found
++                    break
++                if "setUp" in parent_class.__dict__:
++                    # Found a custom setUp method in a parent class
++                    has_setup_method = True
++                    break
+ 
+         for attr in itertools.chain(direct_methods, defined_classes):
+             if attr.startswith("_"):
