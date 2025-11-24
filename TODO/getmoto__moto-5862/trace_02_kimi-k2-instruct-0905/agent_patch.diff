@@ -1,0 +1,25 @@
+diff --git a/moto/ses/models.py b/moto/ses/models.py
+index 27e1e5fef..2f81eacaf 100644
+--- a/moto/ses/models.py
++++ b/moto/ses/models.py
+@@ -585,6 +585,4 @@ class SESBackend(BaseBackend):
+         return attributes_by_identity
+ 
+ 
+-ses_backends: Mapping[str, SESBackend] = BackendDict(
+-    SESBackend, "ses", use_boto3_regions=False, additional_regions=["global"]
+-)
++ses_backends: Mapping[str, SESBackend] = BackendDict(SESBackend, "ses")
+diff --git a/moto/ses/responses.py b/moto/ses/responses.py
+index 016ff3fc0..f36aa7601 100644
+--- a/moto/ses/responses.py
++++ b/moto/ses/responses.py
+@@ -11,7 +11,7 @@ class EmailResponse(BaseResponse):
+ 
+     @property
+     def backend(self):
+-        return ses_backends[self.current_account]["global"]
++        return ses_backends[self.current_account][self.region]
+ 
+     def verify_email_identity(self):
+         address = self.querystring.get("EmailAddress")[0]

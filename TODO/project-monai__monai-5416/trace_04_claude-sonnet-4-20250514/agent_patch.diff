@@ -1,0 +1,65 @@
+diff --git a/monai/losses/dice.py b/monai/losses/dice.py
+index 869dd05a..d28beebe 100644
+--- a/monai/losses/dice.py
++++ b/monai/losses/dice.py
+@@ -802,10 +802,16 @@ class DiceFocalLoss(_Loss):
+ 
+         """
+         super().__init__()
++        # Store activation parameters to apply them manually in forward()
++        self.sigmoid = sigmoid
++        self.softmax = softmax
++        self.other_act = other_act
++        
++        # Create DiceLoss without activation functions since we'll apply them manually
+         self.dice = DiceLoss(
+-            sigmoid=sigmoid,
+-            softmax=softmax,
+-            other_act=other_act,
++            sigmoid=False,
++            softmax=False,
++            other_act=None,
+             squared_pred=squared_pred,
+             jaccard=jaccard,
+             reduction=reduction,
+@@ -846,16 +852,37 @@ class DiceFocalLoss(_Loss):
+             else:
+                 target = one_hot(target, num_classes=n_pred_ch)
+ 
++        # Apply activation functions to input before removing background channel
++        dice_input = input
++        if self.sigmoid:
++            dice_input = torch.sigmoid(dice_input)
++        
++        if self.softmax:
++            if n_pred_ch == 1:
++                warnings.warn("single channel prediction, `softmax=True` ignored.")
++            else:
++                dice_input = torch.softmax(dice_input, 1)
++        
++        if self.other_act is not None:
++            dice_input = self.other_act(dice_input)
++
++        # Keep original input for focal loss (it expects logits)
++        focal_input = input
++        focal_target = target
++
++        # Remove background channel if needed
+         if not self.include_background:
+             if n_pred_ch == 1:
+                 warnings.warn("single channel prediction, `include_background=False` ignored.")
+             else:
+                 # if skipping background, removing first channel
+                 target = target[:, 1:]
+-                input = input[:, 1:]
++                dice_input = dice_input[:, 1:]
++                focal_target = focal_target[:, 1:]
++                focal_input = focal_input[:, 1:]
+ 
+-        dice_loss = self.dice(input, target)
+-        focal_loss = self.focal(input, target)
++        dice_loss = self.dice(dice_input, target)
++        focal_loss = self.focal(focal_input, focal_target)
+         total_loss: torch.Tensor = self.lambda_dice * dice_loss + self.lambda_focal * focal_loss
+         return total_loss
+ 

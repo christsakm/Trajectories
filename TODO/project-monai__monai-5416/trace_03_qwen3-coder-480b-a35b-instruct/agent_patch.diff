@@ -1,0 +1,62 @@
+diff --git a/monai/losses/dice.py b/monai/losses/dice.py
+index 869dd05a..c5017171 100644
+--- a/monai/losses/dice.py
++++ b/monai/losses/dice.py
+@@ -846,16 +846,47 @@ class DiceFocalLoss(_Loss):
+             else:
+                 target = one_hot(target, num_classes=n_pred_ch)
+ 
+-        if not self.include_background:
+-            if n_pred_ch == 1:
+-                warnings.warn("single channel prediction, `include_background=False` ignored.")
+-            else:
+-                # if skipping background, removing first channel
+-                target = target[:, 1:]
+-                input = input[:, 1:]
+-
+-        dice_loss = self.dice(input, target)
+-        focal_loss = self.focal(input, target)
++        # Handle the special case for binary segmentation with include_background=False and softmax=True
++        if not self.include_background and n_pred_ch == 2 and self.dice.softmax:
++            # For binary segmentation, we need to:
++            # 1. Apply softmax to the original 2-channel input
++            # 2. Pass the foreground channel to Dice loss (which will have 1 channel)
++            # 3. Pass the original input (logits) to Focal loss
++            
++            # Apply softmax to the original input
++            softmax_input = torch.softmax(input, 1)
++            
++            # For Dice loss: use the foreground channel after softmax
++            dice_input = softmax_input[:, 1:]  # Keep only the foreground channel
++            dice_target = target[:, 1:]  # Keep only the foreground channel
++            
++            # For Focal loss: use the original input (logits)
++            focal_input = input
++            focal_target = target
++            
++            # Temporarily disable softmax for the Dice loss since we've already applied it
++            original_softmax = self.dice.softmax
++            self.dice.softmax = False
++            
++            # Compute losses
++            dice_loss = self.dice(dice_input, dice_target)
++            focal_loss = self.focal(focal_input, focal_target)
++            
++            # Restore the original softmax setting
++            self.dice.softmax = original_softmax
++        else:
++            # For all other cases, use the original logic
++            if not self.include_background:
++                if n_pred_ch == 1:
++                    warnings.warn("single channel prediction, `include_background=False` ignored.")
++                else:
++                    # if skipping background, removing first channel
++                    target = target[:, 1:]
++                    input = input[:, 1:]
++
++            dice_loss = self.dice(input, target)
++            focal_loss = self.focal(input, target)
++        
+         total_loss: torch.Tensor = self.lambda_dice * dice_loss + self.lambda_focal * focal_loss
+         return total_loss
+ 

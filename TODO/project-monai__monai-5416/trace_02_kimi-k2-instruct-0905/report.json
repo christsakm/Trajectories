@@ -1,0 +1,35 @@
+{
+    "project-monai__monai-5416": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false,
+        "tests_status": {
+            "FAIL_TO_PASS": {
+                "success": [],
+                "failure": [
+                    "tests/test_dice_focal_loss.py::TestDiceFocalLoss::test_result_no_onehot_no_bg_1",
+                    "tests/test_dice_focal_loss.py::TestDiceFocalLoss::test_result_no_onehot_no_bg_0"
+                ]
+            },
+            "PASS_TO_PASS": {
+                "success": [
+                    "tests/test_dice_focal_loss.py::TestDiceFocalLoss::test_ill_lambda",
+                    "tests/test_dice_focal_loss.py::TestDiceFocalLoss::test_result_onehot_target_include_bg",
+                    "tests/test_dice_focal_loss.py::TestDiceFocalLoss::test_ill_shape"
+                ],
+                "failure": [
+                    "tests/test_dice_focal_loss.py::TestDiceFocalLoss::test_script"
+                ]
+            },
+            "FAIL_TO_FAIL": {
+                "success": [],
+                "failure": []
+            },
+            "PASS_TO_FAIL": {
+                "success": [],
+                "failure": []
+            }
+        }
+    }
+}
