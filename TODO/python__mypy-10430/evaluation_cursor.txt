@@ -1,0 +1,138 @@
+Evaluation Form - EVALUATED
+Language *
+Python
+Category *
+Bug fixing
+Difficulty *
+The time it would take a software engineer to solve the issue based on estimation on human hours for a person who is familiar with the codebase 
+
+15 min ~ 1 hour
+Must-read files *
+Files that the agent must view to fix the issue or implement the new feature. Annotate in a list with absolute path starting with repo work_dir (/testbed)
+
+[
+  "/testbed/mypy/nodes.py"
+]
+Must-check tests *
+Tests that the agent must run to ensure that no regression is introduced. Annotate in a list with absolute path starting with repo work_dir ( /testbed)
+
+[
+  "/testbed/test-data/unit/check-incremental.test"
+]
+Rubrics *
+Remember to do this based on all 4 traces.
+
+{
+  "rubric_01": {
+    "type": "correctness",
+    "criterion": "The patch adds from_module_getattr as string literal to Decorator serialization list in nodes.py.",
+    "rationale": "The crash occurs because from_module_getattr flag is not serialized during incremental mode. The field must be added as a string literal to match serialization format.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_02": {
+    "type": "correctness",
+    "criterion": "The patch does not modify lookup.py or other files beyond nodes.py.",
+    "rationale": "The golden patch only modifies nodes.py. Modifying lookup.py is the wrong architectural approach.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_03": {
+    "type": "correctness",
+    "criterion": "The patch sets from_module_getattr flag on Var nodes when creating them.",
+    "rationale": "Understanding the flag is essential even if using wrong approach. Shows comprehension of the issue.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_04": {
+    "type": "correctness",
+    "criterion": "The patch creates Var nodes with proper type when handling __getattr__.",
+    "rationale": "Creating Var nodes with proper type shows understanding of the data structure needed.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "true"
+  },
+  "rubric_05": {
+    "type": "correctness",
+    "criterion": "The patch does not create TypeInfo objects for nested access in lookup.py.",
+    "rationale": "Creating TypeInfo objects for __getattr__ names is incorrect and shows misunderstanding of the problem.",
+    "importance": "MUST_FOLLOW",
+    "is_positive": "false"
+  },
+  "rubric_06": {
+    "type": "agent behavior",
+    "criterion": "The patch does not create unnecessary reproduction or test files.",
+    "rationale": "The golden patch is minimal with no extra files. Creating repro files shows incomplete understanding.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "false"
+  },
+  "rubric_07": {
+    "type": "code style",
+    "criterion": "The patch uses minimal change and clean code structure when modifying files.",
+    "rationale": "The golden patch adds only one field to the serialization list. Using helper functions or maintaining alphabetical order improves maintainability.",
+    "importance": "GOOD_TO_HAVE",
+    "is_positive": "true"
+  }
+}
+Rubrics rating *
+Evaluate all 4 traces using the exact trace names.
+
+{
+  "trace_01": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL"
+  },
+  "trace_02": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "FAIL",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL"
+  },
+  "trace_03": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "FAIL",
+    "rubric_04": "FAIL",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "FAIL"
+  },
+  "trace_04": {
+    "rubric_01": "FAIL",
+    "rubric_02": "FAIL",
+    "rubric_03": "PASS",
+    "rubric_04": "PASS",
+    "rubric_05": "PASS",
+    "rubric_06": "FAIL",
+    "rubric_07": "PASS"
+  }
+}
+Overall rating *
+Remember to keep using the exact 4 trace names, you used in previous fields.
+
+{
+  "trace_01": {
+    "rating": 2,
+    "rationale": "Partial fix that correctly creates synthetic Var nodes with from_module_getattr=True and AnyType(TypeOfAny.special_form) when __getattr__ is detected, demonstrating understanding of the flag concept. The solution uses in_module_scope tracking to ensure Var creation only happens at module level. However, it modifies lookup.py instead of nodes.py, missing the core serialization fix. Despite thorough investigation (9 views of nodes.py, 12 serialization searches), the agent chose the wrong architectural approach. The solution works functionally but fails 2 MUST_FOLLOW rubrics by not addressing serialization in nodes.py."
+  },
+  "trace_02": {
+    "rating": 1,
+    "rationale": "Fundamentally incorrect solution that creates Var nodes with type=None and fabricates fake TypeInfo objects for nested attribute access (dummy_def = ClassDef(key, Block([]))). The approach misunderstands the problem by treating __getattr__ names as class-like structures with nested namespaces. Minimal investigation (viewed nodes.py once, never searched from_module_getattr) suggests the agent didn't understand the root cause. The solution doesn't set from_module_getattr flag and creates incorrect data structures that would break type checking. Failed 5 MUST_FOLLOW rubrics, indicating complete misunderstanding of the issue."
+  },
+  "trace_03": {
+    "rating": 1,
+    "rationale": "Incomplete fix that only checks mod.is_partial_stub_package and returns None without creating any Var nodes or addressing serialization. The patch adds a comment about __getattr__ but provides no actual implementation - it just suppresses errors for partial stub packages. Despite the most thorough investigation (13 views of nodes.py, 18 serialization searches), the agent failed to implement any meaningful fix. The solution doesn't create Var nodes, doesn't set from_module_getattr flag, and doesn't modify nodes.py. Failed 4 MUST_FOLLOW rubrics with a solution that doesn't actually solve the problem."
+  },
+  "trace_04": {
+    "rating": 3,
+    "rationale": "Well-structured but architecturally wrong solution that implements a helper function _create_getattr_var to extract return types from __getattr__ callables (using CallableType.ret_type). The code correctly sets from_module_getattr=True and creates Var nodes with proper types derived from the __getattr__ signature. However, it modifies lookup.py instead of nodes.py, missing the serialization fix entirely. The clean code organization with helper function shows good engineering practices, but the fundamental approach is wrong. Failed 2 MUST_FOLLOW rubrics - the best implementation among wrong approaches but still doesn't address the root cause in nodes.py."
+  }
+}
+
