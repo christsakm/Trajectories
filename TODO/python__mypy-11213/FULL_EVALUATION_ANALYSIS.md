@@ -155,58 +155,58 @@ Must-check tests *
 ```json
 {
   "rubric_01": {
-    "criterion": "The patch refactors in_checked_function from one-liner to multi-statement logic.",
-    "rationale": "Stack walking requires multiple statements to iterate and find enclosing function.",
+    "criterion": "The patch refactors in_checked_function from single-line return statement to multi-statement control flow with early returns and loop logic.",
+    "rationale": "Original one-liner checked only the last function in stack. Stack walking algorithm requires explicit iteration through multiple functions to skip lambdas and find the first regular function, necessitating multi-statement implementation with conditional logic and loop construct.",
     "type": "correctness",
     "importance": "MUST_FOLLOW",
     "is_positive": "true"
   },
   "rubric_02": {
-    "criterion": "The patch loops backward through function_stack to find non-lambda function.",
-    "rationale": "Nested lambdas require iteration up stack to find regular function context.",
+    "criterion": "The patch implements backward iteration through function_stack using loop construct like while or for-reversed to examine each function starting from innermost.",
+    "rationale": "When lambda is inside another lambda inside a function, the algorithm must traverse backward from innermost to outermost examining each stack frame. Simple any() or all() operations don't provide positional control needed to stop at first non-lambda and return its checked status.",
     "type": "correctness",
     "importance": "MUST_FOLLOW",
     "is_positive": "true"
   },
   "rubric_03": {
-    "criterion": "The patch returns not is_dynamic for found non-lambda function.",
-    "rationale": "Lambda inherits checked status from enclosing function's annotation state.",
+    "criterion": "The patch returns the negation of is_dynamic method call on the found non-lambda function, implementing inheritance logic.",
+    "rationale": "Functions marked dynamic are untyped and unchecked. Lambda should inherit this status from enclosing regular function. Returning not is_dynamic() means if parent function is dynamic (untyped), lambda becomes unchecked; if parent is typed, lambda is checked.",
     "type": "correctness",
     "importance": "MUST_FOLLOW",
     "is_positive": "true"
   },
   "rubric_04": {
-    "criterion": "The patch returns True when only lambdas exist in stack.",
-    "rationale": "Module-level lambdas without function context should be checked.",
+    "criterion": "The patch returns True as fallback when iteration completes without finding non-lambda function, handling module-level lambda case.",
+    "rationale": "Module-level lambdas defined outside any function context have only lambda expressions in the function_stack. These should be checked by default since module-level code is always checked. Returning True ensures correct behavior for g = lambda x: UNDEFINED which should report errors.",
     "type": "correctness",
     "importance": "MUST_FOLLOW",
     "is_positive": "true"
   },
   "rubric_05": {
-    "criterion": "The agent only modifies in_checked_function method in semanal.py.",
-    "rationale": "Root cause is in this specific method, other files unnecessary.",
+    "criterion": "The agent modifies only in_checked_function method in semanal.py, not touching checker.py, checkexpr.py, or other mypy components.",
+    "rationale": "Semantic analyzer determines whether code should be checked during the analysis phase. Type checker in checker.py and expression checker in checkexpr.py consume this decision but don't determine it. Modifying type checking layer treats symptom not root cause, leading to incomplete fix or breaking other functionality.",
     "type": "agent behavior",
     "importance": "MUST_FOLLOW",
     "is_positive": "true"
   },
   "rubric_06": {
-    "criterion": "Solution correctly handles deeply nested lambda stacks in tests.",
-    "rationale": "Must walk up through multiple lambdas to find enclosing function.",
+    "criterion": "Solution passes testLambdaInheritsCheckedContextFromFuncLambdaStack which tests lambda: lambda: lambda x: UNDEFINED inside untyped function g().",
+    "rationale": "Triple-nested lambda case validates algorithm correctly iterates through entire stack of lambdas to find enclosing function. Simple checks on stack[-1] or any() logic fail this test by not properly implementing positional traversal to find outermost regular function.",
     "type": "summary",
     "importance": "GOOD_TO_HAVE",
     "is_positive": "true"
   },
   "rubric_07": {
     "type": "code style",
-    "criterion": "Includes comment explaining lambdas inherit checked status from parent",
-    "rationale": "Comments help future maintainers understand why lambdas are special case.",
+    "criterion": "Code includes inline comment near loop or return statement explaining lambdas inherit checked status from parent function because they cannot be annotated.",
+    "rationale": "Future maintainers need to understand why lambda is special-cased. Comment explaining that lambda syntax doesn't allow type annotations so it must inherit from enclosing context prevents confusion and accidental removal of inheritance logic during refactoring.",
     "importance": "GOOD_TO_HAVE",
     "is_positive": "true"
   },
   "rubric_08": {
     "type": "summary",
-    "criterion": "Summary explains lambdas inherit checked status from parent context",
-    "rationale": "Correct summary demonstrates understanding that lambdas inherit from enclosing scope.",
+    "criterion": "Agent documentation or comments demonstrate understanding that lambdas inherit checked status from enclosing non-lambda function scope, not just any parent.",
+    "rationale": "Correct mental model distinguishes between inheriting from nearest function (wrong) versus walking up stack past nested lambdas to find regular function (correct). Agent summary showing this understanding indicates proper analysis of the architectural issue beyond just making tests pass.",
     "importance": "GOOD_TO_HAVE",
     "is_positive": "true"
   }
