@@ -281,19 +281,19 @@ Must-check tests *
 {
   "trace_01": {
     "rating": 4,
-    "rationale": "Best solution despite minor errors. Correctly delegates to composed losses and removes manual preprocessing. Tests pass with resolved true and all 6 tests passing. However, passes to_onehot_y=to_onehot_y instead of False (lucky pass), removes self.to_onehot_y incorrectly, and adds unnecessary repro.py file. Demonstrates proper understanding of delegation pattern despite implementation flaws. Failed 3 MUST_FOLLOW rubrics."
+    "rationale": "Best solution despite minor errors. Correctly delegates to composed losses and removes manual preprocessing. Tests pass with resolved true and all 6 tests passing. However, passes to_onehot_y=to_onehot_y instead of False (lucky pass), removes self.to_onehot_y incorrectly, and adds unnecessary repro.py file. Demonstrates proper understanding of delegation pattern despite implementation flaws."
   },
   "trace_02": {
     "rating": 2,
-    "rationale": "Completely wrong approach modifying base DiceLoss behavior instead of fixing DiceFocalLoss delegation. Created dynamic DiceLoss instances in forward method showing fundamental misunderstanding. Tests failed with resolved false, 2 FAIL_TO_PASS failures and 1 PASS_TO_PASS regression. Breaks existing functionality while not fixing the bug. Failed 6 MUST_FOLLOW rubrics."
+    "rationale": "Completely wrong approach modifying base DiceLoss behavior instead of fixing DiceFocalLoss delegation. Created dynamic DiceLoss instances in forward method showing fundamental misunderstanding. Tests failed with resolved false, 2 FAIL_TO_PASS failures and 1 PASS_TO_PASS regression. Breaks existing functionality while not fixing the bug."
   },
   "trace_03": {
     "rating": 2,
-    "rationale": "Narrow special-case solution only for binary segmentation showing incomplete understanding. Manually applies softmax and temporarily mutates self.dice.softmax state (dangerous anti-pattern). Tests failed with resolved false and 2 FAIL_TO_PASS failures despite no PASS_TO_PASS regressions. Would fail for non-binary cases. Failed 5 MUST_FOLLOW rubrics."
+    "rationale": "Narrow special-case solution only for binary segmentation showing incomplete understanding. Manually applies softmax and temporarily mutates self.dice.softmax state (dangerous anti-pattern). Tests failed with resolved false and 2 FAIL_TO_PASS failures despite no PASS_TO_PASS regressions. Would fail for non-binary cases."
   },
   "trace_04": {
     "rating": 3,
-    "rationale": "Tests pass with resolved true and all 6 tests passing but using wrong architecture. Manually applies activation functions instead of letting DiceLoss handle them, defeating delegation pattern. Stores redundant activation parameters as instance variables. Completed in 40 steps with 9 test runs showing thorough validation. Works correctly but misses the architectural insight of parameter delegation. Failed 4 MUST_FOLLOW rubrics."
+    "rationale": "Tests pass with resolved true and all 6 tests passing but using wrong architecture. Manually applies activation functions instead of letting DiceLoss handle them, defeating delegation pattern. Stores redundant activation parameters as instance variables. Completed in 40 steps with 9 test runs showing thorough validation. Works correctly but misses the architectural insight of parameter delegation."
   }
 }
 ```
